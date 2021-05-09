@@ -1,7 +1,28 @@
 import 'package:flutter/material.dart';
 import 'package:flutterapp/Mine/MineInfo_screen.dart';
+import 'package:flutterapp/Mine/Model/MineModel.dart';
 
 class WPMine extends StatelessWidget {
+  List commonUseList = WPMineModel.commonUseList;
+  List mineList = WPMineModel.mineList;
+
+  List<Widget> getCommonUseCellList(BuildContext context) {
+    List<Widget> listViews = <Widget>[];
+    for (WPMineModel model in commonUseList) {
+      listViews.add(cell(model, context));
+    }
+    return listViews;
+  }
+
+  List<Widget> getMineCellList(BuildContext context) {
+    List<Widget> listViews = <Widget>[];
+    for (WPMineModel model in mineList) {
+      listViews.add(cell(model, context));
+    }
+    listViews.add(Expanded(child: SizedBox()));
+    return listViews;
+  }
+
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -9,7 +30,7 @@ class WPMine extends StatelessWidget {
         child: SafeArea(
             top: false,
             child: Scaffold(
-              backgroundColor: Colors.grey,
+              backgroundColor: Color(0xFFF6F6F6),
               body: Stack(children: [
                 Padding(
                   padding: EdgeInsets.only(left: 0, right: 0),
@@ -42,13 +63,8 @@ class WPMine extends StatelessWidget {
                             ),
                             Padding(
                               padding: EdgeInsets.only(top: 18),
-                              child: Row(children: [
-                                cell("images/me_icon_fangyi@3x.png", "疫情助手"),
-                                cell("images/me_icon_invite@3x.png", "邀请"),
-                                cell("images/me_icon_downloadapp@3x.png",
-                                    "下载app"),
-                                cell("images/me_icon_setting@3x.png", "设置"),
-                              ]),
+                              child:
+                                  Row(children: getCommonUseCellList(context)),
                             ),
                             Padding(
                               padding: EdgeInsets.only(top: 41),
@@ -63,12 +79,7 @@ class WPMine extends StatelessWidget {
                             Padding(
                                 padding: EdgeInsets.only(top: 18),
                                 child: Row(
-                                  children: [
-                                    cell("images/me_icon_circle@3x.png", "朋友圈"),
-                                    cell("images/me_icon_home@3x.png", "个人主页"),
-                                    cell("images/me_icon_collect@3x.png", "收藏"),
-                                    Expanded(child: SizedBox())
-                                  ],
+                                  children: getMineCellList(context),
                                 )),
                           ],
                         ),
@@ -80,24 +91,32 @@ class WPMine extends StatelessWidget {
             )));
   }
 
-  Widget cell(String path, String title) {
+  Widget cell(WPMineModel model, BuildContext context) {
     return Expanded(
-        child: Column(
-      children: [
-        Container(
-          width: 25,
-          height: 25,
-          child: Image.asset(path),
-        ),
-        SizedBox(
-          height: 7,
-        ),
-        Text(
-          title,
-          style: TextStyle(fontSize: 12, color: Color(0xFF333333)),
-        )
-      ],
-    ));
+        child: InkWell(
+            onTap: () {
+              Navigator.push(
+                  context,
+                  MaterialPageRoute<dynamic>(
+                    builder: (BuildContext context) => model.screen,
+                  ));
+            },
+            child: Column(
+              children: [
+                SizedBox(
+                  width: 25,
+                  height: 25,
+                  child: Image.asset(model.icon),
+                ),
+                SizedBox(
+                  height: 7,
+                ),
+                Text(
+                  model.title,
+                  style: TextStyle(fontSize: 12, color: Color(0xFF333333)),
+                )
+              ],
+            )));
   }
 
   Widget headInfo(BuildContext context) {
@@ -212,7 +231,7 @@ class WPMine extends StatelessWidget {
                       style: TextStyle(fontSize: 14, color: Color(0xFF000000)),
                     ),
                   )),
-                  Icon(Icons.arrow_right)
+                  Icon(Icons.keyboard_arrow_right)
                 ],
               )
             ],

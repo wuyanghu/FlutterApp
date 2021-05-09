@@ -9,6 +9,7 @@ class WPMineInfo extends StatelessWidget {
             top: false,
             child: Scaffold(
               appBar: AppBar(
+                backgroundColor: Color(0xFF4B77B0),
                 title: Text("个人信息"),
               ),
               backgroundColor: Color(0xFFF6F6F6),
@@ -30,7 +31,7 @@ class WPMineInfo extends StatelessWidget {
                               height: 40,
                               child: Image.asset("images/me_header.png"),
                             ),
-                            Icon(Icons.arrow_right)
+                            Icon(Icons.keyboard_arrow_right)
                           ],
                         )
                       ],
@@ -38,8 +39,6 @@ class WPMineInfo extends StatelessWidget {
                   ),
                   line(),
                   cell("昵称", "某非著名程序员"),
-                  line(),
-                  cell("手机号", "15658026793"),
                   line(),
                   cell("手机号", "15658026793"),
                   line(),
@@ -78,7 +77,7 @@ class WPMineInfo extends StatelessWidget {
             Row(
               children: [
                 Text(subTitle, style: TextStyle(fontSize: 14)),
-                Icon(Icons.arrow_right)
+                Icon(Icons.keyboard_arrow_right)
               ],
             )
           ],
