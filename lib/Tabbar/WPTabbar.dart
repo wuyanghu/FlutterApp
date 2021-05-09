@@ -5,21 +5,20 @@ import 'package:flutterapp/Mine/Mine_screen.dart';
 import 'package:flutterapp/examples/WP6Chapter.dart';
 import 'package:flutterapp/examples/WPChapters_screen.dart';
 
-class ScaffoldRoute extends StatefulWidget {
+class MyHomePage extends StatefulWidget {
+  MyHomePage({Key key, this.title}) : super(key: key);
+  final String title;
+
   @override
-  State<StatefulWidget> createState() {
-    return _ScaffoldRouteState();
-  }
+  _ScaffoldRouteState createState() => _ScaffoldRouteState();
 }
 
-class _ScaffoldRouteState extends State<ScaffoldRoute>
+class _ScaffoldRouteState extends State<MyHomePage>
     with SingleTickerProviderStateMixin {
   int _selectedIndex = 0;
   TabController _tabController;
 
-  List tabs = ["学习列表", "历史", "学习"];
-  List tabs1 = ["新闻1", "图片1", "学习1"];
-  List tabs2 = ["新闻2", "图片2", "学习2"];
+  List tabs = ["flutter实战demo", "我的2", "MarkDown解析"];
 
   @override
   void initState() {
@@ -40,16 +39,15 @@ class _ScaffoldRouteState extends State<ScaffoldRoute>
     });
   }
 
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
+  Widget getAppBar() {
+    if (_selectedIndex == 0) {
+      return AppBar(
         //导航栏
         title: Text("首页"),
         bottom: TabBar(
             //生成Tab菜单
-            controller: getSelectTabController(),
-            tabs: getSelectTab()),
+            controller: _tabController,
+            tabs: tabs.map((e) => Tab(text: e)).toList()),
         leading: Builder(builder: (context) {
           return IconButton(
               icon: Icon(Icons.dashboard, color: Colors.white), //自定义图标
@@ -66,34 +64,44 @@ class _ScaffoldRouteState extends State<ScaffoldRoute>
                 Scaffold.of(context).openDrawer();
               }),
         ],
-      ),
+      );
+    }
+    return null;
+  }
 
-      drawer: new LeftDrawer(), //抽屉
-      body: TabBarView(
-          controller: getSelectTabController(), children: getSelectContainer()),
+  Widget getBody() {
+    if (_selectedIndex == 0) {
+      return TabBarView(
+          controller: _tabController, children: getSelectContainer());
+    }
+    return WPMine();
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: getAppBar(),
+
+      drawer: LeftDrawer(), //抽屉
+      body: getBody(),
       bottomNavigationBar: BottomNavigationBar(
         // 底部导航
         items: <BottomNavigationBarItem>[
           BottomNavigationBarItem(icon: Icon(Icons.home), title: Text('Home')),
-          BottomNavigationBarItem(
-              icon: Icon(Icons.business), title: Text('Business')),
-          BottomNavigationBarItem(
-              icon: Icon(Icons.school), title: Text('School')),
+          BottomNavigationBarItem(icon: Icon(Icons.person), title: Text('Me')),
         ],
         currentIndex: _selectedIndex,
         fixedColor: Colors.blue,
-        onTap: _onItemTapped,
+        onTap: (int index) {
+          setState(() {
+            _selectedIndex = index;
+          });
+        },
       ),
-      //悬浮按钮
-      floatingActionButton:
-          FloatingActionButton(child: Icon(Icons.add), onPressed: _onAdd),
+      // floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
+      // floatingActionButton:
+      //     FloatingActionButton(child: Icon(Icons.add), onPressed: _onAdd),
     );
-  }
-
-  void _onItemTapped(int index) {
-    setState(() {
-      _selectedIndex = index;
-    });
   }
 
   void _onAdd() {
@@ -102,29 +110,17 @@ class _ScaffoldRouteState extends State<ScaffoldRoute>
   }
 
   List getSelectContainer() {
-    List _tabs;
-    if (_selectedIndex == 0) {
-      _tabs = tabs;
-    } else if (_selectedIndex == 1) {
-      _tabs = tabs1;
-    } else {
-      _tabs = tabs2;
-    }
-
-    return _tabs.map((e) {
+    return tabs.map((e) {
+      if (_selectedIndex == 1) {
+        return WPMine();
+      }
       //创建3个Tab页
       if (e == tabs[0]) {
-        return WPMine();
-      } else if (e == tabs[1]) {
         return WPChaters();
-      }
-
-      if (e == tabs1[0]) {
-        return FlutterMarkdown();
-      }
-
-      if (e == tabs2[0]) {
+      } else if (e == tabs[1]) {
         return Mine();
+      } else if (e == tabs[2]) {
+        return FlutterMarkdown();
       }
 
       return Container(
@@ -132,19 +128,5 @@ class _ScaffoldRouteState extends State<ScaffoldRoute>
         child: Text(e, textScaleFactor: 5),
       );
     }).toList();
-  }
-
-  TabController getSelectTabController() {
-    return _tabController;
-  }
-
-  List<Tab> getSelectTab() {
-    if (_selectedIndex == 0) {
-      return tabs.map((e) => Tab(text: e)).toList();
-    } else if (_selectedIndex == 1) {
-      return tabs1.map((e) => Tab(text: e)).toList();
-    } else {
-      return tabs2.map((e) => Tab(text: e)).toList();
-    }
   }
 }

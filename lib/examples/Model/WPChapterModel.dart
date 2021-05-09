@@ -20,10 +20,6 @@ class WPChapterModel {
 
   static List<WPChapterModel> homeList = [
     WPChapterModel(
-      title: '我的',
-      navigateScreen: WPMine(),
-    ),
-    WPChapterModel(
       title: '2.1计数器应用实例',
       navigateScreen: WP2_1Counter(title: '2.1计数器应用实例'),
     ),

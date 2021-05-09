@@ -23,7 +23,7 @@ class LeftDrawer extends StatelessWidget {
                     padding: const EdgeInsets.symmetric(horizontal: 16.0),
                     child: ClipOval(
                       child: Image.asset(
-                        "imgs/avatar.png",
+                        "images/me_header.png",
                         width: 80,
                       ),
                     ),
