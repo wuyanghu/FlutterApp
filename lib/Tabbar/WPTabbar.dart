@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutterapp/Tabbar/FlutterMarkdown.dart';
 import 'package:flutterapp/LeftDrawer/LeftDrawer.dart';
-import 'package:flutterapp/Tabbar/Mine_screen.dart';
+import 'package:flutterapp/Mine/Mine_screen.dart';
 import 'package:flutterapp/examples/WP6Chapter.dart';
 import 'package:flutterapp/examples/WPChapters_screen.dart';
 

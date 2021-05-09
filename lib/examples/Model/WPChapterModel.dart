@@ -1,5 +1,5 @@
 import 'package:flutter/widgets.dart';
-import 'package:flutterapp/Tabbar/Mine_screen.dart';
+import 'package:flutterapp/Mine/Mine_screen.dart';
 import 'package:flutterapp/examples/WP2Chapter.dart';
 import 'package:flutterapp/examples/WP3Chapter.dart';
 import 'package:flutterapp/examples/WP4Chapter.dart';
