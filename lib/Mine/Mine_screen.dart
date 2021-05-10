@@ -95,6 +95,10 @@ class WPMine extends StatelessWidget {
     return Expanded(
         child: InkWell(
             onTap: () {
+              if (model.screen == null) {
+                print("跳转页面不存在");
+                return;
+              }
               Navigator.push(
                   context,
                   MaterialPageRoute<dynamic>(
