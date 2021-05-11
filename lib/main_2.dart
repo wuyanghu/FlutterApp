@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutterapp/Tabbar/MyHomePage.dart';
-import 'package:flutterapp/examples/WP2Chapter.dart';
+import 'package:flutterapp/MyApp/Tabbar/MyHomePage.dart';
+import 'package:flutterapp/MyApp/examples/WP2Chapter.dart';
 
 void main() {
   runApp(MyApp());

@@ -1,3 +1,5 @@
+import 'dart:math';
+
 import 'package:flutter/material.dart';
 import 'package:flutterapp/widgets/search_text_field_widget.dart';
 import 'package:flutterapp/pages/home/home_app_bar.dart' as myapp;
@@ -24,19 +26,11 @@ var _tabs = ['动态', '推荐'];
 DefaultTabController getWidget() {
   return DefaultTabController(
     initialIndex: 1,
-    length: _tabs.length, // This is the number of tabs.
+    length: _tabs.length,
     child: NestedScrollView(
       headerSliverBuilder: (BuildContext context, bool innerBoxIsScrolled) {
-        // These are the slivers that show up in the "outer" scroll view.
         return <Widget>[
           SliverOverlapAbsorber(
-            // This widget takes the overlapping behavior of the SliverAppBar,
-            // and redirects it to the SliverOverlapInjector below. If it is
-            // missing, then it is possible for the nested "inner" scroll view
-            // below to end up under the SliverAppBar even when the inner
-            // scroll view thinks it has not been scrolled.
-            // This is not necessary if the "headerSliverBuilder" only builds
-            // widgets that do not overlap the next sliver.
             handle: NestedScrollView.sliverOverlapAbsorberHandleFor(context),
             sliver: myapp.SliverAppBar(
               pinned: true,
@@ -58,14 +52,6 @@ DefaultTabController getWidget() {
                   alignment: Alignment(0.0, 0.0),
                 ),
               ),
-              // The "forceElevated" property causes the SliverAppBar to show
-              // a shadow. The "innerBoxIsScrolled" parameter is true when the
-              // inner scroll view is scrolled beyond its "zero" point, i.e.
-              // when it appears to be scrolled below the SliverAppBar.
-              // Without this, there are cases where the shadow would appear
-              // or not appear inappropriately, because the SliverAppBar is
-              // not actually aware of the precise position of the inner
-              // scroll views.
               bottomTextString: _tabs,
               bottom: TabBar(
                 // These are the widgets to put in each tab in the tab bar.
@@ -83,7 +69,6 @@ DefaultTabController getWidget() {
         ];
       },
       body: TabBarView(
-        // These are the contents of the tab views, below the tabs.
         children: _tabs.map((String name) {
           return SliverContainer(
             name: name,
@@ -123,10 +108,11 @@ class _SliverContainerState extends State<SliverContainer> {
   List<Subject> list;
 
   void requestAPI() async {
-//    var _request = HttpRequest(API.BASE_URL);
-//    int start = math.Random().nextInt(220);
-//    final Map result = await _request.get(API.TOP_250 + '?start=$start&count=30');
-//    var resultList = result['subjects'];
+    // var _request = HttpRequest(API.BASE_URL);
+    // int start = Random().nextInt(220);
+    // final Map result =
+    //     await _request.get(API.TOP_250 + '?start=$start&count=30');
+    // var resultList = result['subjects'];
 
     var _request = MockRequest();
     var result = await _request.get(API.TOP_250);
@@ -153,24 +139,12 @@ class _SliverContainerState extends State<SliverContainer> {
       top: false,
       bottom: false,
       child: Builder(
-        // This Builder is needed to provide a BuildContext that is "inside"
-        // the NestedScrollView, so that sliverOverlapAbsorberHandleFor() can
-        // find the NestedScrollView.
         builder: (BuildContext context) {
           return CustomScrollView(
             physics: const BouncingScrollPhysics(),
-            // The "controller" and "primary" members should be left
-            // unset, so that the NestedScrollView can control this
-            // inner scroll view.
-            // If the "controller" property is set, then this scroll
-            // view will not be associated with the NestedScrollView.
-            // The PageStorageKey should be unique to this ScrollView;
-            // it allows the list to remember its scroll position when
-            // the tab view is not on the screen.
             key: PageStorageKey<String>(widget.name),
             slivers: <Widget>[
               SliverOverlapInjector(
-                // This is the flip side of the SliverOverlapAbsorber above.
                 handle:
                     NestedScrollView.sliverOverlapAbsorberHandleFor(context),
               ),
@@ -235,6 +209,7 @@ class _SliverContainerState extends State<SliverContainer> {
           Padding(
             padding: const EdgeInsets.only(left: 15.0, right: 15.0),
             child: Row(
+              crossAxisAlignment: CrossAxisAlignment.center,
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: <Widget>[
                 Image.asset(
@@ -245,8 +220,8 @@ class _SliverContainerState extends State<SliverContainer> {
                 Image.asset(
                   Constant.ASSETS_IMG +
                       'ic_notification_tv_calendar_comments.png',
-                  width: 20.0,
-                  height: 20.0,
+                  width: 25.0,
+                  height: 25.0,
                 ),
                 Image.asset(
                   Constant.ASSETS_IMG + 'ic_status_detail_reshare_icon.png',

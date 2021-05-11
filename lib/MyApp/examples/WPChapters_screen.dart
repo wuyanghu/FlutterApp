@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutterapp/examples/Model/WPChapterModel.dart';
+import 'package:flutterapp/MyApp/examples/Model/WPChapterModel.dart';
 
 class WPChaters extends StatefulWidget {
   @override

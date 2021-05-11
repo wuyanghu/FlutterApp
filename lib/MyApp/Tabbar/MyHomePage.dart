@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:flutterapp/Tabbar/FlutterMarkdown.dart';
-import 'package:flutterapp/LeftDrawer/LeftDrawer.dart';
-import 'package:flutterapp/Mine/Mine_screen.dart';
-import 'package:flutterapp/examples/WP6Chapter.dart';
-import 'package:flutterapp/examples/WPChapters_screen.dart';
+import 'package:flutterapp/MyApp/Tabbar/FlutterMarkdown.dart';
+import 'package:flutterapp/MyApp/LeftDrawer/LeftDrawer.dart';
+import 'package:flutterapp/MyApp/Mine/Mine_screen.dart';
+import 'package:flutterapp/MyApp/examples/WPChapters_screen.dart';
 
 class MyHomePage extends StatefulWidget {
   MyHomePage({Key key, this.title}) : super(key: key);
@@ -111,9 +110,6 @@ class _ScaffoldRouteState extends State<MyHomePage>
 
   List getSelectContainer() {
     return tabs.map((e) {
-      if (_selectedIndex == 1) {
-        return WPMine();
-      }
       //创建3个Tab页
       if (e == tabs[0]) {
         return WPChaters();

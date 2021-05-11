@@ -1,13 +1,13 @@
 import 'package:flutter/widgets.dart';
-import 'package:flutterapp/Mine/Mine_screen.dart';
-import 'package:flutterapp/examples/WP2Chapter.dart';
-import 'package:flutterapp/examples/WP3Chapter.dart';
-import 'package:flutterapp/examples/WP4Chapter.dart';
-import 'package:flutterapp/examples/WP5Chapter.dart';
-import 'package:flutterapp/examples/WP6Chapter.dart';
-import 'package:flutterapp/examples/WP7Chapter.dart';
-import 'package:flutterapp/examples/WP8Chapter.dart';
-import 'package:flutterapp/examples/WP9Chapter.dart';
+import 'package:flutterapp/MyApp/Mine/Mine_screen.dart';
+import 'package:flutterapp/MyApp/examples/WP2Chapter.dart';
+import 'package:flutterapp/MyApp/examples/WP3Chapter.dart';
+import 'package:flutterapp/MyApp/examples/WP4Chapter.dart';
+import 'package:flutterapp/MyApp/examples/WP5Chapter.dart';
+import 'package:flutterapp/MyApp/examples/WP6Chapter.dart';
+import 'package:flutterapp/MyApp/examples/WP7Chapter.dart';
+import 'package:flutterapp/MyApp/examples/WP8Chapter.dart';
+import 'package:flutterapp/MyApp/examples/WP9Chapter.dart';
 
 class WPChapterModel {
   WPChapterModel({

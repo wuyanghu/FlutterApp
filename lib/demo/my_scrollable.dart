@@ -196,7 +196,7 @@ class Scrollable extends StatefulWidget {
   /// ```
   static ScrollableState of(BuildContext context) {
     final _ScrollableScope widget =
-        context.inheritFromWidgetOfExactType(_ScrollableScope);
+        context.dependOnInheritedWidgetOfExactType<_ScrollableScope>();
     return widget?.scrollable;
   }
 
@@ -284,7 +284,11 @@ class ScrollableState extends State<Scrollable>
   /// [ScrollPosition] in its [ScrollController.createScrollPosition] method.
   ScrollPosition get position => _position;
   ScrollPosition _position;
-
+// Missing concrete implementation of 'ScrollContext.saveOffset'.
+  @override
+  void saveOffset(double offset) {
+    // TODO: implement saveOffset
+  }
   @override
   AxisDirection get axisDirection => widget.axisDirection;
 

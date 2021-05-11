@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutterapp/Mine/Model/MineModel.dart';
+import 'package:flutterapp/MyApp/Mine/Model/MineModel.dart';
 
 class SettingScreen extends StatelessWidget {
   List<SettingModel> settingList = SettingModel.settingList;
