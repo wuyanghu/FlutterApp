@@ -6,43 +6,64 @@ class LineRowLayout extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(title: Text("线性布局-row")),
       body: Column(
-        //测试Row对齐方式，排除Column默认居中对齐的干扰
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: <Widget>[
-          Row(
-            mainAxisAlignment: MainAxisAlignment.end,
-            children: <Widget>[
-              Text(" hello world "),
-              Text(" I am Jack "),
-            ],
+        children: [
+          Text(
+            "线性布局-row",
+            style: TextStyle(fontSize: 22, fontWeight: FontWeight.bold),
           ),
-          Row(
-            mainAxisSize: MainAxisSize.min,
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: <Widget>[
-              Text(" hello world "),
-              Text(" I am Jack "),
-            ],
-          ),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.end,
-            textDirection: TextDirection.rtl,
-            children: <Widget>[
-              Text(" hello world "),
-              Text(" I am Jack "),
-            ],
-          ),
-          Row(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            verticalDirection: VerticalDirection.up,
-            children: <Widget>[
-              Text(
-                " hello world ",
-                style: TextStyle(fontSize: 30.0),
-              ),
-              Text(" I am Jack "),
-            ],
-          ),
+          Container(
+            decoration: BoxDecoration(
+                color: Colors.red,
+                borderRadius: BorderRadius.circular(3.0), //3像素圆角
+                boxShadow: [
+                  //阴影
+                  BoxShadow(
+                      color: Colors.black54,
+                      offset: Offset(2.0, 2.0),
+                      blurRadius: 4.0)
+                ]),
+            padding: EdgeInsets.only(top: 16, left: 10, right: 10),
+            child: Column(
+              //测试Row对齐方式，排除Column默认居中对齐的干扰
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: <Widget>[
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.end,
+                  children: <Widget>[
+                    Text(" hello world "),
+                    Text(" I am Jack "),
+                  ],
+                ),
+                Row(
+                  mainAxisSize: MainAxisSize.min,
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: <Widget>[
+                    Text(" hello world "),
+                    Text(" I am Jack "),
+                  ],
+                ),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.end,
+                  textDirection: TextDirection.rtl,
+                  children: <Widget>[
+                    Text(" hello world "),
+                    Text(" I am Jack "),
+                  ],
+                ),
+                Row(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  verticalDirection: VerticalDirection.up,
+                  children: <Widget>[
+                    Text(
+                      " hello world ",
+                      style: TextStyle(fontSize: 30.0),
+                    ),
+                    Text(" I am Jack "),
+                  ],
+                ),
+              ],
+            ),
+          )
         ],
       ),
     );

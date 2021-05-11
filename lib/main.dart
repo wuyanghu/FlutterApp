@@ -1,37 +1,70 @@
 import 'package:flutter/material.dart';
-import 'package:flutterapp/Tabbar/WPTabbar.dart';
-import 'package:flutterapp/examples/WP2Chapter.dart';
+import 'dart:io';
+import 'package:flutter/services.dart';
+
+import 'package:flutterapp/widgets/bottom_drag_widget.dart';
+import 'package:flutterapp/pages/splash/splash_widget.dart';
 
 void main() {
   runApp(MyApp());
+  if (Platform.isAndroid) {
+    //设置Android头部的导航栏透明
+    SystemUiOverlayStyle systemUiOverlayStyle =
+        SystemUiOverlayStyle(statusBarColor: Colors.transparent);
+    SystemChrome.setSystemUIOverlayStyle(systemUiOverlayStyle);
+  }
 }
 
 class MyApp extends StatelessWidget {
   // This widget is the root of your application.
+
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      title: '应用名称',
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-        visualDensity: VisualDensity.adaptivePlatformDensity,
+    return RestartWidget(
+      child: MaterialApp(
+        theme: ThemeData(backgroundColor: Colors.white),
+        home: Scaffold(
+          // resizeToAvoidBottomPadding: false,
+          body: SplashWidget(),
+        ),
       ),
-      //注册路由表
-      routes: {
-        "NewRoute": (context) => NewRoute(),
-        "RouterTestRoute": (context) => RouterTestRoute(),
-        "CupertinoTestRoute": (context) => CupertinoTestRoute(),
-        // "/":(context) => MyHomePage(title: 'Flutter Demo Home Page'), //注册首页路由
-      },
-      onGenerateRoute: (RouteSettings settings) {
-        return MaterialPageRoute(builder: (context) {
-          String routeName = settings.name;
-          // 如果访问的路由页需要登录，但当前未登录，则直接返回登录页路由，
-          // 引导用户登录；其它情况则正常打开路由。
-        });
-      },
+    );
+  }
+}
 
-      home: MyHomePage(title: 'Flutter WP Demo Home Page'),
+///这个组件用来重新加载整个child Widget的。当我们需要重启APP的时候，可以使用这个方案
+///https://stackoverflow.com/questions/50115311/flutter-how-to-force-an-application-restart-in-production-mode
+class RestartWidget extends StatefulWidget {
+  final Widget child;
+
+  RestartWidget({Key key, @required this.child})
+      : assert(child != null),
+        super(key: key);
+
+  static restartApp(BuildContext context) {
+    final _RestartWidgetState state =
+        context.findAncestorStateOfType<_RestartWidgetState>();
+    state.restartApp();
+  }
+
+  @override
+  _RestartWidgetState createState() => _RestartWidgetState();
+}
+
+class _RestartWidgetState extends State<RestartWidget> {
+  Key key = UniqueKey();
+
+  void restartApp() {
+    setState(() {
+      key = UniqueKey();
+    });
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      key: key,
+      child: widget.child,
     );
   }
 }

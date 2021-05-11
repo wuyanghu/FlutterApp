@@ -32,6 +32,28 @@ dependencies:
   flutter_markdown: ^0.3.4
   encrypt: ^4.0.0
 
+  # The following adds the Cupertino Icons font to your application.
+  # Use with the CupertinoIcons class for iOS style icons.
+  # cupertino_icons: 0.1.2
+
+  flutter_cache_manager: ^1.4.1
+
+#  palette_generator: 0.1.1
+
+  flutter_webview_plugin: 0.3.0+2
+
+  webview_flutter: 0.3.3+1
+
+  video_player: 0.10.0+2
+  # 用来模拟网络返回的数据，这些数据是真实的，这里模拟
+  dio: 1.0.13
+
+  fluttertoast: 3.0.4
+
+  cached_network_image: ^2.1.0
+
+  shared_preferences: 0.5.3+2
+
 dev_dependencies:
   flutter_test:
     sdk: flutter
@@ -51,6 +73,8 @@ flutter:
   assets:
     - images/
     - assets/markdown.md
+    - assets/images/
+    - mock/
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.

@@ -18,7 +18,7 @@ class _ScaffoldRouteState extends State<MyHomePage>
   int _selectedIndex = 0;
   TabController _tabController;
 
-  List tabs = ["flutter实战demo", "我的2", "MarkDown解析"];
+  List tabs = ["flutter实战demo", "MarkDown解析"];
 
   @override
   void initState() {
@@ -118,8 +118,6 @@ class _ScaffoldRouteState extends State<MyHomePage>
       if (e == tabs[0]) {
         return WPChaters();
       } else if (e == tabs[1]) {
-        return Mine();
-      } else if (e == tabs[2]) {
         return FlutterMarkdown();
       }
 
