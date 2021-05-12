@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'dart:io';
 import 'package:flutter/services.dart';
-import 'package:flutterapp/pages/splash/splash_widget.dart';
+import 'package:flutterapp/DouBan/pages/splash/splash_widget.dart';
 
 void main() {
   runApp(MyApp());

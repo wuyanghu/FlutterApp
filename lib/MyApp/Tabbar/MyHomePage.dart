@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:flutterapp/BestUI/navigation_home_screen.dart';
 import 'package:flutterapp/MyApp/Tabbar/FlutterMarkdown.dart';
 import 'package:flutterapp/MyApp/LeftDrawer/LeftDrawer.dart';
 import 'package:flutterapp/MyApp/Mine/Mine_screen.dart';
 import 'package:flutterapp/MyApp/examples/WPChapters_screen.dart';
-import 'package:flutterapp/pages/container_page.dart';
+import 'package:flutterapp/DouBan/pages/container_page.dart';
 
 class MyHomePage extends StatefulWidget {
   MyHomePage({Key key, this.title}) : super(key: key);
@@ -75,42 +76,10 @@ class _ScaffoldRouteState extends State<MyHomePage>
           controller: _tabController, children: getSelectContainer());
     } else if (_selectedIndex == 1) {
       return ContainerPage();
+    } else if (_selectedIndex == 2) {
+      return NavigationHomeScreen();
     }
     return WPMine();
-  }
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: getAppBar(),
-
-      drawer: LeftDrawer(), //抽屉
-      body: getBody(),
-      bottomNavigationBar: BottomNavigationBar(
-        // 底部导航
-        items: <BottomNavigationBarItem>[
-          BottomNavigationBarItem(icon: Icon(Icons.home), title: Text('Home')),
-          BottomNavigationBarItem(
-              icon: Icon(Icons.book), title: Text('DouBan')),
-          BottomNavigationBarItem(icon: Icon(Icons.person), title: Text('Me')),
-        ],
-        currentIndex: _selectedIndex,
-        fixedColor: Colors.blue,
-        onTap: (int index) {
-          setState(() {
-            _selectedIndex = index;
-          });
-        },
-      ),
-      // floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
-      // floatingActionButton:
-      //     FloatingActionButton(child: Icon(Icons.add), onPressed: _onAdd),
-    );
-  }
-
-  void _onAdd() {
-    var now = new DateTime.now();
-    print(now.millisecondsSinceEpoch); //单位毫秒，13位时间戳
   }
 
   List getSelectContainer() {
@@ -127,5 +96,44 @@ class _ScaffoldRouteState extends State<MyHomePage>
         child: Text(e, textScaleFactor: 5),
       );
     }).toList();
+  }
+
+  Widget getBottomNavigationBar() {
+    return BottomNavigationBar(
+      // 底部导航
+      items: <BottomNavigationBarItem>[
+        BottomNavigationBarItem(icon: Icon(Icons.home), label: 'Home'),
+        BottomNavigationBarItem(icon: Icon(Icons.book), label: 'DouBan'),
+        BottomNavigationBarItem(icon: Icon(Icons.book), label: 'BestUI'),
+        BottomNavigationBarItem(icon: Icon(Icons.person), label: 'Me'),
+      ],
+      currentIndex: _selectedIndex,
+      unselectedItemColor: Colors.grey,
+      selectedItemColor: Colors.blue,
+      // showUnselectedLabels: true,
+      // fixedColor: Colors.blue,
+      onTap: (int index) {
+        setState(() {
+          _selectedIndex = index;
+        });
+      },
+    );
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: getAppBar(),
+      drawer: LeftDrawer(), //抽屉
+      body: getBody(),
+      bottomNavigationBar: getBottomNavigationBar(),
+      // floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
+      // floatingActionButton: FloatingActionButton(
+      //     child: Icon(Icons.add),
+      //     onPressed: (() {
+      //       var now = new DateTime.now();
+      //       print(now.millisecondsSinceEpoch); //单位毫秒，13位时间戳
+      //     })),
+    );
   }
 }
