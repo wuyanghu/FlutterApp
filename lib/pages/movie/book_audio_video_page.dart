@@ -5,10 +5,6 @@ import 'package:flutterapp/widgets/my_tab_bar_widget.dart';
 import 'package:flutterapp/widgets/search_text_field_widget.dart';
 import 'package:flutterapp/router.dart';
 
-var titleList = ['电影', '电视', '综艺', '读书', '音乐', '同城'];
-
-List<Widget> tabList;
-
 ///书影音
 ///包含了'电影', '电视', '综艺', '读书', '音乐', '同城' item Widget
 ///这个Widget是整个项目中，十分复杂的Widget之一
@@ -20,11 +16,13 @@ class BookAudioVideoPage extends StatefulWidget {
   }
 }
 
+List<Widget> tabList;
 TabController _tabController;
 
 class _BookAudioVideoPageState extends State<BookAudioVideoPage>
     with SingleTickerProviderStateMixin {
   var tabBar;
+  var titleList = ['电影', '电视', '综艺', '读书', '音乐', '同城'];
 
   @override
   void initState() {
@@ -52,48 +50,39 @@ class _BookAudioVideoPageState extends State<BookAudioVideoPage>
               length: titleList.length, child: _getNestedScrollView(tabBar))),
     );
   }
-}
 
-Widget _getNestedScrollView(Widget tabBar) {
-  String hintText = '用一部电影来形容你的2018';
-  return NestedScrollView(
-      headerSliverBuilder: (BuildContext context, bool innerBoxIsScrolled) {
-        return <Widget>[
-          SliverToBoxAdapter(
-            child: Container(
-              color: Colors.white,
-              padding: const EdgeInsets.all(10.0),
-              child: SearchTextFieldWidget(
-                hintText: hintText,
-                onTab: () {
-                  Router2.push(context, Router2.searchPage, hintText);
-                },
+  Widget _getNestedScrollView(Widget tabBar) {
+    String hintText = '用一部电影来形容你的2018';
+    return NestedScrollView(
+        headerSliverBuilder: (BuildContext context, bool innerBoxIsScrolled) {
+          return <Widget>[
+            SliverToBoxAdapter(
+              child: Container(
+                color: Colors.white,
+                padding: const EdgeInsets.all(10.0),
+                child: SearchTextFieldWidget(
+                  hintText: hintText,
+                  onTab: () {
+                    Router2.push(context, Router2.searchPage, hintText);
+                  },
+                ),
               ),
             ),
-          ),
-          SliverPersistentHeader(
-              floating: true,
-              pinned: true,
-              delegate: _SliverAppBarDelegate(
-                  maxHeight: 49.0,
-                  minHeight: 49.0,
-                  child: Container(
-                    color: Colors.white,
-                    child: tabBar,
-                  )))
-        ];
-      },
-      body: FlutterTabBarView(
-        tabController: _tabController,
-      ));
-}
-
-class HomePageTabBar extends StatefulWidget {
-  HomePageTabBar({Key key}) : super(key: key);
-
-  @override
-  State<StatefulWidget> createState() {
-    return _HomePageTabBarState();
+            SliverPersistentHeader(
+                floating: true,
+                pinned: true,
+                delegate: _SliverAppBarDelegate(
+                    maxHeight: 49.0,
+                    minHeight: 49.0,
+                    child: Container(
+                      color: Colors.white,
+                      child: tabBar,
+                    )))
+          ];
+        },
+        body: FlutterTabBarView(
+          tabController: _tabController,
+        ));
   }
 }
 
@@ -125,6 +114,15 @@ class _SliverAppBarDelegate extends SliverPersistentHeaderDelegate {
     return maxHeight != oldDelegate.maxHeight ||
         minHeight != oldDelegate.minHeight ||
         child != oldDelegate.child;
+  }
+}
+
+class HomePageTabBar extends StatefulWidget {
+  HomePageTabBar({Key key}) : super(key: key);
+
+  @override
+  State<StatefulWidget> createState() {
+    return _HomePageTabBarState();
   }
 }
 

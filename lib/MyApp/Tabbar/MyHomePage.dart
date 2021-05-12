@@ -3,6 +3,7 @@ import 'package:flutterapp/MyApp/Tabbar/FlutterMarkdown.dart';
 import 'package:flutterapp/MyApp/LeftDrawer/LeftDrawer.dart';
 import 'package:flutterapp/MyApp/Mine/Mine_screen.dart';
 import 'package:flutterapp/MyApp/examples/WPChapters_screen.dart';
+import 'package:flutterapp/pages/container_page.dart';
 
 class MyHomePage extends StatefulWidget {
   MyHomePage({Key key, this.title}) : super(key: key);
@@ -72,6 +73,8 @@ class _ScaffoldRouteState extends State<MyHomePage>
     if (_selectedIndex == 0) {
       return TabBarView(
           controller: _tabController, children: getSelectContainer());
+    } else if (_selectedIndex == 1) {
+      return ContainerPage();
     }
     return WPMine();
   }
@@ -87,6 +90,8 @@ class _ScaffoldRouteState extends State<MyHomePage>
         // 底部导航
         items: <BottomNavigationBarItem>[
           BottomNavigationBarItem(icon: Icon(Icons.home), title: Text('Home')),
+          BottomNavigationBarItem(
+              icon: Icon(Icons.book), title: Text('DouBan')),
           BottomNavigationBarItem(icon: Icon(Icons.person), title: Text('Me')),
         ],
         currentIndex: _selectedIndex,

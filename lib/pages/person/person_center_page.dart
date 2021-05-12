@@ -174,13 +174,11 @@ class _UseNetDataWidgetState extends State<UseNetDataWidget> {
       child: Padding(
         padding: const EdgeInsets.only(left: 10.0, right: 10.0),
         child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: <Widget>[
             Text(
               '书影音数据是否来自网络',
               style: TextStyle(color: Colors.redAccent, fontSize: 17.0),
-            ),
-            Expanded(
-              child: Container(),
             ),
             CupertinoSwitch(
               value: mSelectNetData,

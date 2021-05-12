@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutterapp/BestUI/navigation_home_screen.dart';
 import 'package:flutterapp/MyApp/Mine/Setting_screen.dart';
 import 'package:flutterapp/main.dart';
 
@@ -12,7 +13,10 @@ class WPMineModel {
   static List<WPMineModel> commonUseList = [
     WPMineModel(
         icon: "images/me_icon_fangyi@3x.png", title: "疫情助手", screen: MyApp()),
-    WPMineModel(icon: "images/me_icon_invite@3x.png", title: "邀请"),
+    WPMineModel(
+        icon: "images/me_icon_invite@3x.png",
+        title: "邀请",
+        screen: NavigationHomeScreen()),
     WPMineModel(icon: "images/me_icon_downloadapp@3x.png", title: "下载app"),
     WPMineModel(
         icon: "images/me_icon_setting@3x.png",
