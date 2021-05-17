@@ -29,7 +29,8 @@ class WPMineInfo extends StatelessWidget {
                             SizedBox(
                               width: 40,
                               height: 40,
-                              child: Image.asset("images/me_header.png"),
+                              child:
+                                  Image.asset("assets/bling/me/me_header.png"),
                             ),
                             Icon(Icons.keyboard_arrow_right)
                           ],

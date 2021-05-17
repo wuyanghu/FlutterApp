@@ -8,7 +8,7 @@ import 'package:flutterapp/DouBan/bean/comments_entity.dart';
 import 'package:flutterapp/DouBan/bean/search_result_entity.dart';
 import 'package:flutterapp/DouBan/bean/celebrity_entity.dart' as celebrity;
 import 'package:flutterapp/DouBan/bean/celebrity_work_entity.dart';
-import 'package:flutterapp/util/palette_generator.dart';
+import 'package:flutterapp/DouBan/util/palette_generator.dart';
 import 'dart:math' as math;
 //import 'package:palette_generator/palette_generator.dart';
 import 'package:flutter/material.dart';

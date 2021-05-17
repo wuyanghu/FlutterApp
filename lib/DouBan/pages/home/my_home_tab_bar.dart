@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutterapp/DouBan/widgets/search_text_field_widget.dart';
-import 'package:flutterapp/util/screen_utils.dart';
+import 'package:flutterapp/DouBan/util/screen_utils.dart';
 import 'package:flutterapp/DouBan/router.dart';
 
 const double _kTabHeight = 46.0;

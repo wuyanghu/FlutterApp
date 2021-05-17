@@ -1,11 +1,11 @@
 import 'package:cached_network_image/cached_network_image.dart';
-import 'package:flutterapp/util/palette_generator.dart';
+import 'package:flutterapp/DouBan/util/palette_generator.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutterapp/DouBan/http/API.dart';
 import 'package:flutterapp/DouBan/bean/movie_detail_bean.dart';
 import 'package:flutterapp/DouBan/pages/detail/detail_title_widget.dart';
-import 'package:flutterapp/util/pick_img_main_color.dart';
+import 'package:flutterapp/DouBan/util/pick_img_main_color.dart';
 import 'package:flutterapp/DouBan/constant/constant.dart';
 import 'package:flutterapp/DouBan/pages/detail/score_start.dart';
 import 'package:flutterapp/DouBan/pages/detail/look_confirm_button.dart';

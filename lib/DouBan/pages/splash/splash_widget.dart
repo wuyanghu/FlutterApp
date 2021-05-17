@@ -2,7 +2,7 @@ import 'dart:async';
 
 import 'package:flutter/material.dart';
 import 'package:flutterapp/DouBan/pages/container_page.dart';
-import 'package:flutterapp/util/screen_utils.dart';
+import 'package:flutterapp/DouBan/util/screen_utils.dart';
 import 'package:flutterapp/DouBan/constant/constant.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 

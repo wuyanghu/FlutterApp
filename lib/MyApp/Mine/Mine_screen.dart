@@ -34,7 +34,7 @@ class WPMine extends StatelessWidget {
               body: Stack(children: [
                 Padding(
                   padding: EdgeInsets.only(left: 0, right: 0),
-                  child: Image.asset('images/me_bg.png'),
+                  child: Image.asset('assets/bling/me/me_bg.png'),
                 ),
                 headInfo(context),
                 Column(
@@ -49,7 +49,8 @@ class WPMine extends StatelessWidget {
                         child: Padding(
                       padding: EdgeInsets.only(top: 14),
                       child: Container(
-                        padding: EdgeInsets.only(left: 24, top: 29),
+                        padding: EdgeInsets.only(
+                            left: 24, top: 29, right: 24, bottom: 10),
                         color: Colors.white,
                         child: Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
@@ -205,7 +206,7 @@ class WPMine extends StatelessWidget {
                       SizedBox(
                         width: 55,
                         height: 55,
-                        child: Image.asset("images/me_header.png"),
+                        child: Image.asset("assets/bling/me/me_header.png"),
                       )
                     ],
                   ),

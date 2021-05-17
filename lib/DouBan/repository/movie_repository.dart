@@ -1,4 +1,4 @@
-import 'package:flutterapp/util/palette_generator.dart';
+import 'package:flutterapp/DouBan/util/palette_generator.dart';
 import 'package:flutter/material.dart';
 import 'package:flutterapp/DouBan/bean/subject_entity.dart';
 import 'package:flutterapp/DouBan/bean/top_item_bean.dart';

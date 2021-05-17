@@ -369,7 +369,6 @@ class _ThemeTestRouteState extends State<ThemeTestRoute> {
 class FutureBuilderTest extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    // TODO: implement build
     return Scaffold(
         appBar: AppBar(title: Text("futureBuilder")),
         body: Center(
@@ -402,7 +401,6 @@ class FutureBuilderTest extends StatelessWidget {
 class StreamBuilderTest extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    // TODO: implement build
     return Scaffold(
         appBar: AppBar(title: Text("StreamBuilder")),
         body: StreamBuilder<int>(

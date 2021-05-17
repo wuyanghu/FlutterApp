@@ -2,7 +2,7 @@ import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 //import 'package:flutterapp/DouBan/widgets/image/cached_network_image.dart';
 import 'package:flutterapp/DouBan/bean/top_item_bean.dart';
-import 'package:flutterapp/util/pick_img_main_color.dart';
+import 'package:flutterapp/DouBan/util/pick_img_main_color.dart';
 import 'package:flutterapp/DouBan/constant/color_constant.dart';
 import 'dart:math' as math;
 

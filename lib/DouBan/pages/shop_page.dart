@@ -2,7 +2,7 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:flutter_webview_plugin/flutter_webview_plugin.dart';
-import 'package:flutterapp/util/screen_utils.dart';
+import 'package:flutterapp/DouBan/util/screen_utils.dart';
 
 String url1 = 'https://flutterchina.club/';
 String url2 = 'http://flutterall.com/';

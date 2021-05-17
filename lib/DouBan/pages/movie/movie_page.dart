@@ -20,7 +20,7 @@ import 'package:flutter/rendering.dart';
 import 'package:flutterapp/DouBan/repository/movie_repository.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutterapp/DouBan/widgets/loading_widget.dart';
-import 'package:flutterapp/util/screen_utils.dart';
+import 'package:flutterapp/DouBan/util/screen_utils.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 
 ///书影音-电影
