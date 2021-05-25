@@ -43,7 +43,7 @@ class _Circle extends State<Circle> {
     startId = 0;
     circleModel = await Tweets.tweet(startId, limit);
     if (cells.length > 0) {
-      cells.removeRange(0, cells.length - 1);
+      cells.removeRange(0, cells.length);
     }
     for (var model in circleModel.tweetList) {
       cells.addAll(cell(model));
@@ -177,7 +177,7 @@ class _Circle extends State<Circle> {
               : SizedBox()),
       SliverToBoxAdapter(
         child: Container(
-          padding: EdgeInsets.only(left: 15),
+          padding: EdgeInsets.zero,
           height: 10,
           decoration: BoxDecoration(color: Color(0xFFEEEEEE)),
         ),
@@ -526,46 +526,52 @@ class _Circle extends State<Circle> {
     return Container(
         color: Color(0xFF5173B1),
         child: Padding(
-          padding: EdgeInsets.only(
-              left: 15,
-              right: 15,
-              top: MediaQuery.of(context).padding.top,
-              bottom: 15),
-          child: Row(
-            children: [
-              InkWell(
-                child: SizedBox(
-                  child: Icon(
-                    Icons.keyboard_arrow_left,
-                    color: Colors.white,
-                    size: 30,
-                  ),
-                  width: 40,
+            padding: EdgeInsets.only(
+                left: 15,
+                right: 15,
+                top: MediaQuery.of(context).padding.top,
+                bottom: 15),
+            child: Column(
+              children: [
+                SizedBox(
+                  height: 10,
                 ),
-                onTap: () {
-                  Navigator.pop(context);
-                },
-              ),
-              Expanded(
-                  child: Text(
-                "朋友圈",
-                style: TextStyle(color: Color(0xFFFFFFFF), fontSize: 18),
-                textAlign: TextAlign.center,
-              )),
-              InkWell(
-                onTap: () {
-                  Fluttertoast.showToast(
-                      msg: "发送朋友圈,功能暂未开发", gravity: ToastGravity.CENTER);
-                },
-                child: Icon(
-                  Icons.add,
-                  color: Colors.white,
-                  size: 30,
+                Row(
+                  children: [
+                    InkWell(
+                      child: SizedBox(
+                        child: Icon(
+                          Icons.keyboard_arrow_left,
+                          color: Colors.white,
+                          size: 30,
+                        ),
+                        width: 40,
+                      ),
+                      onTap: () {
+                        Navigator.pop(context);
+                      },
+                    ),
+                    Expanded(
+                        child: Text(
+                      "朋友圈",
+                      style: TextStyle(color: Color(0xFFFFFFFF), fontSize: 18),
+                      textAlign: TextAlign.center,
+                    )),
+                    InkWell(
+                      onTap: () {
+                        Fluttertoast.showToast(
+                            msg: "发送朋友圈,功能暂未开发", gravity: ToastGravity.CENTER);
+                      },
+                      child: Icon(
+                        Icons.add,
+                        color: Colors.white,
+                        size: 30,
+                      ),
+                    )
+                  ],
                 ),
-              )
-            ],
-          ),
-        ));
+              ],
+            )));
   }
 
   Widget cornerImage(String url, double radius) {
