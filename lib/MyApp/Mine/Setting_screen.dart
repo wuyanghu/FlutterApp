@@ -1,5 +1,10 @@
+import 'dart:ffi';
+
 import 'package:flutter/material.dart';
+import 'package:flutterapp/MyApp/Login/LoginShare.dart';
 import 'package:flutterapp/MyApp/Mine/Model/MineModel.dart';
+import 'package:fluttertoast/fluttertoast.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 class SettingScreen extends StatelessWidget {
   List<SettingModel> settingList = SettingModel.settingList;
@@ -21,7 +26,7 @@ class SettingScreen extends StatelessWidget {
                 height: 10,
               );
             } else if (type == SettingCellType.loginOut) {
-              return cellLogin(index);
+              return cellLoginOut(index, context);
             } else if (type == SettingCellType.checkVersion) {
               return cellCheckVersion(index);
             }
@@ -74,15 +79,31 @@ class SettingScreen extends StatelessWidget {
     );
   }
 
-  Widget cellLogin(int index) {
-    return Container(
-      color: Colors.white,
-      padding: EdgeInsets.only(top: 10, bottom: 10, left: 10, right: 10),
-      child: Text(
-        settingList[index].title,
-        style: TextStyle(fontSize: 16, color: Colors.red),
-        textAlign: TextAlign.center,
+  Widget cellLoginOut(int index, BuildContext context) {
+    return InkWell(
+      onTap: () {
+        loginOut().then((a) {
+          LoginShare share = LoginShare.getInstance();
+          share.logoutCallBack();
+          Navigator.pop(context);
+          Fluttertoast.showToast(msg: "退出登录成功", gravity: ToastGravity.CENTER);
+        });
+      },
+      child: Container(
+        color: Colors.white,
+        padding: EdgeInsets.only(top: 10, bottom: 10, left: 10, right: 10),
+        child: Text(
+          settingList[index].title,
+          style: TextStyle(fontSize: 16, color: Colors.red),
+          textAlign: TextAlign.center,
+        ),
       ),
     );
+  }
+
+  Future<void> loginOut() async {
+    SharedPreferences perferences = await SharedPreferences.getInstance();
+    perferences.remove("token");
+    perferences.remove("phoneNumber");
   }
 }

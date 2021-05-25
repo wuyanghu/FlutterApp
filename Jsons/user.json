@@ -1,7 +1,10 @@
 {
-  "name":"wendux",
-  "father":"$user", 
-  "friends":"$[]user", 
-  "keywords":"$[]String", 
-  "age":20
+	"code": 0,
+	"msg": "OK",
+	"data": {
+		"tmpToken": "tt_4d7f6e2122dc0cc3",
+		"token": "t_9789ec2000f161f67",
+		"accountId": "uid_57077205d83993c1",
+		"accountName": "uid_57077205d83993c1"
+	}
 }

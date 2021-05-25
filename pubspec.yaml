@@ -31,8 +31,7 @@ dependencies:
   flutter_cache_manager: ^1.4.1
   flutter_webview_plugin: 0.3.0+2
   webview_flutter: 0.3.3+1
-  video_player: 0.10.0+2
-  # 用来模拟网络返回的数据，这些数据是真实的，这里模拟
+
   dio: ^3.0.0
   dio_http_cache: ^0.2.11
   crypto: ^2.1.5
@@ -46,7 +45,10 @@ dependencies:
   intl: ^0.16.0
   lottie: ^0.7.0
   # json_annotation: ^2.2.0
-
+  #获取版本号等信息
+  package_info: ^0.4.0+3 
+  photo_view: ^0.9.0
+  video_player: ^2.1.1
 dev_dependencies:
   flutter_test:
     sdk: flutter
@@ -68,8 +70,10 @@ flutter:
     - assets/markdown.md
     - assets/if_refresh.json
     - assets/loading.json
+    - assets/bumble_bee_captions.srt
     - assets/images/
     - mock/
+    - jsons/
     - assets/design_course/
     - assets/fitness_app/
     - assets/hotel/

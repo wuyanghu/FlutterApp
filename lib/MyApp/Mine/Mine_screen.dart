@@ -30,6 +30,7 @@ class WPMine extends StatelessWidget {
         child: SafeArea(
             top: false,
             child: Scaffold(
+              resizeToAvoidBottomInset: false,
               backgroundColor: Color(0xFFF6F6F6),
               body: Stack(children: [
                 Padding(

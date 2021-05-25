@@ -1,13 +1,40 @@
 import 'package:flutter/material.dart';
+import 'package:flutterapp/MyApp/Login/Login.dart';
+import 'package:flutterapp/MyApp/Login/LoginShare.dart';
 import 'package:flutterapp/MyApp/Tabbar/MyHomePage.dart';
 import 'package:flutterapp/MyApp/examples/WP2Chapter.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 void main() {
+  print("启动");
   runApp(MyApp());
 }
 
-class MyApp extends StatelessWidget {
-  // This widget is the root of your application.
+class MyApp extends StatefulWidget {
+  @override
+  State<StatefulWidget> createState() {
+    return _MyApp();
+  }
+}
+
+class _MyApp extends State {
+  String token;
+
+  @override
+  void initState() {
+    super.initState();
+    loadData();
+    LoginShare.getInstance().logOut(() {
+      loadData();
+    });
+  }
+
+  void loadData() async {
+    SharedPreferences perferences = await SharedPreferences.getInstance();
+    token = perferences.getString("token");
+    setState(() {});
+  }
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -32,7 +59,14 @@ class MyApp extends StatelessWidget {
         });
       },
 
-      home: MyHomePage(title: 'Flutter WP Demo Home Page'),
+      home: token == null
+          ? Login(
+              loginFinish: () {
+                print("登录回调刷新");
+                loadData();
+              },
+            )
+          : MyHomePage(title: 'Flutter WP Demo Home Page'),
     );
   }
 }

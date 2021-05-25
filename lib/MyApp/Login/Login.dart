@@ -1,16 +1,47 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutterapp/BestUI/app_theme.dart';
-import 'package:flutterapp/MyApp/CircleOfFriends/Circle.dart';
 import 'package:flutterapp/MyApp/Network/Request.dart';
 import 'package:fluttertoast/fluttertoast.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
-class Login extends StatelessWidget {
+class Login extends StatefulWidget {
+  VoidCallback loginFinish;
+  Login({this.loginFinish});
+  @override
+  State<StatefulWidget> createState() {
+    return _Login(loginFinish: loginFinish);
+  }
+}
+
+class _Login extends State<Login> {
   String phone = '';
   String psw = '';
+  VoidCallback loginFinish;
+  bool autofocus;
+  _Login({this.loginFinish, this.autofocus = false});
+
+  @override
+  void initState() {
+    super.initState();
+    print("initState");
+    initAsync();
+  }
+
+  void initAsync() async {
+    SharedPreferences perferences = await SharedPreferences.getInstance();
+    String phoneNumebr = perferences.getString("phoneNumber");
+    setState(() {
+      if (phoneNumebr != null) {
+        phone = phoneNumebr;
+      }
+    });
+    print("initAsync");
+  }
 
   @override
   Widget build(BuildContext context) {
+    print("build");
     return Container(
         color: Colors.white,
         child: SafeArea(
@@ -30,7 +61,7 @@ class Login extends StatelessWidget {
                                 Padding(
                                   padding: const EdgeInsets.only(
                                       left: 10, right: 10, top: 2, bottom: 2),
-                                  child: getHoriLine(),
+                                  child: horiLine(),
                                 ),
                                 Text('跟随系统'),
                                 Icon(Icons.keyboard_arrow_down)
@@ -69,16 +100,21 @@ class Login extends StatelessWidget {
                             style: TextStyle(fontSize: 16),
                           ),
                           Icon(Icons.keyboard_arrow_down),
-                          getHoriLine(),
+                          horiLine(),
                           SizedBox(
                             width: 5,
                           ),
                           Expanded(
-                              child: getTextField('请输入手机号', (String text) {
-                            phone = text;
+                              child: getTextField(
+                                  '请输入手机号',
+                                  phone.length == 0 ? "" : phone,
+                                  autofocus, (String text) {
+                            setState(() {
+                              phone = text;
+                            });
                           }))
                         ]),
-                        line(),
+                        verticalLine(),
                         SizedBox(
                           height: 20,
                         ),
@@ -86,10 +122,12 @@ class Login extends StatelessWidget {
                           "密码",
                           style: TextStyle(fontSize: 16),
                         ),
-                        getTextField('请输入密码', (String text) {
-                          psw = text;
+                        getTextField('请输入密码', "", autofocus, (String text) {
+                          setState(() {
+                            psw = text;
+                          });
                         }),
-                        line(),
+                        verticalLine(),
                       ],
                     ),
                   ),
@@ -103,86 +141,101 @@ class Login extends StatelessWidget {
                             Text("新用户注册"),
                             Padding(
                               padding: EdgeInsets.only(left: 10, right: 10),
-                              child: getHoriLine(),
+                              child: horiLine(),
                             ),
                             Text('忘记密码?')
                           ],
                         ),
-                        Padding(
-                          padding: const EdgeInsets.only(
-                              top: 16, bottom: 20, left: 20, right: 20),
-                          child: Center(
-                            child: Container(
-                              height: 50,
-                              decoration: BoxDecoration(
-                                color: Colors.blue,
-                                borderRadius: const BorderRadius.all(
-                                    Radius.circular(4.0)),
-                                boxShadow: <BoxShadow>[
-                                  BoxShadow(
-                                      color: Colors.grey.withOpacity(0.6),
-                                      offset: const Offset(4, 4),
-                                      blurRadius: 8.0),
-                                ],
-                              ),
-                              child: Material(
-                                color: Colors.transparent,
-                                child: InkWell(
-                                  onTap: () {
-                                    Future<Map> res =
-                                        LoginRequest.loginAuthPsw(phone, psw);
-                                    Navigator.push(context,
-                                        MaterialPageRoute(builder: (context) {
-                                      return Circle();
-                                    }));
-
-                                    // showDialog(
-                                    //     context: context,
-                                    //     builder: (BuildContext context) {
-                                    //       return AlertDialog(
-                                    //         title: Text('提示'),
-                                    //         content: Text("内容"),
-                                    //         actions: <Widget>[
-                                    //           FlatButton(
-                                    //             child: Text('确定'),
-                                    //             onPressed: () {
-                                    //               Navigator.of(context).pop();
-                                    //             },
-                                    //           ),
-                                    //           FlatButton(
-                                    //             child: Text('取消'),
-                                    //             onPressed: () {
-                                    //               Navigator.of(context).pop();
-                                    //             },
-                                    //           )
-                                    //         ],
-                                    //       );
-                                    //     });
-                                  },
-                                  child: Center(
-                                    child: Padding(
-                                      padding: const EdgeInsets.all(4.0),
-                                      child: Text(
-                                        '登录',
-                                        style: TextStyle(
-                                          fontWeight: FontWeight.w500,
-                                          color: Colors.white,
-                                        ),
-                                      ),
-                                    ),
-                                  ),
-                                ),
-                              ),
-                            ),
-                          ),
-                        )
+                        loginBtn()
                       ])),
                 ],
               )),
         ));
   }
 
-  Widget getHoriLine() {
+  Widget getTextField(String hintText, String text, bool autofocus,
+      ValueChanged<String> onChanged) {
+    return TextField(
+      autofocus: autofocus,
+      maxLines: 1,
+      onChanged: onChanged,
+      style: TextStyle(
+        fontFamily: AppTheme.fontName,
+        fontSize: 16,
+        color: Colors.black,
+      ),
+      cursorColor: Colors.blue,
+      decoration: text.length > 0
+          ? InputDecoration(
+              border: InputBorder.none,
+              labelText: text,
+              labelStyle: TextStyle(color: Colors.black, fontSize: 16))
+          : InputDecoration(
+              border: InputBorder.none,
+              hintText: hintText,
+              hintStyle: TextStyle(color: Colors.black26, fontSize: 16)),
+    );
+  }
+
+  Widget loginBtn() {
+    return Padding(
+      padding: const EdgeInsets.only(top: 16, bottom: 20, left: 20, right: 20),
+      child: Center(
+        child: Container(
+          height: 50,
+          decoration: BoxDecoration(
+            color: isEmpty() ? Colors.grey : Colors.blue,
+            borderRadius: const BorderRadius.all(Radius.circular(4.0)),
+            boxShadow: <BoxShadow>[
+              BoxShadow(
+                  color: Colors.grey.withOpacity(0.6),
+                  offset: const Offset(4, 4),
+                  blurRadius: 8.0),
+            ],
+          ),
+          child: Material(
+            color: Colors.transparent,
+            child: InkWell(
+              onTap: () {
+                if (isEmpty()) {
+                  Fluttertoast.showToast(
+                      msg: "用户名密码不能为空", gravity: ToastGravity.CENTER);
+                  return;
+                }
+
+                LoginRequest.loginAuthPsw(phone, psw).then((value) {
+                  if (value == null) {
+                    return;
+                  }
+                  if (loginFinish != null) {
+                    loginFinish();
+                  }
+                });
+              },
+              child: Center(
+                child: Padding(
+                  padding: const EdgeInsets.all(4.0),
+                  child: Text(
+                    '登录',
+                    style: TextStyle(
+                      fontWeight: FontWeight.w500,
+                      color: Colors.white,
+                    ),
+                  ),
+                ),
+              ),
+            ),
+          ),
+        ),
+      ),
+    );
+  }
+
+  bool isEmpty() {
+    return (phone.length == 0 || psw.length == 0);
+  }
+
+  Widget horiLine() {
     return Container(
       width: 2,
       height: 20,
@@ -193,25 +246,7 @@ class Login extends StatelessWidget {
     );
   }
 
-  Widget getTextField(String hintText, ValueChanged<String> onChanged) {
-    return TextField(
-      autofocus: false,
-      maxLines: 1,
-      onChanged: onChanged,
-      style: TextStyle(
-        fontFamily: AppTheme.fontName,
-        fontSize: 16,
-        color: Colors.black,
-      ),
-      cursorColor: Colors.blue,
-      decoration: InputDecoration(
-          border: InputBorder.none,
-          hintText: hintText,
-          hintStyle: TextStyle(color: Colors.black26, fontSize: 16)),
-    );
-  }
-
-  Widget line() {
+  Widget verticalLine() {
     return Container(color: Color(0xFFEEEEEE), height: 2);
   }
 }

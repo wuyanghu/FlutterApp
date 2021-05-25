@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutterapp/BestUI/navigation_home_screen.dart';
+import 'package:flutterapp/MyApp/CircleOfFriends/Circle.dart';
 import 'package:flutterapp/MyApp/Login/Login.dart';
 import 'package:flutterapp/MyApp/Mine/Setting_screen.dart';
 import 'package:flutterapp/main.dart';
@@ -32,7 +33,7 @@ class WPMineModel {
     WPMineModel(
         icon: "assets/bling/me/me_icon_circle@3x.png",
         title: "朋友圈",
-        screen: Login()),
+        screen: Circle()),
     WPMineModel(icon: "assets/bling/me/me_icon_home@3x.png", title: "个人主页"),
     WPMineModel(icon: "assets/bling/me/me_icon_collect@3x.png", title: "收藏"),
   ];
