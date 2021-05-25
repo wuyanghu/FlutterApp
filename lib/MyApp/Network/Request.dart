@@ -2,10 +2,9 @@ import 'dart:convert';
 import 'package:dio/dio.dart';
 import 'package:dio_http_cache/dio_http_cache.dart';
 import 'dart:convert';
-import 'package:convert/convert.dart';
-import 'package:crypto/crypto.dart';
 import 'package:flutter/services.dart';
 import 'package:flutterapp/MyApp/CircleOfFriends/CircleModel.dart';
+import 'package:flutterapp/MyApp/Network/Util.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 // 接口URL
@@ -34,23 +33,9 @@ final httpClient = Dio(BaseOptions(
     dioManager.interceptor,
   );
 
-Future<dynamic> mock({String action}) async {
-  var responseStr = await rootBundle.loadString('jsons/$action.json');
-  var responseJson = json.decode(responseStr);
-  return responseJson;
-}
-
 class LoginRequest {
-// md5 加密
-  static String generateSha1(String data) {
-    var content = new Utf8Encoder().convert(data);
-    var digest = sha1.convert(content);
-    // 这里其实就是 digest.toString()
-    return hex.encode(digest.bytes);
-  }
-
   static Future<Map> loginAuthPsw(String phone, String psw) async {
-    Map res = await mock(action: "user");
+    Map res = await Util.mock(action: "user");
     var map = res['data'];
 
     SharedPreferences perferences = await SharedPreferences.getInstance();
@@ -65,7 +50,7 @@ class LoginRequest {
 
 class Tweets {
   static Future<CircleModel> tweet(int startId, int limit) async {
-    Map res = await mock(action: "circle");
+    Map res = await Util.mock(action: "circle");
     var map = res['data'];
     CircleModel model = CircleModel.fromJson(map);
     return model;
