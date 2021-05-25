@@ -49,7 +49,8 @@ class BumbleBeeRemoteVideoState extends State<BumbleBeeRemoteVideo> {
       child: Container(
         padding: const EdgeInsets.all(0),
         child: AspectRatio(
-          aspectRatio: _controller.value.aspectRatio,
+          aspectRatio: MediaQuery.of(context).size.width /
+              MediaQuery.of(context).size.height,
           child: Stack(
             alignment: Alignment.bottomCenter,
             children: <Widget>[
