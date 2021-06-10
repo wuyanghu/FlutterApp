@@ -6,7 +6,7 @@ import 'package:flutterapp/MyApp/examples/WP2Chapter.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 void main() {
-  print("启动");
+  print("启动1");
   runApp(MyApp());
 }
 
