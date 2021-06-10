@@ -1,4 +1,4 @@
-import 'package:flutterapp/MyApp/Network/Request.dart';
+import 'package:flutterapp/MyApp/Help/Network/Request.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 class CircleModel {

@@ -1,5 +1,4 @@
 import 'package:flutter/widgets.dart';
-import 'package:flutterapp/MyApp/Mine/Mine_screen.dart';
 import 'package:flutterapp/MyApp/examples/WP2Chapter.dart';
 import 'package:flutterapp/MyApp/examples/WP3Chapter.dart';
 import 'package:flutterapp/MyApp/examples/WP4Chapter.dart';
@@ -168,12 +167,8 @@ class WPChapterModel {
       navigateScreen: ThemeTestRoute(),
     ),
     WPChapterModel(
-      title: '7.5.1 FutureBuilder',
-      navigateScreen: FutureBuilderTest(),
-    ),
-    WPChapterModel(
-      title: '7.5.2 StreamBuilder',
-      navigateScreen: StreamBuilderTest(),
+      title: '7.5 FutureBuilder和StreamBuilder',
+      navigateScreen: AsyncUpdateUI(),
     ),
     WPChapterModel(
       title: '8.2.1 GestureDetector-点击、双击、长按',

@@ -11,8 +11,6 @@ class FlutterMarkdown extends StatelessWidget {
       child: FutureBuilder(
         future: rootBundle.loadString('assets/markdown.md'),
         builder: (BuildContext context, AsyncSnapshot snapshot) {
-          // var en = EncryptUtil.encrypt("test");
-          // print("11-${en}");
           if (snapshot.hasData) {
             return Markdown(data: snapshot.data);
           } else {

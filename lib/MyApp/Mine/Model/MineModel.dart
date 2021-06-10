@@ -3,6 +3,7 @@ import 'package:flutterapp/BestUI/navigation_home_screen.dart';
 import 'package:flutterapp/MyApp/CircleOfFriends/Circle.dart';
 import 'package:flutterapp/MyApp/Login/Login.dart';
 import 'package:flutterapp/MyApp/Mine/Setting_screen.dart';
+import 'package:flutterapp/MyApp/Thinking/Thinking.dart';
 import 'package:flutterapp/main.dart';
 
 class WPMineModel {
@@ -15,8 +16,8 @@ class WPMineModel {
   static List<WPMineModel> commonUseList = [
     WPMineModel(
         icon: "assets/bling/me/me_icon_fangyi@3x.png",
-        title: "疫情助手",
-        screen: MyApp()),
+        title: "想法",
+        screen: Thinking()),
     WPMineModel(
         icon: "assets/bling/me/me_icon_invite@3x.png",
         title: "邀请",

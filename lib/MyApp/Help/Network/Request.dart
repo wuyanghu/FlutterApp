@@ -4,8 +4,9 @@ import 'package:dio_http_cache/dio_http_cache.dart';
 import 'dart:convert';
 import 'package:flutter/services.dart';
 import 'package:flutterapp/MyApp/CircleOfFriends/CircleModel.dart';
-import 'package:flutterapp/MyApp/Network/Util.dart';
+import 'package:flutterapp/MyApp/Help/Network/Util.dart';
 import 'package:shared_preferences/shared_preferences.dart';
+import 'package:date_format/date_format.dart';
 
 // 接口URL
 abstract class API {
@@ -19,6 +20,8 @@ abstract class DYBase {
   static final baseHost = 'bling-dev-api.percent.cn';
   static final baseUrl = '${DYBase.baseSchema}://${DYBase.baseHost}';
   static final ossUrl = 'https://bling-dev-api.percent.cn';
+  static final thinkingUrl =
+      'http://172.22.253.139:8080/Thinking/QueryAllServlet';
 }
 
 // http请求
@@ -54,5 +57,25 @@ class Tweets {
     var map = res['data'];
     CircleModel model = CircleModel.fromJson(map);
     return model;
+  }
+}
+
+class ThinkingNetwork {
+  static Future allThinking(Map params) async {
+    String dateStr = formatDate(
+        DateTime.now(), [yyyy, "-", mm, "-", dd, " ", HH, ":", nn, ":", ss]);
+    String md5 = Util.generateMd5(dateStr);
+    Map headers = httpClient.options.headers;
+    headers.addAll({
+      "Action": "query_thinking_topic",
+      "RSIEncryptKey": Util.RSAEncrypted(md5)
+    });
+
+    var res = await httpClient.get(
+      DYBase.thinkingUrl,
+      queryParameters: params,
+    );
+
+    res.data['data'];
   }
 }

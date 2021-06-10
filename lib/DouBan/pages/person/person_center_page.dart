@@ -244,14 +244,11 @@ class _VideoBookMusicBookWidgetState extends State<_VideoBookMusicBookWidget>
       height: 130.0,
       child: DefaultTabController(
           length: tabTxt.length,
-          child: Column(
-            children: <Widget>[
-              Align(
-                child: _TabBarWidget(),
-                alignment: Alignment.centerLeft,
-              ),
-              _tabView()
-            ],
+          child: Container(
+            decoration: BoxDecoration(color: Colors.red),
+            child: Column(
+              children: <Widget>[_TabBarWidget(), _tabView()],
+            ),
           )),
     );
   }
@@ -319,12 +316,20 @@ class _TabBarWidgetState extends State<_TabBarWidget> {
     unselectedColor = Color.fromARGB(255, 117, 117, 117);
     selectStyle = TextStyle(fontSize: 18, color: selectColor);
     unselectedStyle = TextStyle(fontSize: 18, color: selectColor);
-    tabWidgets = tabTxt
-        .map((item) => Text(
+    tabWidgets = tabTxt.map((item) {
+      return Container(
+        color: Colors.green,
+        child: Column(
+          children: [
+            Icon(Icons.face),
+            Text(
               item,
               style: TextStyle(fontSize: 15),
-            ))
-        .toList();
+            )
+          ],
+        ),
+      );
+    }).toList();
   }
 
   @override

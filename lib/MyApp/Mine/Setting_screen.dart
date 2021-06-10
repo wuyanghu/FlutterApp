@@ -1,5 +1,3 @@
-import 'dart:ffi';
-
 import 'package:flutter/material.dart';
 import 'package:flutterapp/MyApp/Login/LoginShare.dart';
 import 'package:flutterapp/MyApp/Mine/Model/MineModel.dart';
