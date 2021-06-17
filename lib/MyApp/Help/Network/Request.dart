@@ -53,7 +53,7 @@ class LoginRequest {
 
 class Tweets {
   static Future<CircleModel> tweet(int startId, int limit) async {
-    Map res = await Util.mock(action: "circle");
+    Map res = await Util.mock(action: "circle1");
     var map = res['data'];
     CircleModel model = CircleModel.fromJson(map);
     return model;

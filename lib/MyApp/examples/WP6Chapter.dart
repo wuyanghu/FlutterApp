@@ -200,3 +200,117 @@ class ListVierAddHeader2 extends StatelessWidget {
     );
   }
 }
+
+class CustomScrollViewTestRoute extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    //因为本路由没有使用Scaffold，为了让子级Widget(如Text)使用
+    //Material Design 默认的样式风格,我们使用Material作为本路由的根。
+    return Material(
+      child: CustomScrollView(
+        slivers: <Widget>[
+          //AppBar，包含一个导航栏
+          SliverAppBar(
+            pinned: true,
+            expandedHeight: 250.0,
+            flexibleSpace: FlexibleSpaceBar(
+              title: const Text('Demo'),
+              background: Image.asset(
+                "assets/bling/me/me_bg.png",
+                fit: BoxFit.cover,
+              ),
+            ),
+          ),
+
+          SliverPadding(
+            padding: const EdgeInsets.all(8.0),
+            sliver: new SliverGrid(
+              //Grid
+              gridDelegate: new SliverGridDelegateWithFixedCrossAxisCount(
+                crossAxisCount: 2, //Grid按两列显示
+                mainAxisSpacing: 10.0,
+                crossAxisSpacing: 10.0,
+                childAspectRatio: 4.0,
+              ),
+              delegate: new SliverChildBuilderDelegate(
+                (BuildContext context, int index) {
+                  //创建子widget
+                  return new Container(
+                    alignment: Alignment.center,
+                    color: Colors.cyan[100 * (index % 9)],
+                    child: new Text('grid item $index'),
+                  );
+                },
+                childCount: 20,
+              ),
+            ),
+          ),
+          //List
+          new SliverFixedExtentList(
+            itemExtent: 50.0,
+            delegate: new SliverChildBuilderDelegate(
+                (BuildContext context, int index) {
+              //创建列表项
+              return new Container(
+                alignment: Alignment.center,
+                color: Colors.lightBlue[100 * (index % 9)],
+                child: new Text('list item $index'),
+              );
+            }, childCount: 50 //50个列表项
+                ),
+          ),
+        ],
+      ),
+    );
+  }
+}
+
+class ScrollNotificationTestRoute extends StatefulWidget {
+  @override
+  _ScrollNotificationTestRouteState createState() =>
+      new _ScrollNotificationTestRouteState();
+}
+
+class _ScrollNotificationTestRouteState
+    extends State<ScrollNotificationTestRoute> {
+  String _progress = "0%"; //保存进度百分比
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      body: Scrollbar(
+        //进度条
+        // 监听滚动通知
+        child: NotificationListener<ScrollNotification>(
+          onNotification: (ScrollNotification notification) {
+            double progress = notification.metrics.pixels /
+                notification.metrics.maxScrollExtent;
+            //重新构建
+            setState(() {
+              _progress = "${(progress * 100).toInt()}%";
+            });
+            print("BottomEdge: ${notification.metrics.extentAfter == 0}");
+            //return true; //放开此行注释后，进度条将失效
+          },
+          child: Stack(
+            alignment: Alignment.center,
+            children: <Widget>[
+              ListView.builder(
+                  itemCount: 100,
+                  itemExtent: 50.0,
+                  itemBuilder: (context, index) {
+                    return ListTile(title: Text("$index"));
+                  }),
+              CircleAvatar(
+                //显示进度百分比
+                radius: 30.0,
+                child: Text(_progress),
+                backgroundColor: Colors.black54,
+              )
+            ],
+          ),
+        ),
+      ),
+    );
+  }
+}

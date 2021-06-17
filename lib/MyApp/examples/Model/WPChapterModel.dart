@@ -147,6 +147,12 @@ class WPChapterModel {
       navigateScreen: ListVierAddHeader2(),
     ),
     WPChapterModel(
+        title: '6.5customscrollview',
+        navigateScreen: CustomScrollViewTestRoute()),
+    WPChapterModel(
+        title: '6.6ScrollController',
+        navigateScreen: ScrollNotificationTestRoute()),
+    WPChapterModel(
       title: '7.1 导航返回拦截（WillPopScope）',
       navigateScreen: WillPopScopeTestRoute(),
     ),

@@ -75,41 +75,40 @@ class _Circle extends State<Circle> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        body: Container(
-      color: Colors.white,
-      child: Container(
-        child: Column(
-          children: [
-            getAppBar(context),
-            Expanded(
-                child: RefreshConfiguration(
-                    headerTriggerDistance: 80,
-                    maxOverScrollExtent: 100,
-                    footerTriggerDistance: 50,
-                    maxUnderScrollExtent: 0,
-                    headerBuilder: () => DYrefreshHeader(),
-                    footerBuilder: () => DYrefreshFooter(),
-                    child: SmartRefresher(
-                        enablePullDown: true,
-                        enablePullUp: true,
-                        footer: DYrefreshFooter(
-                          bgColor: Color(0xfff1f5f6),
-                        ),
-                        controller: _refreshController,
-                        onRefresh: loadNew,
-                        onLoading: loadHistory,
-                        child: CustomScrollView(
-                          physics: const BouncingScrollPhysics(),
-                          shrinkWrap: true,
-                          slivers: cells,
-                        )))),
-            SizedBox(
-              height: MediaQuery.of(context).padding.bottom,
-            )
-          ],
-        ),
-      ),
-    ));
+        body: SafeArea(
+            top: false,
+            child: Container(
+              color: Colors.white,
+              child: Container(
+                child: Column(
+                  children: [
+                    getAppBar(context),
+                    Expanded(
+                        child: RefreshConfiguration(
+                            headerTriggerDistance: 80,
+                            maxOverScrollExtent: 100,
+                            footerTriggerDistance: 50,
+                            maxUnderScrollExtent: 0,
+                            headerBuilder: () => DYrefreshHeader(),
+                            footerBuilder: () => DYrefreshFooter(),
+                            child: SmartRefresher(
+                                enablePullDown: true,
+                                enablePullUp: true,
+                                footer: DYrefreshFooter(
+                                  bgColor: Color(0xfff1f5f6),
+                                ),
+                                controller: _refreshController,
+                                onRefresh: loadNew,
+                                onLoading: loadHistory,
+                                child: CustomScrollView(
+                                  physics: const BouncingScrollPhysics(),
+                                  shrinkWrap: true,
+                                  slivers: cells,
+                                )))),
+                  ],
+                ),
+              ),
+            )));
   }
 
   List<Widget> cell(TweetList model) {
