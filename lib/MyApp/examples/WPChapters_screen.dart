@@ -14,7 +14,7 @@ class _WPChatersState extends State<WPChaters> {
     return ListView.builder(
       itemCount: homeList.length,
       itemBuilder: (BuildContext context, int index) {
-        return InkWell(
+        return GestureDetector(
             child: Padding(
               padding: EdgeInsets.only(top: 5, left: 10, right: 10, bottom: 5),
               child: Container(

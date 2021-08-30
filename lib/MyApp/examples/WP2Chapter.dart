@@ -1,6 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
 
+class CountModel {
+  int count = 0;
+}
+
 class WP2_1Counter extends StatefulWidget {
   WP2_1Counter({Key key, this.title}) : super(key: key);
   final String title;
@@ -10,11 +14,12 @@ class WP2_1Counter extends StatefulWidget {
 }
 
 class _WP2_1CounterState extends State<WP2_1Counter> {
-  int _counter = 0;
+  CountModel countModel = CountModel();
+  _WP2_1CounterState();
 
   void _incrementCounter() {
     setState(() {
-      _counter++;
+      countModel.count++;
     });
   }
 
@@ -24,24 +29,44 @@ class _WP2_1CounterState extends State<WP2_1Counter> {
       appBar: AppBar(
         title: Text(widget.title),
       ),
-      body: Center(
-          // Center is a layout widget. It takes a single child and positions it
-          // in the middle of the parent.
-          child: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: <Widget>[
-          Text(
-            '$_counter',
-            style: Theme.of(context).textTheme.headline4,
-          ),
-        ],
-      )),
+      body: SingleChildScrollView(
+        child: CountWidget(this.countModel),
+      ),
       floatingActionButton: FloatingActionButton(
         onPressed: _incrementCounter,
         tooltip: 'Increment',
         child: Icon(Icons.add),
       ), // This trailing comma makes auto-formatting nicer for build methods.
     );
+  }
+}
+
+class CountWidget extends StatefulWidget {
+  CountModel countModel;
+  CountWidget(this.countModel);
+  @override
+  State<StatefulWidget> createState() {
+    return _CountState(this.countModel);
+  }
+}
+
+class _CountState extends State<CountWidget> {
+  CountModel countModel;
+  _CountState(this.countModel);
+  @override
+  Widget build(BuildContext context) {
+    return Center(
+        // Center is a layout widget. It takes a single child and positions it
+        // in the middle of the parent.
+        child: Column(
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: <Widget>[
+        Text(
+          '${countModel.count}',
+          style: Theme.of(context).textTheme.headline4,
+        ),
+      ],
+    ));
   }
 }
 

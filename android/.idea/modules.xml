@@ -3,6 +3,15 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/android.iml" filepath="$PROJECT_DIR$/android.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/android.app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/android.app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/807579080/android.flutter_webview_plugin.iml" filepath="$PROJECT_DIR$/.idea/modules/807579080/android.flutter_webview_plugin.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/1717560564/android.fluttertoast.iml" filepath="$PROJECT_DIR$/.idea/modules/1717560564/android.fluttertoast.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/-1761456487/android.package_info.iml" filepath="$PROJECT_DIR$/.idea/modules/-1761456487/android.package_info.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/-1669213352/android.path_provider.iml" filepath="$PROJECT_DIR$/.idea/modules/-1669213352/android.path_provider.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/-216384017/android.shared_preferences.iml" filepath="$PROJECT_DIR$/.idea/modules/-216384017/android.shared_preferences.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/-2029286415/android.sqflite.iml" filepath="$PROJECT_DIR$/.idea/modules/-2029286415/android.sqflite.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/1758342795/android.video_player.iml" filepath="$PROJECT_DIR$/.idea/modules/1758342795/android.video_player.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/1136703950/android.webview_flutter.iml" filepath="$PROJECT_DIR$/.idea/modules/1136703950/android.webview_flutter.iml" />
     </modules>
   </component>
 </project>

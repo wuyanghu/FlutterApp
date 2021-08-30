@@ -248,6 +248,11 @@ class GestureConflictTestRouteState extends State<GestureConflictTestRoute> {
   }
 }
 
+class MyNotification extends Notification {
+  MyNotification(this.msg);
+  final String msg;
+}
+
 class NotificationRoute extends StatefulWidget {
   @override
   NotificationRouteState createState() {
@@ -290,9 +295,4 @@ class NotificationRouteState extends State<NotificationRoute> {
       ),
     );
   }
-}
-
-class MyNotification extends Notification {
-  MyNotification(this.msg);
-  final String msg;
 }

@@ -232,6 +232,7 @@ class _Login extends State<Login> {
   }
 
   bool isEmpty() {
+    if (phone == null) return true;
     return (phone.length == 0 || psw.length == 0);
   }
 

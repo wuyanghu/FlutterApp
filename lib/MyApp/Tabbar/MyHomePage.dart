@@ -19,7 +19,7 @@ class _ScaffoldRouteState extends State<MyHomePage>
   int _selectedIndex = 0;
   TabController _tabController;
 
-  List tabs = ["flutter实战demo", "MarkDown解析"];
+  List tabs = ["flutter实战demo", "flutter核心技术与实战", "MarkDown解析"];
 
   @override
   void initState() {
@@ -88,6 +88,26 @@ class _ScaffoldRouteState extends State<MyHomePage>
       if (e == tabs[0]) {
         return WPChaters();
       } else if (e == tabs[1]) {
+        List<String> titles = [
+          "ProviderExample",
+          "FutureExample",
+          "CustomInheritedWidget"
+        ];
+        return ListView.builder(
+          itemBuilder: (BuildContext context, int index) => GestureDetector(
+              onTap: () {
+                print(index);
+                Navigator.pushNamed(context, titles[index]);
+              },
+              child: Container(
+                padding:
+                    EdgeInsets.only(left: 10, right: 10, top: 5, bottom: 5),
+                child: Text(titles[index]),
+              )),
+          itemExtent: 44,
+          itemCount: titles.length,
+        );
+      } else if (e == tabs[2]) {
         return FlutterMarkdown();
       }
 
@@ -127,13 +147,6 @@ class _ScaffoldRouteState extends State<MyHomePage>
       drawer: LeftDrawer(), //抽屉
       body: getBody(),
       bottomNavigationBar: getBottomNavigationBar(),
-      // floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
-      // floatingActionButton: FloatingActionButton(
-      //     child: Icon(Icons.add),
-      //     onPressed: (() {
-      //       var now = new DateTime.now();
-      //       print(now.millisecondsSinceEpoch); //单位毫秒，13位时间戳
-      //     })),
     );
   }
 }
