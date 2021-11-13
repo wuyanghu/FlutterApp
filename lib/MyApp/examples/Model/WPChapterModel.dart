@@ -10,6 +10,8 @@ import 'package:flutterapp/MyApp/examples/Chapter7/Chapter7.dart';
 import 'package:flutterapp/MyApp/examples/WP8Chapter.dart';
 import 'package:flutterapp/MyApp/examples/WP9Chapter.dart';
 
+import '../ShareDataWidget.dart';
+
 class WPChapterModel {
   WPChapterModel({
     this.navigateScreen,

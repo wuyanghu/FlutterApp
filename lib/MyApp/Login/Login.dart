@@ -6,7 +6,7 @@ import 'package:fluttertoast/fluttertoast.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 class Login extends StatefulWidget {
-  VoidCallback loginFinish;
+  final VoidCallback loginFinish;
   Login({this.loginFinish});
   @override
   State<StatefulWidget> createState() {
