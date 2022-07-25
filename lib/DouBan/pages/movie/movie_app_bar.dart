@@ -389,12 +389,12 @@ class _AppBarState extends State<AppBar> {
 
     IconThemeData appBarIconTheme =
         widget.iconTheme ?? appBarTheme.iconTheme ?? themeData.primaryIconTheme;
-    TextStyle centerStyle = widget.textTheme?.title ??
-        appBarTheme.textTheme?.title ??
-        themeData.primaryTextTheme.title;
-    TextStyle sideStyle = widget.textTheme?.body1 ??
-        appBarTheme.textTheme?.body1 ??
-        themeData.primaryTextTheme.body1;
+    TextStyle centerStyle = widget.textTheme?.headline1 ??
+        appBarTheme.textTheme?.headline1 ??
+        themeData.primaryTextTheme.headline1;
+    TextStyle sideStyle = widget.textTheme?.bodyText1 ??
+        appBarTheme.textTheme?.bodyText1 ??
+        themeData.primaryTextTheme.bodyText1;
 
     if (widget.toolbarOpacity != 1.0) {
       final double opacity =

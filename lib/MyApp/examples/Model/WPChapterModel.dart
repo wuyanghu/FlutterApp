@@ -1,5 +1,4 @@
 import 'package:flutter/widgets.dart';
-import 'package:flutterapp/MyApp/examples/Chapter7/ShareDataWidget.dart';
 import 'package:flutterapp/MyApp/examples/Chapter7/Shopping.dart';
 import 'package:flutterapp/MyApp/examples/WP2Chapter.dart';
 import 'package:flutterapp/MyApp/examples/WP3Chapter.dart';

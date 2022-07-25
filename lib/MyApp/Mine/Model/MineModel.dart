@@ -1,10 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutterapp/BestUI/navigation_home_screen.dart';
 import 'package:flutterapp/MyApp/CircleOfFriends/Circle.dart';
-import 'package:flutterapp/MyApp/Login/Login.dart';
 import 'package:flutterapp/MyApp/Mine/Setting_screen.dart';
 import 'package:flutterapp/MyApp/Thinking/Thinking.dart';
-import 'package:flutterapp/main.dart';
 
 class WPMineModel {
   WPMineModel({this.icon, this.title = '', this.screen});

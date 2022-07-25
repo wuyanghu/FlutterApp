@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutterapp/BestUI/navigation_home_screen.dart';
-import 'package:flutterapp/MyApp/Tabbar/FlutterMarkdown.dart';
 import 'package:flutterapp/MyApp/LeftDrawer/LeftDrawer.dart';
 import 'package:flutterapp/MyApp/Mine/Mine_screen.dart';
 import 'package:flutterapp/MyApp/examples/WPChapters_screen.dart';
@@ -91,7 +90,9 @@ class _ScaffoldRouteState extends State<MyHomePage>
         List<String> titles = [
           "ProviderExample",
           "FutureExample",
-          "CustomInheritedWidget"
+          "CustomInheritedWidget",
+          "StatefulWidget1",
+          "StatefulWidget2"
         ];
         return ListView.builder(
           itemBuilder: (BuildContext context, int index) => GestureDetector(
@@ -107,8 +108,6 @@ class _ScaffoldRouteState extends State<MyHomePage>
           itemExtent: 44,
           itemCount: titles.length,
         );
-      } else if (e == tabs[2]) {
-        return FlutterMarkdown();
       }
 
       return Container(

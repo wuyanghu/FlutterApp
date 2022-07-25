@@ -3,8 +3,8 @@ import 'package:flutterapp/MyApp/Mine/MineInfo_screen.dart';
 import 'package:flutterapp/MyApp/Mine/Model/MineModel.dart';
 
 class WPMine extends StatelessWidget {
-  List commonUseList = WPMineModel.commonUseList;
-  List mineList = WPMineModel.mineList;
+  final List commonUseList = WPMineModel.commonUseList;
+  final List mineList = WPMineModel.mineList;
 
   List<Widget> getCommonUseCellList(BuildContext context) {
     List<Widget> listViews = <Widget>[];

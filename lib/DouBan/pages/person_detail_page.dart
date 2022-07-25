@@ -171,6 +171,7 @@ class _PersonDetailPageState extends State<PersonDetailPage> {
   }
 
   void requestAPI() async {
+    Future(() => () {}).then((value) => null);
     Future(() => (PersonDetailRepository().requestAPI(widget.id)))
         .then((personDetailRepository) {
       setState(() {
@@ -178,7 +179,7 @@ class _PersonDetailPageState extends State<PersonDetailPage> {
         celebrityEntity = personDetailRepository.celebrityEntity;
         celebrityWorkEntity = personDetailRepository.celebrityWorkEntity;
       });
-    });
+    }).then((value) => null);
   }
 
   ///影院热映item

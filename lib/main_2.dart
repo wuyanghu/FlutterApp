@@ -7,6 +7,7 @@ import 'package:flutterapp/MyApp/examples/WP2Chapter.dart';
 import 'package:provider/provider.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
+// import 'MyApp/examples2/Extends.dart';
 import 'MyApp/examples2/FutureExample.dart';
 import 'MyApp/examples2/InheritedWidget.dart';
 import 'MyApp/examples2/Provider.dart';
@@ -93,7 +94,9 @@ class _MyApp extends State with WidgetsBindingObserver {
             "MyProvider_SecondPage": (context) => SecondPage(),
             "FutureExample": (context) => FutureExample(),
             "/ProviderRoute": (context) => ProviderRoute(),
-            "CustomInheritedWidget": (context) => CustomInheritedWidget()
+            "CustomInheritedWidget": (context) => CustomInheritedWidget(),
+            // "StatefulWidget1": (context) => StatefulWidget1(),
+            // "StatefulWidget2": (context) => StatefulWidget2()
           },
           onUnknownRoute: (RouteSettings setting) =>
               MaterialPageRoute(builder: (context) {

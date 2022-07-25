@@ -5,7 +5,7 @@ import 'package:fluttertoast/fluttertoast.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 class SettingScreen extends StatelessWidget {
-  List<SettingModel> settingList = SettingModel.settingList;
+  final List<SettingModel> settingList = SettingModel.settingList;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
