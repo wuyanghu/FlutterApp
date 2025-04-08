@@ -8,10 +8,12 @@ import 'package:provider/provider.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 // import 'MyApp/examples2/Extends.dart';
+import 'MyApp/examples/WP4Chapter.dart';
 import 'MyApp/examples2/FutureExample.dart';
 import 'MyApp/examples2/InheritedWidget.dart';
 import 'MyApp/examples2/Provider.dart';
 import 'MyApp/examples/Chapter7/Shopping.dart';
+import 'MyApp/performance/performance.dart';
 
 void main() {
   // 将 debugPrint 指定为空的执行体, 所以它什么也不做
@@ -52,7 +54,7 @@ class _MyApp extends State with WidgetsBindingObserver {
 
     //只要有build就会回调，动画调用最多
     WidgetsBinding.instance.addPersistentFrameCallback((_) {
-      print(" 实时 Frame 绘制回调 "); // 每帧都回调
+      // print(" 实时 Frame 绘制回调 "); // 每帧都回调
     });
 
     loadData();
@@ -95,8 +97,11 @@ class _MyApp extends State with WidgetsBindingObserver {
             "FutureExample": (context) => FutureExample(),
             "/ProviderRoute": (context) => ProviderRoute(),
             "CustomInheritedWidget": (context) => CustomInheritedWidget(),
+            "LineColumnLayout": (context) => LineColumnLayout(),
+            "CustomSingleChildScrollView": (context) =>
+                CustomSingleChildScrollView(),
             // "StatefulWidget1": (context) => StatefulWidget1(),
-            // "StatefulWidget2": (context) => StatefulWidget2()
+            // "StatefulWidget2": (context) => StatefulWidget2(),
           },
           onUnknownRoute: (RouteSettings setting) =>
               MaterialPageRoute(builder: (context) {

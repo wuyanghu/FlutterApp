@@ -1,3 +1,5 @@
+import 'dart:ui';
+
 import 'package:flutter/material.dart';
 
 class LineRowLayout extends StatelessWidget {
@@ -71,8 +73,107 @@ class LineRowLayout extends StatelessWidget {
 }
 
 class LineColumnLayout extends StatelessWidget {
+  void main() {
+    PictureRecorder recorder = PictureRecorder();
+    // 初始化 Canvas 时，传入 PictureRecorder 实例
+    // 用于记录发生在该 canvas 上的所有操作
+    //
+    Canvas canvas = Canvas(recorder);
+
+    Paint circlePaint = Paint();
+    circlePaint.color = Colors.blueAccent;
+
+    // 调用 Canvas 的绘制接口，画一个圆形
+    //
+    canvas.drawCircle(Offset(400, 400), 300, circlePaint);
+
+    // 绘制结束，生成Picture
+    //
+    Picture picture = recorder.endRecording();
+
+    SceneBuilder sceneBuilder = SceneBuilder();
+    sceneBuilder.pushOffset(0, 0);
+    // 将 picture 送入 SceneBuilder
+    //
+    sceneBuilder.addPicture(Offset(0, 0), picture);
+    sceneBuilder.pop();
+
+    // 生成 Scene
+    //
+    Scene scene = sceneBuilder.build();
+
+    window.onDrawFrame = () {
+      // 将 scene 送入 Engine 层进行渲染显示
+      //
+      window.render(scene);
+    };
+    window.scheduleFrame();
+  }
+
   @override
   Widget build(BuildContext context) {
+    return ListView(
+      children: [
+        Container(
+          height: 100,
+          color: Colors.red,
+        ),
+        Container(
+          height: 200,
+          color: Colors.black,
+        ),
+        Container(
+          height: 300,
+          color: Colors.blue,
+        ),
+        Container(
+          height: 400,
+          color: Colors.red,
+        ),
+        Container(
+          height: 500,
+          color: Colors.black,
+        ),
+        Container(
+          height: 600,
+          color: Colors.blue,
+        ),
+      ],
+    );
+
+    //解释为什么超出部分之后会自动截取了
+    return Column(
+      children: [
+        Expanded(
+          child: Container(
+            color: Colors.red,
+            height: 2001,
+          ),
+        )
+      ],
+    );
+
+    return Center(
+      child: Container(
+          key: Key("value"), width: 100, height: 100, color: Colors.red),
+    );
+
+    return SingleChildScrollView(
+      child: Container(
+        height: 100,
+        color: Colors.red,
+      ),
+    );
+
+    // return Column(
+    //   // mainAxisSize: MainAxisSize.min,
+    //   crossAxisAlignment: CrossAxisAlignment.end,
+    //   children: [
+    //     Container(color: Colors.red, height: 200, ),
+    //     // Text("第三个Text"), Text("居右"),
+    //   ],
+    // );
+
     return Scaffold(
       appBar: AppBar(title: Text("线性布局-column")),
       body: Column(

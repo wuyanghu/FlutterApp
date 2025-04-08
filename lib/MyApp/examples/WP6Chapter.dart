@@ -41,7 +41,7 @@ class ListViewDefalut extends StatelessWidget {
         title: Text("ListViewDefalut"),
       ),
       body: ListView(
-        shrinkWrap: true,
+        shrinkWrap: false,
         padding: const EdgeInsets.all(20.0),
         children: <Widget>[
           const Text('I\'m dedicating every day to you'),

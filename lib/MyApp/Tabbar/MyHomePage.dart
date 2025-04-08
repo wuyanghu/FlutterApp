@@ -88,6 +88,7 @@ class _ScaffoldRouteState extends State<MyHomePage>
         return WPChaters();
       } else if (e == tabs[1]) {
         List<String> titles = [
+          "CustomSingleChildScrollView",
           "ProviderExample",
           "FutureExample",
           "CustomInheritedWidget",

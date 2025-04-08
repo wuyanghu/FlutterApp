@@ -1,5 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AndroidLayouts">
+    <shared>
+      <config />
+    </shared>
+  </component>
   <component name="AndroidLogFilters">
     <option name="TOOL_WINDOW_CONFIGURED_FILTER" value="Show only selected application" />
   </component>
@@ -7,37 +12,38 @@
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6ee1ac08-7d97-4738-ae9f-d2a1444300ed" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/local.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.flutter-plugins" beforeDir="false" afterPath="$PROJECT_DIR$/.flutter-plugins" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.flutter-plugins-dependencies" beforeDir="false" afterPath="$PROJECT_DIR$/.flutter-plugins-dependencies" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/android/gradle.properties" beforeDir="false" afterPath="$PROJECT_DIR$/android/gradle.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/flutterapp.iml" beforeDir="false" afterPath="$PROJECT_DIR$/flutterapp.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ios/Flutter/AppFrameworkInfo.plist" beforeDir="false" afterPath="$PROJECT_DIR$/ios/Flutter/AppFrameworkInfo.plist" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ios/Podfile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/ios/Podfile.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ios/Runner.xcodeproj/xcshareddata/xcschemes/Runner.xcscheme" beforeDir="false" afterPath="$PROJECT_DIR$/ios/Runner.xcodeproj/xcshareddata/xcschemes/Runner.xcscheme" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/DouBan/pages/home/home_app_bar.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/DouBan/pages/home/home_app_bar.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/DouBan/pages/movie/movie_app_bar.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/DouBan/pages/movie/movie_app_bar.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/DouBan/pages/person_detail_page.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/DouBan/pages/person_detail_page.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/MyApp/Mine/Mine_screen.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/MyApp/Mine/Mine_screen.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/MyApp/Mine/Model/MineModel.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/MyApp/Mine/Model/MineModel.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/MyApp/Mine/Setting_screen.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/MyApp/Mine/Setting_screen.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/MyApp/Tabbar/FlutterMarkdown.dart" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/MyApp/Tabbar/MyHomePage.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/MyApp/Tabbar/MyHomePage.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/MyApp/examples/Model/WPChapterModel.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/MyApp/examples/Model/WPChapterModel.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/generated_plugin_registrant.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/generated_plugin_registrant.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/main_2.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/main_2.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pubspec.lock" beforeDir="false" afterPath="$PROJECT_DIR$/pubspec.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pubspec.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/pubspec.yaml" afterDir="false" />
-    </list>
+    <list default="true" id="6ee1ac08-7d97-4738-ae9f-d2a1444300ed" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Dart File" />
+      </list>
+    </option>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitSEFilterConfiguration">
+    <file-type-list>
+      <filtered-out-file-type name="LOCAL_BRANCH" />
+      <filtered-out-file-type name="REMOTE_BRANCH" />
+      <filtered-out-file-type name="TAG" />
+      <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
+    </file-type-list>
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/../../config/flutter/packages/flutter/lib/src/widgets/framework.dart" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/../../config/flutter/packages/flutter/lib/src/rendering/viewport_offset.dart" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/../../config/flutter/packages/flutter/lib/src/foundation/node.dart" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/../../config/flutter/packages/flutter/lib/src/widgets/single_child_scroll_view.dart" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/../../config/flutter/packages/flutter/lib/src/rendering/box.dart" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/../../config/flutter/packages/flutter/lib/src/rendering/object.dart" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/../../config/flutter/packages/flutter/lib/src/rendering/shifted_box.dart" root0="SKIP_INSPECTION" />
   </component>
   <component name="ProjectId" id="2AwHCF6rWDFCdL3wLbgpUiJzeRa" />
   <component name="ProjectViewState">
@@ -47,13 +53,15 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.cidr.known.project.marker" value="true" />
     <property name="cidr.known.project.marker" value="true" />
+    <property name="com.intellij.openapi.externalSystem.service.settings.ExternalSystemGroupConfigurable" value="ALL" />
     <property name="dart.analysis.tool.window.force.activate" value="true" />
     <property name="dart.analysis.tool.window.visible" value="false" />
+    <property name="io.flutter.reload.alreadyRun" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.17" />
     <property name="project.structure.side.proportion" value="0.2" />
-    <property name="settings.editor.selected.configurable" value="http.proxy" />
+    <property name="settings.editor.selected.configurable" value="flutter.settings" />
     <property name="show.migrate.to.gradle.popup" value="false" />
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
@@ -78,5 +86,49 @@
       </map>
     </option>
     <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint suspend="THREAD" type="Dart">
+          <url>file://$PROJECT_DIR$/lib/MyApp/examples/WP6Chapter.dart</url>
+          <line>42</line>
+          <option name="timeStamp" value="5" />
+        </line-breakpoint>
+        <line-breakpoint suspend="THREAD" type="Dart">
+          <url>file://$PROJECT_DIR$/../../config/flutter/packages/flutter/lib/src/rendering/viewport.dart</url>
+          <line>1345</line>
+          <option name="timeStamp" value="8" />
+        </line-breakpoint>
+        <line-breakpoint suspend="THREAD" type="Dart">
+          <url>file://$PROJECT_DIR$/../../config/flutter/packages/flutter/lib/src/rendering/viewport.dart</url>
+          <line>271</line>
+          <option name="timeStamp" value="11" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="Dart">
+          <url>file://$PROJECT_DIR$/../../config/flutter/packages/flutter/lib/src/rendering/object.dart</url>
+          <line>503</line>
+          <option name="timeStamp" value="49" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="Dart">
+          <url>file://$PROJECT_DIR$/../../config/flutter/packages/flutter/lib/src/rendering/object.dart</url>
+          <line>545</line>
+          <option name="timeStamp" value="53" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="Dart">
+          <url>file://$PROJECT_DIR$/../../config/flutter/packages/flutter/lib/src/rendering/object.dart</url>
+          <line>581</line>
+          <option name="timeStamp" value="54" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="Dart">
+          <url>file://$PROJECT_DIR$/lib/MyApp/examples/WP4Chapter.dart</url>
+          <line>144</line>
+          <option name="timeStamp" value="116" />
+        </line-breakpoint>
+      </breakpoints>
+      <default-breakpoints>
+        <breakpoint suspend="THREAD" type="dart-exception" />
+      </default-breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

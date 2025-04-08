@@ -13,11 +13,19 @@ class WP2_1Counter extends StatefulWidget {
   _WP2_1CounterState createState() => _WP2_1CounterState();
 }
 
+extension StringToNumber on String {
+  int toInt() {
+    return int.parse(this);
+  }
+}
+
 class _WP2_1CounterState extends State<WP2_1Counter> {
   CountModel countModel = CountModel();
   _WP2_1CounterState();
 
   void _incrementCounter() {
+    '18'.toInt();
+
     setState(() {
       countModel.count++;
     });

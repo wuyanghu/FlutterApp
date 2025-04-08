@@ -18,6 +18,7 @@ class FutureExample extends StatelessWidget {
       ),
       body: SizedBox(),
     );
+    // Column()
   }
 
   void future() async {
