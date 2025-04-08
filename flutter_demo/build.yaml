@@ -1,0 +1,7 @@
+builders:
+  testBuilder:
+    import: "package:flutter_annotation/test.dart"
+    builder_factories: ["testBuilder"]
+    build_extensions: {".dart": [".g.part"]}
+    auto_apply: root_package
+    build_to: source
