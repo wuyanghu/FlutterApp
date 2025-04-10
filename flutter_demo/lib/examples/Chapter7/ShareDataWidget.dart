@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 
 class ShareDataWidget extends InheritedWidget {
-  ShareDataWidget({@required this.data, Widget child}) : super(child: child);
+  ShareDataWidget({required this.data, required Widget child}) : super(child: child);
 
   final int data; //需要在子树中共享的数据，保存点击次数
 
   //定义一个便捷方法，方便子树中的widget获取共享数据
-  static ShareDataWidget of(BuildContext context) {
+  static ShareDataWidget? of(BuildContext context) {
     return context.dependOnInheritedWidgetOfExactType<ShareDataWidget>();
   }
 
@@ -28,7 +28,7 @@ class __TestWidgetState extends State<_TestWidget> {
   @override
   Widget build(BuildContext context) {
     //使用InheritedWidget中的共享数据
-    return Text(ShareDataWidget.of(context).data.toString());
+    return Text(ShareDataWidget.of(context)?.data.toString() ?? "");
   }
 
   @override
@@ -64,7 +64,7 @@ class _InheritedWidgetTestRouteState extends State<InheritedWidgetTestRoute> {
                   padding: const EdgeInsets.only(bottom: 20.0),
                   child: _TestWidget(), //子widget中依赖ShareDataWidget
                 ),
-                RaisedButton(
+                ElevatedButton(
                   child: Text("Increment"),
                   //每点击一次，将count自增，然后重新build,ShareDataWidget的data将被更新
                   onPressed: () => setState(() => ++count),

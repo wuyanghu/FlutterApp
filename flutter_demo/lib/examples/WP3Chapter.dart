@@ -2,7 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class CounterWidget extends StatefulWidget {
-  const CounterWidget({Key key, this.initValue: 0});
+  const CounterWidget({Key? key, this.initValue = 0});
 
   final int initValue;
 
@@ -11,7 +11,7 @@ class CounterWidget extends StatefulWidget {
 }
 
 class _CounterWidgetState extends State<CounterWidget> {
-  int _counter;
+  int _counter = 0;
 
   @override
   void initState() {
@@ -26,7 +26,7 @@ class _CounterWidgetState extends State<CounterWidget> {
     print("build");
     return Scaffold(
       body: Center(
-        child: FlatButton(
+        child: ElevatedButton(
           child: Text('$_counter'),
           //点击后计数器自增
           onPressed: () => setState(
@@ -69,7 +69,7 @@ class _CounterWidgetState extends State<CounterWidget> {
 }
 
 class TapboxA extends StatefulWidget {
-  TapboxA({Key key}) : super(key: key);
+  TapboxA({Key? key}) : super(key: key);
 
   @override
   _TapboxAState createState() => new _TapboxAState();
@@ -136,7 +136,7 @@ class _ParentWidgetState extends State<ParentWidget> {
 //------------------------- TapboxB ----------------------------------
 
 class TapboxB extends StatelessWidget {
-  TapboxB({Key key, this.active: false, @required this.onChanged})
+  TapboxB({Key? key, this.active = false, required this.onChanged})
       : super(key: key);
 
   final bool active;
@@ -196,7 +196,7 @@ class _ParentWidgetCState extends State<ParentWidgetC> {
 //----------------------------- TapboxC ------------------------------
 
 class TapboxC extends StatefulWidget {
-  TapboxC({Key key, this.active: false, @required this.onChanged})
+  TapboxC({Key? key, this.active = false, required this.onChanged})
       : super(key: key);
 
   final bool active;
@@ -250,7 +250,7 @@ class _TapboxCState extends State<TapboxC> {
           color: widget.active ? Colors.lightGreen[700] : Colors.grey[600],
           border: _highlight
               ? new Border.all(
-                  color: Colors.teal[700],
+                  color: Colors.teal,
                   width: 10.0,
                 )
               : null,

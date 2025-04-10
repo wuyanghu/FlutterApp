@@ -8,8 +8,8 @@ class ScaleAnimationRoute extends StatefulWidget {
 //需要继承TickerProvider，如果有多个AnimationController，则应该使用TickerProviderStateMixin。
 class _ScaleAnimationRouteState extends State<ScaleAnimationRoute>
     with SingleTickerProviderStateMixin {
-  Animation<double> animation;
-  AnimationController controller;
+  late Animation<double> animation;
+  late AnimationController controller;
 
   initState() {
     super.initState();

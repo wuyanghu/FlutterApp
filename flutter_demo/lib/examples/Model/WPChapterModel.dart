@@ -1,19 +1,19 @@
 import 'package:flutter/widgets.dart';
-import 'package:flutterapp/MyApp/examples/Chapter7/Shopping.dart';
-import 'package:flutterapp/MyApp/examples/WP2Chapter.dart';
-import 'package:flutterapp/MyApp/examples/WP3Chapter.dart';
-import 'package:flutterapp/MyApp/examples/WP4Chapter.dart';
-import 'package:flutterapp/MyApp/examples/WP5Chapter.dart';
-import 'package:flutterapp/MyApp/examples/WP6Chapter.dart';
-import 'package:flutterapp/MyApp/examples/Chapter7/Chapter7.dart';
-import 'package:flutterapp/MyApp/examples/WP8Chapter.dart';
-import 'package:flutterapp/MyApp/examples/WP9Chapter.dart';
 
-import '../ShareDataWidget.dart';
+import '../../main.dart';
+import '../Chapter7/Chapter7.dart';
+import '../Chapter7/ShareDataWidget.dart';
+import '../Chapter7/Shopping.dart';
+import '../WP2Chapter.dart';
+import '../WP3Chapter.dart';
+import '../WP4Chapter.dart';
+import '../WP5Chapter.dart';
+import '../WP6Chapter.dart';
+import '../WP8Chapter.dart';
 
 class WPChapterModel {
   WPChapterModel({
-    this.navigateScreen,
+    required this.navigateScreen,
     this.title = '',
   });
 

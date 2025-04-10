@@ -6,7 +6,7 @@ class CountModel {
 }
 
 class WP2_1Counter extends StatefulWidget {
-  WP2_1Counter({Key key, this.title}) : super(key: key);
+  WP2_1Counter({Key? key, required this.title}) : super(key: key);
   final String title;
 
   @override
@@ -101,7 +101,7 @@ class RouterTestRoute extends StatelessWidget {
       ),
       backgroundColor: Colors.red,
       body: Center(
-        child: RaisedButton(
+        child: ElevatedButton(
           onPressed: () async {
             // 打开`TipRoute`，并等待返回结果
             var result = await Navigator.push(
@@ -142,8 +142,8 @@ class CupertinoTestRoute extends StatelessWidget {
 
 class TipRoute extends StatelessWidget {
   TipRoute({
-    Key key,
-    @required this.text, // 接收一个text参数
+    Key? key,
+    required this.text, // 接收一个text参数
   }) : super(key: key);
   final String text;
 
@@ -159,7 +159,7 @@ class TipRoute extends StatelessWidget {
           child: Column(
             children: <Widget>[
               Text(text),
-              RaisedButton(
+              ElevatedButton(
                 onPressed: () => Navigator.pop(context, "我是返回值"),
                 child: Text("返回"),
               )
@@ -174,8 +174,8 @@ class TipRoute extends StatelessWidget {
 class EchoRoute extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    var args = ModalRoute.of(context).settings.arguments;
-    print("命名路由传递参数:" + args);
+    var args = ModalRoute.of(context)?.settings.arguments;
+    // print("命名路由传递参数:" + args);
     return Scaffold(
       appBar: AppBar(
         title: Text("EchoRoute route"),

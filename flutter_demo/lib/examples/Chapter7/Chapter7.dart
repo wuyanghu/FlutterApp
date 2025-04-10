@@ -8,7 +8,7 @@ class WillPopScopeTestRoute extends StatefulWidget {
 }
 
 class WillPopScopeTestRouteState extends State<WillPopScopeTestRoute> {
-  DateTime _lastPressedAt; //上次点击时间
+  DateTime? _lastPressedAt; //上次点击时间
 
   @override
   Widget build(BuildContext context) {
@@ -19,7 +19,7 @@ class WillPopScopeTestRouteState extends State<WillPopScopeTestRoute> {
         body: WillPopScope(
             onWillPop: () async {
               if (_lastPressedAt == null ||
-                  DateTime.now().difference(_lastPressedAt) >
+                  DateTime.now().difference(_lastPressedAt!) >
                       Duration(seconds: 1)) {
                 //两次点击间隔超过1秒则重新计时
                 _lastPressedAt = DateTime.now();
@@ -39,9 +39,9 @@ class NavBar extends StatelessWidget {
   final Color color; //背景颜色
 
   NavBar({
-    Key key,
-    this.color,
-    this.title,
+    Key? key,
+    required this.color,
+    required this.title,
   });
 
   @override
@@ -105,7 +105,7 @@ class _ThemeTestRouteState extends State<ThemeTestRoute> {
     ThemeData themeData = Theme.of(context);
     return Theme(
       data: ThemeData(
-          primarySwatch: _themeColor, //用于导航栏、FloatingActionButton的背景色等
+          // primarySwatch: _themeColor, //用于导航栏、FloatingActionButton的背景色等
           iconTheme: IconThemeData(color: _themeColor) //用于Icon颜色
           ),
       child: Scaffold(
@@ -191,7 +191,6 @@ class AsyncUpdateUI extends StatelessWidget {
                     case ConnectionState.done:
                       return Text('Stream已关闭');
                   }
-                  return null; // unreachable
                 },
               )
             ],

@@ -10,6 +10,8 @@ import 'dart:async';
 import 'dart:isolate';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
+import 'examples/WPChapters_screen.dart';
+
 void main() {
   runApp(const MyApp());
 }
@@ -73,28 +75,28 @@ class _MyHomePageState extends State<MyHomePage> {
         backgroundColor: Theme.of(context).colorScheme.inversePrimary,
         title: Text(widget.title),
       ),
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            const TestBuildWidget(),
-            RepaintBoundary(
-              child: CustomPaintRoute(),
-            ),
-            //添加一个刷新button
-            ElevatedButton(onPressed: () {}, child: Text("刷新")),
-            // ScaleAnimationRoute1(
-            //   key: UniqueKey(),
-            // ),
-            // const Text(
-            //   'You have pushed the button this many times:',
-            // ),
-            // Text(
-            //   '$_counter',
-            //   style: Theme.of(context).textTheme.headlineMedium,
-            // ),
-          ],
-        ),
+      body: ListView(
+        padding: EdgeInsets.only(left: 16,right: 16),
+        children: <Widget>[
+          // const TestBuildWidget(),
+          // RepaintBoundary(
+          //   child: CustomPaintRoute(),
+          // ),
+          //添加一个刷新button
+          ElevatedButton(onPressed: () {
+            Navigator.push(context, MaterialPageRoute(builder: (_) => WPChaters()));
+          }, child: Text("flutter实战")),
+          // ScaleAnimationRoute1(
+          //   key: UniqueKey(),
+          // ),
+          // const Text(
+          //   'You have pushed the button this many times:',
+          // ),
+          // Text(
+          //   '$_counter',
+          //   style: Theme.of(context).textTheme.headlineMedium,
+          // ),
+        ],
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: _incrementCounter,

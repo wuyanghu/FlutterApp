@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 class CustomInheritedProvider<T> extends InheritedWidget {
   //共享状态使用泛型
   final T data;
-  CustomInheritedProvider({@required this.data, Widget child})
+  CustomInheritedProvider({required this.data, required Widget child})
       : super(child: child);
 
   @override
@@ -40,9 +40,9 @@ class CustomChangeNotifierProvider<T extends CustomChangeNotifier>
   final T data;
 
   CustomChangeNotifierProvider({
-    Key key,
-    this.data,
-    this.child,
+    Key? key,
+    required this.data,
+    required this.child,
   });
 
   //定义一个便捷方法，方便子树中的widget获取共享数据
@@ -54,7 +54,7 @@ class CustomChangeNotifierProvider<T extends CustomChangeNotifier>
   // }
 
   //添加一个listen参数，表示是否建立依赖关系
-  static T of<T>(BuildContext context, {bool listen = true}) {
+  static T? of<T>(BuildContext context, {bool listen = true}) {
     // final type = _typeOf<InheritedProvider<T>>();
     final provider = listen
         ? context
@@ -63,7 +63,7 @@ class CustomChangeNotifierProvider<T extends CustomChangeNotifier>
             .getElementForInheritedWidgetOfExactType<
                 CustomInheritedProvider<T>>()
             ?.widget as CustomInheritedProvider<T>;
-    return provider.data;
+    return provider?.data;
   }
 
   @override

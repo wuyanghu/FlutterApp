@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:english_words/english_words.dart';
+// import 'package:english_words/english_words.dart';
 
 class SingleChildScrollViewTestRoute extends StatelessWidget {
   @override
@@ -153,13 +153,13 @@ class _InfiniteListViewState extends State<InfiniteListView> {
 
   void _retrieveData() {
     Future.delayed(Duration(seconds: 1)).then((e) {
-      setState(() {
-        //重新构建列表
-        _words.insertAll(
-            _words.length - 1,
-            //每次生成20个单词
-            generateWordPairs().take(20).map((e) => e.asPascalCase).toList());
-      });
+      // setState(() {
+      //   //重新构建列表
+      //   _words.insertAll(
+      //       _words.length - 1,
+      //       //每次生成20个单词
+      //       generateWordPairs().take(20).map((e) => e.asPascalCase).toList());
+      // });
     });
   }
 }
@@ -290,7 +290,7 @@ class _ScrollNotificationTestRouteState
               _progress = "${(progress * 100).toInt()}%";
             });
             print("BottomEdge: ${notification.metrics.extentAfter == 0}");
-            //return true; //放开此行注释后，进度条将失效
+            return false; //放开此行注释后，进度条将失效
           },
           child: Stack(
             alignment: Alignment.center,
