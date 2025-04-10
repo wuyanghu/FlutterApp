@@ -2,7 +2,8 @@ import 'dart:async';
 import 'dart:io';
 import 'dart:math';
 
-import 'package:demo/bloc_demo_bloc.dart';
+import 'package:demo/bloc_demo/bloc_demo_bloc.dart';
+import 'package:demo/bloc_demo/bloc_demo_page.dart';
 import 'package:demo/soluation.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -10,7 +11,7 @@ import 'dart:async';
 import 'dart:isolate';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-import 'examples/WPChapters_screen.dart';
+import 'flutter_实战/WPChapters_screen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -51,24 +52,16 @@ class _MyHomePageState extends State<MyHomePage> {
     //
     // final results = Solution().trap([0,1,0,2,1,0,1,3,2,1,2,1]);
     // print("results = $results");
-
-    // BlocProvider(
-    //   create: (BuildContext context) => DemoBloc(),
-    //   child: const MyHomePage(
-    //     title: '',
-    //   ),
-    // );
-    // BlocProvider.of<DemoBloc>(context);
-    // BlocBuilder<DemoBloc, DemoInitial>(
-    //   builder: (BuildContext context, state) {
-    //     return MyHomePage(title: '');
-    //   },
-    // );
-    // context.read<DemoBloc>().add(DemoEvent());
   }
 
   @override
   Widget build(BuildContext context) {
+
+    Widget _buildItem(String title,Widget body) {
+      return ElevatedButton(onPressed: () {
+        Navigator.push(context, MaterialPageRoute(builder: (_) => body));
+      }, child: Text(title));
+    }
 
     return Scaffold(
       appBar: AppBar(
@@ -82,10 +75,8 @@ class _MyHomePageState extends State<MyHomePage> {
           // RepaintBoundary(
           //   child: CustomPaintRoute(),
           // ),
-          //添加一个刷新button
-          ElevatedButton(onPressed: () {
-            Navigator.push(context, MaterialPageRoute(builder: (_) => WPChaters()));
-          }, child: Text("flutter实战")),
+          _buildItem("bloc_demo", BlocDemoPage()),
+          _buildItem("flutter实战", WPChaters()),
           // ScaleAnimationRoute1(
           //   key: UniqueKey(),
           // ),
