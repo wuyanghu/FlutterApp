@@ -34,12 +34,12 @@ class CustomChangeNotifier implements Listenable {
   }
 }
 
-class CustomChangeNotifierProvider<T extends CustomChangeNotifier>
+class ChangeNotifierProvider<T extends CustomChangeNotifier>
     extends StatefulWidget {
   final Widget child;
   final T data;
 
-  CustomChangeNotifierProvider({
+  ChangeNotifierProvider({
     Key? key,
     required this.data,
     required this.child,
@@ -67,19 +67,19 @@ class CustomChangeNotifierProvider<T extends CustomChangeNotifier>
   }
 
   @override
-  _CustomChangeNotifierProviderState<T> createState() =>
-      _CustomChangeNotifierProviderState<T>();
+  _ChangeNotifierProviderState<T> createState() =>
+      _ChangeNotifierProviderState<T>();
 }
 
-class _CustomChangeNotifierProviderState<T extends CustomChangeNotifier>
-    extends State<CustomChangeNotifierProvider<T>> {
+class _ChangeNotifierProviderState<T extends CustomChangeNotifier>
+    extends State<ChangeNotifierProvider<T>> {
   void update() {
     //如果数据发生变化（model类调用了notifyListeners），重新构建InheritedProvider
     setState(() => {});
   }
 
   @override
-  void didUpdateWidget(CustomChangeNotifierProvider<T> oldWidget) {
+  void didUpdateWidget(ChangeNotifierProvider<T> oldWidget) {
     //当Provider更新时，如果新旧数据不"=="，则解绑旧数据监听，同时添加新数据监听
     if (widget.data != oldWidget.data) {
       oldWidget.data.removeListener(update);

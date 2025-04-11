@@ -71,7 +71,6 @@ class _MyHomePageState extends State<MyHomePage> {
       body: ListView(
         padding: EdgeInsets.only(left: 16,right: 16),
         children: <Widget>[
-          // const TestBuildWidget(),
           // RepaintBoundary(
           //   child: CustomPaintRoute(),
           // ),
@@ -212,20 +211,6 @@ class GrowTransition extends StatelessWidget {
         child: child,
       ),
     );
-  }
-}
-
-class TestBuildWidget extends StatefulWidget {
-  const TestBuildWidget({super.key});
-
-  @override
-  State<TestBuildWidget> createState() => _TestBuildWidgetState();
-}
-
-class _TestBuildWidgetState extends State<TestBuildWidget> {
-  @override
-  Widget build(BuildContext context) {
-    return const Placeholder();
   }
 }
 

@@ -15,7 +15,7 @@ class Consumer<T> extends StatelessWidget {
   Widget build(BuildContext context) {
     return builder(
       context,
-      CustomChangeNotifierProvider.of<T>(context), //自动获取Model
+      ChangeNotifierProvider.of<T>(context), //自动获取Model
     );
   }
 }
@@ -58,9 +58,10 @@ class _ProviderRouteState extends State<ProviderRoute> {
           title: Text("provider"),
         ),
         body: Center(
-          child: CustomChangeNotifierProvider<CartModel>(
+          child: ChangeNotifierProvider<CartModel>(
             data: CartModel(),
             child: Builder(builder: (context) {
+              print("_ProviderRouteState build");
               return Column(
                 children: <Widget>[
                   Consumer<CartModel>(
@@ -77,7 +78,7 @@ class _ProviderRouteState extends State<ProviderRoute> {
                       onPressed: () {
                         //给购物车中添加商品，添加后总价会更新
                         // listen 设为false，不建立依赖关系
-                        CustomChangeNotifierProvider.of<CartModel>(context,
+                        ChangeNotifierProvider.of<CartModel>(context,
                                 listen: false)
                             ?.add(Item(20.0, 1));
                       },
