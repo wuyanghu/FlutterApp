@@ -71,7 +71,7 @@ class _CountState extends State<CountWidget> {
       children: <Widget>[
         Text(
           '${countModel.count}',
-          style: Theme.of(context).textTheme.headline4,
+          style: Theme.of(context).textTheme.headlineLarge,
         ),
       ],
     ));

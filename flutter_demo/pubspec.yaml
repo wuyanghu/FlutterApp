@@ -49,6 +49,7 @@ dev_dependencies:
   flutter_bloc: 8.1.6
   source_gen:
   build_runner:
+  provider:
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec

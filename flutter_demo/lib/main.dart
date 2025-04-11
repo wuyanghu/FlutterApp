@@ -4,13 +4,11 @@ import 'dart:math';
 
 import 'package:demo/bloc_demo/bloc_demo_bloc.dart';
 import 'package:demo/bloc_demo/bloc_demo_page.dart';
+import 'package:demo/provider/provider_demo.dart';
 import 'package:demo/soluation.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'dart:async';
 import 'dart:isolate';
-import 'package:flutter_bloc/flutter_bloc.dart';
-
 import 'flutter_实战/WPChapters_screen.dart';
 
 void main() {
@@ -76,6 +74,7 @@ class _MyHomePageState extends State<MyHomePage> {
           // ),
           _buildItem("bloc_demo", BlocDemoPage()),
           _buildItem("flutter实战", WPChaters()),
+          _buildItem("provider_demo", ProviderDemo())
           // ScaleAnimationRoute1(
           //   key: UniqueKey(),
           // ),
