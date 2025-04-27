@@ -6,10 +6,12 @@ import 'package:demo/bloc_demo/bloc_demo_bloc.dart';
 import 'package:demo/bloc_demo/bloc_demo_page.dart';
 import 'package:demo/provider/provider_demo.dart';
 import 'package:demo/soluation.dart';
+import 'package:demo/switch/switch_demo.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'dart:isolate';
 import 'flutter_实战/WPChapters_screen.dart';
+import 'flutter_实战/symmetric_slider_demo.dart';
 
 void main() {
   runApp(const MyApp());
@@ -74,7 +76,9 @@ class _MyHomePageState extends State<MyHomePage> {
           // ),
           _buildItem("bloc_demo", BlocDemoPage()),
           _buildItem("flutter实战", WPChaters()),
-          _buildItem("provider_demo", ProviderDemo())
+          _buildItem("provider_demo", ProviderDemo()),
+          _buildItem("slider_demo", SymmetricSliderDemo()),
+          _buildItem("switch_demo", SwitchDemo())
           // ScaleAnimationRoute1(
           //   key: UniqueKey(),
           // ),
