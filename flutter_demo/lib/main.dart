@@ -1,17 +1,15 @@
-import 'dart:async';
-import 'dart:io';
 import 'dart:math';
 
-import 'package:demo/bloc_demo/bloc_demo_bloc.dart';
-import 'package:demo/bloc_demo/bloc_demo_page.dart';
 import 'package:demo/provider/provider_demo.dart';
-import 'package:demo/soluation.dart';
+import 'package:demo/status_manager/bloc_demo/bloc_demo_page.dart';
+import 'package:demo/status_manager/bloc_demo/bloc_example.dart';
 import 'package:demo/switch/switch_demo.dart';
+import 'package:demo/tab_demo/tab_demo.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'dart:isolate';
 import 'flutter_实战/WPChapters_screen.dart';
-import 'flutter_实战/symmetric_slider_demo.dart';
+import 'slider/symmetric_slider_demo.dart';
 
 void main() {
   runApp(const MyApp());
@@ -75,10 +73,12 @@ class _MyHomePageState extends State<MyHomePage> {
           //   child: CustomPaintRoute(),
           // ),
           _buildItem("bloc_demo", BlocDemoPage()),
+          _buildItem("bloc_官方demo", BlocExample()),
           _buildItem("flutter实战", WPChaters()),
           _buildItem("provider_demo", ProviderDemo()),
           _buildItem("slider_demo", SymmetricSliderDemo()),
-          _buildItem("switch_demo", SwitchDemo())
+          _buildItem("switch_demo", SwitchDemo()),
+          _buildItem("tab_demo", TabDemo()),
           // ScaleAnimationRoute1(
           //   key: UniqueKey(),
           // ),
