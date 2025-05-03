@@ -122,7 +122,6 @@ class _ScaffoldRouteState extends State<MyHomePage>
       // 底部导航
       items: <BottomNavigationBarItem>[
         BottomNavigationBarItem(icon: Icon(Icons.home), label: 'Home'),
-        BottomNavigationBarItem(icon: Icon(Icons.book), label: 'DouBan'),
         BottomNavigationBarItem(icon: Icon(Icons.book), label: 'BestUI'),
         BottomNavigationBarItem(icon: Icon(Icons.person), label: 'Me'),
       ],

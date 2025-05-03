@@ -1,8 +1,7 @@
 import 'package:flutterapp/BestUI/hotel_booking/hotel_app_theme.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:smooth_star_rating/smooth_star_rating.dart';
-
+import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 import 'model/hotel_list_data.dart';
 
 class HotelListView extends StatelessWidget {
@@ -128,17 +127,23 @@ class HotelListView extends StatelessWidget {
                                                   const EdgeInsets.only(top: 4),
                                               child: Row(
                                                 children: <Widget>[
-                                                  SmoothStarRating(
+                                                  RatingBar.builder(
+                                                    initialRating: 3,
+                                                    minRating: 1,
+                                                    direction: Axis.horizontal,
                                                     allowHalfRating: true,
-                                                    starCount: 5,
-                                                    rating: hotelData.rating,
-                                                    size: 20,
-                                                    color: HotelAppTheme
-                                                            .buildLightTheme()
-                                                        .primaryColor,
-                                                    borderColor: HotelAppTheme
-                                                            .buildLightTheme()
-                                                        .primaryColor,
+                                                    itemCount: 5,
+                                                    itemPadding:
+                                                        EdgeInsets.symmetric(
+                                                            horizontal: 4.0),
+                                                    itemBuilder: (context, _) =>
+                                                        Icon(
+                                                      Icons.star,
+                                                      color: Colors.amber,
+                                                    ),
+                                                    onRatingUpdate: (rating) {
+                                                      print(rating);
+                                                    },
                                                   ),
                                                   Text(
                                                     ' ${hotelData.reviews} Reviews',

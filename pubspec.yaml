@@ -29,9 +29,9 @@ dependency_overrides:
   # flutter_markdown: ^0.3.4
   encrypt: 5.0.1
   flutter_cache_manager: 3.4.1
-  flutter_webview_plugin: 0.3.0+2
+  flutter_webview_plugin: 0.4.0
   webview_flutter: 0.3.3+1
-  pointycastle: ^2.0.0
+  pointycastle: 4.0.0
   args: ^1.6.0
 
   dio: 5.8.0+1
@@ -42,17 +42,17 @@ dependency_overrides:
   shared_preferences: 2.3.0
   pull_to_refresh: 2.0.0
 
-  font_awesome_flutter: ^8.8.1
-  smooth_star_rating: ^1.1.1
-  intl: ^0.16.0
-  lottie: 3.3.1
+  font_awesome_flutter: 10.8.0
+  flutter_rating_bar: 4.0.1
+  intl: 0.20.2
+  lottie: 2.6.0
   # json_annotation: ^2.2.0
   #获取版本号等信息
   package_info: ^0.4.0+3 
-  photo_view: ^0.9.0
+  photo_view: 0.15.0
   video_player: ^2.1.1
-  date_format: ^1.0.9
-  provider: ^4.0.0
+  date_format: 2.0.9
+  provider: 6.1.5
 
   # 国际化配置
 flutter_intl:

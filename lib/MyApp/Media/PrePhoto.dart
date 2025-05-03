@@ -24,7 +24,7 @@ class GalleryPhotoViewWrapper extends StatefulWidget {
   }) : pageController = PageController(initialPage: initialIndex);
 
   final Widget? loadingChild;
-  final Decoration backgroundDecoration;
+  final BoxDecoration? backgroundDecoration;
   final dynamic minScale;
   final dynamic maxScale;
   final int initialIndex;

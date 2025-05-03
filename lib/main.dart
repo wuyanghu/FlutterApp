@@ -61,7 +61,7 @@ class _MyApp extends State with WidgetsBindingObserver {
 
   void loadData() async {
     SharedPreferences perferences = await SharedPreferences.getInstance();
-    token = perferences.getString("token")!;
+    token = perferences.getString("token");
     setState(() {});
   }
 
