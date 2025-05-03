@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_app/MyApp/Mine/MineInfo_screen.dart';
-import 'package:flutter_app/MyApp/Mine/Model/MineModel.dart';
+import 'package:flutter_app/MyApp/Mine/mine_info_page.dart';
+import 'package:flutter_app/MyApp/Mine/Model/mine_model.dart';
 
 class WPMine extends StatelessWidget {
   final List commonUseList = WPMineModel.commonUseList;
@@ -172,7 +172,6 @@ class WPMine extends StatelessWidget {
       borderRadius: BorderRadius.all(Radius.circular(10.0)),
       child: Container(
           color: Colors.white,
-          height: 140,
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [

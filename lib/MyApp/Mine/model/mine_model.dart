@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_app/BestUI/navigation_home_screen.dart';
 import 'package:flutter_app/MyApp/CircleOfFriends/Circle.dart';
-import 'package:flutter_app/MyApp/Mine/Setting_screen.dart';
+import 'package:flutter_app/MyApp/Mine/setting_page.dart';
 import 'package:flutter_app/MyApp/Thinking/Thinking.dart';
 
 class WPMineModel {

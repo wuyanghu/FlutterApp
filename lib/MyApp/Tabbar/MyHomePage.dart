@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_app/BestUI/navigation_home_screen.dart';
 import 'package:flutter_app/MyApp/LeftDrawer/LeftDrawer.dart';
-import 'package:flutter_app/MyApp/Mine/Mine_screen.dart';
+import 'package:flutter_app/MyApp/Mine/mine_page.dart';
 import 'package:flutter_demo/main.dart';
 import 'package:performance_demo/main.dart';
 
