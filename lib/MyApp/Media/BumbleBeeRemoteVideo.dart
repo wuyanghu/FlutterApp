@@ -3,15 +3,15 @@ import 'package:video_player/video_player.dart';
 
 class BumbleBeeRemoteVideo extends StatefulWidget {
   String videoUrl;
-  BumbleBeeRemoteVideo({this.videoUrl});
+  BumbleBeeRemoteVideo({required this.videoUrl});
   @override
   BumbleBeeRemoteVideoState createState() =>
       BumbleBeeRemoteVideoState(videoUrl: videoUrl);
 }
 
 class BumbleBeeRemoteVideoState extends State<BumbleBeeRemoteVideo> {
-  VideoPlayerController _controller;
-  String videoUrl;
+  VideoPlayerController? _controller;
+  String? videoUrl;
   BumbleBeeRemoteVideoState({this.videoUrl});
 
   Future<ClosedCaptionFile> _loadCaptions() async {
@@ -24,21 +24,21 @@ class BumbleBeeRemoteVideoState extends State<BumbleBeeRemoteVideo> {
   void initState() {
     super.initState();
     _controller = VideoPlayerController.network(
-      videoUrl,
+      videoUrl!,
       // closedCaptionFile: _loadCaptions(),
       videoPlayerOptions: VideoPlayerOptions(mixWithOthers: true),
     );
 
-    _controller.addListener(() {
+    _controller!.addListener(() {
       setState(() {});
     });
-    _controller.setLooping(true);
-    _controller.initialize();
+    _controller!.setLooping(true);
+    _controller!.initialize();
   }
 
   @override
   void dispose() {
-    _controller.dispose();
+    _controller!.dispose();
     super.dispose();
   }
 
@@ -54,10 +54,10 @@ class BumbleBeeRemoteVideoState extends State<BumbleBeeRemoteVideo> {
           child: Stack(
             alignment: Alignment.bottomCenter,
             children: <Widget>[
-              VideoPlayer(_controller),
+              VideoPlayer(_controller!),
               // ClosedCaption(text: _controller.value.caption.text),
-              _ControlsOverlay(controller: _controller),
-              VideoProgressIndicator(_controller, allowScrubbing: true),
+              _ControlsOverlay(controller: _controller!),
+              VideoProgressIndicator(_controller!, allowScrubbing: true),
             ],
           ),
         ),
@@ -67,7 +67,7 @@ class BumbleBeeRemoteVideoState extends State<BumbleBeeRemoteVideo> {
 }
 
 class _ControlsOverlay extends StatelessWidget {
-  const _ControlsOverlay({Key key, this.controller}) : super(key: key);
+  _ControlsOverlay({Key? key, required this.controller}) : super(key: key);
 
   static const _examplePlaybackRates = [
     0.25,
@@ -80,7 +80,7 @@ class _ControlsOverlay extends StatelessWidget {
     10.0,
   ];
 
-  final VideoPlayerController controller;
+  late VideoPlayerController controller;
 
   @override
   Widget build(BuildContext context) {

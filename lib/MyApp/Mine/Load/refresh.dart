@@ -11,7 +11,7 @@ class DYrefreshHeader extends StatelessWidget with DYBase {
 
     return CustomHeader(
         refreshStyle: RefreshStyle.Follow,
-        builder: (BuildContext context, RefreshStatus status) {
+        builder: (BuildContext context, RefreshStatus? status) {
           bool swimming = (status == RefreshStatus.refreshing ||
               status == RefreshStatus.completed);
           return Container(
@@ -42,7 +42,7 @@ class DYrefreshFooter extends StatelessWidget with DYBase {
 
     return CustomFooter(
       height: height,
-      builder: (BuildContext context, LoadStatus mode) {
+      builder: (BuildContext context, LoadStatus? mode) {
         final textStyle = TextStyle(
           color: Color(0xffA7A7A7),
           fontSize: 13,

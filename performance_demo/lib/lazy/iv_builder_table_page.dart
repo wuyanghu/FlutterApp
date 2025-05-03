@@ -69,7 +69,7 @@ class _IVBuilderTablePageState extends State<IVBuilderTablePage> {
         child: LayoutBuilder(
           builder: (BuildContext context, BoxConstraints constraints) {
             return InteractiveViewer.builder(
-              panAxis: PanAxis.aligned, scaleEnabled: false,
+              // panAxis: PanAxis.aligned, scaleEnabled: false,
               transformationController: _transformationController,
               //maxScale: _maxScale,
               //minScale: _minScale,

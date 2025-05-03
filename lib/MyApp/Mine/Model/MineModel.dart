@@ -5,11 +5,11 @@ import 'package:flutterapp/MyApp/Mine/Setting_screen.dart';
 import 'package:flutterapp/MyApp/Thinking/Thinking.dart';
 
 class WPMineModel {
-  WPMineModel({this.icon, this.title = '', this.screen});
+  WPMineModel({required this.icon, this.title = '', this.screen});
 
   String icon;
   String title;
-  Widget screen;
+  Widget? screen;
 
   static List<WPMineModel> commonUseList = [
     WPMineModel(

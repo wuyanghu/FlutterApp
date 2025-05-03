@@ -5,11 +5,11 @@ import 'package:flutter/material.dart';
 
 class WaterView extends StatefulWidget {
   const WaterView(
-      {Key key, this.mainScreenAnimationController, this.mainScreenAnimation})
+      {Key? key, required this.mainScreenAnimationController, required this.mainScreenAnimation})
       : super(key: key);
 
   final AnimationController mainScreenAnimationController;
-  final Animation<dynamic> mainScreenAnimation;
+  final Animation<double> mainScreenAnimation;
 
   @override
   _WaterViewState createState() => _WaterViewState();
@@ -25,7 +25,7 @@ class _WaterViewState extends State<WaterView> with TickerProviderStateMixin {
   Widget build(BuildContext context) {
     return AnimatedBuilder(
       animation: widget.mainScreenAnimationController,
-      builder: (BuildContext context, Widget child) {
+      builder: (BuildContext context, Widget? child) {
         return FadeTransition(
           opacity: widget.mainScreenAnimation,
           child: Transform(

@@ -4,22 +4,22 @@ import 'package:flutter/material.dart';
 
 class DrawerUserController extends StatefulWidget {
   const DrawerUserController({
-    Key key,
+    Key? key,
     this.drawerWidth = 250,
     this.onDrawerCall,
-    this.screenView,
+    required this.screenView,
     this.animatedIconData = AnimatedIcons.arrow_menu,
     this.menuView,
     this.drawerIsOpen,
-    this.screenIndex,
+    required this.screenIndex,
   }) : super(key: key);
 
   final double drawerWidth;
-  final Function(DrawerIndex) onDrawerCall;
+  final Function(DrawerIndex)? onDrawerCall;
   final Widget screenView;
-  final Function(bool) drawerIsOpen;
+  final Function(bool)? drawerIsOpen;
   final AnimatedIconData animatedIconData;
-  final Widget menuView;
+  final Widget? menuView;
   final DrawerIndex screenIndex;
 
   @override
@@ -28,9 +28,9 @@ class DrawerUserController extends StatefulWidget {
 
 class _DrawerUserControllerState extends State<DrawerUserController>
     with TickerProviderStateMixin {
-  ScrollController scrollController;
-  AnimationController iconAnimationController;
-  AnimationController animationController;
+  late ScrollController scrollController;
+  late AnimationController iconAnimationController;
+  late AnimationController animationController;
 
   double scrolloffset = 0.0;
 
@@ -53,7 +53,7 @@ class _DrawerUserControllerState extends State<DrawerUserController>
             setState(() {
               scrolloffset = 1.0;
               try {
-                widget.drawerIsOpen(true);
+                widget.drawerIsOpen?.call(true);
               } catch (_) {}
             });
           }
@@ -71,7 +71,7 @@ class _DrawerUserControllerState extends State<DrawerUserController>
             setState(() {
               scrolloffset = 0.0;
               try {
-                widget.drawerIsOpen(false);
+                widget.drawerIsOpen?.call(false);
               } catch (_) {}
             });
           }
@@ -111,7 +111,7 @@ class _DrawerUserControllerState extends State<DrawerUserController>
                 height: MediaQuery.of(context).size.height,
                 child: AnimatedBuilder(
                   animation: iconAnimationController,
-                  builder: (BuildContext context, Widget child) {
+                  builder: (BuildContext context, Widget? child) {
                     return Transform(
                       //transform we use for the stable drawer  we, not need to move with scroll view
                       transform: Matrix4.translationValues(
@@ -124,7 +124,7 @@ class _DrawerUserControllerState extends State<DrawerUserController>
                         callBackIndex: (DrawerIndex indexType) {
                           onDrawerClick();
                           try {
-                            widget.onDrawerCall(indexType);
+                            widget.onDrawerCall?.call(indexType);
                           } catch (e) {}
                         },
                       ),

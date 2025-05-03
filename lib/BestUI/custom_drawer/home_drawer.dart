@@ -3,10 +3,10 @@ import 'package:flutter/material.dart';
 
 class HomeDrawer extends StatefulWidget {
   const HomeDrawer(
-      {Key key,
-      this.screenIndex,
-      this.iconAnimationController,
-      this.callBackIndex})
+      {Key? key,
+      required this.screenIndex,
+      required this.iconAnimationController,
+      required this.callBackIndex})
       : super(key: key);
 
   final AnimationController iconAnimationController;
@@ -18,7 +18,7 @@ class HomeDrawer extends StatefulWidget {
 }
 
 class _HomeDrawerState extends State<HomeDrawer> {
-  List<DrawerList> drawerList;
+  late List<DrawerList> drawerList;
   @override
   void initState() {
     setDrawerListArray();
@@ -80,7 +80,7 @@ class _HomeDrawerState extends State<HomeDrawer> {
                 children: <Widget>[
                   AnimatedBuilder(
                     animation: widget.iconAnimationController,
-                    builder: (BuildContext context, Widget child) {
+                    builder: (BuildContext context, Widget? child) {
                       return ScaleTransition(
                         scale: AlwaysStoppedAnimation<double>(
                             1.0 - (widget.iconAnimationController.value) * 0.2),
@@ -227,7 +227,7 @@ class _HomeDrawerState extends State<HomeDrawer> {
                                   ? Colors.blue
                                   : AppTheme.nearlyBlack),
                         )
-                      : Icon(listData.icon.icon,
+                      : Icon(listData.icon!.icon,
                           color: widget.screenIndex == listData.index
                               ? Colors.blue
                               : AppTheme.nearlyBlack),
@@ -251,7 +251,7 @@ class _HomeDrawerState extends State<HomeDrawer> {
             widget.screenIndex == listData.index
                 ? AnimatedBuilder(
                     animation: widget.iconAnimationController,
-                    builder: (BuildContext context, Widget child) {
+                    builder: (BuildContext context, Widget? child) {
                       return Transform(
                         transform: Matrix4.translationValues(
                             (MediaQuery.of(context).size.width * 0.75 - 64) *
@@ -307,12 +307,12 @@ class DrawerList {
     this.isAssetsImage = false,
     this.labelName = '',
     this.icon,
-    this.index,
+    required this.index,
     this.imageName = '',
   });
 
   String labelName;
-  Icon icon;
+  Icon? icon;
   bool isAssetsImage;
   String imageName;
   DrawerIndex index;

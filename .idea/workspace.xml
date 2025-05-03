@@ -13,15 +13,72 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6ee1ac08-7d97-4738-ae9f-d2a1444300ed" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.flutter-plugins" beforeDir="false" afterPath="$PROJECT_DIR$/.flutter-plugins" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.flutter-plugins-dependencies" beforeDir="false" afterPath="$PROJECT_DIR$/.flutter-plugins-dependencies" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/libraries/Dart_SDK.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Dart_SDK.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/BestUI/app_theme.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/BestUI/app_theme.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/BestUI/custom_drawer/drawer_user_controller.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/BestUI/custom_drawer/drawer_user_controller.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/BestUI/custom_drawer/home_drawer.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/BestUI/custom_drawer/home_drawer.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/BestUI/design_course/category_list_view.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/BestUI/design_course/category_list_view.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/BestUI/design_course/course_info_screen.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/BestUI/design_course/course_info_screen.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/BestUI/design_course/design_course_app_theme.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/BestUI/design_course/design_course_app_theme.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/BestUI/design_course/popular_course_list_view.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/BestUI/design_course/popular_course_list_view.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/BestUI/feedback_screen.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/BestUI/feedback_screen.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/BestUI/fitness_app/bottom_navigation_view/bottom_bar_view.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/BestUI/fitness_app/bottom_navigation_view/bottom_bar_view.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/BestUI/fitness_app/fintness_app_theme.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/BestUI/fitness_app/fintness_app_theme.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/BestUI/fitness_app/fitness_app_home_screen.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/BestUI/fitness_app/fitness_app_home_screen.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/BestUI/fitness_app/models/meals_list_data.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/BestUI/fitness_app/models/meals_list_data.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/BestUI/fitness_app/models/tabIcon_data.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/BestUI/fitness_app/models/tabIcon_data.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/BestUI/fitness_app/my_diary/meals_list_view.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/BestUI/fitness_app/my_diary/meals_list_view.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/BestUI/fitness_app/my_diary/my_diary_screen.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/BestUI/fitness_app/my_diary/my_diary_screen.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/BestUI/fitness_app/my_diary/water_view.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/BestUI/fitness_app/my_diary/water_view.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/BestUI/fitness_app/traning/training_screen.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/BestUI/fitness_app/traning/training_screen.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/BestUI/fitness_app/ui_view/area_list_view.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/BestUI/fitness_app/ui_view/area_list_view.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/BestUI/fitness_app/ui_view/body_measurement.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/BestUI/fitness_app/ui_view/body_measurement.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/BestUI/fitness_app/ui_view/glass_view.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/BestUI/fitness_app/ui_view/glass_view.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/BestUI/fitness_app/ui_view/mediterranesn_diet_view.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/BestUI/fitness_app/ui_view/mediterranesn_diet_view.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/BestUI/fitness_app/ui_view/running_view.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/BestUI/fitness_app/ui_view/running_view.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/BestUI/fitness_app/ui_view/title_view.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/BestUI/fitness_app/ui_view/title_view.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/BestUI/fitness_app/ui_view/wave_view.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/BestUI/fitness_app/ui_view/wave_view.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/BestUI/fitness_app/ui_view/workout_view.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/BestUI/fitness_app/ui_view/workout_view.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/BestUI/home_screen.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/BestUI/home_screen.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/BestUI/hotel_booking/calendar_popup_view.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/BestUI/hotel_booking/calendar_popup_view.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/BestUI/hotel_booking/custom_calendar.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/BestUI/hotel_booking/custom_calendar.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/BestUI/hotel_booking/filters_screen.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/BestUI/hotel_booking/filters_screen.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/BestUI/hotel_booking/hotel_app_theme.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/BestUI/hotel_booking/hotel_app_theme.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/BestUI/hotel_booking/hotel_home_screen.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/BestUI/hotel_booking/hotel_home_screen.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/BestUI/hotel_booking/hotel_list_view.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/BestUI/hotel_booking/hotel_list_view.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/BestUI/hotel_booking/range_slider_view.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/BestUI/hotel_booking/range_slider_view.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/BestUI/hotel_booking/slider_view.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/BestUI/hotel_booking/slider_view.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/BestUI/model/homelist.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/BestUI/model/homelist.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/BestUI/navigation_home_screen.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/BestUI/navigation_home_screen.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/MyApp/CircleOfFriends/Circle.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/MyApp/CircleOfFriends/Circle.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/MyApp/CircleOfFriends/CircleModel.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/MyApp/CircleOfFriends/CircleModel.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/MyApp/Help/Network/NetWork.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/MyApp/Help/Network/NetWork.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/MyApp/Help/Network/Request.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/MyApp/Help/Network/Request.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/MyApp/Help/Network/Util.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/MyApp/Help/Network/Util.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/MyApp/LeftDrawer/LeftDrawer.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/MyApp/LeftDrawer/LeftDrawer.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/MyApp/Login/Login.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/MyApp/Login/Login.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/MyApp/Login/LoginShare.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/MyApp/Login/LoginShare.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/MyApp/Media/BumbleBeeRemoteVideo.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/MyApp/Media/BumbleBeeRemoteVideo.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/MyApp/Media/PrePhoto.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/MyApp/Media/PrePhoto.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/MyApp/Mine/Load/refresh.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/MyApp/Mine/Load/refresh.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/MyApp/Mine/Mine_screen.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/MyApp/Mine/Mine_screen.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/MyApp/Mine/Model/MineModel.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/MyApp/Mine/Model/MineModel.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/MyApp/Tabbar/MyHomePage.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/MyApp/Tabbar/MyHomePage.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/MyApp/examples2/FutureExample.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/MyApp/examples2/FutureExample.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/MyApp/examples2/InheritedWidget.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/MyApp/examples2/InheritedWidget.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/MyApp/examples2/Provider.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/MyApp/examples2/Provider.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/MyApp/performance/performance.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/MyApp/performance/performance.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/generated/intl/messages_all.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/generated/intl/messages_all.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/generated/intl/messages_en.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/generated/intl/messages_en.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/generated/l10n.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/generated/l10n.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/performance_demo/ios/Flutter/Debug.xcconfig" beforeDir="false" afterPath="$PROJECT_DIR$/performance_demo/ios/Flutter/Debug.xcconfig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/performance_demo/ios/Flutter/Release.xcconfig" beforeDir="false" afterPath="$PROJECT_DIR$/performance_demo/ios/Flutter/Release.xcconfig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/performance_demo/pubspec.lock" beforeDir="false" afterPath="$PROJECT_DIR$/performance_demo/pubspec.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/performance_demo/pubspec.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/performance_demo/pubspec.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/main_2.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/main_2.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/pages/container_page.dart" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/pages/movie/book_audio_video_page.dart" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/performance_demo/lib/lazy/iv_builder_table_page.dart" beforeDir="false" afterPath="$PROJECT_DIR$/performance_demo/lib/lazy/iv_builder_table_page.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/performance_demo/lib/lazy/iv_builderless_page.dart" beforeDir="false" afterPath="$PROJECT_DIR$/performance_demo/lib/lazy/iv_builderless_page.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pubspec.lock" beforeDir="false" afterPath="$PROJECT_DIR$/pubspec.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pubspec.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/pubspec.yaml" afterDir="false" />
     </list>
@@ -86,7 +143,7 @@
     "git-widget-placeholder": "main",
     "io.flutter.reload.alreadyRun": "true",
     "kotlin-language-version-configured": "true",
-    "settings.editor.selected.configurable": "flutter.settings",
+    "settings.editor.selected.configurable": "preferences.keymap",
     "show.migrate.to.gradle.popup": "false"
   }
 }]]></component>

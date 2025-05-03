@@ -2,11 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:flutterapp/BestUI/navigation_home_screen.dart';
 import 'package:flutterapp/MyApp/LeftDrawer/LeftDrawer.dart';
 import 'package:flutterapp/MyApp/Mine/Mine_screen.dart';
-import 'package:flutterapp/MyApp/examples/WPChapters_screen.dart';
-import 'package:flutterapp/DouBan/pages/container_page.dart';
 
 class MyHomePage extends StatefulWidget {
-  MyHomePage({Key key, this.title}) : super(key: key);
+  MyHomePage({Key? key, required this.title}) : super(key: key);
   final String title;
 
   @override
@@ -16,7 +14,7 @@ class MyHomePage extends StatefulWidget {
 class _ScaffoldRouteState extends State<MyHomePage>
     with SingleTickerProviderStateMixin {
   int _selectedIndex = 0;
-  TabController _tabController;
+  late TabController _tabController;
 
   List tabs = ["flutter实战demo", "flutter核心技术与实战", "MarkDown解析"];
 
@@ -39,7 +37,7 @@ class _ScaffoldRouteState extends State<MyHomePage>
     });
   }
 
-  Widget getAppBar() {
+  PreferredSizeWidget? getAppBar() {
     if (_selectedIndex == 0) {
       return AppBar(
         //导航栏
@@ -74,18 +72,19 @@ class _ScaffoldRouteState extends State<MyHomePage>
       return TabBarView(
           controller: _tabController, children: getSelectContainer());
     } else if (_selectedIndex == 1) {
-      return ContainerPage();
+      return SizedBox();
     } else if (_selectedIndex == 2) {
       return NavigationHomeScreen();
     }
     return WPMine();
   }
 
-  List getSelectContainer() {
-    return tabs.map((e) {
+  List<Widget> getSelectContainer() {
+    return tabs.map<Widget>((e) {
       //创建3个Tab页
       if (e == tabs[0]) {
-        return WPChaters();
+        return SizedBox();
+        // return WPChaters();
       } else if (e == tabs[1]) {
         List<String> titles = [
           "CustomSingleChildScrollView",

@@ -3,31 +3,27 @@ import 'package:flutter/material.dart';
 import 'package:flutterapp/MyApp/Login/Login.dart';
 import 'package:flutterapp/MyApp/Login/LoginShare.dart';
 import 'package:flutterapp/MyApp/Tabbar/MyHomePage.dart';
-import 'package:flutterapp/MyApp/examples/WP2Chapter.dart';
 import 'package:provider/provider.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
-// import 'MyApp/examples2/Extends.dart';
-import 'MyApp/examples/WP4Chapter.dart';
 import 'MyApp/examples2/FutureExample.dart';
 import 'MyApp/examples2/InheritedWidget.dart';
 import 'MyApp/examples2/Provider.dart';
-import 'MyApp/examples/Chapter7/Shopping.dart';
 import 'MyApp/performance/performance.dart';
 
 void main() {
   // 将 debugPrint 指定为空的执行体, 所以它什么也不做
-  debugPrint = (String message, {int wrapWidth}) {};
+  // debugPrint = (String message, {int wrapWidth}) {};
 
   runApp(MyApp());
 }
 
 void main_dev() {
-  Provider.debugCheckInvalidValueType = null;
+  // Provider.debugCheckInvalidValueType = null;
 
   // 将 debugPrint 指定为同步打印数据
-  debugPrint = (String message, {int wrapWidth}) =>
-      debugPrintSynchronously(message, wrapWidth: wrapWidth);
+  // debugPrint = (String message, {int wrapWidth}) =>
+  //     debugPrintSynchronously(message, wrapWidth: wrapWidth);
 
   runApp(MyApp());
 }
@@ -40,7 +36,7 @@ class MyApp extends StatefulWidget {
 }
 
 class _MyApp extends State with WidgetsBindingObserver {
-  String token;
+  String? token;
 
   @override
   void initState() {
@@ -65,7 +61,7 @@ class _MyApp extends State with WidgetsBindingObserver {
 
   void loadData() async {
     SharedPreferences perferences = await SharedPreferences.getInstance();
-    token = perferences.getString("token");
+    token = perferences.getString("token")!;
     setState(() {});
   }
 
@@ -89,16 +85,16 @@ class _MyApp extends State with WidgetsBindingObserver {
           ),
           //注册路由表
           routes: {
-            "NewRoute": (context) => NewRoute(),
-            "RouterTestRoute": (context) => RouterTestRoute(),
-            "CupertinoTestRoute": (context) => CupertinoTestRoute(),
+            // "NewRoute": (context) => NewRoute(),
+            // "RouterTestRoute": (context) => RouterTestRoute(),
+            // "CupertinoTestRoute": (context) => CupertinoTestRoute(),
             "ProviderExample": (context) => ChangeNotifierProvider(
                 create: (context) => CounterModel(), child: ProviderExample()),
             "MyProvider_SecondPage": (context) => SecondPage(),
             "FutureExample": (context) => FutureExample(),
-            "/ProviderRoute": (context) => ProviderRoute(),
+            // "/ProviderRoute": (context) => ProviderRoute(),
             "CustomInheritedWidget": (context) => CustomInheritedWidget(),
-            "LineColumnLayout": (context) => LineColumnLayout(),
+            // "LineColumnLayout": (context) => LineColumnLayout(),
             "CustomSingleChildScrollView": (context) =>
                 CustomSingleChildScrollView(),
             // "StatefulWidget1": (context) => StatefulWidget1(),
@@ -109,13 +105,17 @@ class _MyApp extends State with WidgetsBindingObserver {
             return UnknownPage(); //统一处理没有生效,不是没有生效
           }),
 
-          onGenerateRoute: (RouteSettings settings) {
-            return MaterialPageRoute(builder: (context) {
-              String routeName = settings.name;
-              // 如果访问的路由页需要登录，但当前未登录，则直接返回登录页路由，
-              // 引导用户登录；其它情况则正常打开路由。
-            });
-          },
+          // onGenerateRoute: (RouteSettings settings) {
+          //   return MaterialPageRoute(builder: (context) {
+          //     String? routeName = settings.name;
+          //     if (routeName == null) {
+          //       return "/";
+          //     }
+          //     return "";
+          //     // 如果访问的路由页需要登录，但当前未登录，则直接返回登录页路由，
+          //     // 引导用户登录；其它情况则正常打开路由。
+          //   });
+          // },
 
           home: token == null
               ? Login(

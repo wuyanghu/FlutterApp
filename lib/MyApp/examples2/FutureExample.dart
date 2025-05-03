@@ -85,7 +85,7 @@ class FutureExample extends StatelessWidget {
     print("func after");
   }
 
-  Isolate isolate;
+  late Isolate isolate;
 
   start() async {
     ReceivePort receivePort = ReceivePort(); // 创建管道
@@ -96,7 +96,6 @@ class FutureExample extends StatelessWidget {
       print('Data：$data');
       receivePort.close(); // 关闭管道
       isolate?.kill(priority: Isolate.immediate); // 杀死并发 Isolate
-      isolate = null;
     });
   }
 

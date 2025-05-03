@@ -36,7 +36,7 @@ class Util {
     return hex.encode(digest.bytes);
   }
 
-  static Future<dynamic> mock({String action}) async {
+  static Future<dynamic> mock({required String action}) async {
     var responseStr = await rootBundle.loadString('jsons/$action.json');
     var responseJson = json.decode(responseStr);
     return responseJson;

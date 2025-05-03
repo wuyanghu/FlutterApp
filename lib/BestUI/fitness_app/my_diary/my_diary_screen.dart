@@ -8,7 +8,7 @@ import 'package:flutterapp/BestUI/fitness_app/my_diary/water_view.dart';
 import 'package:flutter/material.dart';
 
 class MyDiaryScreen extends StatefulWidget {
-  const MyDiaryScreen({Key key, this.animationController}) : super(key: key);
+  const MyDiaryScreen({Key? key, required this.animationController}) : super(key: key);
 
   final AnimationController animationController;
   @override
@@ -17,7 +17,7 @@ class MyDiaryScreen extends StatefulWidget {
 
 class _MyDiaryScreenState extends State<MyDiaryScreen>
     with TickerProviderStateMixin {
-  Animation<double> topBarAnimation;
+  late Animation<double> topBarAnimation;
 
   List<Widget> listViews = <Widget>[];
   final ScrollController scrollController = ScrollController();
@@ -212,7 +212,7 @@ class _MyDiaryScreenState extends State<MyDiaryScreen>
       children: <Widget>[
         AnimatedBuilder(
           animation: widget.animationController,
-          builder: (BuildContext context, Widget child) {
+          builder: (BuildContext context, Widget? child) {
             return FadeTransition(
               opacity: topBarAnimation,
               child: Transform(

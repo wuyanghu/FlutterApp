@@ -13,22 +13,25 @@ import 'intl/messages_all.dart';
 // ignore_for_file: avoid_redundant_argument_values, avoid_escaping_inner_quotes
 
 class S {
-  S();
+  S(); 
 
   static S? _current;
 
   static S get current {
-    assert(_current != null,
-        'No instance of S was loaded. Try to initialize the S delegate before accessing S.current.');
+    assert(
+      _current != null,
+      'No instance of S was loaded. Try to initialize the S delegate before accessing S.current.',
+    );
     return _current!;
   }
 
   static const AppLocalizationDelegate delegate = AppLocalizationDelegate();
 
   static Future<S> load(Locale locale) {
-    final name = (locale.countryCode?.isEmpty ?? false)
-        ? locale.languageCode
-        : locale.toString();
+    final name =
+        (locale.countryCode?.isEmpty ?? false)
+            ? locale.languageCode
+            : locale.toString();
     final localeName = Intl.canonicalizedLocale(name);
     return initializeMessages(localeName).then((_) {
       Intl.defaultLocale = localeName;
@@ -41,8 +44,10 @@ class S {
 
   static S of(BuildContext context) {
     final instance = S.maybeOf(context);
-    assert(instance != null,
-        'No instance of S present in the widget tree. Did you add S.delegate in localizationsDelegates?');
+    assert(
+      instance != null,
+      'No instance of S present in the widget tree. Did you add S.delegate in localizationsDelegates?',
+    );
     return instance!;
   }
 
@@ -52,112 +57,57 @@ class S {
 
   /// `共享`
   String get common_share {
-    return Intl.message(
-      '共享',
-      name: 'common_share',
-      desc: '',
-      args: [],
-    );
+    return Intl.message('共享', name: 'common_share', desc: '', args: []);
   }
 
   /// `邀请`
   String get common_invited {
-    return Intl.message(
-      '邀请',
-      name: 'common_invited',
-      desc: '',
-      args: [],
-    );
+    return Intl.message('邀请', name: 'common_invited', desc: '', args: []);
   }
 
   /// `全部`
   String get common_all {
-    return Intl.message(
-      '全部',
-      name: 'common_all',
-      desc: '',
-      args: [],
-    );
+    return Intl.message('全部', name: 'common_all', desc: '', args: []);
   }
 
   /// `图片`
   String get common_img {
-    return Intl.message(
-      '图片',
-      name: 'common_img',
-      desc: '',
-      args: [],
-    );
+    return Intl.message('图片', name: 'common_img', desc: '', args: []);
   }
 
   /// `文件`
   String get common_file {
-    return Intl.message(
-      '文件',
-      name: 'common_file',
-      desc: '',
-      args: [],
-    );
+    return Intl.message('文件', name: 'common_file', desc: '', args: []);
   }
 
   /// `取消`
   String get common_cancel {
-    return Intl.message(
-      '取消',
-      name: 'common_cancel',
-      desc: '',
-      args: [],
-    );
+    return Intl.message('取消', name: 'common_cancel', desc: '', args: []);
   }
 
   /// `确定`
   String get common_ok {
-    return Intl.message(
-      '确定',
-      name: 'common_ok',
-      desc: '',
-      args: [],
-    );
+    return Intl.message('确定', name: 'common_ok', desc: '', args: []);
   }
 
   /// `重置`
   String get common_reset {
-    return Intl.message(
-      '重置',
-      name: 'common_reset',
-      desc: '',
-      args: [],
-    );
+    return Intl.message('重置', name: 'common_reset', desc: '', args: []);
   }
 
   /// `视频`
   String get common_video {
-    return Intl.message(
-      '视频',
-      name: 'common_video',
-      desc: '',
-      args: [],
-    );
+    return Intl.message('视频', name: 'common_video', desc: '', args: []);
   }
 
   /// `删除`
   String get common_deleted {
-    return Intl.message(
-      '删除',
-      name: 'common_deleted',
-      desc: '',
-      args: [],
-    );
+    return Intl.message('删除', name: 'common_deleted', desc: '', args: []);
   }
 
   /// `搜索`
   String get common_search {
-    return Intl.message(
-      '搜索',
-      name: 'common_search',
-      desc: '',
-      args: [],
-    );
+    return Intl.message('搜索', name: 'common_search', desc: '', args: []);
   }
 
   /// `设置失败`
@@ -172,32 +122,17 @@ class S {
 
   /// `添加`
   String get common_add {
-    return Intl.message(
-      '添加',
-      name: 'common_add',
-      desc: '',
-      args: [],
-    );
+    return Intl.message('添加', name: 'common_add', desc: '', args: []);
   }
 
   /// `确认`
   String get common_confirm {
-    return Intl.message(
-      '确认',
-      name: 'common_confirm',
-      desc: '',
-      args: [],
-    );
+    return Intl.message('确认', name: 'common_confirm', desc: '', args: []);
   }
 
   /// `点击重试`
   String get common_click_retry {
-    return Intl.message(
-      '点击重试',
-      name: 'common_click_retry',
-      desc: '',
-      args: [],
-    );
+    return Intl.message('点击重试', name: 'common_click_retry', desc: '', args: []);
   }
 
   /// `网络连接发生问题，请检查您的网络设置`
@@ -212,42 +147,22 @@ class S {
 
   /// `加载中...`
   String get common_loading {
-    return Intl.message(
-      '加载中...',
-      name: 'common_loading',
-      desc: '',
-      args: [],
-    );
+    return Intl.message('加载中...', name: 'common_loading', desc: '', args: []);
   }
 
   /// `其它`
   String get work_other {
-    return Intl.message(
-      '其它',
-      name: 'work_other',
-      desc: '',
-      args: [],
-    );
+    return Intl.message('其它', name: 'work_other', desc: '', args: []);
   }
 
   /// `收藏`
   String get me_fav {
-    return Intl.message(
-      '收藏',
-      name: 'me_fav',
-      desc: '',
-      args: [],
-    );
+    return Intl.message('收藏', name: 'me_fav', desc: '', args: []);
   }
 
   /// `回收站暂无文件`
   String get doc_trash_empty {
-    return Intl.message(
-      '回收站暂无文件',
-      name: 'doc_trash_empty',
-      desc: '',
-      args: [],
-    );
+    return Intl.message('回收站暂无文件', name: 'doc_trash_empty', desc: '', args: []);
   }
 
   /// `权限已修改，请重试`
@@ -272,12 +187,7 @@ class S {
 
   /// `权限设置`
   String get doc_perm_setting {
-    return Intl.message(
-      '权限设置',
-      name: 'doc_perm_setting',
-      desc: '',
-      args: [],
-    );
+    return Intl.message('权限设置', name: 'doc_perm_setting', desc: '', args: []);
   }
 
   /// `确定放弃邀请协作者?`
@@ -292,22 +202,12 @@ class S {
 
   /// `云文档`
   String get doc_title {
-    return Intl.message(
-      '云文档',
-      name: 'doc_title',
-      desc: '',
-      args: [],
-    );
+    return Intl.message('云文档', name: 'doc_title', desc: '', args: []);
   }
 
   /// `外链管理`
   String get doc_link_manager {
-    return Intl.message(
-      '外链管理',
-      name: 'doc_link_manager',
-      desc: '',
-      args: [],
-    );
+    return Intl.message('外链管理', name: 'doc_link_manager', desc: '', args: []);
   }
 
   /// `查看所有协作者 >`
@@ -342,32 +242,17 @@ class S {
 
   /// `共享文件夹`
   String get doc_share_folder {
-    return Intl.message(
-      '共享文件夹',
-      name: 'doc_share_folder',
-      desc: '',
-      args: [],
-    );
+    return Intl.message('共享文件夹', name: 'doc_share_folder', desc: '', args: []);
   }
 
   /// `与我共享`
   String get doc_share_to_me {
-    return Intl.message(
-      '与我共享',
-      name: 'doc_share_to_me',
-      desc: '',
-      args: [],
-    );
+    return Intl.message('与我共享', name: 'doc_share_to_me', desc: '', args: []);
   }
 
   /// `所有者`
   String get doc_screen_owner {
-    return Intl.message(
-      '所有者',
-      name: 'doc_screen_owner',
-      desc: '',
-      args: [],
-    );
+    return Intl.message('所有者', name: 'doc_screen_owner', desc: '', args: []);
   }
 
   /// `设为所有者`
@@ -462,22 +347,12 @@ class S {
 
   /// `可阅读`
   String get doc_perm_read {
-    return Intl.message(
-      '可阅读',
-      name: 'doc_perm_read',
-      desc: '',
-      args: [],
-    );
+    return Intl.message('可阅读', name: 'doc_perm_read', desc: '', args: []);
   }
 
   /// `可编辑`
   String get doc_perm_edit {
-    return Intl.message(
-      '可编辑',
-      name: 'doc_perm_edit',
-      desc: '',
-      args: [],
-    );
+    return Intl.message('可编辑', name: 'doc_perm_edit', desc: '', args: []);
   }
 
   /// `邀请协作者`
@@ -492,132 +367,67 @@ class S {
 
   /// `协作者`
   String get doc_cooperate {
-    return Intl.message(
-      '协作者',
-      name: 'doc_cooperate',
-      desc: '',
-      args: [],
-    );
+    return Intl.message('协作者', name: 'doc_cooperate', desc: '', args: []);
   }
 
   /// `最近`
   String get doc_nearest {
-    return Intl.message(
-      '最近',
-      name: 'doc_nearest',
-      desc: '',
-      args: [],
-    );
+    return Intl.message('最近', name: 'doc_nearest', desc: '', args: []);
   }
 
   /// `我的空间`
   String get doc_mine_space {
-    return Intl.message(
-      '我的空间',
-      name: 'doc_mine_space',
-      desc: '',
-      args: [],
-    );
+    return Intl.message('我的空间', name: 'doc_mine_space', desc: '', args: []);
   }
 
   /// `共享空间`
   String get doc_share_space {
-    return Intl.message(
-      '共享空间',
-      name: 'doc_share_space',
-      desc: '',
-      args: [],
-    );
+    return Intl.message('共享空间', name: 'doc_share_space', desc: '', args: []);
   }
 
   /// `回收站`
   String get doc_trash {
-    return Intl.message(
-      '回收站',
-      name: 'doc_trash',
-      desc: '',
-      args: [],
-    );
+    return Intl.message('回收站', name: 'doc_trash', desc: '', args: []);
   }
 
   /// `新建`
   String get doc_new_build {
-    return Intl.message(
-      '新建',
-      name: 'doc_new_build',
-      desc: '',
-      args: [],
-    );
+    return Intl.message('新建', name: 'doc_new_build', desc: '', args: []);
   }
 
   /// `文档`
   String get doc_word {
-    return Intl.message(
-      '文档',
-      name: 'doc_word',
-      desc: '',
-      args: [],
-    );
+    return Intl.message('文档', name: 'doc_word', desc: '', args: []);
   }
 
   /// `表格`
   String get doc_xlsx {
-    return Intl.message(
-      '表格',
-      name: 'doc_xlsx',
-      desc: '',
-      args: [],
-    );
+    return Intl.message('表格', name: 'doc_xlsx', desc: '', args: []);
   }
 
   /// `文件夹`
   String get doc_folder {
-    return Intl.message(
-      '文件夹',
-      name: 'doc_folder',
-      desc: '',
-      args: [],
-    );
+    return Intl.message('文件夹', name: 'doc_folder', desc: '', args: []);
   }
 
   /// `上传`
   String get doc_upload {
-    return Intl.message(
-      '上传',
-      name: 'doc_upload',
-      desc: '',
-      args: [],
-    );
+    return Intl.message('上传', name: 'doc_upload', desc: '', args: []);
   }
 
   /// `创建`
   String get doc_create {
-    return Intl.message(
-      '创建',
-      name: 'doc_create',
-      desc: '',
-      args: [],
-    );
+    return Intl.message('创建', name: 'doc_create', desc: '', args: []);
   }
 
   /// `创建文件`
   String get doc_create_file {
-    return Intl.message(
-      '创建文件',
-      name: 'doc_create_file',
-      desc: '',
-      args: [],
-    );
+    return Intl.message('创建文件', name: 'doc_create_file', desc: '', args: []);
   }
 
   /// `创建文件夹`
   String get doc_create_folder {
-    return Intl.message(
-      '创建文件夹',
-      name: 'doc_create_folder',
-      desc: '',
-      args: [],
-    );
+    return Intl.message('创建文件夹', name: 'doc_create_folder', desc: '', args: []);
   }
 
   /// `请输入文件名称`
@@ -652,52 +462,27 @@ class S {
 
   /// `PPT`
   String get doc_ppt {
-    return Intl.message(
-      'PPT',
-      name: 'doc_ppt',
-      desc: '',
-      args: [],
-    );
+    return Intl.message('PPT', name: 'doc_ppt', desc: '', args: []);
   }
 
   /// `最近修改`
   String get doc_near_change {
-    return Intl.message(
-      '最近修改',
-      name: 'doc_near_change',
-      desc: '',
-      args: [],
-    );
+    return Intl.message('最近修改', name: 'doc_near_change', desc: '', args: []);
   }
 
   /// `最近浏览`
   String get doc_near_look {
-    return Intl.message(
-      '最近浏览',
-      name: 'doc_near_look',
-      desc: '',
-      args: [],
-    );
+    return Intl.message('最近浏览', name: 'doc_near_look', desc: '', args: []);
   }
 
   /// `我的文件夹`
   String get doc_my_folder {
-    return Intl.message(
-      '我的文件夹',
-      name: 'doc_my_folder',
-      desc: '',
-      args: [],
-    );
+    return Intl.message('我的文件夹', name: 'doc_my_folder', desc: '', args: []);
   }
 
   /// `添加至收藏`
   String get doc_favorites {
-    return Intl.message(
-      '添加至收藏',
-      name: 'doc_favorites',
-      desc: '',
-      args: [],
-    );
+    return Intl.message('添加至收藏', name: 'doc_favorites', desc: '', args: []);
   }
 
   /// `已取消收藏`
@@ -712,62 +497,32 @@ class S {
 
   /// `移动至`
   String get doc_move_to {
-    return Intl.message(
-      '移动至',
-      name: 'doc_move_to',
-      desc: '',
-      args: [],
-    );
+    return Intl.message('移动至', name: 'doc_move_to', desc: '', args: []);
   }
 
   /// `移动到此处`
   String get doc_move_here {
-    return Intl.message(
-      '移动到此处',
-      name: 'doc_move_here',
-      desc: '',
-      args: [],
-    );
+    return Intl.message('移动到此处', name: 'doc_move_here', desc: '', args: []);
   }
 
   /// `重命名`
   String get doc_rename {
-    return Intl.message(
-      '重命名',
-      name: 'doc_rename',
-      desc: '',
-      args: [],
-    );
+    return Intl.message('重命名', name: 'doc_rename', desc: '', args: []);
   }
 
   /// `历史版本`
   String get doc_version {
-    return Intl.message(
-      '历史版本',
-      name: 'doc_version',
-      desc: '',
-      args: [],
-    );
+    return Intl.message('历史版本', name: 'doc_version', desc: '', args: []);
   }
 
   /// `归我所有`
   String get doc_belong_to_me {
-    return Intl.message(
-      '归我所有',
-      name: 'doc_belong_to_me',
-      desc: '',
-      args: [],
-    );
+    return Intl.message('归我所有', name: 'doc_belong_to_me', desc: '', args: []);
   }
 
   /// `最近搜索`
   String get doc_near_search {
-    return Intl.message(
-      '最近搜索',
-      name: 'doc_near_search',
-      desc: '',
-      args: [],
-    );
+    return Intl.message('最近搜索', name: 'doc_near_search', desc: '', args: []);
   }
 
   /// `修改时间`
@@ -792,22 +547,12 @@ class S {
 
   /// `名称`
   String get doc_screen_name {
-    return Intl.message(
-      '名称',
-      name: 'doc_screen_name',
-      desc: '',
-      args: [],
-    );
+    return Intl.message('名称', name: 'doc_screen_name', desc: '', args: []);
   }
 
   /// `还原`
   String get doc_restore {
-    return Intl.message(
-      '还原',
-      name: 'doc_restore',
-      desc: '',
-      args: [],
-    );
+    return Intl.message('还原', name: 'doc_restore', desc: '', args: []);
   }
 
   /// `彻底删除`
@@ -852,32 +597,17 @@ class S {
 
   /// `预览`
   String get doc_preview {
-    return Intl.message(
-      '预览',
-      name: 'doc_preview',
-      desc: '',
-      args: [],
-    );
+    return Intl.message('预览', name: 'doc_preview', desc: '', args: []);
   }
 
   /// `创建成功`
   String get doc_create_success {
-    return Intl.message(
-      '创建成功',
-      name: 'doc_create_success',
-      desc: '',
-      args: [],
-    );
+    return Intl.message('创建成功', name: 'doc_create_success', desc: '', args: []);
   }
 
   /// `创建失败`
   String get doc_create_fail {
-    return Intl.message(
-      '创建失败',
-      name: 'doc_create_fail',
-      desc: '',
-      args: [],
-    );
+    return Intl.message('创建失败', name: 'doc_create_fail', desc: '', args: []);
   }
 
   /// `最多可输入64个字符`
@@ -902,22 +632,12 @@ class S {
 
   /// `删除成功`
   String get doc_delete_success {
-    return Intl.message(
-      '删除成功',
-      name: 'doc_delete_success',
-      desc: '',
-      args: [],
-    );
+    return Intl.message('删除成功', name: 'doc_delete_success', desc: '', args: []);
   }
 
   /// `删除失败`
   String get doc_delete_fail {
-    return Intl.message(
-      '删除失败',
-      name: 'doc_delete_fail',
-      desc: '',
-      args: [],
-    );
+    return Intl.message('删除失败', name: 'doc_delete_fail', desc: '', args: []);
   }
 
   /// `恢复成功`
@@ -932,12 +652,7 @@ class S {
 
   /// `恢复失败`
   String get doc_recover_fail {
-    return Intl.message(
-      '恢复失败',
-      name: 'doc_recover_fail',
-      desc: '',
-      args: [],
-    );
+    return Intl.message('恢复失败', name: 'doc_recover_fail', desc: '', args: []);
   }
 
   /// `取消收藏失败`
@@ -962,22 +677,12 @@ class S {
 
   /// `重命名失败`
   String get doc_rename_fail {
-    return Intl.message(
-      '重命名失败',
-      name: 'doc_rename_fail',
-      desc: '',
-      args: [],
-    );
+    return Intl.message('重命名失败', name: 'doc_rename_fail', desc: '', args: []);
   }
 
   /// `最新版`
   String get doc_version_new {
-    return Intl.message(
-      '最新版',
-      name: 'doc_version_new',
-      desc: '',
-      args: [],
-    );
+    return Intl.message('最新版', name: 'doc_version_new', desc: '', args: []);
   }
 
   /// `删除后文档将不可恢复,确认要删除吗？`
@@ -1012,82 +717,42 @@ class S {
 
   /// `添加至`
   String get doc_add_to {
-    return Intl.message(
-      '添加至',
-      name: 'doc_add_to',
-      desc: '',
-      args: [],
-    );
+    return Intl.message('添加至', name: 'doc_add_to', desc: '', args: []);
   }
 
   /// `添加至此处`
   String get doc_add_here {
-    return Intl.message(
-      '添加至此处',
-      name: 'doc_add_here',
-      desc: '',
-      args: [],
-    );
+    return Intl.message('添加至此处', name: 'doc_add_here', desc: '', args: []);
   }
 
   /// `移动成功`
   String get doc_move_success {
-    return Intl.message(
-      '移动成功',
-      name: 'doc_move_success',
-      desc: '',
-      args: [],
-    );
+    return Intl.message('移动成功', name: 'doc_move_success', desc: '', args: []);
   }
 
   /// `移动失败`
   String get doc_move_fail {
-    return Intl.message(
-      '移动失败',
-      name: 'doc_move_fail',
-      desc: '',
-      args: [],
-    );
+    return Intl.message('移动失败', name: 'doc_move_fail', desc: '', args: []);
   }
 
   /// `添加成功`
   String get doc_add_success {
-    return Intl.message(
-      '添加成功',
-      name: 'doc_add_success',
-      desc: '',
-      args: [],
-    );
+    return Intl.message('添加成功', name: 'doc_add_success', desc: '', args: []);
   }
 
   /// `添加失败`
   String get doc_add_fail {
-    return Intl.message(
-      '添加失败',
-      name: 'doc_add_fail',
-      desc: '',
-      args: [],
-    );
+    return Intl.message('添加失败', name: 'doc_add_fail', desc: '', args: []);
   }
 
   /// `创建副本`
   String get doc_create_copy {
-    return Intl.message(
-      '创建副本',
-      name: 'doc_create_copy',
-      desc: '',
-      args: [],
-    );
+    return Intl.message('创建副本', name: 'doc_create_copy', desc: '', args: []);
   }
 
   /// `删除源文件`
   String get doc_del_class {
-    return Intl.message(
-      '删除源文件',
-      name: 'doc_del_class',
-      desc: '',
-      args: [],
-    );
+    return Intl.message('删除源文件', name: 'doc_del_class', desc: '', args: []);
   }
 
   /// `是否从最近列表中删除？`
@@ -1202,32 +867,17 @@ class S {
 
   /// `暂无文件`
   String get doc_empty_file {
-    return Intl.message(
-      '暂无文件',
-      name: 'doc_empty_file',
-      desc: '',
-      args: [],
-    );
+    return Intl.message('暂无文件', name: 'doc_empty_file', desc: '', args: []);
   }
 
   /// `上传列表`
   String get doc_upload_list {
-    return Intl.message(
-      '上传列表',
-      name: 'doc_upload_list',
-      desc: '',
-      args: [],
-    );
+    return Intl.message('上传列表', name: 'doc_upload_list', desc: '', args: []);
   }
 
   /// `全部取消`
   String get doc_all_cancel {
-    return Intl.message(
-      '全部取消',
-      name: 'doc_all_cancel',
-      desc: '',
-      args: [],
-    );
+    return Intl.message('全部取消', name: 'doc_all_cancel', desc: '', args: []);
   }
 
   /// `等待上传`
@@ -1262,12 +912,7 @@ class S {
 
   /// `正在上传文件`
   String get doc_uploading {
-    return Intl.message(
-      '正在上传文件',
-      name: 'doc_uploading',
-      desc: '',
-      args: [],
-    );
+    return Intl.message('正在上传文件', name: 'doc_uploading', desc: '', args: []);
   }
 
   /// `{successCount}条上传成功，{failCount}条上传失败`
@@ -1332,12 +977,7 @@ class S {
 
   /// `收藏失败`
   String get doc_favorites_fail {
-    return Intl.message(
-      '收藏失败',
-      name: 'doc_favorites_fail',
-      desc: '',
-      args: [],
-    );
+    return Intl.message('收藏失败', name: 'doc_favorites_fail', desc: '', args: []);
   }
 
   /// `确认删除？`
@@ -1532,12 +1172,7 @@ class S {
 
   /// `今天 {time}`
   String today_time(Object time) {
-    return Intl.message(
-      '今天 $time',
-      name: 'today_time',
-      desc: '',
-      args: [time],
-    );
+    return Intl.message('今天 $time', name: 'today_time', desc: '', args: [time]);
   }
 
   /// `{d}天{h}小时{m}分钟`
@@ -1562,22 +1197,12 @@ class S {
 
   /// `{m}分钟`
   String minute(Object m) {
-    return Intl.message(
-      '$m分钟',
-      name: 'minute',
-      desc: '',
-      args: [m],
-    );
+    return Intl.message('$m分钟', name: 'minute', desc: '', args: [m]);
   }
 
   /// `最近上传`
   String get lately_upload {
-    return Intl.message(
-      '最近上传',
-      name: 'lately_upload',
-      desc: '',
-      args: [],
-    );
+    return Intl.message('最近上传', name: 'lately_upload', desc: '', args: []);
   }
 
   /// `我是有底线的`
@@ -1595,9 +1220,7 @@ class AppLocalizationDelegate extends LocalizationsDelegate<S> {
   const AppLocalizationDelegate();
 
   List<Locale> get supportedLocales {
-    return const <Locale>[
-      Locale.fromSubtags(languageCode: 'en'),
-    ];
+    return const <Locale>[Locale.fromSubtags(languageCode: 'en')];
   }
 
   @override

@@ -1,13 +1,14 @@
-import 'package:flutterapp/DouBan/pages/detail/look_confirm_button.dart';
+import 'dart:ui';
+
 import 'package:shared_preferences/shared_preferences.dart';
 
 class LoginShare {
-  static LoginShare _instance;
+  static LoginShare? _instance;
   static LoginShare getInstance() {
     if (_instance == null) {
       _instance = LoginShare();
     }
-    return _instance;
+    return _instance!;
   }
 
   void removeLoginInfo() async {
@@ -28,7 +29,7 @@ class LoginShare {
     perferences.setString("tmpToken", map["tmpToken"]);
   }
 
-  VoidCallback logoutCallBack;
+  late VoidCallback logoutCallBack;
   void logOut(VoidCallback callback) {
     logoutCallBack = callback;
   }

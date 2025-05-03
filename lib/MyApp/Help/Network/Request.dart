@@ -29,8 +29,8 @@ final dioManager = DioCacheManager(CacheConfig(skipDiskCache: true));
 final httpClient = Dio(BaseOptions(
   baseUrl: DYBase.baseUrl,
   responseType: ResponseType.json,
-  connectTimeout: 5000,
-  receiveTimeout: 3000,
+  connectTimeout: Duration(seconds: 5),
+  receiveTimeout: Duration(seconds: 5),
 ))
   ..interceptors.add(
     dioManager.interceptor,
@@ -61,7 +61,7 @@ class Tweets {
 }
 
 class ThinkingNetwork {
-  static Future allThinking(Map params) async {
+  static Future allThinking(Map<String,dynamic> params) async {
     String dateStr = formatDate(
         DateTime.now(), [yyyy, "-", mm, "-", dd, " ", HH, ":", nn, ":", ss]);
     String md5 = Util.generateMd5(dateStr);

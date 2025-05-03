@@ -5,17 +5,17 @@ import 'dart:math' as math;
 
 class MediterranesnDietView extends StatelessWidget {
   final AnimationController animationController;
-  final Animation animation;
+  final Animation<double> animation;
 
   const MediterranesnDietView(
-      {Key key, this.animationController, this.animation})
+      {Key? key, required this.animationController, required this.animation})
       : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return AnimatedBuilder(
       animation: animationController,
-      builder: (BuildContext context, Widget child) {
+      builder: (BuildContext context, Widget? child) {
         return FadeTransition(
           opacity: animation,
           child: new Transform(
@@ -255,7 +255,7 @@ class MediterranesnDietView extends StatelessWidget {
                             padding: const EdgeInsets.only(right: 16),
                             child: Center(
                               child: Stack(
-                                overflow: Overflow.visible,
+                                // overflow: Overflow.visible,
                                 children: <Widget>[
                                   Padding(
                                     padding: const EdgeInsets.all(8.0),
@@ -573,11 +573,11 @@ class CurvePainter extends CustomPainter {
   final double angle;
   final List<Color> colors;
 
-  CurvePainter({this.colors, this.angle = 140});
+  CurvePainter({required this.colors, this.angle = 140});
 
   @override
   void paint(Canvas canvas, Size size) {
-    List<Color> colorsList = List<Color>();
+    List<Color> colorsList = [];
     if (colors != null) {
       colorsList = colors;
     } else {

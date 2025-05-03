@@ -6,7 +6,7 @@ import 'package:photo_view/photo_view.dart';
 import 'package:photo_view/photo_view_gallery.dart';
 
 class GalleryItem {
-  GalleryItem({this.id, this.resource});
+  GalleryItem({required this.id, required this.resource});
 
   final String id;
   final String resource;
@@ -15,15 +15,15 @@ class GalleryItem {
 class GalleryPhotoViewWrapper extends StatefulWidget {
   GalleryPhotoViewWrapper({
     this.loadingChild,
-    this.backgroundDecoration,
+    required this.backgroundDecoration,
     this.minScale,
     this.maxScale,
-    this.initialIndex,
-    @required this.galleryItems,
+    required this.initialIndex,
+    required this.galleryItems,
     this.scrollDirection = Axis.horizontal,
   }) : pageController = PageController(initialPage: initialIndex);
 
-  final Widget loadingChild;
+  final Widget? loadingChild;
   final Decoration backgroundDecoration;
   final dynamic minScale;
   final dynamic maxScale;
@@ -39,7 +39,7 @@ class GalleryPhotoViewWrapper extends StatefulWidget {
 }
 
 class _GalleryPhotoViewWrapperState extends State<GalleryPhotoViewWrapper> {
-  int currentIndex;
+  late int currentIndex;
 
   @override
   void initState() {
@@ -68,7 +68,6 @@ class _GalleryPhotoViewWrapperState extends State<GalleryPhotoViewWrapper> {
               scrollPhysics: BouncingScrollPhysics(),
               builder: _buildItem,
               itemCount: widget.galleryItems.length,
-              loadingChild: widget.loadingChild,
               backgroundDecoration: widget.backgroundDecoration,
               pageController: widget.pageController,
               onPageChanged: onPageChanged,

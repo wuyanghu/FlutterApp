@@ -7,7 +7,7 @@ import 'package:flutter/material.dart';
 import '../fintness_app_theme.dart';
 
 class TrainingScreen extends StatefulWidget {
-  const TrainingScreen({Key key, this.animationController}) : super(key: key);
+  const TrainingScreen({Key? key, required this.animationController}) : super(key: key);
 
   final AnimationController animationController;
   @override
@@ -16,7 +16,7 @@ class TrainingScreen extends StatefulWidget {
 
 class _TrainingScreenState extends State<TrainingScreen>
     with TickerProviderStateMixin {
-  Animation<double> topBarAnimation;
+  late Animation<double> topBarAnimation;
 
   List<Widget> listViews = <Widget>[];
   final ScrollController scrollController = ScrollController();
@@ -169,7 +169,7 @@ class _TrainingScreenState extends State<TrainingScreen>
       children: <Widget>[
         AnimatedBuilder(
           animation: widget.animationController,
-          builder: (BuildContext context, Widget child) {
+          builder: (BuildContext context, Widget? child) {
             return FadeTransition(
               opacity: topBarAnimation,
               child: Transform(

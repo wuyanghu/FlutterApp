@@ -104,7 +104,7 @@ class WPMine extends StatelessWidget {
               Navigator.push(
                   context,
                   MaterialPageRoute<dynamic>(
-                    builder: (BuildContext context) => model.screen,
+                    builder: (BuildContext context) => model.screen!,
                   ));
             },
             child: Column(

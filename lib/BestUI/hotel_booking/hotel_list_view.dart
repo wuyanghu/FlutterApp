@@ -7,23 +7,23 @@ import 'model/hotel_list_data.dart';
 
 class HotelListView extends StatelessWidget {
   const HotelListView(
-      {Key key,
-      this.hotelData,
-      this.animationController,
-      this.animation,
-      this.callback})
+      {Key? key,
+      required this.hotelData,
+      required this.animationController,
+      required this.animation,
+      required this.callback})
       : super(key: key);
 
   final VoidCallback callback;
   final HotelListData hotelData;
   final AnimationController animationController;
-  final Animation<dynamic> animation;
+  final Animation<double> animation;
 
   @override
   Widget build(BuildContext context) {
     return AnimatedBuilder(
       animation: animationController,
-      builder: (BuildContext context, Widget child) {
+      builder: (BuildContext context, Widget? child) {
         return FadeTransition(
           opacity: animation,
           child: Transform(
@@ -63,7 +63,7 @@ class HotelListView extends StatelessWidget {
                             ),
                             Container(
                               color: HotelAppTheme.buildLightTheme()
-                                  .backgroundColor,
+                                  .scaffoldBackgroundColor,
                               child: Row(
                                 mainAxisAlignment: MainAxisAlignment.center,
                                 crossAxisAlignment: CrossAxisAlignment.start,

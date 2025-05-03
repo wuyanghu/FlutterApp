@@ -5,15 +5,15 @@ import '../fintness_app_theme.dart';
 
 class GlassView extends StatelessWidget {
   final AnimationController animationController;
-  final Animation animation;
+  final Animation<double> animation;
 
-  const GlassView({Key key, this.animationController, this.animation})
+  const GlassView({Key? key, required this.animationController, required this.animation})
       : super(key: key);
   @override
   Widget build(BuildContext context) {
     return AnimatedBuilder(
       animation: animationController,
-      builder: (BuildContext context, Widget child) {
+      builder: (BuildContext context, Widget? child) {
         return FadeTransition(
           opacity: animation,
           child: new Transform(
@@ -25,7 +25,7 @@ class GlassView extends StatelessWidget {
                   padding: const EdgeInsets.only(
                       left: 24, right: 24, top: 0, bottom: 24),
                   child: Stack(
-                    overflow: Overflow.visible,
+                    // overflow: Overflow.visible,
                     children: <Widget>[
                       Padding(
                         padding: const EdgeInsets.only(top: 16),

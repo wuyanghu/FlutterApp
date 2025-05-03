@@ -30,9 +30,9 @@ class CustomSingleChildScrollView extends StatelessWidget {
 }
 
 class DinnerPlates {
-  int _capacity;
-  List<List<int>> _stacks;
-  List<int> _availableStacks;
+  late int _capacity;
+  late List<List<int>> _stacks;
+  late List<int> _availableStacks;
 
   DinnerPlates(int capacity) {
     _capacity = capacity;

@@ -2,7 +2,8 @@ import 'package:flutterapp/BestUI/hotel_booking/hotel_app_theme.dart';
 import 'package:flutter/material.dart';
 
 class RangeSliderView extends StatefulWidget {
-  const RangeSliderView({Key key, this.values, this.onChangeRangeValues})
+  const RangeSliderView(
+      {Key? key, required this.values, required this.onChangeRangeValues})
       : super(key: key);
 
   final Function(RangeValues) onChangeRangeValues;
@@ -13,7 +14,7 @@ class RangeSliderView extends StatefulWidget {
 }
 
 class _RangeSliderViewState extends State<RangeSliderView> {
-  RangeValues _values;
+  late RangeValues _values;
 
   @override
   void initState() {
@@ -113,18 +114,18 @@ class CustomRangeThumbShape extends RangeSliderThumbShape {
 
   @override
   void paint(
-    PaintingContext context,
-    Offset center, {
-    @required Animation<double> activationAnimation,
-    @required Animation<double> enableAnimation,
-    bool isDiscrete = false,
-    bool isEnabled = false,
-    bool isOnTop,
-    bool isPressed,
-    @required SliderThemeData sliderTheme,
-    TextDirection textDirection,
-    Thumb thumb,
-  }) {
+      PaintingContext context,
+      Offset center, {
+        required Animation<double> activationAnimation,
+        required Animation<double> enableAnimation,
+        bool isDiscrete = false,
+        bool isEnabled = false,
+        bool isOnTop = false,
+        bool isPressed = false,
+        required SliderThemeData sliderTheme,
+        TextDirection? textDirection,
+        Thumb? thumb,
+      }) {
     final Canvas canvas = context.canvas;
     final ColorTween colorTween = ColorTween(
       begin: sliderTheme.disabledThumbColor,
@@ -132,7 +133,7 @@ class CustomRangeThumbShape extends RangeSliderThumbShape {
     );
 
     final double size = _thumbSize * sizeTween.evaluate(enableAnimation);
-    Path thumbPath;
+    Path? thumbPath;
     switch (textDirection) {
       case TextDirection.rtl:
         switch (thumb) {
@@ -170,9 +171,9 @@ class CustomRangeThumbShape extends RangeSliderThumbShape {
     cPaint..color = Colors.white;
     cPaint..strokeWidth = 14 / 2;
     canvas.drawCircle(Offset(center.dx, center.dy), 12, cPaint);
-    cPaint..color = colorTween.evaluate(enableAnimation);
+    cPaint..color = colorTween.evaluate(enableAnimation)!;
     canvas.drawCircle(Offset(center.dx, center.dy), 10, cPaint);
-    canvas.drawPath(thumbPath, Paint()..color = Colors.white);
+    canvas.drawPath(thumbPath!, Paint()..color = Colors.white);
   }
 
   double convertRadiusToSigma(double radius) {

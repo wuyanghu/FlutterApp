@@ -2,26 +2,26 @@ import 'package:flutterapp/MyApp/Help/Network/Request.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 class CircleModel {
-  int startId;
-  List<TweetList> tweetList;
-  bool isBottom;
+  int? startId;
+  List<TweetList>? tweetList;
+  bool? isBottom;
 
   CircleModel({this.startId, this.tweetList, this.isBottom});
 
   CircleModel.fromJson(Map<String, dynamic> json) {
     startId = json['startId'];
     if (json['tweetList'] != null) {
-      tweetList = new List<TweetList>();
+      tweetList = [];
 
       for (int i = 0; i < json['tweetList'].length; i++) {
-        TweetList list;
+        TweetList? list;
         try {
           list = new TweetList.fromJson(json['tweetList'][i]);
         } catch (e) {
           print("json解析出现问题");
         }
         if (list != null) {
-          tweetList.add(list);
+          tweetList!.add(list);
         }
       }
     }
@@ -32,7 +32,7 @@ class CircleModel {
     final Map<String, dynamic> data = new Map<String, dynamic>();
     data['startId'] = this.startId;
     if (this.tweetList != null) {
-      data['tweetList'] = this.tweetList.map((v) => v.toJson()).toList();
+      data['tweetList'] = this.tweetList!.map((v) => v.toJson()).toList();
     }
     data['isBottom'] = this.isBottom;
     return data;
@@ -43,7 +43,7 @@ class Friend {
   String accountId;
   String nick;
   String image;
-  Friend({this.accountId, this.nick, this.image});
+  Friend({this.accountId = '', required this.nick, required this.image});
 }
 
 Map<String, Friend> friendMap = {
@@ -141,23 +141,23 @@ enum TweetType {
 }
 
 class TweetList {
-  String tweetId;
-  TweetType type;
-  String accountId;
-  int createTime;
-  String content;
-  List<String> atUserList;
-  List<Pictures> pictures;
-  int width;
-  int height;
-  Config config;
-  List<String> likeList;
-  int commentTotal;
-  int likeTotal;
-  List<CommentList> commentList;
-  String video;
-  String videoPreview;
-  String location; //具体返回字段需要确定
+  String? tweetId;
+  TweetType? type;
+  String? accountId;
+  int? createTime;
+  String? content;
+  List<String>? atUserList;
+  List<Pictures>? pictures;
+  int? width;
+  int? height;
+  Config? config;
+  List<String>? likeList;
+  int? commentTotal;
+  int? likeTotal;
+  List<CommentList>? commentList;
+  String? video;
+  String? videoPreview;
+  String? location; //具体返回字段需要确定
 
   TweetList({
     this.tweetId,
@@ -195,9 +195,9 @@ class TweetList {
     atUserList =
         json['atUserList'] != null ? json['atUserList'].cast<String>() : null;
     if (json['pictures'] != null) {
-      pictures = new List<Pictures>();
+      pictures = [];
       json['pictures'].forEach((v) {
-        pictures.add(new Pictures.fromJson(v));
+        pictures!.add(new Pictures.fromJson(v));
       });
     }
     width = json['width'];
@@ -209,9 +209,9 @@ class TweetList {
     commentTotal = json['commentTotal'];
     likeTotal = json['likeTotal'];
     if (json['commentList'] != null) {
-      commentList = new List<CommentList>();
+      commentList = [];
       json['commentList'].forEach((v) {
-        commentList.add(new CommentList.fromJson(v));
+        commentList!.add(new CommentList.fromJson(v));
       });
     }
     video = json['video'];
@@ -228,18 +228,18 @@ class TweetList {
     data['content'] = this.content;
     data['atUserList'] = this.atUserList;
     if (this.pictures != null) {
-      data['pictures'] = this.pictures.map((v) => v.toJson()).toList();
+      data['pictures'] = this.pictures!.map((v) => v.toJson()).toList();
     }
     data['width'] = this.width;
     data['height'] = this.height;
     if (this.config != null) {
-      data['config'] = this.config.toJson();
+      data['config'] = this.config!.toJson();
     }
     data['likeList'] = this.likeList;
     data['commentTotal'] = this.commentTotal;
     data['likeTotal'] = this.likeTotal;
     if (this.commentList != null) {
-      data['commentList'] = this.commentList.map((v) => v.toJson()).toList();
+      data['commentList'] = this.commentList!.map((v) => v.toJson()).toList();
     }
     data['video'] = this.video;
     data['videoPreview'] = this.videoPreview;
@@ -248,38 +248,38 @@ class TweetList {
   }
 
   Friend getUser() {
-    return getUser2(accountId);
+    return getUser2(accountId!);
   }
 
   static Friend getUser2(String accountId) {
-    Friend model = friendMap[accountId];
+    Friend? model = friendMap?[accountId];
     if (model == null) {
       print("没找到 user = " + accountId);
       model = Friend(nick: "张三", image: '');
     }
-    return model;
+    return model!;
   }
 
   Future<bool> isDel() async {
     SharedPreferences perferences = await SharedPreferences.getInstance();
-    String meAccountId = perferences.getString("accountId");
+    String? meAccountId = perferences.getString("accountId");
     return meAccountId == accountId;
   }
 
   bool isComment() {
-    return commentTotal != null && commentTotal > 0;
+    return commentTotal != null && commentTotal! > 0;
   }
 
   bool isMoreComment() {
-    return isComment() && commentList.length > 3;
+    return isComment() && commentList!.length > 3;
   }
 
   int commentNum() {
     if (!isComment()) {
       return 0;
     } else {
-      if (commentList.length <= 3) {
-        return commentList.length;
+      if (commentList!.length <= 3) {
+        return commentList!.length;
       } else {
         return 3;
       }
@@ -287,25 +287,25 @@ class TweetList {
   }
 
   bool isLike() {
-    return likeTotal != null && likeTotal > 0;
+    return likeTotal != null && likeTotal! > 0;
   }
 
   Future<bool> isLiked() async {
     SharedPreferences perferences = await SharedPreferences.getInstance();
-    String meAccountId = perferences.getString("accountId");
+    String? meAccountId = perferences.getString("accountId");
     if (likeList == null) {
       return false;
     }
-    bool res = likeList.contains(meAccountId);
+    bool res = likeList!.contains(meAccountId);
     return res;
   }
 
   bool isAtUserList() {
-    return atUserList != null && atUserList.length > 0;
+    return atUserList != null && atUserList!.length > 0;
   }
 
   bool isOnePic() {
-    return pictures != null && pictures.length == 1;
+    return pictures != null && pictures!.length == 1;
   }
 
   bool isLocation() {
@@ -314,9 +314,9 @@ class TweetList {
 
   String atUserString() {
     String atString = "";
-    for (int i = 0; i < atUserList.length; i++) {
-      atString += getUser2(atUserList[i]).nick;
-      if (i != atUserList.length - 1) {
+    for (int i = 0; i < atUserList!.length; i++) {
+      atString += getUser2(atUserList![i]).nick;
+      if (i != atUserList!.length - 1) {
         atString += "、";
       }
     }
@@ -325,9 +325,9 @@ class TweetList {
 
   String likeListString() {
     String likeString = "";
-    for (int i = 0; i < likeList.length; i++) {
-      likeString += getUser2(likeList[i]).nick;
-      if (i != likeList.length - 1) {
+    for (int i = 0; i < likeList!.length; i++) {
+      likeString += getUser2(likeList![i]).nick;
+      if (i != likeList!.length - 1) {
         likeString += "、";
       }
     }
@@ -336,24 +336,24 @@ class TweetList {
 
   List<String> pictureSfullUrl() {
     List<String> urls = [];
-    for (int i = 0; i < pictures.length; i++) {
-      urls.add(DYBase.ossUrl + pictures[i].url);
+    for (int i = 0; i < pictures!.length; i++) {
+      urls.add(DYBase.ossUrl + pictures![i].url!);
     }
     return urls;
   }
 }
 
 class Pictures {
-  int width;
-  String url;
-  int height;
+  int? width;
+  String? url;
+  int? height;
 
-  Pictures({this.width, this.url, this.height});
+  Pictures({this.width = 0, this.url = '', this.height = 0});
 
   Pictures.fromJson(Map<String, dynamic> json) {
-    width = json['width'];
-    url = json['url'];
-    height = json['height'];
+    width = json['width'] as int;
+    url = json['url'] as String;
+    height = json['height'] as int;
   }
 
   Map<String, dynamic> toJson() {
@@ -366,9 +366,9 @@ class Pictures {
 }
 
 class Config {
-  List<String> userList;
-  bool isVisible;
-  bool isPrivate;
+  List<String>? userList;
+  bool? isVisible;
+  bool? isPrivate;
 
   Config({this.userList, this.isVisible, this.isPrivate});
 
@@ -389,11 +389,11 @@ class Config {
 }
 
 class CommentList {
-  String id;
-  String accountId;
-  String content;
-  int createTime;
-  String for1;
+  String? id;
+  String? accountId;
+  String? content;
+  int? createTime;
+  String? for1;
 
   CommentList(
       {this.id, this.accountId, this.content, this.createTime, this.for1});

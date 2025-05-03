@@ -82,7 +82,7 @@ class _IVBuilderlessPageState extends State<IVBuilderlessPage> {
               constraints.maxHeight,
             );
             return InteractiveViewer(
-              panAxis: PanAxis.free, constrained: false,
+              // panAxis: PanAxis.free, constrained: false,
               transformationController: _transformationController,
               scaleEnabled: false,
               child: Builder(

@@ -13,13 +13,13 @@ class NavigationHomeScreen extends StatefulWidget {
 }
 
 class _NavigationHomeScreenState extends State<NavigationHomeScreen> {
-  Widget screenView;
-  DrawerIndex drawerIndex;
+  late Widget screenView;
+  late DrawerIndex drawerIndex;
 
   @override
   void initState() {
     drawerIndex = DrawerIndex.HOME;
-    screenView = const MyHomePage();
+    screenView = MyHomePage();
     super.initState();
   }
 
@@ -52,7 +52,7 @@ class _NavigationHomeScreenState extends State<NavigationHomeScreen> {
       drawerIndex = drawerIndexdata;
       if (drawerIndex == DrawerIndex.HOME) {
         setState(() {
-          screenView = const MyHomePage();
+          screenView = MyHomePage();
         });
       } else if (drawerIndex == DrawerIndex.Help) {
         setState(() {

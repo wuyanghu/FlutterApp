@@ -7,7 +7,7 @@ import 'package:shared_preferences/shared_preferences.dart';
 
 class Login extends StatefulWidget {
   final VoidCallback loginFinish;
-  Login({this.loginFinish});
+  Login({required this.loginFinish});
   @override
   State<StatefulWidget> createState() {
     return _Login(loginFinish: loginFinish);
@@ -19,7 +19,7 @@ class _Login extends State<Login> {
   String psw = '';
   VoidCallback loginFinish;
   bool autofocus;
-  _Login({this.loginFinish, this.autofocus = false});
+  _Login({required this.loginFinish, this.autofocus = false});
 
   @override
   void initState() {
@@ -30,7 +30,7 @@ class _Login extends State<Login> {
 
   void initAsync() async {
     SharedPreferences perferences = await SharedPreferences.getInstance();
-    String phoneNumebr = perferences.getString("phoneNumber");
+    String? phoneNumebr = perferences.getString("phoneNumber");
     setState(() {
       if (phoneNumebr != null) {
         phone = phoneNumebr;
@@ -72,7 +72,6 @@ class _Login extends State<Login> {
                                   msg: "切换语言",
                                   toastLength: Toast.LENGTH_SHORT,
                                   gravity: ToastGravity.CENTER,
-                                  timeInSecForIos: 1,
                                   backgroundColor: Colors.black45,
                                   textColor: Colors.white,
                                   fontSize: 16.0);

@@ -19,8 +19,8 @@ class _Circle extends State<Circle> {
   final int limit = 20;
   int startId = 0;
 
-  CircleModel circleModel;
-  List<Widget> cells;
+  late CircleModel circleModel;
+  late List<Widget> cells;
   RefreshController _refreshController =
       RefreshController(initialRefresh: true);
 
@@ -45,7 +45,7 @@ class _Circle extends State<Circle> {
     if (cells.length > 0) {
       cells.removeRange(0, cells.length);
     }
-    for (var model in circleModel.tweetList) {
+    for (var model in circleModel.tweetList ?? []) {
       cells.addAll(cell(model));
     }
     setState(() {
@@ -55,16 +55,16 @@ class _Circle extends State<Circle> {
 
   void loadHistory() async {
     print("加载历史数据");
-    startId = circleModel.startId;
+    startId = circleModel.startId ?? 0;
     CircleModel historyCircleModel = await Tweets.tweet(startId, limit);
 
-    for (var model in historyCircleModel.tweetList) {
+    for (var model in historyCircleModel.tweetList ?? []) {
       cells.addAll(cell(model));
     }
     circleModel.startId = historyCircleModel.startId;
 
     setState(() {
-      if (historyCircleModel.isBottom) {
+      if (historyCircleModel.isBottom == true) {
         _refreshController.loadNoData();
       } else {
         _refreshController.loadComplete();
@@ -155,7 +155,7 @@ class _Circle extends State<Circle> {
           alignment: Alignment.center,
           child: Padding(
               padding: EdgeInsets.only(top: 10, left: 15, right: 15),
-              child: oneComment(model.commentList[index])),
+              child: oneComment(model.commentList![index])),
         );
       }, childCount: model.commentNum())),
       SliverToBoxAdapter(
@@ -218,7 +218,7 @@ class _Circle extends State<Circle> {
               Row(
                 children: [
                   Text(
-                    DateTime.fromMillisecondsSinceEpoch(model.createTime)
+                    DateTime.fromMillisecondsSinceEpoch(model.createTime!)
                         .toString(),
                     style: TextStyle(fontSize: 12),
                   ),
@@ -240,7 +240,7 @@ class _Circle extends State<Circle> {
                 if (snapshot.connectionState != ConnectionState.done) {
                   return SizedBox();
                 }
-                if (snapshot.data) {
+                if (snapshot.data != null) {
                   return Padding(
                     padding: EdgeInsets.only(top: 2),
                     child: Icon(Icons.delete, color: Colors.grey),
@@ -260,7 +260,7 @@ class _Circle extends State<Circle> {
             ? Padding(
                 padding: EdgeInsets.only(left: 15, top: 15, right: 15),
                 child: Text(
-                  model.content,
+                  model.content!,
                   style: TextStyle(
                       color: Color(0xFF000000).withOpacity(0.8), fontSize: 16),
                 ),
@@ -275,15 +275,15 @@ class _Circle extends State<Circle> {
       int width;
       int height;
       if (model.isOnePic()) {
-        width = model.pictures[0].width;
-        height = model.pictures[0].height;
+        width = model.pictures![0].width!;
+        height = model.pictures![0].height!;
       } else {
-        width = model.width;
-        height = model.height;
+        width = model.width!;
+        height = model.height!;
       }
       Size size = getImageSize(Size(width.toDouble(), height.toDouble()));
       String url = DYBase.ossUrl +
-          "${model.isOnePic() ? model.pictures[0].url : model.videoPreview}";
+          "${model.isOnePic() ? model.pictures![0].url : model.videoPreview}";
       return SliverToBoxAdapter(
         child: InkWell(
             child: Padding(
@@ -315,11 +315,11 @@ class _Circle extends State<Circle> {
                 )),
             onTap: () {
               if (model.isOnePic()) {
-                _showPhotoGallery([url], tag: model.accountId);
+                _showPhotoGallery([url], tag: model.accountId!);
               } else {
                 Navigator.push(context, MaterialPageRoute(builder: (context) {
                   return BumbleBeeRemoteVideo(
-                    videoUrl: DYBase.ossUrl + model.video,
+                    videoUrl: DYBase.ossUrl + model.video!,
                   );
                 }));
               }
@@ -337,16 +337,16 @@ class _Circle extends State<Circle> {
       delegate: SliverChildBuilderDelegate(
         (BuildContext context, int index) {
           //创建子widget
-          String url = DYBase.ossUrl + model.pictures[index].url;
+          String url = DYBase.ossUrl + model.pictures![index].url!;
           return InkWell(
             child: cornerImage(url, 5.0),
             onTap: () {
               print("点击图片");
-              _showPhotoGallery(model.pictureSfullUrl(), tag: model.accountId);
+              _showPhotoGallery(model.pictureSfullUrl(), tag: model.accountId!);
             },
           );
         },
-        childCount: model.pictures.length,
+        childCount: model.pictures!.length,
       ),
     );
   }
@@ -358,7 +358,7 @@ class _Circle extends State<Circle> {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                model.isLocation() ? Text(model.location) : SizedBox(),
+                model.isLocation() ? Text(model.location!) : SizedBox(),
                 model.isAtUserList()
                     ? Row(
                         children: [
@@ -401,7 +401,7 @@ class _Circle extends State<Circle> {
                                     },
                                     child: Icon(
                                       Icons.favorite,
-                                      color: snapshot.data
+                                      color: snapshot.data != null
                                           ? Colors.red
                                           : Colors.grey,
                                     ));
@@ -446,7 +446,7 @@ class _Circle extends State<Circle> {
   }
 
   Widget oneComment(CommentList list) {
-    Friend friend = TweetList.getUser2(list.accountId);
+    Friend friend = TweetList.getUser2(list.accountId!);
     return Column(
       children: [
         Row(
@@ -470,7 +470,7 @@ class _Circle extends State<Circle> {
               SizedBox(
                 height: 5,
               ),
-              Text(list.content,
+              Text(list.content!,
                   style: TextStyle(
                       color: Color(0xFF000000).withOpacity(0.8), fontSize: 14)),
               SizedBox(
@@ -479,7 +479,7 @@ class _Circle extends State<Circle> {
               Row(
                 children: [
                   Text(
-                    DateTime.fromMillisecondsSinceEpoch(list.createTime)
+                    DateTime.fromMillisecondsSinceEpoch(list.createTime!)
                         .toString(),
                     style: TextStyle(color: Color(0xFF000000).withOpacity(0.8)),
                   ),
@@ -622,7 +622,7 @@ class _Circle extends State<Circle> {
   }
 
   // 图片预览gallery
-  void _showPhotoGallery(List pic, {int index = 0, String tag}) {
+  void _showPhotoGallery(List pic, {int index = 0, String tag = ''}) {
     var galleryItems = pic
         .asMap()
         .map((i, item) {
@@ -636,7 +636,7 @@ class _Circle extends State<Circle> {
         .values
         .toList();
     Navigator.push(context, PageRouteBuilder(pageBuilder: (BuildContext context,
-        Animation animation, Animation secondaryAnimation) {
+        Animation<double> animation, Animation secondaryAnimation) {
       return FadeTransition(
         opacity: animation,
         child: GalleryPhotoViewWrapper(
@@ -645,7 +645,7 @@ class _Circle extends State<Circle> {
             color: Colors.black,
           ),
           initialIndex: index,
-          scrollDirection: Axis.horizontal,
+          scrollDirection: Axis.horizontal, loadingChild: null,
         ),
       );
     }));

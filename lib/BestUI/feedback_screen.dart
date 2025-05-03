@@ -7,7 +7,7 @@ class FeedbackScreen extends StatefulWidget {
 }
 
 class _FeedbackScreenState extends State<FeedbackScreen> {
-  String textFiledText; //输入文本
+  late String textFiledText; //输入文本
 
   @override
   void initState() {

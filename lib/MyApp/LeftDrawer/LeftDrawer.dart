@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 class LeftDrawer extends StatelessWidget {
   const LeftDrawer({
-    Key key,
+    Key? key,
   }) : super(key: key);
 
   @override

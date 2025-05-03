@@ -43,7 +43,7 @@ class FirstPage extends StatefulWidget {
 }
 
 class _FirstPage extends State<FirstPage> {
-  Timer _timer;
+  late Timer _timer;
   @override
   void initState() {
     super.initState();

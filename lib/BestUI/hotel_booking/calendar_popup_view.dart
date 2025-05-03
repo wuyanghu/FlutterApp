@@ -8,14 +8,14 @@ import 'custom_calendar.dart';
 
 class CalendarPopupView extends StatefulWidget {
   const CalendarPopupView(
-      {Key key,
-      this.initialStartDate,
-      this.initialEndDate,
+      {Key? key,
+      required this.initialStartDate,
+      required this.initialEndDate,
       this.onApplyClick,
       this.onCancelClick,
       this.barrierDismissible = true,
-      this.minimumDate,
-      this.maximumDate})
+      required this.minimumDate,
+      required this.maximumDate})
       : super(key: key);
 
   final DateTime minimumDate;
@@ -23,18 +23,18 @@ class CalendarPopupView extends StatefulWidget {
   final bool barrierDismissible;
   final DateTime initialStartDate;
   final DateTime initialEndDate;
-  final Function(DateTime, DateTime) onApplyClick;
+  final Function(DateTime, DateTime)? onApplyClick;
 
-  final Function onCancelClick;
+  final Function? onCancelClick;
   @override
   _CalendarPopupViewState createState() => _CalendarPopupViewState();
 }
 
 class _CalendarPopupViewState extends State<CalendarPopupView>
     with TickerProviderStateMixin {
-  AnimationController animationController;
-  DateTime startDate;
-  DateTime endDate;
+  late AnimationController animationController;
+  DateTime? startDate;
+  DateTime? endDate;
 
   @override
   void initState() {
@@ -63,7 +63,7 @@ class _CalendarPopupViewState extends State<CalendarPopupView>
         backgroundColor: Colors.transparent,
         body: AnimatedBuilder(
           animation: animationController,
-          builder: (BuildContext context, Widget child) {
+          builder: (BuildContext context, Widget? child) {
             return AnimatedOpacity(
               duration: const Duration(milliseconds: 100),
               opacity: animationController.value,
@@ -82,7 +82,7 @@ class _CalendarPopupViewState extends State<CalendarPopupView>
                     padding: const EdgeInsets.all(24.0),
                     child: Container(
                       decoration: BoxDecoration(
-                        color: HotelAppTheme.buildLightTheme().backgroundColor,
+                        color: Color(0xFFFFFFFF),
                         borderRadius:
                             const BorderRadius.all(Radius.circular(24.0)),
                         boxShadow: <BoxShadow>[
@@ -124,7 +124,7 @@ class _CalendarPopupViewState extends State<CalendarPopupView>
                                       Text(
                                         startDate != null
                                             ? DateFormat('EEE, dd MMM')
-                                                .format(startDate)
+                                                .format(startDate!)
                                             : '--/-- ',
                                         style: TextStyle(
                                           fontWeight: FontWeight.bold,
@@ -160,7 +160,7 @@ class _CalendarPopupViewState extends State<CalendarPopupView>
                                       Text(
                                         endDate != null
                                             ? DateFormat('EEE, dd MMM')
-                                                .format(endDate)
+                                                .format(endDate!)
                                             : '--/-- ',
                                         style: TextStyle(
                                             fontWeight: FontWeight.bold,
@@ -179,8 +179,8 @@ class _CalendarPopupViewState extends State<CalendarPopupView>
                               maximumDate: widget.maximumDate,
                               initialEndDate: widget.initialEndDate,
                               initialStartDate: widget.initialStartDate,
-                              startEndDateChange: (DateTime startDateData,
-                                  DateTime endDateData) {
+                              startEndDateChange: (DateTime? startDateData,
+                                  DateTime? endDateData) {
                                 setState(() {
                                   startDate = startDateData;
                                   endDate = endDateData;
@@ -216,7 +216,7 @@ class _CalendarPopupViewState extends State<CalendarPopupView>
                                         // animationController.reverse().then((f) {
 
                                         // });
-                                        widget.onApplyClick(startDate, endDate);
+                                        widget.onApplyClick?.call(startDate!, endDate!);
                                         Navigator.pop(context);
                                       } catch (_) {}
                                     },

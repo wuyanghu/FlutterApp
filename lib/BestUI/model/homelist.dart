@@ -5,7 +5,7 @@ import 'package:flutter/widgets.dart';
 
 class HomeList {
   HomeList({
-    this.navigateScreen,
+    required this.navigateScreen,
     this.imagePath = '',
   });
 
