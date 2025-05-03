@@ -1,4 +1,4 @@
-import 'package:flutterapp/BestUI/main_3.dart';
+import 'package:flutter_app/BestUI/main_3.dart';
 import 'package:flutter/material.dart';
 
 class HotelAppTheme {

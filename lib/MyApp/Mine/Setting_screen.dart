@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutterapp/MyApp/Login/LoginShare.dart';
-import 'package:flutterapp/MyApp/Mine/Model/MineModel.dart';
+import 'package:flutter_app/MyApp/Login/LoginShare.dart';
+import 'package:flutter_app/MyApp/Mine/Model/MineModel.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 

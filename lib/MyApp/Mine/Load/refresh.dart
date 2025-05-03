@@ -1,6 +1,6 @@
 // 下拉刷新头部、底部组件
 import 'package:flutter/material.dart';
-import 'package:flutterapp/MyApp/Help/Network/Request.dart';
+import 'package:flutter_app/MyApp/Help/Network/Request.dart';
 import 'package:lottie/lottie.dart';
 import 'package:pull_to_refresh/pull_to_refresh.dart';
 

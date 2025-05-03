@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutterapp/MyApp/Mine/MineInfo_screen.dart';
-import 'package:flutterapp/MyApp/Mine/Model/MineModel.dart';
+import 'package:flutter_app/MyApp/Mine/MineInfo_screen.dart';
+import 'package:flutter_app/MyApp/Mine/Model/MineModel.dart';
 
 class WPMine extends StatelessWidget {
   final List commonUseList = WPMineModel.commonUseList;

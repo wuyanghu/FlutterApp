@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:flutterapp/BestUI/navigation_home_screen.dart';
-import 'package:flutterapp/MyApp/LeftDrawer/LeftDrawer.dart';
-import 'package:flutterapp/MyApp/Mine/Mine_screen.dart';
-import 'package:demo/main.dart';
+import 'package:flutter_app/BestUI/navigation_home_screen.dart';
+import 'package:flutter_app/MyApp/LeftDrawer/LeftDrawer.dart';
+import 'package:flutter_app/MyApp/Mine/Mine_screen.dart';
+import 'package:flutter_demo/main.dart';
 import 'package:performance_demo/main.dart';
 
 class MyHomePage extends StatefulWidget {

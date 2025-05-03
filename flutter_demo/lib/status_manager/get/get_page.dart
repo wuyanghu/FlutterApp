@@ -1,4 +1,4 @@
-import 'package:demo/status_manager/get/get_state.dart';
+import 'package:flutter_demo/status_manager/get/get_state.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'get_logic.dart';

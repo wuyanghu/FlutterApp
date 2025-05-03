@@ -1,5 +1,5 @@
-import 'package:flutterapp/BestUI/fitness_app/models/tabIcon_data.dart';
-import 'package:flutterapp/BestUI/fitness_app/traning/training_screen.dart';
+import 'package:flutter_app/BestUI/fitness_app/models/tabIcon_data.dart';
+import 'package:flutter_app/BestUI/fitness_app/traning/training_screen.dart';
 import 'package:flutter/material.dart';
 import 'bottom_navigation_view/bottom_bar_view.dart';
 import 'fintness_app_theme.dart';

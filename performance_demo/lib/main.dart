@@ -143,9 +143,7 @@ class _PerformanceHomePageState extends State<PerformanceHomePage> {
 
   @override
   Widget build(BuildContext context) {
-    // return Container(width: 200, height: 200, color: Colors.red);
-
-    List<String> datas = [
+    List<String> titles = [
       "复杂耗时计算时,也会UI也会卡顿",
       "自定义RepaintBoundary",
       "Lazy Performance Demos",
@@ -164,18 +162,18 @@ class _PerformanceHomePageState extends State<PerformanceHomePage> {
             child: GestureDetector(
               onTap: () {
                 if (index == 0) {
-                  pushPage(TimeConsumingPage(datas[index]));
+                  pushPage(TimeConsumingPage(titles[index]));
                 } else if (index == 1) {
-                  pushPage(CustomPainterPage(datas[index]));
+                  pushPage(CustomPainterPage(titles[index]));
                 } else if (index == 2) {
-                  pushPage(LazyPage(datas[index]));
+                  pushPage(LazyPage(titles[index]));
                 }
               },
               child: Row(
                 children: [
                   Expanded(
                     child: Text(
-                      datas[index],
+                      titles[index],
                       style: TextStyle(fontSize: 16),
                     ),
                   )
@@ -184,7 +182,7 @@ class _PerformanceHomePageState extends State<PerformanceHomePage> {
             ),
           );
         },
-        itemCount: datas.length,
+        itemCount: titles.length,
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: _incrementCounter,

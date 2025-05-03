@@ -1,4 +1,4 @@
-import 'package:flutterapp/BestUI/fitness_app/fintness_app_theme.dart';
+import 'package:flutter_app/BestUI/fitness_app/fintness_app_theme.dart';
 import 'package:flutter/material.dart';
 
 class TitleView extends StatelessWidget {

@@ -1,6 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutterapp/MyApp/Help/Network/Request.dart';
+import 'package:flutter_app/MyApp/Help/Network/Request.dart';
 
 class Thinking extends StatefulWidget {
   @override

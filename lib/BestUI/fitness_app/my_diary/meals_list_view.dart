@@ -1,6 +1,6 @@
-import 'package:flutterapp/BestUI/fitness_app/fintness_app_theme.dart';
-import 'package:flutterapp/BestUI/fitness_app/models/meals_list_data.dart';
-import 'package:flutterapp/BestUI/main_3.dart';
+import 'package:flutter_app/BestUI/fitness_app/fintness_app_theme.dart';
+import 'package:flutter_app/BestUI/fitness_app/models/meals_list_data.dart';
+import 'package:flutter_app/BestUI/main_3.dart';
 import 'package:flutter/material.dart';
 
 import '../../main_3.dart';

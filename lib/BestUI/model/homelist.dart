@@ -1,6 +1,6 @@
-import 'package:flutterapp/BestUI/design_course/home_design_course.dart';
-import 'package:flutterapp/BestUI/fitness_app/fitness_app_home_screen.dart';
-import 'package:flutterapp/BestUI/hotel_booking/hotel_home_screen.dart';
+import 'package:flutter_app/BestUI/design_course/home_design_course.dart';
+import 'package:flutter_app/BestUI/fitness_app/fitness_app_home_screen.dart';
+import 'package:flutter_app/BestUI/hotel_booking/hotel_home_screen.dart';
 import 'package:flutter/widgets.dart';
 
 class HomeList {

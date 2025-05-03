@@ -1,4 +1,4 @@
-name: flutterapp
+name: flutter_app
 description: A new Flutter project.
 
 # The following line prevents the package from being accidentally published to
@@ -23,7 +23,7 @@ environment:
 dependency_overrides:
   flutter:
     sdk: flutter
-  demo:
+  flutter_demo:
     path: ./flutter_demo
   performance_demo:
     path: ./performance_demo

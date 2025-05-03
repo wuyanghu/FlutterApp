@@ -1,7 +1,7 @@
-import 'package:flutterapp/BestUI/design_course/category_list_view.dart';
-import 'package:flutterapp/BestUI/design_course/course_info_screen.dart';
-import 'package:flutterapp/BestUI/design_course/popular_course_list_view.dart';
-import 'package:flutterapp/BestUI/main_3.dart';
+import 'package:flutter_app/BestUI/design_course/category_list_view.dart';
+import 'package:flutter_app/BestUI/design_course/course_info_screen.dart';
+import 'package:flutter_app/BestUI/design_course/popular_course_list_view.dart';
+import 'package:flutter_app/BestUI/main_3.dart';
 import 'package:flutter/material.dart';
 import 'design_course_app_theme.dart';
 

@@ -1,4 +1,4 @@
-import 'package:demo/status_manager/get/get_state.dart';
+import 'package:flutter_demo/status_manager/get/get_state.dart';
 import 'package:get/get.dart';
 
 class GetLogic extends GetxController {

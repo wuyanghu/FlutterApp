@@ -249,13 +249,6 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "2.0.9"
-  demo:
-    dependency: "direct overridden"
-    description:
-      path: flutter_demo
-      relative: true
-    source: path
-    version: "1.0.0+1"
   dio:
     dependency: "direct overridden"
     description:
@@ -349,6 +342,13 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "3.4.1"
+  flutter_demo:
+    dependency: "direct overridden"
+    description:
+      path: flutter_demo
+      relative: true
+    source: path
+    version: "1.0.0+1"
   flutter_rating_bar:
     dependency: "direct overridden"
     description:

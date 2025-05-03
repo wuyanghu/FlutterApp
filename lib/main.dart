@@ -1,8 +1,8 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
-import 'package:flutterapp/MyApp/Login/Login.dart';
-import 'package:flutterapp/MyApp/Login/LoginShare.dart';
-import 'package:flutterapp/MyApp/Tabbar/MyHomePage.dart';
+import 'package:flutter_app/MyApp/Login/Login.dart';
+import 'package:flutter_app/MyApp/Login/LoginShare.dart';
+import 'package:flutter_app/MyApp/Tabbar/MyHomePage.dart';
 import 'package:provider/provider.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
