@@ -1,10 +1,11 @@
-import 'dart:math';
-
+import 'package:demo/paint/custom_paint.dart';
 import 'package:demo/provider/provider_demo.dart';
 import 'package:demo/status_manager/bloc_demo/bloc_demo_page.dart';
 import 'package:demo/status_manager/bloc_demo/bloc_example.dart';
+import 'package:demo/status_manager/get/get_page.dart';
 import 'package:demo/switch/switch_demo.dart';
 import 'package:demo/tab_demo/tab_demo.dart';
+import 'package:demo/util/util.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'dart:isolate';
@@ -55,9 +56,13 @@ class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
 
-    Widget _buildItem(String title,Widget body) {
+    Widget _buildItem(String title,Widget? body,{VoidCallback? onTap}) {
       return ElevatedButton(onPressed: () {
-        Navigator.push(context, MaterialPageRoute(builder: (_) => body));
+        if (onTap != null) {
+          onTap!.call();
+          return;
+        }
+        Navigator.push(context, MaterialPageRoute(builder: (_) => body!));
       }, child: Text(title));
     }
 
@@ -69,16 +74,18 @@ class _MyHomePageState extends State<MyHomePage> {
       body: ListView(
         padding: EdgeInsets.only(left: 16,right: 16),
         children: <Widget>[
-          // RepaintBoundary(
-          //   child: CustomPaintRoute(),
-          // ),
+          _buildItem("CustomPaint_demo", CustomPaintDemo()),
           _buildItem("bloc_demo", BlocDemoPage()),
           _buildItem("bloc_官方demo", BlocExample()),
+          _buildItem("get_demo", GetPage()),
           _buildItem("flutter实战", WPChaters()),
           _buildItem("provider_demo", ProviderDemo()),
           _buildItem("slider_demo", SymmetricSliderDemo()),
           _buildItem("switch_demo", SwitchDemo()),
-          _buildItem("tab_demo", TabDemo()),
+          _buildItem("tab_异常_demo", TabDemo()),
+          _buildItem("事件任务、微任务",null,onTap: (){
+            EventLoop().task();
+          })
           // ScaleAnimationRoute1(
           //   key: UniqueKey(),
           // ),
@@ -218,81 +225,3 @@ class GrowTransition extends StatelessWidget {
 }
 
 
-class CustomPaintRoute extends StatelessWidget {
-  const CustomPaintRoute({Key? key}) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return Center(
-      child: CustomPaint(
-        size: Size(300, 300), //指定画布大小
-        painter: MyPainter(),
-      ),
-    );
-  }
-}
-
-class MyPainter extends CustomPainter {
-  @override
-  void paint(Canvas canvas, Size size) {
-    print('paint');
-    var rect = Offset.zero & size;
-    //画棋盘
-    drawChessboard(canvas, rect);
-    //画棋子
-    drawPieces(canvas, rect);
-  }
-
-  void drawChessboard(Canvas canvas, Rect rect) {
-    //棋盘背景
-    var paint = Paint()
-      ..isAntiAlias = true
-      ..style = PaintingStyle.fill //填充
-      ..color = Color(0xFFDCC48C);
-    canvas.drawRect(rect, paint);
-
-    //画棋盘网格
-    paint
-      ..style = PaintingStyle.stroke //线
-      ..color = Colors.black38
-      ..strokeWidth = 1.0;
-
-    //画横线
-    for (int i = 0; i <= 15; ++i) {
-      double dy = rect.top + rect.height / 15 * i;
-      canvas.drawLine(Offset(rect.left, dy), Offset(rect.right, dy), paint);
-    }
-
-    for (int i = 0; i <= 15; ++i) {
-      double dx = rect.left + rect.width / 15 * i;
-      canvas.drawLine(Offset(dx, rect.top), Offset(dx, rect.bottom), paint);
-    }
-  }
-
-  //画棋子
-  void drawPieces(Canvas canvas, Rect rect) {
-    double eWidth = rect.width / 15;
-    double eHeight = rect.height / 15;
-    //画一个黑子
-    var paint = Paint()
-      ..style = PaintingStyle.fill
-      ..color = Colors.black;
-    //画一个黑子
-    canvas.drawCircle(
-      Offset(rect.center.dx - eWidth / 2, rect.center.dy - eHeight / 2),
-      min(eWidth / 2, eHeight / 2) - 2,
-      paint,
-    );
-    //画一个白子
-    paint.color = Colors.white;
-    canvas.drawCircle(
-      Offset(rect.center.dx + eWidth / 2, rect.center.dy - eHeight / 2),
-      min(eWidth / 2, eHeight / 2) - 2,
-      paint,
-    );
-  }
-
-  // 返回false, 后面介绍
-  @override
-  bool shouldRepaint(CustomPainter oldDelegate) => false;
-}
