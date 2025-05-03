@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutterapp/BestUI/navigation_home_screen.dart';
 import 'package:flutterapp/MyApp/LeftDrawer/LeftDrawer.dart';
 import 'package:flutterapp/MyApp/Mine/Mine_screen.dart';
+import 'package:demo/main.dart';
+import 'package:performance_demo/main.dart';
 
 class MyHomePage extends StatefulWidget {
   MyHomePage({Key? key, required this.title}) : super(key: key);
@@ -16,7 +18,11 @@ class _ScaffoldRouteState extends State<MyHomePage>
   int _selectedIndex = 0;
   late TabController _tabController;
 
-  List tabs = ["flutter实战demo", "flutter核心技术与实战", "MarkDown解析"];
+  List tabs = [
+    "flutter实战demo",
+    "flutter核心技术与实战",
+    "性能优化"
+  ];
 
   @override
   void initState() {
@@ -30,14 +36,11 @@ class _ScaffoldRouteState extends State<MyHomePage>
         case 1:
           print("1_1");
           break;
-        case 2:
-          print("1_2");
-          break;
       }
     });
   }
 
-  PreferredSizeWidget? getAppBar() {
+  PreferredSizeWidget? _buildAppBarWidget() {
     if (_selectedIndex == 0) {
       return AppBar(
         //导航栏
@@ -67,32 +70,30 @@ class _ScaffoldRouteState extends State<MyHomePage>
     return null;
   }
 
-  Widget getBody() {
+  Widget _buildBodyWidget() {
     if (_selectedIndex == 0) {
       return TabBarView(
-          controller: _tabController, children: getSelectContainer());
+          controller: _tabController, children: _buildTabWidget());
     } else if (_selectedIndex == 1) {
-      return SizedBox();
-    } else if (_selectedIndex == 2) {
       return NavigationHomeScreen();
     }
     return WPMine();
   }
 
-  List<Widget> getSelectContainer() {
+  List<Widget> _buildTabWidget() {
     return tabs.map<Widget>((e) {
       //创建3个Tab页
       if (e == tabs[0]) {
-        return SizedBox();
-        // return WPChaters();
+        return FlutterDemoHomePage(
+          title: 'flutter demo',
+          hideAppBar: true,
+        );
       } else if (e == tabs[1]) {
         List<String> titles = [
           "CustomSingleChildScrollView",
           "ProviderExample",
           "FutureExample",
           "CustomInheritedWidget",
-          "StatefulWidget1",
-          "StatefulWidget2"
         ];
         return ListView.builder(
           itemBuilder: (BuildContext context, int index) => GestureDetector(
@@ -109,6 +110,8 @@ class _ScaffoldRouteState extends State<MyHomePage>
           itemCount: titles.length,
         );
       }
+
+      return PerformanceApp();
 
       return Container(
         alignment: Alignment.center,
@@ -141,9 +144,9 @@ class _ScaffoldRouteState extends State<MyHomePage>
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: getAppBar(),
+      appBar: _buildAppBarWidget(),
       drawer: LeftDrawer(), //抽屉
-      body: getBody(),
+      body: _buildBodyWidget(),
       bottomNavigationBar: getBottomNavigationBar(),
     );
   }

@@ -18,7 +18,7 @@ void main() {
   debugProfilePaintsEnabled = true;
   debugProfileLayoutsEnabled = true;
   debugRepaintRainbowEnabled = true;
-  runApp(const MyApp());
+  runApp(const PerformanceApp());
 }
 
 void main2() {
@@ -27,7 +27,7 @@ void main2() {
   ContainerLayer containerLayer = ContainerLayer();
   PaintingContext paintingContext = PaintingContext(containerLayer, Rect.zero);
 
-  Paint circle1Paint= Paint();
+  Paint circle1Paint = Paint();
   circle1Paint.color = Colors.blue;
 
   // 注释1
@@ -35,7 +35,8 @@ void main2() {
 
   // 对画布进行裁剪
   //
-  paintingContext.canvas.clipRect(Rect.fromCenter(center: Offset(400, 400), width: 280, height: 600));
+  paintingContext.canvas.clipRect(
+      Rect.fromCenter(center: Offset(400, 400), width: 280, height: 600));
 
   // 在裁剪后的画布上画一个⭕️
   //
@@ -53,9 +54,14 @@ void main2() {
   // 通过 pushClipRect 方法再次执行裁剪
   // 注意此处 needsCompositing 参数为 true
   //
-  paintingContext.pushClipRect(true, Offset.zero, Rect.fromCenter(center: Offset(500, 400), width: 200, height: 200), _painter,);
+  paintingContext.pushClipRect(
+    true,
+    Offset.zero,
+    Rect.fromCenter(center: Offset(500, 400), width: 200, height: 200),
+    _painter,
+  );
 
-  Paint circle3Paint= Paint();
+  Paint circle3Paint = Paint();
   circle3Paint.color = Colors.yellow;
 
   // 再次画一个⭕️
@@ -85,8 +91,8 @@ void main2() {
   window.scheduleFrame();
 }
 
-class MyApp extends StatelessWidget {
-  const MyApp({Key? key}) : super(key: key);
+class PerformanceApp extends StatelessWidget {
+  const PerformanceApp({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -96,7 +102,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: const MyHomePage(title: 'Flutter Demo Home Page'),
+      home: const PerformanceHomePage(title: 'Flutter Demo Home Page'),
       routes: <String, Widget Function(BuildContext)>{
         SingleChildScrollViewPage.routeName: (BuildContext context) =>
             SingleChildScrollViewPage(),
@@ -113,25 +119,23 @@ class MyApp extends StatelessWidget {
   }
 }
 
-class MyHomePage extends StatefulWidget {
-  const MyHomePage({Key? key, required this.title}) : super(key: key);
-  final String title;
+class PerformanceHomePage extends StatefulWidget {
+  const PerformanceHomePage({Key? key, this.title}) : super(key: key);
+  final String? title;
 
   @override
-  State<MyHomePage> createState() => _MyHomePageState();
+  State<PerformanceHomePage> createState() => _PerformanceHomePageState();
 }
-
 
 class _Foo {
   int foo() => 42;
 }
 
-class _MyHomePageState extends State<MyHomePage> {
+class _PerformanceHomePageState extends State<PerformanceHomePage> {
   int _counter = 0;
   _Foo _bar() => _Foo();
 
   void _incrementCounter() {
-
     setState(() {
       _counter++;
     });
@@ -147,9 +151,11 @@ class _MyHomePageState extends State<MyHomePage> {
       "Lazy Performance Demos",
     ];
     return Scaffold(
-      appBar: AppBar(
-        title: Text(widget.title),
-      ),
+      appBar: widget.title?.isNotEmpty == true
+          ? AppBar(
+              title: Text(widget.title!),
+            )
+          : null,
       body: ListView.builder(
         itemBuilder: (BuildContext context, int index) {
           return Container(

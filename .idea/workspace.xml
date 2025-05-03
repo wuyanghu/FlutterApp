@@ -13,27 +13,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6ee1ac08-7d97-4738-ae9f-d2a1444300ed" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.flutter-plugins" beforeDir="false" afterPath="$PROJECT_DIR$/.flutter-plugins" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.flutter-plugins-dependencies" beforeDir="false" afterPath="$PROJECT_DIR$/.flutter-plugins-dependencies" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README 2.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ios/Flutter/AppFrameworkInfo.plist" beforeDir="false" afterPath="$PROJECT_DIR$/ios/Flutter/AppFrameworkInfo.plist" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ios/Podfile" beforeDir="false" afterPath="$PROJECT_DIR$/ios/Podfile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ios/Podfile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/ios/Podfile.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ios/Runner.xcodeproj/project.pbxproj" beforeDir="false" afterPath="$PROJECT_DIR$/ios/Runner.xcodeproj/project.pbxproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ios/Runner.xcodeproj/xcshareddata/xcschemes/Runner.xcscheme" beforeDir="false" afterPath="$PROJECT_DIR$/ios/Runner.xcodeproj/xcshareddata/xcschemes/Runner.xcscheme" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ios/Runner/Info.plist" beforeDir="false" afterPath="$PROJECT_DIR$/ios/Runner/Info.plist" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/BestUI/hotel_booking/hotel_list_view.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/BestUI/hotel_booking/hotel_list_view.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/MyApp/Media/PrePhoto.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/MyApp/Media/PrePhoto.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/flutter_demo/lib/main.dart" beforeDir="false" afterPath="$PROJECT_DIR$/flutter_demo/lib/main.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/MyApp/Tabbar/MyHomePage.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/MyApp/Tabbar/MyHomePage.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/main_2.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/main.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/performance_demo/ios/Podfile" beforeDir="false" afterPath="$PROJECT_DIR$/performance_demo/ios/Podfile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/performance_demo/ios/Runner.xcodeproj/project.pbxproj" beforeDir="false" afterPath="$PROJECT_DIR$/performance_demo/ios/Runner.xcodeproj/project.pbxproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/performance_demo/ios/Runner.xcworkspace/contents.xcworkspacedata" beforeDir="false" afterPath="$PROJECT_DIR$/performance_demo/ios/Runner.xcworkspace/contents.xcworkspacedata" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/main.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/main.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/performance_demo/lib/main.dart" beforeDir="false" afterPath="$PROJECT_DIR$/performance_demo/lib/main.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/performance_demo/pubspec.lock" beforeDir="false" afterPath="$PROJECT_DIR$/performance_demo/pubspec.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/performance_demo/pubspec.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/performance_demo/pubspec.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/performance_demo/test/widget_test.dart" beforeDir="false" afterPath="$PROJECT_DIR$/performance_demo/test/widget_test.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pubspec.lock" beforeDir="false" afterPath="$PROJECT_DIR$/pubspec.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pubspec.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/pubspec.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/widget_test.dart" beforeDir="false" afterPath="$PROJECT_DIR$/test/widget_test.dart" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -141,30 +130,15 @@
           <line>1345</line>
           <option name="timeStamp" value="8" />
         </line-breakpoint>
-        <line-breakpoint suspend="THREAD" type="Dart">
+        <line-breakpoint type="Dart">
           <url>file://$PROJECT_DIR$/../../config/flutter/packages/flutter/lib/src/rendering/viewport.dart</url>
           <line>271</line>
           <option name="timeStamp" value="11" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="Dart">
-          <url>file://$PROJECT_DIR$/../../config/flutter/packages/flutter/lib/src/rendering/object.dart</url>
-          <line>503</line>
-          <option name="timeStamp" value="49" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="Dart">
-          <url>file://$PROJECT_DIR$/../../config/flutter/packages/flutter/lib/src/rendering/object.dart</url>
-          <line>545</line>
-          <option name="timeStamp" value="53" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="Dart">
-          <url>file://$PROJECT_DIR$/../../config/flutter/packages/flutter/lib/src/rendering/object.dart</url>
-          <line>581</line>
-          <option name="timeStamp" value="54" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="Dart">
-          <url>file://$PROJECT_DIR$/lib/MyApp/examples/WP4Chapter.dart</url>
-          <line>144</line>
-          <option name="timeStamp" value="116" />
+        <line-breakpoint type="Dart">
+          <url>file://$PROJECT_DIR$/flutter_demo/lib/main.dart</url>
+          <line>74</line>
+          <option name="timeStamp" value="117" />
         </line-breakpoint>
       </breakpoints>
       <default-breakpoints>

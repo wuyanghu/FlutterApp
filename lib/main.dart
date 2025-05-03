@@ -13,17 +13,17 @@ import 'MyApp/performance/performance.dart';
 
 void main() {
   // 将 debugPrint 指定为空的执行体, 所以它什么也不做
-  // debugPrint = (String message, {int wrapWidth}) {};
+  debugPrint = (String? message, {int? wrapWidth}) {};
 
   runApp(MyApp());
 }
 
 void main_dev() {
-  // Provider.debugCheckInvalidValueType = null;
+  Provider.debugCheckInvalidValueType = null;
 
   // 将 debugPrint 指定为同步打印数据
-  // debugPrint = (String message, {int wrapWidth}) =>
-  //     debugPrintSynchronously(message, wrapWidth: wrapWidth);
+  debugPrint = (String? message, {int? wrapWidth}) =>
+      debugPrintSynchronously(message, wrapWidth: wrapWidth);
 
   runApp(MyApp());
 }
@@ -97,8 +97,6 @@ class _MyApp extends State with WidgetsBindingObserver {
             // "LineColumnLayout": (context) => LineColumnLayout(),
             "CustomSingleChildScrollView": (context) =>
                 CustomSingleChildScrollView(),
-            // "StatefulWidget1": (context) => StatefulWidget1(),
-            // "StatefulWidget2": (context) => StatefulWidget2(),
           },
           onUnknownRoute: (RouteSettings setting) =>
               MaterialPageRoute(builder: (context) {

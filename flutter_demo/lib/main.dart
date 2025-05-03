@@ -28,20 +28,24 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: const MyHomePage(title: 'Flutter Demo Home Page'),
+      home: const FlutterDemoHomePage(
+        title: 'Flutter Demo Home Page',
+        hideAppBar: false,
+      ),
     );
   }
 }
 
-class MyHomePage extends StatefulWidget {
-  const MyHomePage({super.key, required this.title});
+class FlutterDemoHomePage extends StatefulWidget {
+  const FlutterDemoHomePage({super.key, required this.title, this.hideAppBar});
   final String title;
+  final bool? hideAppBar;
 
   @override
-  State<MyHomePage> createState() => _MyHomePageState();
+  State<FlutterDemoHomePage> createState() => _FlutterDemoHomePageState();
 }
 
-class _MyHomePageState extends State<MyHomePage> {
+class _FlutterDemoHomePageState extends State<FlutterDemoHomePage> {
   int _counter = 0;
 
   void _incrementCounter() async {
@@ -55,24 +59,27 @@ class _MyHomePageState extends State<MyHomePage> {
 
   @override
   Widget build(BuildContext context) {
-
-    Widget _buildItem(String title,Widget? body,{VoidCallback? onTap}) {
-      return ElevatedButton(onPressed: () {
-        if (onTap != null) {
-          onTap!.call();
-          return;
-        }
-        Navigator.push(context, MaterialPageRoute(builder: (_) => body!));
-      }, child: Text(title));
+    Widget _buildItem(String title, Widget? body, {VoidCallback? onTap}) {
+      return ElevatedButton(
+          onPressed: () {
+            if (onTap != null) {
+              onTap!.call();
+              return;
+            }
+            Navigator.push(context, MaterialPageRoute(builder: (_) => body!));
+          },
+          child: Text(title));
     }
 
     return Scaffold(
-      appBar: AppBar(
-        backgroundColor: Theme.of(context).colorScheme.inversePrimary,
-        title: Text(widget.title),
-      ),
+      appBar: widget.hideAppBar == true
+          ? null
+          : AppBar(
+              backgroundColor: Theme.of(context).colorScheme.inversePrimary,
+              title: Text(widget.title),
+            ),
       body: ListView(
-        padding: EdgeInsets.only(left: 16,right: 16),
+        padding: EdgeInsets.only(left: 16, right: 16),
         children: <Widget>[
           _buildItem("CustomPaint_demo", CustomPaintDemo()),
           _buildItem("bloc_demo", BlocDemoPage()),
@@ -83,7 +90,7 @@ class _MyHomePageState extends State<MyHomePage> {
           _buildItem("slider_demo", SymmetricSliderDemo()),
           _buildItem("switch_demo", SwitchDemo()),
           _buildItem("tab_异常_demo", TabDemo()),
-          _buildItem("事件任务、微任务",null,onTap: (){
+          _buildItem("事件任务、微任务", null, onTap: () {
             EventLoop().task();
           })
           // ScaleAnimationRoute1(
@@ -223,5 +230,3 @@ class GrowTransition extends StatelessWidget {
     );
   }
 }
-
-
