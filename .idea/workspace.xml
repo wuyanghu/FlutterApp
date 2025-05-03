@@ -13,94 +13,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6ee1ac08-7d97-4738-ae9f-d2a1444300ed" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/flutter_demo/lib/flutter_实战/symmetric_slider_demo.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Dart_SDK.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Dart_SDK.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/flutter_demo/ios/Flutter/Debug.xcconfig" beforeDir="false" afterPath="$PROJECT_DIR$/flutter_demo/ios/Flutter/Debug.xcconfig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/flutter_demo/ios/Flutter/Release.xcconfig" beforeDir="false" afterPath="$PROJECT_DIR$/flutter_demo/ios/Flutter/Release.xcconfig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/flutter_demo/ios/Runner.xcodeproj/project.pbxproj" beforeDir="false" afterPath="$PROJECT_DIR$/flutter_demo/ios/Runner.xcodeproj/project.pbxproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/flutter_demo/ios/Runner.xcworkspace/contents.xcworkspacedata" beforeDir="false" afterPath="$PROJECT_DIR$/flutter_demo/ios/Runner.xcworkspace/contents.xcworkspacedata" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/flutter_demo/lib/main.dart" beforeDir="false" afterPath="$PROJECT_DIR$/flutter_demo/lib/main.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/flutter_demo/pubspec.lock" beforeDir="false" afterPath="$PROJECT_DIR$/flutter_demo/pubspec.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/flutter_demo/pubspec.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/flutter_demo/pubspec.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/flutterapp.iml" beforeDir="false" afterPath="$PROJECT_DIR$/flutterapp.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/DouBan/Util/DateUitl.dart" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/DouBan/Util/EncryptUtil.dart" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/DouBan/Util/LoadImages.dart" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/DouBan/Util/palette_generator.dart" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/DouBan/Util/pick_img_main_color.dart" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/DouBan/Util/screen_utils.dart" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/DouBan/bean/celebrity_entity.dart" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/DouBan/bean/celebrity_work_entity.dart" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/DouBan/bean/comments_entity.dart" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/DouBan/bean/movie_detail_bean.dart" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/DouBan/bean/movie_long_comments_entity.dart" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/DouBan/bean/search_result_entity.dart" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/DouBan/bean/subject_entity.dart" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/DouBan/bean/top_item_bean.dart" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/DouBan/constant/cache_key.dart" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/DouBan/constant/color_constant.dart" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/DouBan/constant/constant.dart" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/DouBan/constant/text_size_constant.dart" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/DouBan/demo/image_colors.dart" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/DouBan/demo/my_scroll_view.dart" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/DouBan/demo/my_scrollable.dart" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/DouBan/demo/slide_container.dart" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/DouBan/generated/i18n.dart" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/DouBan/http/API.dart" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/DouBan/http/http_request.dart" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/DouBan/http/mock_request.dart" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/DouBan/pages/container_page.dart" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/DouBan/pages/detail/detail_page.dart" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/DouBan/pages/detail/detail_title_widget.dart" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/DouBan/pages/detail/long_comment_widget.dart" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/DouBan/pages/detail/look_confirm_button.dart" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/DouBan/pages/detail/score_start.dart" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/DouBan/pages/detail/summary_widget.dart" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/DouBan/pages/detail/tags_widget.dart" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/DouBan/pages/douya_top_250_list_widget.dart" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/DouBan/pages/group/group_page.dart" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/DouBan/pages/home/home_app_bar.dart" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/DouBan/pages/home/home_page.dart" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/DouBan/pages/home/my_home_tab_bar.dart" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/DouBan/pages/movie/book_audio_video_page.dart" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/DouBan/pages/movie/hot_soon_movie_widget.dart" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/DouBan/pages/movie/hot_soon_tab_bar.dart" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/DouBan/pages/movie/movie_app_bar.dart" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/DouBan/pages/movie/movie_list_page.dart" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/DouBan/pages/movie/movie_page.dart" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/DouBan/pages/movie/movie_page_new.dart" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/DouBan/pages/movie/title_widget.dart" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/DouBan/pages/movie/today_play_movie_widget.dart" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/DouBan/pages/movie/top_item_widget.dart" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/DouBan/pages/movie/tv_page.dart" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/DouBan/pages/person/person_center_page.dart" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/DouBan/pages/person_detail_page.dart" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/DouBan/pages/photo_hero_page.dart" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/DouBan/pages/search/search_page.dart" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/DouBan/pages/shop_page.dart" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/DouBan/pages/splash/splash_widget.dart" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/DouBan/pages/videos_play_page.dart" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/DouBan/pages/web_view_page.dart" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/DouBan/repository/movie_repository.dart" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/DouBan/repository/person_detail_repository.dart" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/DouBan/router.dart" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/DouBan/widgets/animal_photo.dart" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/DouBan/widgets/bottom_drag_widget.dart" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/DouBan/widgets/image/LaminatedImage.dart" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/DouBan/widgets/image/cache_img_radius.dart" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/DouBan/widgets/image/heart_img_widget.dart" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/DouBan/widgets/image/network_img_widget.dart" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/DouBan/widgets/image/radius_img.dart" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/DouBan/widgets/item_count_title.dart" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/DouBan/widgets/loading_widget.dart" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/DouBan/widgets/my_tab_bar_widget.dart" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/DouBan/widgets/rating_bar.dart" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/DouBan/widgets/search_text_field_widget.dart" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/DouBan/widgets/subject_mark_image_widget.dart" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/DouBan/widgets/title_bar.dart" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/DouBan/widgets/video_progress_bar.dart" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/DouBan/widgets/video_widget.dart" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/main.dart" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/generated/intl/messages_all.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/generated/intl/messages_all.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/generated/intl/messages_en.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/generated/intl/messages_en.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/generated/l10n.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/generated/l10n.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/performance_demo/ios/Flutter/Debug.xcconfig" beforeDir="false" afterPath="$PROJECT_DIR$/performance_demo/ios/Flutter/Debug.xcconfig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/performance_demo/ios/Flutter/Release.xcconfig" beforeDir="false" afterPath="$PROJECT_DIR$/performance_demo/ios/Flutter/Release.xcconfig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/performance_demo/pubspec.lock" beforeDir="false" afterPath="$PROJECT_DIR$/performance_demo/pubspec.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/performance_demo/pubspec.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/performance_demo/pubspec.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pubspec.lock" beforeDir="false" afterPath="$PROJECT_DIR$/pubspec.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pubspec.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/pubspec.yaml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -153,6 +76,7 @@
   "keyToString": {
     "Flutter.main.dart.executor": "Debug",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.cidr.known.project.marker": "true",
     "RunOnceActivity.git.unshallow": "true",
     "RunOnceActivity.readMode.enableVisualFormatting": "true",

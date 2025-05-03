@@ -31,8 +31,7 @@ class __TestWidgetState extends State<_TestWidget> {
   Widget build(BuildContext context) {
     //使用InheritedWidget中的共享数据
     // return Text("data");
-    ShareDataWidget share = ShareDataWidget.of(context);
-    return Text(ShareDataWidget.of(context).data.toString());
+    return Text(ShareDataWidget.of(context)!.data.toString());
   }
 
   @override
@@ -52,7 +51,7 @@ class InheritedWidgetTestRoute extends StatefulWidget {
 
 class _InheritedWidgetTestRouteState extends State<InheritedWidgetTestRoute> {
   int count = 0;
-  Timer _timer;
+  late Timer _timer;
   @override
   void initState() {
     super.initState();
