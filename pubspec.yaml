@@ -52,6 +52,13 @@ dependency_overrides:
   date_format: ^1.0.9
   provider: ^4.0.0
 
+  # 国际化配置
+flutter_intl:
+  enabled: true # Required. Must be set to true to activate the plugin. Default: false
+  arb_dir: lib/l10n # Optional. Sets the directory of your ARB resource files. Provided value should be a valid path on your system. Default: lib/l10n
+  output_dir: lib/generated # Optional. Sets the directory of generated localization files. Provided value should be a valid path on your system. Default: lib/generated
+  use_deferred_loading: false
+  
 dev_dependencies:
   flutter_test:
     sdk: flutter

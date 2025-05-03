@@ -1,3 +1,5 @@
+import 'dart:async';
+
 import 'package:flutter/material.dart';
 
 class ShareDataWidget extends InheritedWidget {
@@ -28,7 +30,9 @@ class __TestWidgetState extends State<_TestWidget> {
   @override
   Widget build(BuildContext context) {
     //使用InheritedWidget中的共享数据
-    return Text(ShareDataWidget.of(context)?.data.toString() ?? "");
+    // return Text("data");
+    ShareDataWidget share = ShareDataWidget.of(context);
+    return Text(ShareDataWidget.of(context).data.toString());
   }
 
   @override
@@ -48,6 +52,22 @@ class InheritedWidgetTestRoute extends StatefulWidget {
 
 class _InheritedWidgetTestRouteState extends State<InheritedWidgetTestRoute> {
   int count = 0;
+  Timer _timer;
+  @override
+  void initState() {
+    super.initState();
+    const timeout = const Duration(seconds: 1);
+    _timer = Timer.periodic(timeout, (timer) {
+      count++;
+      setState(() {});
+    });
+  }
+
+  @override
+  void dispose() {
+    super.dispose();
+    _timer.cancel();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -67,7 +87,17 @@ class _InheritedWidgetTestRouteState extends State<InheritedWidgetTestRoute> {
                 ElevatedButton(
                   child: Text("Increment"),
                   //每点击一次，将count自增，然后重新build,ShareDataWidget的data将被更新
-                  onPressed: () => setState(() => ++count),
+                  onPressed: () {
+                    setState(() => ++count);
+                    Navigator.push<dynamic>(
+                      context,
+                      MaterialPageRoute<dynamic>(
+                          builder: (BuildContext context) => ShareDataWidget(
+                                data: count,
+                                child: _TestWidget(),
+                              )),
+                    );
+                  },
                 )
               ],
             ),

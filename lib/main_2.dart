@@ -78,7 +78,7 @@ class _MyApp extends State with WidgetsBindingObserver {
     return MultiProvider(
         providers: [
           Provider.value(value: 30.0), // 注入字体大小
-          ChangeNotifierProvider.value(value: CounterModel()) // 注入计数器实例
+          // ChangeNotifierProvider.value(value: CounterModel()) // 注入计数器实例
         ],
         child: MaterialApp(
           debugShowCheckedModeBanner: false,
@@ -92,7 +92,8 @@ class _MyApp extends State with WidgetsBindingObserver {
             "NewRoute": (context) => NewRoute(),
             "RouterTestRoute": (context) => RouterTestRoute(),
             "CupertinoTestRoute": (context) => CupertinoTestRoute(),
-            "ProviderExample": (context) => ProviderExample(),
+            "ProviderExample": (context) => ChangeNotifierProvider(
+                create: (context) => CounterModel(), child: ProviderExample()),
             "MyProvider_SecondPage": (context) => SecondPage(),
             "FutureExample": (context) => FutureExample(),
             "/ProviderRoute": (context) => ProviderRoute(),
