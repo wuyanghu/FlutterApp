@@ -18,11 +18,7 @@ class _ScaffoldRouteState extends State<MyHomePage>
   int _selectedIndex = 0;
   late TabController _tabController;
 
-  List tabs = [
-    "flutter实战demo",
-    "flutter核心技术与实战",
-    "性能优化"
-  ];
+  List tabs = ["flutter实战demo", "性能优化"];
 
   @override
   void initState() {
@@ -46,7 +42,6 @@ class _ScaffoldRouteState extends State<MyHomePage>
         //导航栏
         title: Text("首页"),
         bottom: TabBar(
-            //生成Tab菜单
             controller: _tabController,
             tabs: tabs.map((e) => Tab(text: e)).toList()),
         leading: Builder(builder: (context) {
@@ -88,35 +83,9 @@ class _ScaffoldRouteState extends State<MyHomePage>
           title: 'flutter demo',
           hideAppBar: true,
         );
-      } else if (e == tabs[1]) {
-        List<String> titles = [
-          "CustomSingleChildScrollView",
-          "ProviderExample",
-          "FutureExample",
-          "CustomInheritedWidget",
-        ];
-        return ListView.builder(
-          itemBuilder: (BuildContext context, int index) => GestureDetector(
-              onTap: () {
-                print(index);
-                Navigator.pushNamed(context, titles[index]);
-              },
-              child: Container(
-                padding:
-                    EdgeInsets.only(left: 10, right: 10, top: 5, bottom: 5),
-                child: Text(titles[index]),
-              )),
-          itemExtent: 44,
-          itemCount: titles.length,
-        );
       }
 
       return PerformanceApp();
-
-      return Container(
-        alignment: Alignment.center,
-        child: Text(e, textScaleFactor: 5),
-      );
     }).toList();
   }
 

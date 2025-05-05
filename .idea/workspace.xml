@@ -13,18 +13,31 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6ee1ac08-7d97-4738-ae9f-d2a1444300ed" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/assets/cloud.riv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/fire.riv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/grass.riv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/marty_transparent.riv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/marty_v6.riv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/planet.riv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/star.riv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/star_close.riv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/ufo.riv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/wave.riv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/performance_demo/lib/performance/custom_single_scroll_view.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.flutter-plugins-dependencies" beforeDir="false" afterPath="$PROJECT_DIR$/.flutter-plugins-dependencies" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/runConfigurations/main_dart.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/runConfigurations/main_dart.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/MyApp/Mine/Mine_screen.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/MyApp/Mine/Mine_screen.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/flutter_demo/lib/flutter_实战/Chapter7/Chapter7.dart" beforeDir="false" afterPath="$PROJECT_DIR$/flutter_demo/lib/provider/Chapter7/Chapter7.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/flutter_demo/lib/flutter_实战/Chapter7/ShareDataWidget.dart" beforeDir="false" afterPath="$PROJECT_DIR$/flutter_demo/lib/provider/Chapter7/share_data_widget.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/flutter_demo/lib/flutter_实战/Chapter7/Shopping.dart" beforeDir="false" afterPath="$PROJECT_DIR$/flutter_demo/lib/provider/Chapter7/shopping.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/flutter_demo/lib/flutter_实战/Chapter7/ShoppingProvider.dart" beforeDir="false" afterPath="$PROJECT_DIR$/flutter_demo/lib/provider/Chapter7/shopping_provider.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/flutter_demo/lib/flutter_实战/Model/WPChapterModel.dart" beforeDir="false" afterPath="$PROJECT_DIR$/flutter_demo/lib/flutter_实战/Model/WPChapterModel.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/flutter_demo/lib/main.dart" beforeDir="false" afterPath="$PROJECT_DIR$/flutter_demo/lib/main.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/flutter_demo/lib/provider/provider_demo.dart" beforeDir="false" afterPath="$PROJECT_DIR$/flutter_demo/lib/provider/provider_demo.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/flutter_demo/lib/util/util.dart" beforeDir="false" afterPath="$PROJECT_DIR$/flutter_demo/lib/util/util.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/flutter_demo/pubspec.lock" beforeDir="false" afterPath="$PROJECT_DIR$/flutter_demo/pubspec.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/flutter_demo/pubspec.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/flutter_demo/pubspec.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/BestUI/design_course/category_list_view.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/BestUI/design_course/category_list_view.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/MyApp/Tabbar/MyHomePage.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/MyApp/Tabbar/MyHomePage.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/MyApp/examples2/FutureExample.dart" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/MyApp/examples2/InheritedWidget.dart" beforeDir="false" afterPath="$PROJECT_DIR$/flutter_demo/lib/provider/custom_inherited_widget.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/MyApp/examples2/Provider.dart" beforeDir="false" afterPath="$PROJECT_DIR$/flutter_demo/lib/provider/share_provider_page.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/MyApp/performance/performance.dart" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/main.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/main.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/performance_demo/lib/custom_painter_page.dart" beforeDir="false" afterPath="$PROJECT_DIR$/performance_demo/lib/performance/custom_painter_page.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/performance_demo/lib/main.dart" beforeDir="false" afterPath="$PROJECT_DIR$/performance_demo/lib/main.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/performance_demo/lib/time_consuming_page.dart" beforeDir="false" afterPath="$PROJECT_DIR$/performance_demo/lib/performance/time_consuming_page.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pubspec.lock" beforeDir="false" afterPath="$PROJECT_DIR$/pubspec.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pubspec.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/pubspec.yaml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -93,12 +106,18 @@
     "kotlin-language-version-configured": "true",
     "last_opened_file_path": "/Users/wupeng/Desktop/code/FlutterApp/assets",
     "settings.editor.selected.configurable": "preferences.keymap",
-    "show.migrate.to.gradle.popup": "false"
+    "show.migrate.to.gradle.popup": "false",
+    "structure.view.defaults.are.configured": "true"
   }
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/assets" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/flutter_demo/lib/provider" />
+      <recent name="$PROJECT_DIR$/performance_demo/lib/performance" />
+      <recent name="$PROJECT_DIR$/performance_demo/lib" />
     </key>
   </component>
   <component name="RunManager">
@@ -147,10 +166,25 @@
           <line>271</line>
           <option name="timeStamp" value="11" />
         </line-breakpoint>
-        <line-breakpoint type="Dart">
-          <url>file://$PROJECT_DIR$/flutter_demo/lib/main.dart</url>
-          <line>76</line>
-          <option name="timeStamp" value="117" />
+        <line-breakpoint enabled="true" type="Dart">
+          <url>file://$USER_HOME$/.pub-cache/hosted/pub.dev/leak_detector-1.1.0/lib/src/view/leak_preview_page.dart</url>
+          <line>20</line>
+          <option name="timeStamp" value="120" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="Dart">
+          <url>file://$PROJECT_DIR$/lib/main.dart</url>
+          <line>42</line>
+          <option name="timeStamp" value="121" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="Dart">
+          <url>file://$USER_HOME$/.pub-cache/hosted/pub.dev/leak_detector-1.1.0/lib/src/leak_detector.dart</url>
+          <line>81</line>
+          <option name="timeStamp" value="123" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="Dart">
+          <url>file://$USER_HOME$/.pub-cache/hosted/pub.dev/leak_detector-1.1.0/lib/src/leak_detector_task.dart</url>
+          <line>85</line>
+          <option name="timeStamp" value="124" />
         </line-breakpoint>
       </breakpoints>
       <default-breakpoints>

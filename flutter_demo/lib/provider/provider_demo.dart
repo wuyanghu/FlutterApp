@@ -52,21 +52,12 @@ class _ProviderDemo extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
             Text('You have pushed the button this many times:'),
-
-            /// Extracted as a separate widget for performance optimization.
-            /// As a separate widget, it will rebuild independently from [MyHomePage].
-            ///
-            /// This is totally optional (and rarely needed).
-            /// Similarly, we could also use [Consumer] or [Selector].
             Count(),
           ],
         ),
       ),
       floatingActionButton: FloatingActionButton(
         key: const Key('increment_floatingActionButton'),
-
-        /// Calls `context.read` instead of `context.watch` so that it does not rebuild
-        /// when [Counter] changes.
         onPressed: () => context.read<Counter>().increment(),
         tooltip: 'Increment',
         child: const Icon(Icons.add),

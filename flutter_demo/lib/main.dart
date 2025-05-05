@@ -1,5 +1,8 @@
 import 'package:flutter_demo/paint/custom_paint.dart';
+import 'package:flutter_demo/provider/Chapter7/share_data_widget.dart';
+import 'package:flutter_demo/provider/custom_inherited_widget.dart';
 import 'package:flutter_demo/provider/provider_demo.dart';
+import 'package:flutter_demo/provider/share_provider_page.dart';
 import 'package:flutter_demo/status_manager/bloc_demo/bloc_demo_page.dart';
 import 'package:flutter_demo/status_manager/bloc_demo/bloc_example.dart';
 import 'package:flutter_demo/status_manager/get/get_page.dart';
@@ -8,11 +11,11 @@ import 'package:flutter_demo/tab_demo/tab_demo.dart';
 import 'package:flutter_demo/util/util.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_demo/paint/custom_paint.dart';
-import 'package:flutter_demo/status_manager/bloc_demo/bloc_demo_page.dart';
 import 'dart:isolate';
+import 'flutter_实战/WP7Chapter.dart';
 import 'flutter_实战/WPChapters_screen.dart';
 import 'slider/symmetric_slider_demo.dart';
+import 'package:leak_detector/leak_detector.dart';
 
 void main() {
   runApp(const MyApp());
@@ -62,15 +65,18 @@ class _FlutterDemoHomePageState extends State<FlutterDemoHomePage> {
   @override
   Widget build(BuildContext context) {
     Widget _buildItem(String title, Widget? body, {VoidCallback? onTap}) {
-      return ElevatedButton(
-          onPressed: () {
+      return GestureDetector(
+          onTap: () {
             if (onTap != null) {
               onTap!.call();
               return;
             }
             Navigator.push(context, MaterialPageRoute(builder: (_) => body!));
           },
-          child: Text(title));
+          child: Text(
+            title,
+            style: TextStyle(fontSize: 16),
+          ));
     }
 
     return Scaffold(
@@ -88,23 +94,41 @@ class _FlutterDemoHomePageState extends State<FlutterDemoHomePage> {
           _buildItem("bloc_官方demo", BlocExample()),
           _buildItem("get_demo", GetPage()),
           _buildItem("flutter实战", WPChaters()),
+          _buildItem(
+            '7.2 数据共享（InheritedWidget）',
+            InheritedWidgetTestRoute(),
+          ),
+          _buildItem(
+            '7.3 跨组件状态共享（Provider）',
+            ProviderRoute(),
+          ),
           _buildItem("provider_demo", ProviderDemo()),
+          _buildItem("ShareProviderPage", ShareProviderPage()),
+          _buildItem("CustomInheritedWidget", CustomInheritedWidget()),
           _buildItem("slider_demo", SymmetricSliderDemo()),
           _buildItem("switch_demo", SwitchDemo()),
           _buildItem("tab_异常_demo", TabDemo()),
           _buildItem("事件任务、微任务", null, onTap: () {
             EventLoop().task();
-          })
-          // ScaleAnimationRoute1(
-          //   key: UniqueKey(),
-          // ),
-          // const Text(
-          //   'You have pushed the button this many times:',
-          // ),
-          // Text(
-          //   '$_counter',
-          //   style: Theme.of(context).textTheme.headlineMedium,
-          // ),
+          }),
+          _buildItem("事件任务、微任务2", null, onTap: () {
+            EventLoop().task2();
+          }),
+          _buildItem("开启Isolate", null, onTap: () {
+            IsolateExample().startIsolate();
+            IsolateExample().asyncFactorialiMain();
+            IsolateExample().asyncFactorialiMain2();
+          }),
+          _buildItem("内存泄漏记录", null, onTap: () {
+            getLeakedRecording().then((List<LeakedInfo> infoList) {
+              showLeakedInfoListPage(context, infoList);
+            });
+          }),
+          _buildItem(
+              "scale animation",
+              ScaleAnimationRoute1(
+                key: UniqueKey(),
+              )),
         ],
       ),
       floatingActionButton: FloatingActionButton(

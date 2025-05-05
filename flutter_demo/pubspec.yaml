@@ -42,6 +42,9 @@ dependencies:
   provider:
   video_player:
 
+dependency_overrides:
+  leak_detector: 1.1.0 #内存泄漏监控
+  vm_service: 11.2.0
 
 dev_dependencies:
   flutter_test:

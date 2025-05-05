@@ -1,4 +1,4 @@
-import 'ShoppingProvider.dart';
+import 'shopping_provider.dart';
 import 'package:flutter/material.dart';
 
 // 这是一个便捷类，会获得当前context和指定数据类型的Provider

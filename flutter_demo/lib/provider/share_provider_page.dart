@@ -16,21 +16,31 @@ class CounterModel with ChangeNotifier {
   }
 }
 
-class ProviderExample extends StatelessWidget {
-  // CounterModel _counterModel = CounterModel();
+class ShareProviderPage extends StatelessWidget {
+  const ShareProviderPage({super.key});
+
   @override
   Widget build(BuildContext context) {
-    // 通过 Provider 组件封装数据资源
+    return ChangeNotifierProvider(
+        create: (context) => CounterModel(), child: _ShareProviderPage());
+  }
+}
 
+class _ShareProviderPage extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-          title: Text("FirstPage"),
+          title: Text("provider共用一个model"),
         ),
         // 展示资源中的数据
         body: FirstPage(), // 跳转到 SecondPage
         floatingActionButton: FloatingActionButton(
-            onPressed: () => Navigator.of(context)
-                .push(MaterialPageRoute(builder: (context) => SecondPage()))));
+            onPressed: () => Navigator.of(context).push(MaterialPageRoute(
+                builder: (_) => ChangeNotifierProvider.value(
+                      value: Provider.of<CounterModel>(context),
+                      child: SecondPage(),
+                    )))));
   }
 }
 
@@ -57,7 +67,6 @@ class _FirstPage extends State<FirstPage> {
 
   @override
   void dispose() {
-    // TODO: implement dispose
     super.dispose();
     _timer.cancel();
   }

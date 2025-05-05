@@ -5,12 +5,7 @@ import 'package:flutter_app/MyApp/Login/LoginShare.dart';
 import 'package:flutter_app/MyApp/Tabbar/MyHomePage.dart';
 import 'package:provider/provider.dart';
 import 'package:shared_preferences/shared_preferences.dart';
-
-import 'MyApp/examples2/FutureExample.dart';
-import 'MyApp/examples2/InheritedWidget.dart';
-import 'MyApp/examples2/Provider.dart';
-import 'MyApp/performance/performance.dart';
-
+import 'package:leak_detector/leak_detector.dart';
 void main() {
   // 将 debugPrint 指定为空的执行体, 所以它什么也不做
   debugPrint = (String? message, {int? wrapWidth}) {};
@@ -41,17 +36,16 @@ class _MyApp extends State with WidgetsBindingObserver {
   @override
   void initState() {
     super.initState();
+    LeakDetector().init(maxRetainingPath: 300);
+    //show preview page
+    LeakDetector().onLeakedStream.listen((LeakedInfo info) {
+      //print to console
+      info.retainingPath.forEach((node) => print(node));
+      //show preview page
+      showLeakedInfoPage(context, info);
+    });
+
     WidgetsBinding.instance.addObserver(this); // 注册监听器
-
-    WidgetsBinding.instance.addPostFrameCallback((_) {
-      //build之后的一次回调
-      print(" 单次 Frame 绘制回调 "); // 只回调一次
-    });
-
-    //只要有build就会回调，动画调用最多
-    WidgetsBinding.instance.addPersistentFrameCallback((_) {
-      // print(" 实时 Frame 绘制回调 "); // 每帧都回调
-    });
 
     loadData();
     LoginShare.getInstance().logOut(() {
@@ -69,7 +63,7 @@ class _MyApp extends State with WidgetsBindingObserver {
   Widget build(BuildContext context) {
     print("build");
     ErrorWidget.builder = (FlutterErrorDetails errorDetails) {
-      return getErrorWidget(context, errorDetails);
+      return UnknownPage();
     };
     return MultiProvider(
         providers: [
@@ -83,20 +77,16 @@ class _MyApp extends State with WidgetsBindingObserver {
             primarySwatch: Colors.blue,
             visualDensity: VisualDensity.adaptivePlatformDensity,
           ),
+          navigatorObservers: [
+            LeakNavigatorObserver(
+              //返回false则不会校验这个页面.
+              shouldCheck: (route) {
+                return route.settings.name != null && route.settings.name != '/';
+              },
+            ),
+          ],
           //注册路由表
           routes: {
-            // "NewRoute": (context) => NewRoute(),
-            // "RouterTestRoute": (context) => RouterTestRoute(),
-            // "CupertinoTestRoute": (context) => CupertinoTestRoute(),
-            "ProviderExample": (context) => ChangeNotifierProvider(
-                create: (context) => CounterModel(), child: ProviderExample()),
-            "MyProvider_SecondPage": (context) => SecondPage(),
-            "FutureExample": (context) => FutureExample(),
-            // "/ProviderRoute": (context) => ProviderRoute(),
-            "CustomInheritedWidget": (context) => CustomInheritedWidget(),
-            // "LineColumnLayout": (context) => LineColumnLayout(),
-            "CustomSingleChildScrollView": (context) =>
-                CustomSingleChildScrollView(),
           },
           onUnknownRoute: (RouteSettings setting) =>
               MaterialPageRoute(builder: (context) {
@@ -140,10 +130,6 @@ class _MyApp extends State with WidgetsBindingObserver {
   void dispose() {
     super.dispose();
     WidgetsBinding.instance.removeObserver(this); // 移除监听器
-  }
-
-  Widget getErrorWidget(BuildContext context, FlutterErrorDetails error) {
-    return UnknownPage();
   }
 }
 

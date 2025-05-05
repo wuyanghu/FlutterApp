@@ -1,9 +1,9 @@
 import 'package:flutter/widgets.dart';
 
 import '../../main.dart';
-import '../Chapter7/Chapter7.dart';
-import '../Chapter7/ShareDataWidget.dart';
-import '../Chapter7/Shopping.dart';
+import '../../provider/Chapter7/Chapter7.dart';
+import '../../provider/Chapter7/share_data_widget.dart';
+import '../../provider/Chapter7/shopping.dart';
 import '../WP2Chapter.dart';
 import '../WP3Chapter.dart';
 import '../WP4Chapter.dart';

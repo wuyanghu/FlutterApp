@@ -3,9 +3,10 @@ import 'dart:ui';
 
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
-import 'package:performance_demo/time_consuming_page.dart';
+import 'package:performance_demo/performance/custom_single_scroll_view.dart';
+import 'package:performance_demo/performance/time_consuming_page.dart';
 
-import 'custom_painter_page.dart';
+import 'performance/custom_painter_page.dart';
 import 'lazy/iv_builder_page.dart';
 import 'lazy/iv_builder_table_page.dart';
 import 'lazy/iv_slow_page.dart';
@@ -97,12 +98,12 @@ class PerformanceApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
+      title: '性能 Demo',
       // showPerformanceOverlay: true,
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: const PerformanceHomePage(title: 'Flutter Demo Home Page'),
+      home: const PerformanceHomePage(title: '性能 Demo'),
       routes: <String, Widget Function(BuildContext)>{
         SingleChildScrollViewPage.routeName: (BuildContext context) =>
             SingleChildScrollViewPage(),
@@ -147,6 +148,7 @@ class _PerformanceHomePageState extends State<PerformanceHomePage> {
       "复杂耗时计算时,也会UI也会卡顿",
       "自定义RepaintBoundary",
       "Lazy Performance Demos",
+      "自定义scrollView，卡顿"
     ];
     return Scaffold(
       appBar: widget.title?.isNotEmpty == true
@@ -167,6 +169,8 @@ class _PerformanceHomePageState extends State<PerformanceHomePage> {
                   pushPage(CustomPainterPage(titles[index]));
                 } else if (index == 2) {
                   pushPage(LazyPage(titles[index]));
+                } else if (index == 3) {
+                  pushPage(CustomSingleChildScrollView(titles[index]));
                 }
               },
               child: Row(

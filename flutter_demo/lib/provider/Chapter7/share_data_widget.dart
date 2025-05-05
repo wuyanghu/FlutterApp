@@ -88,14 +88,6 @@ class _InheritedWidgetTestRouteState extends State<InheritedWidgetTestRoute> {
                   //每点击一次，将count自增，然后重新build,ShareDataWidget的data将被更新
                   onPressed: () {
                     setState(() => ++count);
-                    Navigator.push<dynamic>(
-                      context,
-                      MaterialPageRoute<dynamic>(
-                          builder: (BuildContext context) => ShareDataWidget(
-                                data: count,
-                                child: _TestWidget(),
-                              )),
-                    );
                   },
                 )
               ],
