@@ -14,15 +14,12 @@
   <component name="ChangeListManager">
     <list default="true" id="6ee1ac08-7d97-4738-ae9f-d2a1444300ed" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.flutter-plugins-dependencies" beforeDir="false" afterPath="$PROJECT_DIR$/.flutter-plugins-dependencies" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.fvm/fvm_config.json" beforeDir="false" afterPath="$PROJECT_DIR$/.fvm/fvm_config.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/component_demos/flutter_demo/ios/Podfile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/component_demos/flutter_demo/ios/Podfile.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/component_demos/flutter_demo/lib/main.dart" beforeDir="false" afterPath="$PROJECT_DIR$/component_demos/flutter_demo/lib/main.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/component_demos/flutter_demo/lib/provider/provider_demo.dart" beforeDir="false" afterPath="$PROJECT_DIR$/component_demos/flutter_demo/lib/provider/provider_demo.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/component_demos/flutter_demo/pubspec.lock" beforeDir="false" afterPath="$PROJECT_DIR$/component_demos/flutter_demo/pubspec.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/component_demos/flutter_demo/pubspec.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/component_demos/flutter_demo/pubspec.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/flutterapp.iml" beforeDir="false" afterPath="$PROJECT_DIR$/flutterapp.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/component_demos/alg_demo/ios/Flutter/AppFrameworkInfo.plist" beforeDir="false" afterPath="$PROJECT_DIR$/component_demos/alg_demo/ios/Flutter/AppFrameworkInfo.plist" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/component_demos/alg_demo/ios/Runner.xcodeproj/project.pbxproj" beforeDir="false" afterPath="$PROJECT_DIR$/component_demos/alg_demo/ios/Runner.xcodeproj/project.pbxproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/component_demos/alg_demo/ios/Runner.xcodeproj/xcshareddata/xcschemes/Runner.xcscheme" beforeDir="false" afterPath="$PROJECT_DIR$/component_demos/alg_demo/ios/Runner.xcodeproj/xcshareddata/xcschemes/Runner.xcscheme" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/component_demos/alg_demo/ios/Runner/Info.plist" beforeDir="false" afterPath="$PROJECT_DIR$/component_demos/alg_demo/ios/Runner/Info.plist" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/component_demos/alg_demo/lib/main.dart" beforeDir="false" afterPath="$PROJECT_DIR$/component_demos/alg_demo/lib/main.dart" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

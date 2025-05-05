@@ -155,9 +155,14 @@ class _MyHomePageState extends State<MyHomePage> {
     // print(minSubArrayLen(4, [1, 4, 4]));
     // print(minSubArrayLen(11, [1, 1, 1, 1, 1, 1, 1, 1]));
 
-    print(maxSlidingWindow([1, 3, -1, -3, 5, 3, 6, 7], 3));
-    print(maxSlidingWindow([1], 1));
-    print(maxSlidingWindow([1, -1], 1));
+    // print(maxSlidingWindow([1, 3, -1, -3, 5, 3, 6, 7], 3));
+    // print(maxSlidingWindow([1], 1));
+    // print(maxSlidingWindow([1, -1], 1));
+    
+    print(removeElement([3,2,2,3], 3));
+    print(removeElement([0,1,2,2,3,0,4,2], 2));
+    print(removeElement([2], 3));
+
   }
 
   @override
