@@ -1,7 +1,7 @@
-import 'package:flutter_demo/status_manager/get/get_state.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'get_logic.dart';
+import 'get_state.dart';
 
 class GetPage extends StatelessWidget {
   GetPage({Key? key}) : super(key: key);

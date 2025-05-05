@@ -37,7 +37,7 @@ Future<bool> initializeMessages(String localeName) {
   var availableLocale = Intl.verifiedLocale(
     localeName,
     (locale) => _deferredLibraries[locale] != null,
-    onFailure: (_) => "null",
+    onFailure: (_) => null,
   );
   if (availableLocale == null) {
     return new SynchronousFuture(false);
@@ -61,7 +61,7 @@ MessageLookupByLibrary? _findGeneratedMessagesFor(String locale) {
   var actualLocale = Intl.verifiedLocale(
     locale,
     _messagesExistFor,
-    onFailure: (_) => "null",
+    onFailure: (_) => null,
   );
   if (actualLocale == null) return null;
   return _findExact(actualLocale);
