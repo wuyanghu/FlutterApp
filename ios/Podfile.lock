@@ -4,6 +4,8 @@ PODS:
     - Flutter
   - fluttertoast (0.0.2):
     - Flutter
+  - leak_detector (0.0.1):
+    - Flutter
   - package_info (0.0.1):
     - Flutter
   - path_provider_foundation (0.0.1):
@@ -27,6 +29,7 @@ DEPENDENCIES:
   - Flutter (from `Flutter`)
   - flutter_webview_plugin (from `.symlinks/plugins/flutter_webview_plugin/ios`)
   - fluttertoast (from `.symlinks/plugins/fluttertoast/ios`)
+  - leak_detector (from `.symlinks/plugins/leak_detector/ios`)
   - package_info (from `.symlinks/plugins/package_info/ios`)
   - path_provider_foundation (from `.symlinks/plugins/path_provider_foundation/darwin`)
   - rive_common (from `.symlinks/plugins/rive_common/ios`)
@@ -42,6 +45,8 @@ EXTERNAL SOURCES:
     :path: ".symlinks/plugins/flutter_webview_plugin/ios"
   fluttertoast:
     :path: ".symlinks/plugins/fluttertoast/ios"
+  leak_detector:
+    :path: ".symlinks/plugins/leak_detector/ios"
   package_info:
     :path: ".symlinks/plugins/package_info/ios"
   path_provider_foundation:
@@ -61,6 +66,7 @@ SPEC CHECKSUMS:
   Flutter: 04420c5612cc0139b54ed1624e2bc933b56374e4
   flutter_webview_plugin: ed9e8a6a96baf0c867e90e1bce2673913eeac694
   fluttertoast: f94325a7934d85c77ebb7bd5b7ceb591cb45cbc0
+  leak_detector: 30775053068909f517f5ae3f82dffff4c9b450bc
   package_info: 873975fc26034f0b863a300ad47e7f1ac6c7ec62
   path_provider_foundation: 2b6b4c569c0fb62ec74538f866245ac84301af46
   rive_common: 4743dbfd2911c99066547a3c6454681e0fa907df

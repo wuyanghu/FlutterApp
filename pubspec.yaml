@@ -24,9 +24,9 @@ dependency_overrides:
   flutter:
     sdk: flutter
   flutter_demo:
-    path: ./flutter_demo
+    path: ./component_demos/flutter_demo
   performance_demo:
-    path: ./performance_demo
+    path: ./component_demos/performance_demo
 
   leak_detector: 1.1.0 #内存泄漏监控
   vm_service: 11.2.0
