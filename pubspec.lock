@@ -9,6 +9,13 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "22.0.0"
+  alg_demo:
+    dependency: "direct overridden"
+    description:
+      path: "component_demos/alg_demo"
+      relative: true
+    source: path
+    version: "1.0.0+1"
   analyzer:
     dependency: transitive
     description:

@@ -1,4 +1,8 @@
-import 'package:flutter_demo/paint/custom_paint.dart';
+import 'package:flutter_demo/%E7%BB%98%E5%88%B6/renderobject_paint/done_widget.dart';
+import 'package:flutter_demo/绘制/renderobject_paint/custom_checkbox_page.dart';
+import 'package:flutter_demo/绘制/custom_paint/custom_paint_page.dart';
+import 'package:flutter_demo/绘制/custom_paint/gradient_circular_progress_indicator_page.dart';
+import 'package:flutter_demo/绘制/custom_paint/turn_box_page.dart';
 import 'package:flutter_demo/provider/Chapter7/share_data_widget.dart';
 import 'package:flutter_demo/provider/custom_inherited_widget.dart';
 import 'package:flutter_demo/provider/provider_demo.dart';
@@ -89,11 +93,16 @@ class _FlutterDemoHomePageState extends State<FlutterDemoHomePage> {
       body: ListView(
         padding: EdgeInsets.only(left: 16, right: 16),
         children: <Widget>[
-          _buildItem("CustomPaint_demo", CustomPaintDemo()),
+          Divider(
+            indent: 1,
+          ),
+          _buildItem("flutter实战", WPChaters()),
+          Divider(
+            indent: 1,
+          ),
           _buildItem("bloc_demo", BlocDemoPage()),
           _buildItem("bloc_官方demo", BlocExample()),
           _buildItem("get_demo", GetPage()),
-          _buildItem("flutter实战", WPChaters()),
           _buildItem(
             '7.2 数据共享（InheritedWidget）',
             InheritedWidgetTestRoute(),
@@ -105,9 +114,29 @@ class _FlutterDemoHomePageState extends State<FlutterDemoHomePage> {
           _buildItem("provider_demo", ProviderDemo()),
           _buildItem("ShareProviderPage", ShareProviderPage()),
           _buildItem("CustomInheritedWidget", CustomInheritedWidget()),
+          Divider(
+            indent: 1,
+          ),
+          _buildItem("CustomPaint_五子棋/盘", CustomPaintPage()),
+          _buildItem("GradientCircularProgressRoute_绘制", GradientCircularProgressPage()),
+          _buildItem("TurnBoxRoute", TurnBoxPage()),
+          _buildItem("CustomCheckboxPage", CustomCheckboxPage()),
+          _buildItem("DonePage", DonePage()),
+
+          Divider(
+            indent: 1,
+          ),
           _buildItem("slider_demo", SymmetricSliderDemo()),
           _buildItem("switch_demo", SwitchDemo()),
           _buildItem("tab_异常_demo", TabDemo()),
+          _buildItem(
+              "scale animation",
+              ScaleAnimationRoute1(
+                key: UniqueKey(),
+              )),
+          Divider(
+            indent: 1,
+          ),
           _buildItem("事件任务、微任务", null, onTap: () {
             EventLoop().task();
           }),
@@ -124,11 +153,9 @@ class _FlutterDemoHomePageState extends State<FlutterDemoHomePage> {
               showLeakedInfoListPage(context, infoList);
             });
           }),
-          _buildItem(
-              "scale animation",
-              ScaleAnimationRoute1(
-                key: UniqueKey(),
-              )),
+          Divider(
+            indent: 1,
+          ),
         ],
       ),
       floatingActionButton: FloatingActionButton(

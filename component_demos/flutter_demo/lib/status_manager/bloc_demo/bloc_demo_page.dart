@@ -1,4 +1,3 @@
-
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -23,19 +22,25 @@ class _BlocDemoPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text("bloc_demo"),),
+      appBar: AppBar(
+        title: Text("bloc_demo"),
+      ),
       body: BlocBuilder<DemoBloc, DemoInitial>(
         builder: (BuildContext context, state) {
-          return Column(children: [
-            Text("${state.count}"),
-            ElevatedButton(onPressed: (){
-              // BlocProvider.of<DemoBloc>(context);
-              context.read<DemoBloc>().add(DemoEvent());
-            }, child: Text("add"))
-          ],);
+          return Column(
+            children: [
+              Text("${state.count}"),
+              ElevatedButton(
+                  onPressed: () {
+                    // BlocProvider.of<DemoBloc>(context);
+                    context.read<DemoBloc>().add(DemoEvent());
+                  },
+                  child: Text("add"))
+            ],
+          );
         },
       ),
-    );;
+    );
+    ;
   }
 }
-

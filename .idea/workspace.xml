@@ -13,13 +13,20 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6ee1ac08-7d97-4738-ae9f-d2a1444300ed" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/component_demos/flutter_demo/lib/绘制/custom_paint/gradient_circular_progress_indicator_page.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/component_demos/flutter_demo/lib/绘制/custom_paint/turn_box_page.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/component_demos/flutter_demo/lib/绘制/renderobject_paint/custom_checkbox_page.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/component_demos/flutter_demo/lib/绘制/renderobject_paint/done_widget.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.flutter-plugins-dependencies" beforeDir="false" afterPath="$PROJECT_DIR$/.flutter-plugins-dependencies" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/component_demos/alg_demo/ios/Flutter/AppFrameworkInfo.plist" beforeDir="false" afterPath="$PROJECT_DIR$/component_demos/alg_demo/ios/Flutter/AppFrameworkInfo.plist" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/component_demos/alg_demo/ios/Runner.xcodeproj/project.pbxproj" beforeDir="false" afterPath="$PROJECT_DIR$/component_demos/alg_demo/ios/Runner.xcodeproj/project.pbxproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/component_demos/alg_demo/ios/Runner.xcodeproj/xcshareddata/xcschemes/Runner.xcscheme" beforeDir="false" afterPath="$PROJECT_DIR$/component_demos/alg_demo/ios/Runner.xcodeproj/xcshareddata/xcschemes/Runner.xcscheme" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/component_demos/alg_demo/ios/Runner/Info.plist" beforeDir="false" afterPath="$PROJECT_DIR$/component_demos/alg_demo/ios/Runner/Info.plist" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/component_demos/alg_demo/lib/main.dart" beforeDir="false" afterPath="$PROJECT_DIR$/component_demos/alg_demo/lib/main.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/component_demos/alg_demo/test/widget_test.dart" beforeDir="false" afterPath="$PROJECT_DIR$/component_demos/alg_demo/test/widget_test.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/component_demos/flutter_demo/lib/main.dart" beforeDir="false" afterPath="$PROJECT_DIR$/component_demos/flutter_demo/lib/main.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/component_demos/flutter_demo/lib/paint/custom_paint.dart" beforeDir="false" afterPath="$PROJECT_DIR$/component_demos/flutter_demo/lib/绘制/custom_paint/custom_paint_page.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/component_demos/flutter_demo/lib/provider/Chapter7/share_data_widget.dart" beforeDir="false" afterPath="$PROJECT_DIR$/component_demos/flutter_demo/lib/provider/Chapter7/share_data_widget.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/component_demos/flutter_demo/lib/status_manager/bloc_demo/bloc_demo_page.dart" beforeDir="false" afterPath="$PROJECT_DIR$/component_demos/flutter_demo/lib/status_manager/bloc_demo/bloc_demo_page.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/flutterapp.iml" beforeDir="false" afterPath="$PROJECT_DIR$/flutterapp.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pubspec.lock" beforeDir="false" afterPath="$PROJECT_DIR$/pubspec.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pubspec.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/pubspec.yaml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -82,11 +89,11 @@
     "cf.first.check.clang-format": "false",
     "cidr.known.project.marker": "true",
     "dart.analysis.tool.window.visible": "false",
-    "git-widget-placeholder": "develop",
+    "git-widget-placeholder": "main",
     "io.flutter.reload.alreadyRun": "true",
     "kotlin-language-version-configured": "true",
     "last_opened_file_path": "/Users/wupeng/Desktop/code/FlutterApp/assets",
-    "settings.editor.selected.configurable": "preferences.keymap",
+    "settings.editor.selected.configurable": "flutter.settings",
     "show.migrate.to.gradle.popup": "false",
     "structure.view.defaults.are.configured": "true"
   }
@@ -96,6 +103,8 @@
       <recent name="$PROJECT_DIR$/assets" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/component_demos/flutter_demo/lib/绘制/renderobject" />
+      <recent name="$PROJECT_DIR$/component_demos/flutter_demo/lib/绘制" />
       <recent name="$PROJECT_DIR$/flutter_demo/lib/provider" />
       <recent name="$PROJECT_DIR$/performance_demo/lib/performance" />
       <recent name="$PROJECT_DIR$/performance_demo/lib" />

@@ -23,6 +23,8 @@ environment:
 dependency_overrides:
   flutter:
     sdk: flutter
+  alg_demo:
+    path: ./component_demos/alg_demo
   flutter_demo:
     path: ./component_demos/flutter_demo
   performance_demo:

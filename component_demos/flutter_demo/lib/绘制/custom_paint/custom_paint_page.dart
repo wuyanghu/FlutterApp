@@ -1,17 +1,19 @@
 import 'dart:math';
 import 'package:flutter/material.dart';
 
-class CustomPaintDemo extends StatelessWidget {
-  const CustomPaintDemo({super.key});
+class CustomPaintPage extends StatelessWidget {
+  const CustomPaintPage({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text("custom paint"),),
-      body: CustomPaintRoute(),);
+      appBar: AppBar(
+        title: Text("custom paint"),
+      ),
+      body: CustomPaintRoute(),
+    );
   }
 }
-
 
 class CustomPaintRoute extends StatelessWidget {
   const CustomPaintRoute({Key? key}) : super(key: key);
@@ -19,9 +21,18 @@ class CustomPaintRoute extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Center(
-      child: CustomPaint(
-        size: Size(300, 300), //指定画布大小
-        painter: MyPainter(),
+      child: Column(
+        mainAxisSize: MainAxisSize.min,
+        children: [
+          RepaintBoundary(
+            child: CustomPaint(
+              size: Size(300, 300), //指定画布大小
+              painter: MyPainter(),
+            ),
+          ),
+          //添加一个刷新button
+          ElevatedButton(onPressed: () {}, child: Text("刷新"))
+        ],
       ),
     );
   }
