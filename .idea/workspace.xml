@@ -13,18 +13,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6ee1ac08-7d97-4738-ae9f-d2a1444300ed" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/component_demos/flutter_demo/lib/animations/after_layout.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/component_demos/flutter_demo/lib/animations/custom_hero_page.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/component_demos/flutter_demo/lib/animations/custom_route_animation.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/component_demos/flutter_demo/lib/animations/scale_animation1_page.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/component_demos/flutter_demo/lib/animations/scale_animation2_page.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/component_demos/flutter_demo/lib/animations/scale_animation_page.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/component_demos/flutter_demo/lib/util/scaffold_mixin.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/component_demos/flutter_demo/lib/animations/flutter_hero_page.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/component_demos/flutter_demo/lib/animations/stagger_animation_page.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/component_demos/flutter_demo/lib/flutter_实战/Model/WPChapterModel.dart" beforeDir="false" afterPath="$PROJECT_DIR$/component_demos/flutter_demo/lib/flutter_实战/Model/WPChapterModel.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/component_demos/flutter_demo/lib/main.dart" beforeDir="false" afterPath="$PROJECT_DIR$/component_demos/flutter_demo/lib/main.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/component_demos/flutter_demo/pubspec.lock" beforeDir="false" afterPath="$PROJECT_DIR$/component_demos/flutter_demo/pubspec.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/component_demos/flutter_demo/pubspec.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/component_demos/flutter_demo/pubspec.yaml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

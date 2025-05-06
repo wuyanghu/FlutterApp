@@ -18,9 +18,11 @@ import 'package:flutter/material.dart';
 import 'dart:isolate';
 import 'animations/custom_hero_page.dart';
 import 'animations/custom_route_animation.dart';
+import 'animations/flutter_hero_page.dart';
 import 'animations/scale_animation1_page.dart';
 import 'animations/scale_animation2_page.dart';
 import 'animations/scale_animation_page.dart';
+import 'animations/stagger_animation_page.dart';
 import 'flutter_实战/WP7Chapter.dart';
 import 'flutter_实战/WPChapters_screen.dart';
 import 'slider/symmetric_slider_demo.dart';
@@ -136,27 +138,20 @@ class _FlutterDemoHomePageState extends State<FlutterDemoHomePage> {
               ScaleAnimationRoute(
                 key: UniqueKey(),
               )),
-          _buildItem(
-              "scale1 animation",
-              ScaleAnimationRoute1(
-                key: UniqueKey(),
-              )),
-          _buildItem(
-              "scale2 animation",
-              ScaleAnimationRoute2(
-                key: UniqueKey(),
-              )),
+          _buildItem("scale1 AnimatedImage", ScaleAnimationRoute1()),
+          _buildItem("scale2 AnimatedBuilder", ScaleAnimationRoute2()),
           _buildItem(
               "自定义路由 animation",
               CustomRouteAnimation(
                 count: 0,
-                key: UniqueKey(),
               )),
+          _buildItem("CustomHeroAnimation", CustomHeroAnimation()),
           _buildItem(
-              "CustomHeroAnimation",
-              CustomHeroAnimation(
+              "FlutterHeroAnimation",
+              HeroAnimationRouteA(
                 key: UniqueKey(),
               )),
+          _buildItem("StaggerRoute", StaggerRoute()),
           Divider(
             indent: 1,
           ),
