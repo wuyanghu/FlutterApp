@@ -13,20 +13,18 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6ee1ac08-7d97-4738-ae9f-d2a1444300ed" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/component_demos/flutter_demo/lib/绘制/custom_paint/gradient_circular_progress_indicator_page.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/component_demos/flutter_demo/lib/绘制/custom_paint/turn_box_page.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/component_demos/flutter_demo/lib/绘制/renderobject_paint/custom_checkbox_page.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/component_demos/flutter_demo/lib/绘制/renderobject_paint/done_widget.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.flutter-plugins-dependencies" beforeDir="false" afterPath="$PROJECT_DIR$/.flutter-plugins-dependencies" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/component_demos/flutter_demo/lib/animations/after_layout.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/component_demos/flutter_demo/lib/animations/custom_hero_page.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/component_demos/flutter_demo/lib/animations/custom_route_animation.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/component_demos/flutter_demo/lib/animations/scale_animation1_page.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/component_demos/flutter_demo/lib/animations/scale_animation2_page.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/component_demos/flutter_demo/lib/animations/scale_animation_page.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/component_demos/flutter_demo/lib/util/scaffold_mixin.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/component_demos/alg_demo/test/widget_test.dart" beforeDir="false" afterPath="$PROJECT_DIR$/component_demos/alg_demo/test/widget_test.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/component_demos/flutter_demo/lib/flutter_实战/Model/WPChapterModel.dart" beforeDir="false" afterPath="$PROJECT_DIR$/component_demos/flutter_demo/lib/flutter_实战/Model/WPChapterModel.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/component_demos/flutter_demo/lib/main.dart" beforeDir="false" afterPath="$PROJECT_DIR$/component_demos/flutter_demo/lib/main.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/component_demos/flutter_demo/lib/paint/custom_paint.dart" beforeDir="false" afterPath="$PROJECT_DIR$/component_demos/flutter_demo/lib/绘制/custom_paint/custom_paint_page.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/component_demos/flutter_demo/lib/provider/Chapter7/share_data_widget.dart" beforeDir="false" afterPath="$PROJECT_DIR$/component_demos/flutter_demo/lib/provider/Chapter7/share_data_widget.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/component_demos/flutter_demo/lib/status_manager/bloc_demo/bloc_demo_page.dart" beforeDir="false" afterPath="$PROJECT_DIR$/component_demos/flutter_demo/lib/status_manager/bloc_demo/bloc_demo_page.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/flutterapp.iml" beforeDir="false" afterPath="$PROJECT_DIR$/flutterapp.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pubspec.lock" beforeDir="false" afterPath="$PROJECT_DIR$/pubspec.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pubspec.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/pubspec.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/component_demos/flutter_demo/pubspec.lock" beforeDir="false" afterPath="$PROJECT_DIR$/component_demos/flutter_demo/pubspec.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/component_demos/flutter_demo/pubspec.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/component_demos/flutter_demo/pubspec.yaml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -88,7 +86,6 @@
     "RunOnceActivity.readMode.enableVisualFormatting": "true",
     "cf.first.check.clang-format": "false",
     "cidr.known.project.marker": "true",
-    "dart.analysis.tool.window.visible": "false",
     "git-widget-placeholder": "main",
     "io.flutter.reload.alreadyRun": "true",
     "kotlin-language-version-configured": "true",
@@ -156,26 +153,6 @@
           <url>file://$PROJECT_DIR$/../../config/flutter/packages/flutter/lib/src/rendering/viewport.dart</url>
           <line>271</line>
           <option name="timeStamp" value="11" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="Dart">
-          <url>file://$USER_HOME$/.pub-cache/hosted/pub.dev/leak_detector-1.1.0/lib/src/view/leak_preview_page.dart</url>
-          <line>20</line>
-          <option name="timeStamp" value="120" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="Dart">
-          <url>file://$PROJECT_DIR$/lib/main.dart</url>
-          <line>42</line>
-          <option name="timeStamp" value="121" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="Dart">
-          <url>file://$USER_HOME$/.pub-cache/hosted/pub.dev/leak_detector-1.1.0/lib/src/leak_detector.dart</url>
-          <line>81</line>
-          <option name="timeStamp" value="123" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="Dart">
-          <url>file://$USER_HOME$/.pub-cache/hosted/pub.dev/leak_detector-1.1.0/lib/src/leak_detector_task.dart</url>
-          <line>85</line>
-          <option name="timeStamp" value="124" />
         </line-breakpoint>
       </breakpoints>
       <default-breakpoints>

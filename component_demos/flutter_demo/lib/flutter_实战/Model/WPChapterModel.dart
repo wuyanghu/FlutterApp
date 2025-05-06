@@ -1,6 +1,6 @@
 import 'package:flutter/widgets.dart';
 
-import '../../main.dart';
+import '../../animations/scale_animation_page.dart';
 import '../../provider/Chapter7/Chapter7.dart';
 import '../../provider/Chapter7/share_data_widget.dart';
 import '../../provider/Chapter7/shopping.dart';

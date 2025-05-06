@@ -41,6 +41,7 @@ dependencies:
   build_runner:
   provider:
   video_player:
+  after_layout: 1.2.0
 
 dependency_overrides:
   leak_detector: 1.1.0 #内存泄漏监控
