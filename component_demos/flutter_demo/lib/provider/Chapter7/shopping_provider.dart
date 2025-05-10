@@ -1,14 +1,17 @@
 import 'package:flutter/material.dart';
 
 // 一个通用的InheritedWidget，保存任需要跨组件共享的状态
-class CustomInheritedProvider<T> extends InheritedWidget {
+class CommonInheritedProvider<T> extends InheritedWidget {
   //共享状态使用泛型
   final T data;
-  CustomInheritedProvider({required this.data, required Widget child})
-      : super(child: child);
+  const CommonInheritedProvider({
+    super.key,
+    required this.data,
+    required Widget child,
+  }) : super(child: child);
 
   @override
-  bool updateShouldNotify(CustomInheritedProvider<T> old) {
+  bool updateShouldNotify(CommonInheritedProvider<T> old) {
     //在此简单返回true，则每次更新都会调用依赖其的子孙节点的`didChangeDependencies`。
     return true;
   }
@@ -58,11 +61,11 @@ class ChangeNotifierProvider<T extends CustomChangeNotifier>
     // final type = _typeOf<InheritedProvider<T>>();
     final provider = listen
         ? context
-            .dependOnInheritedWidgetOfExactType<CustomInheritedProvider<T>>()
+            .dependOnInheritedWidgetOfExactType<CommonInheritedProvider<T>>()
         : context
             .getElementForInheritedWidgetOfExactType<
-                CustomInheritedProvider<T>>()
-            ?.widget as CustomInheritedProvider<T>;
+                CommonInheritedProvider<T>>()
+            ?.widget as CommonInheritedProvider<T>;
     return provider?.data;
   }
 
@@ -104,7 +107,7 @@ class _ChangeNotifierProviderState<T extends CustomChangeNotifier>
 
   @override
   Widget build(BuildContext context) {
-    return CustomInheritedProvider<T>(
+    return CommonInheritedProvider<T>(
       data: widget.data,
       child: widget.child,
     );

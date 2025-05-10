@@ -86,11 +86,13 @@ class _InheritedWidgetTestRouteState extends State<InheritedWidgetTestRoute> {
                 ElevatedButton(
                   child: Builder(
                     builder: (context) {
+                      //这个修改：为了说明context的层级问题
                       return Text("${ShareDataWidget.of(context)!.data.toString()}");
                     }
                   ),
                   //每点击一次，将count自增，然后重新build,ShareDataWidget的data将被更新
                   onPressed: () {
+                    //子组件 build()也会刷新，没有必要
                     setState(() => ++count);
                   },
                 )

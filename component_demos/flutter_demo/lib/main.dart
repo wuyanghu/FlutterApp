@@ -1,4 +1,5 @@
 import 'package:flutter_demo/%E7%BB%98%E5%88%B6/renderobject_paint/done_widget.dart';
+import 'package:flutter_demo/provider/Chapter7/shopping.dart';
 import 'package:flutter_demo/绘制/renderobject_paint/custom_checkbox_page.dart';
 import 'package:flutter_demo/绘制/custom_paint/custom_paint_page.dart';
 import 'package:flutter_demo/绘制/custom_paint/gradient_circular_progress_indicator_page.dart';
@@ -23,7 +24,6 @@ import 'animations/scale_animation1_page.dart';
 import 'animations/scale_animation2_page.dart';
 import 'animations/scale_animation_page.dart';
 import 'animations/stagger_animation_page.dart';
-import 'flutter_实战/WP7Chapter.dart';
 import 'flutter_实战/WPChapters_screen.dart';
 import 'slider/symmetric_slider_demo.dart';
 import 'package:leak_detector/leak_detector.dart';

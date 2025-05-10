@@ -53,6 +53,7 @@ class ProviderRoute extends StatefulWidget {
 class _ProviderRouteState extends State<ProviderRoute> {
   @override
   Widget build(BuildContext context) {
+    print("_ProviderRouteState build");
     return Scaffold(
         appBar: AppBar(
           title: Text("provider"),
@@ -69,8 +70,9 @@ class _ProviderRouteState extends State<ProviderRoute> {
                           Text("总价: ${cart?.totalPrice}")),
                   // Builder(builder: (context) {
                   //   var cart = ChangeNotifierProvider.of<CartModel>(context);
-                  //   return Text("总价: ${cart.totalPrice}");
+                  //   return Text("总价: ${cart!.totalPrice}");
                   // }),
+                  SubWidget(),
                   Builder(builder: (context) {
                     print("RaisedButton build"); //在后面优化部分会用到
                     return ElevatedButton(
@@ -89,5 +91,15 @@ class _ProviderRouteState extends State<ProviderRoute> {
             }),
           ),
         ));
+  }
+}
+
+class SubWidget extends StatelessWidget {
+  const SubWidget({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    print("SubWidget build");
+    return Text("SubWidget");
   }
 }
