@@ -1,26 +1,14 @@
 import 'dart:collection';
 import 'dart:math';
 
+import 'package:alg_demo/sliding_window_leetcode.dart';
 import 'package:flutter/material.dart';
 
-int removeElement(List<int> nums, int val) {
-  int r = nums.length - 1;
-  for (int i = 0; i < nums.length; i++) {
-    if (nums[i] == val) {
-      while (r > i && nums[r] == val) {
-        r--;
-      }
-
-      int temp = nums[i];
-      nums[i] = nums[r];
-      nums[r] = temp;
-    }
-    if (i == r) {
-      return i;
-    }
-  }
-  return 0;
-}
+import 'dfs_leetcode.dart';
+import 'double_pointer_leetcode.dart';
+import 'link_leetcode.dart';
+import 'link_util.dart';
+import 'monotonous_stack_leetcode.dart';
 
 List<int> maxSlidingWindow(List<int> nums, int k) {
   List<int> ans = List.filled(nums.length - k + 1, 0);
@@ -43,69 +31,6 @@ List<int> maxSlidingWindow(List<int> nums, int k) {
   return ans;
 }
 
-int minSubArrayLen(int target, List<int> nums) {
-  int l = 0;
-  int r = 0;
-
-  int sum = 0;
-  int minLen = 100000;
-  while (r < nums.length) {
-    sum += nums[r];
-    while (l <= r && sum >= target) {
-      minLen = min(minLen, r - l + 1);
-      sum -= nums[l];
-      l++;
-    }
-    r++;
-  }
-  return minLen == 100000 ? 0 : minLen;
-}
-
-int lengthOfLongestSubstring(String s) {
-  int start = 0;
-
-  int maxLength = 0;
-  Map<String, int> map = {};
-  for (int end = 0; end < s.length; end++) {
-    final cur = s[end];
-    if (map.containsKey(cur) && map[cur]! > start) {
-      start = map[cur]! + 1;
-    }
-
-    map[cur] = end;
-    maxLength = max(maxLength, end - start + 1);
-  }
-  return maxLength;
-}
-
-List<List<int>> threeSum(List<int> nums) {
-  List<List<int>> results = [];
-  nums.sort();
-  for (int i = 0; i < nums.length; i++) {
-    if (i > 0 && nums[i] == nums[i - 1]) continue;
-
-    int l = i + 1;
-    int r = nums.length - 1;
-
-    while (l < r) {
-      int sum = nums[i] + nums[l] + nums[r];
-      if (sum == 0) {
-        results.add([nums[i], nums[l], nums[r]]);
-
-        while (l < r && nums[l] == nums[l + 1]) l++;
-        while (l < r && nums[r - 1] == nums[r]) r--;
-
-        l++;
-        r--;
-      } else if (sum < 0) {
-        l++;
-      } else {
-        r--;
-      }
-    }
-  }
-  return results;
-}
 
 void main() {
   runApp(const MyApp());
@@ -139,6 +64,7 @@ class _MyHomePageState extends State<MyHomePage> {
   int _counter = 0;
 
   void _incrementCounter() {
+    // print(threeSum([-1,0,1,2,-1,-4]));
     // letterCombinations("23");
     // print(permute([1,2,3]));
     // permuteUnique([1,1,2]);
@@ -147,22 +73,52 @@ class _MyHomePageState extends State<MyHomePage> {
     // print(generateParenthesis(3));
     // print(combinationSum([2, 3, 6, 7], 7));
     // print(combinationSum2([10, 1, 2, 7, 6, 1, 5], 8));
+
     // print(lengthOfLongestSubstring("abcabcbb"));
     // print(lengthOfLongestSubstring("bbbbb"));
     // print(lengthOfLongestSubstring("pwwkew"));
+    // print(lengthOfLongestSubstring("abba"));
+
+    // print(checkInclusion("ab", "eidbaooo"));
+    // print(checkInclusion("ab", "eidboaoo"));
+
+    // print(findAnagrams("cbaebabacd", "abc"));
+    // print(findAnagrams("abab", "ab"));
+
+    // print(subarraySum([1,1,1], 2));
+    // print(subarraySum([1,2,3], 3));
+    // print(subarraySum([1], 0));
+    // print(subarraySum([-1,-1,1], 0));
 
     // print(minSubArrayLen(7, [2, 3, 1, 2, 4, 3]));
     // print(minSubArrayLen(4, [1, 4, 4]));
     // print(minSubArrayLen(11, [1, 1, 1, 1, 1, 1, 1, 1]));
 
+    // print(characterReplacement("ABAB",2));
+    // print(characterReplacement("AABABBA",1));
+
     // print(maxSlidingWindow([1, 3, -1, -3, 5, 3, 6, 7], 3));
     // print(maxSlidingWindow([1], 1));
     // print(maxSlidingWindow([1, -1], 1));
-    
-    print(removeElement([3,2,2,3], 3));
-    print(removeElement([0,1,2,2,3,0,4,2], 2));
-    print(removeElement([2], 3));
 
+    // print(removeElement([3, 2, 2, 3], 3));
+    // print(removeElement([0, 1, 2, 2, 3, 0, 4, 2], 2));
+    // print(removeElement([2], 3));
+    // print(removeElement([1], 1));
+
+    // MonotonousStackLeetcode().main();
+    DfsLeetcode().main();
+    // addTwoNumbers([2, 4, 3].createLink(), [5, 6, 4].createLink())?.printH();
+    // addTwoNumbers([0].createLink(), [0].createLink())?.printH();
+    // addTwoNumbers([9, 9, 9, 9, 9, 9, 9].createLink(), [9, 9, 9, 9].createLink())
+    //     ?.printH();
+
+    // reverseList([1, 2, 3, 4, 5].createLink())?.printH();
+    // reverseList([1, 2].createLink())?.printH();
+    // reverseList(null)?.printH();
+
+    // middleNode([1, 2, 3, 4, 5].createLink())?.printH();
+    // middleNode([1, 2, 3, 4, 5, 6].createLink())?.printH();
   }
 
   @override
@@ -192,58 +148,6 @@ class _MyHomePageState extends State<MyHomePage> {
       ), // This trailing comma makes auto-formatting nicer for build methods.
     );
   }
-}
-
-int maxArea(List<int> height) {
-  int i = 0;
-  int j = height.length - 1;
-  int maxArea = 0;
-  while (i < j) {
-    maxArea = max(min(height[i], height[j]) * (j - i), maxArea);
-    if (height[i] >= height[j]) {
-      i++;
-    } else {
-      j--;
-    }
-  }
-  return maxArea;
-}
-
-int maxArea_11(List<int> height) {
-  int i = 0;
-  int j = height.length - 1;
-
-  int maxValue = 0;
-
-  while (i < j) {
-    maxValue = max((j - i) * min(height[i], height[j]), maxValue);
-
-    if (height[i] < height[j]) {
-      j--;
-    } else {
-      i++;
-    }
-  }
-
-  return maxValue;
-}
-
-List<int> dailyTemperatures_739(List<int> temperatures) {
-  print("dailyTemperatures_739");
-
-  List<int> ans = List.filled(temperatures.length, 0);
-  List stack = [];
-
-  for (int i = 0; i < temperatures.length; i++) {
-    while (stack.isNotEmpty && temperatures[stack.last] < temperatures[i]) {
-      int lastIndex = stack.removeLast();
-      ans[lastIndex] = i - lastIndex;
-    }
-
-    stack.add(i);
-  }
-
-  return ans;
 }
 
 List<int> nextGreaterElement_496(List<int> nums1, List<int> nums2) {
@@ -282,33 +186,6 @@ List<int> nextGreaterElements_503(List<int> nums) {
       }
 
       stack.add(i);
-    }
-  }
-
-  return ans;
-}
-
-List<int> maxSlidingWindow_239(List<int> nums, int k) {
-  List<int> ans = List.filled(nums.length - k + 1, 0);
-  Queue queue = Queue();
-
-  int j = 0;
-
-  for (int i = 0; i < nums.length; i++) {
-    //左边滑动，去掉过期的
-    while (queue.isNotEmpty && queue.first <= i - k) {
-      queue.removeFirst();
-    }
-
-    //单调栈，补充右侧
-    while (queue.isNotEmpty && nums[queue.last] < nums[i]) {
-      queue.removeLast();
-    }
-    queue.addLast(i);
-
-    //
-    if (i >= k - 1) {
-      ans[j++] = nums[queue.first];
     }
   }
 

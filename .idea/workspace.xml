@@ -13,10 +13,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6ee1ac08-7d97-4738-ae9f-d2a1444300ed" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/component_demos/flutter_demo/lib/animations/flutter_hero_page.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/component_demos/flutter_demo/lib/animations/stagger_animation_page.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/component_demos/alg_demo/lib/dfs_leetcode.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/component_demos/alg_demo/lib/double_pointer_leetcode.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/component_demos/alg_demo/lib/link_leetcode.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/component_demos/alg_demo/lib/link_util.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/component_demos/alg_demo/lib/monotonous_stack_leetcode.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/component_demos/alg_demo/lib/sliding_window_leetcode.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/component_demos/flutter_demo/lib/main.dart" beforeDir="false" afterPath="$PROJECT_DIR$/component_demos/flutter_demo/lib/main.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/component_demos/alg_demo/lib/main.dart" beforeDir="false" afterPath="$PROJECT_DIR$/component_demos/alg_demo/lib/main.dart" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
