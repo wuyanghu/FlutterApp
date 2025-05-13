@@ -15,69 +15,28 @@ class EventLoop {
     // f6 f9
     // f7 f8 //Future()是重新创建一个
 
-    Future(() => print('f1'));//声明一个匿名Future
-    Future fx = Future(() =>  null);//声明Future fx，其执行体为null
+    Future(() => print('f1')); //声明一个匿名Future
+    Future fx = Future(() => null); //声明Future fx，其执行体为null
 
 //声明一个匿名Future，并注册了两个then。在第一个then回调里启动了一个微任务
     Future(() => print('f2')).then((_) {
       print('f3');
-      scheduleMicrotask(() => print('f4'));//任务的优先级高于Future
+      scheduleMicrotask(() => print('f4')); //任务的优先级高于Future
     }).then((_) => print('f5'));
 
 //声明了一个匿名Future，并注册了两个then。第一个then是一个Future
     Future(() => print('f6'))
-        .then((_) => Future(() => print('f7')))//then中的Future会导致后边的then都是异步
+        .then((_) => Future(() => print('f7'))) //then中的Future会导致后边的then都是异步
         .then((_) => print('f8'));
 
 //声明了一个匿名Future
     Future(() => print('f9'));
 
 //往执行体为null的fx注册了了一个then
-    fx.then((_) => print('f10'));//Future 的 then 回调会执行微任务，then都是接在Future完成之后同步执行的
+    fx.then(
+        (_) => print('f10')); //Future 的 then 回调会执行微任务，then都是接在Future完成之后同步执行的
 
 //启动一个微任务
-    scheduleMicrotask(() => print('f11'));
-    print('f12');
-  }
-
-  void task2() async {
-    Future(() => print('Running in Future 1'));
-
-    Future(() => print('Running in Future 2'))
-        .then((_) => print('and then 1'))
-        .then((_) => print('and then 2')); // 上一个事件循环结束后，连续输出三段字符串
-
-    //f1 比 f2 先执行
-    Future(() => print('f1'));
-    Future(() => print('f2'));
-
-    //f3 执行后会立刻同步执行 then 3
-    Future(() => print('f3')).then((_) => print('then 3'));
-
-    //then 4 会加入微任务队列，尽快执行
-    Future(() => null).then((_) => print('then 4'));
-
-    Future(() => print('f1')); // 声明一个匿名 Future
-    Future fx = Future(() => null); // 声明 Future fx，其执行体为 null
-
-    // 声明一个匿名 Future，并注册了两个 then。在第一个 then 回调里启动了一个微任务
-    Future(() => print('f2')).then((_) {
-      print('f3');
-      scheduleMicrotask(() => print('f4'));
-    }).then((_) => print('f5'));
-
-    // 声明了一个匿名 Future，并注册了两个 then。第一个 then 是一个 Future
-    Future(() => print('f6'))
-        .then((_) => Future(() => print('f7')))
-        .then((_) => print('f8'));
-
-    // 声明了一个匿名 Future
-    Future(() => print('f9'));
-
-    // 往执行体为 null 的 fx 注册了了一个 then
-    fx.then((_) => print('f10'));
-
-    // 启动一个微任务
     scheduleMicrotask(() => print('f11'));
     print('f12');
   }
@@ -87,7 +46,8 @@ class IsolateExample {
   void startIsolate() async {
     final receivePort = ReceivePort(); // 用于接收子Isolate的消息
 
-    await Isolate.spawn(worker, receivePort.sendPort); // 启动子Isolate并传入主Isolate的SendPort
+    await Isolate.spawn(
+        worker, receivePort.sendPort); // 启动子Isolate并传入主Isolate的SendPort
 
     // 等待子Isolate的返回数据
     receivePort.listen((message) {

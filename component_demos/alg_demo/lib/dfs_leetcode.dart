@@ -25,42 +25,27 @@ List<String> generateParenthesis(int n) {
 //
 // }
 
-List<String> generateParenthesis2(int n) {
-  List<String> ans = [];
-  void dfs(String cur, int l, int r) {
-    if (cur.length == 2 * n) {
-      ans.add(cur);
-      return;
-    }
-    if (l < n) dfs(cur + "(", l + 1, r);
-    if (r < l) dfs(cur + ")", l, r + 1);
-  }
-
-  dfs("", 0, 0);
-  return ans;
-}
-
 //46.全排列
 List<List<int>> permute(List<int> nums) {
   List<List<int>> ans = [];
-  List<int> subans = [];
   List<bool> used = List.filled(nums.length, false);
-  void dfs(int index) {
+
+  void dfs(List<int> subans) {
     if (subans.length == nums.length) {
       ans.add(List.from(subans));
       return;
     }
     for (int i = 0; i < nums.length; i++) {
       if (used[i]) continue;
-      used[i] = true;
       subans.add(nums[i]);
-      dfs(i + 1);
-      subans.removeLast();
+      used[i] = true;
+      dfs(subans);
       used[i] = false;
+      subans.removeLast();
     }
   }
 
-  dfs(0);
+  dfs([]);
   return ans;
 }
 
@@ -271,24 +256,40 @@ List<List<int>> combinationSum2(List<int> candidates, int target) {
 }
 
 class DfsLeetcode implements ModulesMain {
+  List<List<int>> subsets(List<int> nums) {
+    List<List<int>> ans = [];
+    List<bool> used = List.filled(nums.length, false);
+    void dfs(List<int> subans, int index) {
+      ans.add(List.from(subans));
+      for (int i = index; i < nums.length; i++) {
+        if (used[i]) continue;
+        subans.add(nums[i]);
+        used[i] = true;
+        dfs(subans, i + 1);
+        used[i] = false;
+        subans.removeLast();
+      }
+    }
+
+    dfs([], 0);
+    return ans;
+  }
+
   @override
   void main() {
     // print(generateParenthesis(1));
     // print(generateParenthesis(2));
     // print(generateParenthesis(3));
 
-    // print(generateParenthesis2(1));
-    // print(generateParenthesis2(2));
-
     // print(permute([1, 2, 3]));
-    // print(permute([0,1]));
+    // print(permute([0, 1]));
 
     // print(permuteUnique([1, 1, 2]));
 
     // print(combine(4, 2));
     // print(combine(1, 1));
 
-    // print(subsets([1, 2, 3]));
+    print(subsets([1, 2, 3]));
     // print(subsetsWithDup([1, 2, 2]));
 
     // print(letterCombinations("23"));
@@ -298,7 +299,7 @@ class DfsLeetcode implements ModulesMain {
     // print(combinationSum([2, 3, 6, 7], 7));
     // print(combinationSum([2, 3, 5], 8));
 
-    print(combinationSum2([10, 1, 2, 7, 6, 1, 5], 8));
-    print(combinationSum2([2, 5, 2, 1, 2], 5));
+    // print(combinationSum2([10, 1, 2, 7, 6, 1, 5], 8));
+    // print(combinationSum2([2, 5, 2, 1, 2], 5));
   }
 }

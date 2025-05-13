@@ -2,57 +2,48 @@ import 'dart:collection';
 import 'dart:math';
 
 import 'package:alg_demo/link_util.dart';
-import 'package:flutter/material.dart';
 
 //1004. 最大连续1的个数 III
 int longestOnes(List<int> nums, int k) {
-  int l = 0;
-  int r = 0;
   int zeroCount = 0;
-  int maxLen = 0;
+  int maxCount = 0;
+  int left = 0;
 
-  while (r < nums.length) {
-    if (nums[r] == 0) {
-      zeroCount++;
+  for (int right = 0; right < nums.length; right++) {
+    if (nums[right] == 0) {
+      zeroCount += 1;
     }
 
-    while (zeroCount > k) {
-      if (nums[l] == 0) {
+    while (zeroCount > k && left <= right) {
+      if (nums[left] == 0) {
         zeroCount--;
       }
-      l++;
+      left++;
     }
-
-    maxLen = max(r - l + 1, maxLen);
-    r++;
+    maxCount = max(maxCount, right - left + 1);
   }
-  return maxLen;
+  return maxCount;
 }
 
 ///239. 滑动窗口最大值
-List<int> maxSlidingWindow_239(List<int> nums, int k) {
+List<int> maxSlidingWindow(List<int> nums, int k) {
+  Queue queue = Queue<int>();
   List<int> ans = List.filled(nums.length - k + 1, 0);
-  Queue queue = Queue();
-
-  int j = 0;
 
   for (int i = 0; i < nums.length; i++) {
-    //左边滑动，去掉过期的
-    while (queue.isNotEmpty && queue.first <= i - k) {
+    while (queue.isNotEmpty && i - k >= queue.first) {
       queue.removeFirst();
     }
 
-    //单调栈，补充右侧
     while (queue.isNotEmpty && nums[queue.last] < nums[i]) {
       queue.removeLast();
     }
-    queue.addLast(i);
+    queue.add(i);
 
     if (i >= k - 1) {
-      ans[j++] = nums[queue.first];
+      ans[i - k + 1] = nums[queue.first];
     }
   }
-
   return ans;
 }
 
@@ -64,7 +55,8 @@ int lengthOfLongestSubstring(String s) {
   Map<String, int> map = {};
   for (int end = 0; end < s.length; end++) {
     final cur = s[end];
-    if (map.containsKey(cur) && map[cur]! >= start) {
+    //不能收缩越变越小 例如：abba
+    if (map[cur] != null && map[cur]! >= start) {
       start = map[cur]! + 1;
     }
 
@@ -85,13 +77,13 @@ String minWindow(String s, String t) {
 
   int left = 0, right = 0;
   int valid = 0;
-  int start = 0, len = s.length + 1;
+  int start = 0, minLen = s.length + 1;
 
   while (right < s.length) {
     String c = s[right];
     right++;
 
-    if (need.containsKey(c)) {
+    if (need[c] != null) {
       window[c] = (window[c] ?? 0) + 1;
       if (window[c] == need[c]) {
         valid++;
@@ -99,15 +91,15 @@ String minWindow(String s, String t) {
     }
 
     while (valid == need.length) {
-      if (right - left < len) {
+      if (right - left < minLen) {
         start = left;
-        len = right - left;
+        minLen = right - left;
       }
 
       String d = s[left];
       left++;
 
-      if (need.containsKey(d)) {
+      if (need[d] != null) {
         if (window[d] == need[d]) {
           valid--;
         }
@@ -116,7 +108,7 @@ String minWindow(String s, String t) {
     }
   }
 
-  return len == s.length + 1 ? "" : s.substring(start, start + len);
+  return minLen == s.length + 1 ? "" : s.substring(start, start + minLen);
 }
 
 //438. 找到字符串中所有字母异位词
@@ -265,8 +257,30 @@ int characterReplacement(String s, int k) {
 }
 
 class SlidingWindowLeetcode implements ModulesMain {
+
   @override
   void main() {
-    // TODO: implement main
+    // print(longestOnes([0,0,0,0], 0));
+    // print(longestOnes([1, 1, 1, 0, 0, 0, 1, 1, 1, 1, 0], 2));
+    // print(longestOnes(
+    //     [0, 0, 1, 1, 0, 0, 1, 1, 1, 0, 1, 1, 0, 0, 0, 1, 1, 1, 1], 3));
+
+    // print(minWindow("ADOBECODEBANC", "ABC"));
+    // print(minWindow("a", "a"));
+    // print(minWindow("a", "aa"));
+
+    // print(findAnagrams("aa", "bb"));
+    // print(findAnagrams("cbaebabacd", "abc"));
+    // print(findAnagrams("abab", "ab"));
+
+    // print(lengthOfLongestSubstring("abcabcbb"));
+    // print(lengthOfLongestSubstring("bbbbb"));
+    // print(lengthOfLongestSubstring("pwwkew"));
+    // print(lengthOfLongestSubstring("dvdf"));
+    // print(lengthOfLongestSubstring("abba"));
+
+    // print(maxSlidingWindow([1, 3, -1, -3, 5, 3, 6, 7], 3));
+    // print(maxSlidingWindow([1], 1));
+    // print(maxSlidingWindow([1, -1], 1));
   }
 }

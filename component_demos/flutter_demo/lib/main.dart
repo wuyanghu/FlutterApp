@@ -5,7 +5,6 @@ import 'package:flutter_demo/绘制/custom_paint/custom_paint_page.dart';
 import 'package:flutter_demo/绘制/custom_paint/gradient_circular_progress_indicator_page.dart';
 import 'package:flutter_demo/绘制/custom_paint/turn_box_page.dart';
 import 'package:flutter_demo/provider/Chapter7/share_data_widget.dart';
-import 'package:flutter_demo/provider/custom_inherited_widget.dart';
 import 'package:flutter_demo/provider/provider_demo.dart';
 import 'package:flutter_demo/provider/share_provider_page.dart';
 import 'package:flutter_demo/status_manager/bloc_demo/bloc_demo_page.dart';
@@ -107,9 +106,6 @@ class _FlutterDemoHomePageState extends State<FlutterDemoHomePage> {
           Divider(
             indent: 1,
           ),
-          _buildItem("bloc_demo", BlocDemoPage()),
-          _buildItem("bloc_官方demo", BlocExample()),
-          _buildItem("get_demo", GetPage()),
           _buildItem(
             '7.2 数据共享（InheritedWidget）',
             InheritedWidgetTestRoute(),
@@ -120,7 +116,9 @@ class _FlutterDemoHomePageState extends State<FlutterDemoHomePage> {
           ),
           _buildItem("provider_demo", ProviderDemo()),
           _buildItem("ShareProviderPage", ShareProviderPage()),
-          _buildItem("CustomInheritedWidget", CustomInheritedWidget()),
+          _buildItem("bloc_demo", BlocDemoPage()),
+          _buildItem("bloc_官方demo", BlocExample()),
+          _buildItem("get_demo", GetPage()),
           Divider(
             indent: 1,
           ),
@@ -161,11 +159,8 @@ class _FlutterDemoHomePageState extends State<FlutterDemoHomePage> {
           Divider(
             indent: 1,
           ),
-          _buildItem("事件任务、微任务", null, onTap: () {
+          _buildItem("事件任务、微任务优先级", null, onTap: () {
             EventLoop().task();
-          }),
-          _buildItem("事件任务、微任务2", null, onTap: () {
-            EventLoop().task2();
           }),
           _buildItem("开启Isolate", null, onTap: () {
             IsolateExample().startIsolate();

@@ -1,7 +1,6 @@
 import 'package:flutter/widgets.dart';
 
 import '../../animations/scale_animation_page.dart';
-import '../../provider/Chapter7/Chapter7.dart';
 import '../../provider/Chapter7/share_data_widget.dart';
 import '../../provider/Chapter7/shopping.dart';
 import '../WP2Chapter.dart';
@@ -9,6 +8,7 @@ import '../WP3Chapter.dart';
 import '../WP4Chapter.dart';
 import '../WP5Chapter.dart';
 import '../WP6Chapter.dart';
+import '../WP7Chapter.dart';
 import '../WP8Chapter.dart';
 
 class WPChapterModel {

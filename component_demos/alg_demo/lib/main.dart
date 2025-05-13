@@ -2,34 +2,15 @@ import 'dart:collection';
 import 'dart:math';
 
 import 'package:alg_demo/sliding_window_leetcode.dart';
+import 'package:alg_demo/sort_leetcode.dart';
 import 'package:flutter/material.dart';
 
 import 'dfs_leetcode.dart';
 import 'double_pointer_leetcode.dart';
+import 'greed_leetcode.dart';
 import 'link_leetcode.dart';
 import 'link_util.dart';
 import 'monotonous_stack_leetcode.dart';
-
-List<int> maxSlidingWindow(List<int> nums, int k) {
-  List<int> ans = List.filled(nums.length - k + 1, 0);
-  Queue<int> queue = Queue();
-
-  for (int i = 0; i < nums.length; i++) {
-    while (queue.isNotEmpty && nums[queue.last] < nums[i]) {
-      queue.removeLast();
-    }
-    queue.add(i);
-
-    if (queue.isNotEmpty && queue.first <= i - k - 1) {
-      queue.removeFirst();
-    }
-
-    if (i + 1 >= k) {
-      ans[i + 1 - k] = nums[queue.first];
-    }
-  }
-  return ans;
-}
 
 
 void main() {
@@ -47,7 +28,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: const MyHomePage(title: 'Flutter Demo Home Page'),
+      home: const MyHomePage(title: 'ALG'),
     );
   }
 }
@@ -64,7 +45,6 @@ class _MyHomePageState extends State<MyHomePage> {
   int _counter = 0;
 
   void _incrementCounter() {
-    // print(threeSum([-1,0,1,2,-1,-4]));
     // letterCombinations("23");
     // print(permute([1,2,3]));
     // permuteUnique([1,1,2]);
@@ -82,9 +62,6 @@ class _MyHomePageState extends State<MyHomePage> {
     // print(checkInclusion("ab", "eidbaooo"));
     // print(checkInclusion("ab", "eidboaoo"));
 
-    // print(findAnagrams("cbaebabacd", "abc"));
-    // print(findAnagrams("abab", "ab"));
-
     // print(subarraySum([1,1,1], 2));
     // print(subarraySum([1,2,3], 3));
     // print(subarraySum([1], 0));
@@ -97,17 +74,13 @@ class _MyHomePageState extends State<MyHomePage> {
     // print(characterReplacement("ABAB",2));
     // print(characterReplacement("AABABBA",1));
 
-    // print(maxSlidingWindow([1, 3, -1, -3, 5, 3, 6, 7], 3));
-    // print(maxSlidingWindow([1], 1));
-    // print(maxSlidingWindow([1, -1], 1));
-
-    // print(removeElement([3, 2, 2, 3], 3));
-    // print(removeElement([0, 1, 2, 2, 3, 0, 4, 2], 2));
-    // print(removeElement([2], 3));
-    // print(removeElement([1], 1));
-
-    // MonotonousStackLeetcode().main();
+    GreedLeetcode().main();
+    LinkLeetcode().main();
+    MonotonousStackLeetcode().main();
     DfsLeetcode().main();
+    DoublePointerLeetcode().main();
+    SlidingWindowLeetcode().main();
+    SortLeetcode().main();
     // addTwoNumbers([2, 4, 3].createLink(), [5, 6, 4].createLink())?.printH();
     // addTwoNumbers([0].createLink(), [0].createLink())?.printH();
     // addTwoNumbers([9, 9, 9, 9, 9, 9, 9].createLink(), [9, 9, 9, 9].createLink())

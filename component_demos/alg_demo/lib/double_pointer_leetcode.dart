@@ -20,6 +20,34 @@ int maxArea(List<int> height) {
   return maxArea;
 }
 
+// 42. 接雨水
+int trap(List<int> height) {
+  int leftMax = 0;
+  int rightMax = 0;
+  int sum = 0;
+
+  int left = 0;
+  int right = height.length - 1;
+  while (left < right) {
+    if (height[left] < height[right]) {
+      if (leftMax < height[left]) {
+        leftMax = height[left];
+      } else {
+        sum += leftMax - height[left];
+      }
+      left++;
+    } else {
+      if (rightMax < height[right]) {
+        rightMax = height[right];
+      } else {
+        sum += rightMax - height[right];
+      }
+      right--;
+    }
+  }
+  return sum;
+}
+
 // 15. 三数之和
 //[-4,-1,-1,-1,0,1,2]
 List<List<int>> threeSum(List<int> nums) {
@@ -73,9 +101,19 @@ int removeElement(List<int> nums, int val) {
   return l;
 }
 
+
 class DoublePointerLeetcode implements ModulesMain{
   @override
   void main() {
-    // TODO: implement main
+    // print(threeSum([-1,0,1,2,-1,-4]));
+
+    // print(trap([0, 1, 0, 2, 1, 0, 1, 3, 2, 1, 2, 1]));
+    // print(trap([4, 2, 0, 3, 2, 5]));
+
+    // print(removeElement([3, 2, 2, 3], 3));
+    // print(removeElement([0, 1, 2, 2, 3, 0, 4, 2], 2));
+    // print(removeElement([2], 3));
+    // print(removeElement([1], 1));
   }
 }
+
