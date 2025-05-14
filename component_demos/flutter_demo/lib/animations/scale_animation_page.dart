@@ -26,7 +26,7 @@ class _ScaleAnimationRouteState extends State<ScaleAnimationRoute>
     //图片宽高从0变到300
     animation = Tween(begin: 0.0, end: 300.0).animate(controller)
       ..addListener(() {
-        setState(() => {});
+        if (mounted) setState(() => {});
       });
 
     //启动动画(正向执行)
@@ -54,7 +54,7 @@ class _ScaleAnimationRouteState extends State<ScaleAnimationRoute>
   @override
   dispose() {
     //路由销毁时需要释放动画资源
-    controller.dispose();
+    // controller.dispose();
     super.dispose();
   }
 }

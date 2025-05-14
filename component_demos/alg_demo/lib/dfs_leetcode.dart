@@ -62,7 +62,9 @@ List<List<int>> permuteUnique(List<int> nums) {
       return;
     }
     for (int i = 0; i < nums.length; i++) {
-      if (i > 0 && nums[i] == nums[i - 1] && used[i - 1]) continue;
+      if (i > 0 && nums[i] == nums[i - 1] && !used[i - 1]) {
+        continue;
+      }
       if (used[i]) continue;
       used[i] = true;
       subans.add(nums[i]);
@@ -74,9 +76,7 @@ List<List<int>> permuteUnique(List<int> nums) {
     }
   }
 
-  dfs(
-    0,
-  );
+  dfs(0);
   return ans;
 }
 
@@ -284,12 +284,12 @@ class DfsLeetcode implements ModulesMain {
     // print(permute([1, 2, 3]));
     // print(permute([0, 1]));
 
-    // print(permuteUnique([1, 1, 2]));
+    print(permuteUnique([1, 1, 2]));
 
     // print(combine(4, 2));
     // print(combine(1, 1));
 
-    print(subsets([1, 2, 3]));
+    // print(subsets([1, 2, 3]));
     // print(subsetsWithDup([1, 2, 2]));
 
     // print(letterCombinations("23"));
@@ -299,7 +299,7 @@ class DfsLeetcode implements ModulesMain {
     // print(combinationSum([2, 3, 6, 7], 7));
     // print(combinationSum([2, 3, 5], 8));
 
-    // print(combinationSum2([10, 1, 2, 7, 6, 1, 5], 8));
-    // print(combinationSum2([2, 5, 2, 1, 2], 5));
+    print(combinationSum2([10, 1, 2, 7, 6, 1, 5], 8));
+    print(combinationSum2([2, 5, 2, 1, 2], 5));
   }
 }

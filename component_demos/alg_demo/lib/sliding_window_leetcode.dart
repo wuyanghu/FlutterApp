@@ -6,23 +6,23 @@ import 'package:alg_demo/link_util.dart';
 //1004. 最大连续1的个数 III
 int longestOnes(List<int> nums, int k) {
   int zeroCount = 0;
-  int maxCount = 0;
   int left = 0;
+  int maxLen = 0;
 
   for (int right = 0; right < nums.length; right++) {
     if (nums[right] == 0) {
-      zeroCount += 1;
+      zeroCount++;
     }
 
-    while (zeroCount > k && left <= right) {
+    while (zeroCount > k) {
       if (nums[left] == 0) {
         zeroCount--;
       }
       left++;
     }
-    maxCount = max(maxCount, right - left + 1);
+    maxLen = max(maxLen, right - left + 1);
   }
-  return maxCount;
+  return maxLen;
 }
 
 ///239. 滑动窗口最大值
@@ -49,21 +49,20 @@ List<int> maxSlidingWindow(List<int> nums, int k) {
 
 //3. 无重复字符的最长子串
 int lengthOfLongestSubstring(String s) {
-  int start = 0;
-
-  int maxLength = 0;
   Map<String, int> map = {};
-  for (int end = 0; end < s.length; end++) {
-    final cur = s[end];
-    //不能收缩越变越小 例如：abba
-    if (map[cur] != null && map[cur]! >= start) {
-      start = map[cur]! + 1;
-    }
+  int maxLen = 0;
+  int left = 0;
 
-    map[cur] = end;
-    maxLength = max(maxLength, end - start + 1);
+  for (int right = 0; right < s.length; right++) {
+    final cur = s[right];
+
+    if (map[cur] != null && map[cur]! >= left) {
+      left = map[cur]! + 1;
+    }
+    maxLen = max(maxLen, right - left + 1);
+    map[cur] = right;
   }
-  return maxLength;
+  return maxLen;
 }
 
 //76. 最小覆盖子串 未验证
@@ -245,6 +244,7 @@ int characterReplacement(String s, int k) {
 
     int maxCount = sCount.reduce((a, b) => a > b ? a : b);
 
+    //能替换的数量 > k 开始收缩
     while (right - left + 1 - maxCount > k) {
       sCount[s.codeUnitAt(left) - ACode]--;
       left++;
@@ -257,10 +257,33 @@ int characterReplacement(String s, int k) {
 }
 
 class SlidingWindowLeetcode implements ModulesMain {
+  int characterReplacement(String s, int k) {
+    List<int> countArr = List.filled(26, 0);
+
+    int ACode = "A".codeUnitAt(0);
+    int maxLen = 0;
+    int left = 0;
+    for (int i = 0; i < s.length; i++) {
+      int index = s.codeUnitAt(i) - ACode;
+      countArr[index]++;
+
+      int maxStrCount = countArr.reduce((int a, int b) => a > b ? a : b);
+
+      while (i - left + 1 - maxStrCount > k) {
+        countArr[s.codeUnitAt(left) - ACode]--;
+        left++;
+      }
+      maxLen = max(maxLen, i - left + 1);
+    }
+    return maxLen;
+  }
 
   @override
   void main() {
-    // print(longestOnes([0,0,0,0], 0));
+    print(characterReplacement("ABAB", 2));
+    print(characterReplacement("AABABBA", 1));
+
+    // print(longestOnes([0, 0, 0, 0], 0));
     // print(longestOnes([1, 1, 1, 0, 0, 0, 1, 1, 1, 1, 0], 2));
     // print(longestOnes(
     //     [0, 0, 1, 1, 0, 0, 1, 1, 1, 0, 1, 1, 0, 0, 0, 1, 1, 1, 1], 3));

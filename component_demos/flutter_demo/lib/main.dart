@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import 'package:flutter_demo/%E7%BB%98%E5%88%B6/renderobject_paint/done_widget.dart';
 import 'package:flutter_demo/provider/Chapter7/shopping.dart';
 import 'package:flutter_demo/绘制/renderobject_paint/custom_checkbox_page.dart';
@@ -70,6 +72,11 @@ class _FlutterDemoHomePageState extends State<FlutterDemoHomePage> {
     //
     // final results = Solution().trap([0,1,0,2,1,0,1,3,2,1,2,1]);
     // print("results = $results");
+  }
+
+  int _fibonacci(int n) {
+    for (int i = 0; i < n; i++) {}
+    return 0;
   }
 
   @override
@@ -162,7 +169,10 @@ class _FlutterDemoHomePageState extends State<FlutterDemoHomePage> {
           _buildItem("事件任务、微任务优先级", null, onTap: () {
             EventLoop().task();
           }),
-          _buildItem("开启Isolate", null, onTap: () {
+          _buildItem("compute()开启Isolate", null, onTap: () {
+            IsolateExample().computeExample();
+          }),
+          _buildItem("开启Isolate2", null, onTap: () {
             IsolateExample().startIsolate();
             IsolateExample().asyncFactorialiMain();
             IsolateExample().asyncFactorialiMain2();

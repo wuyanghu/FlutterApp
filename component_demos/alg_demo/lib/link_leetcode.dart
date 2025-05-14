@@ -26,18 +26,18 @@ ListNode? addTwoNumbers(ListNode? l1, ListNode? l2) {
 
 //206. 反转链表
 ListNode? reverseList(ListNode? head) {
-  ListNode? newH;
 
-  ListNode? cur = head;
-  while (cur != null) {
-    ListNode? post = cur.next;
+  ListNode? curNode = head;
+  ListNode? preNode;
+  while (curNode != null) {
+    ListNode? postNode = curNode.next;
 
-    cur.next = newH;
-    newH = cur;
+    curNode.next = preNode;
+    preNode = curNode;
 
-    cur = post;
+    curNode = postNode;
   }
-  return newH;
+  return preNode;
 }
 
 //876. 链表的中间结点
@@ -56,8 +56,10 @@ ListNode? middleNode(ListNode? head) {
 ListNode? removeNthFromEnd(ListNode? head, int n) {}
 
 class LinkLeetcode implements ModulesMain {
+
   @override
   void main() {
-    // TODO: implement main
+    reverseList([1,2,3,4,5].createLink())?.printH();
+
   }
 }

@@ -43,6 +43,11 @@ class EventLoop {
 }
 
 class IsolateExample {
+  void computeExample() async {
+    final result = await compute(subIsolate, 100);
+    print("compute result = $result");
+  }
+  
   void startIsolate() async {
     final receivePort = ReceivePort(); // 用于接收子Isolate的消息
 
@@ -60,6 +65,10 @@ class IsolateExample {
   // 子Isolate运行的函数
   void worker(SendPort sendPort) {
     sendPort.send('来自子Isolate的消息');
+  }
+
+  int subIsolate(int i) {
+    return i * i;
   }
 
   late Isolate isolate;
