@@ -102,7 +102,7 @@ class _Circle extends State<Circle> {
                                 onLoading: loadHistory,
                                 child: CustomScrollView(
                                   physics: const BouncingScrollPhysics(),
-                                  shrinkWrap: true,
+                                  shrinkWrap: false,
                                   slivers: cells,
                                 )))),
                   ],

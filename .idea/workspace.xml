@@ -13,14 +13,20 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6ee1ac08-7d97-4738-ae9f-d2a1444300ed" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/component_demos/alg_demo/lib/dfs_leetcode.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/component_demos/alg_demo/lib/double_pointer_leetcode.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/component_demos/alg_demo/lib/link_leetcode.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/component_demos/alg_demo/lib/link_util.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/component_demos/alg_demo/lib/monotonous_stack_leetcode.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/component_demos/alg_demo/lib/sliding_window_leetcode.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/component_demos/flutter_demo/lib/async_example/stream_example.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/component_demos/performance_demo/lib/dev_tools_demo/commons.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.flutter-plugins-dependencies" beforeDir="false" afterPath="$PROJECT_DIR$/.flutter-plugins-dependencies" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/component_demos/alg_demo/lib/main.dart" beforeDir="false" afterPath="$PROJECT_DIR$/component_demos/alg_demo/lib/main.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/component_demos/flutter_demo/lib/main.dart" beforeDir="false" afterPath="$PROJECT_DIR$/component_demos/flutter_demo/lib/main.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/component_demos/performance_demo/lib/main.dart" beforeDir="false" afterPath="$PROJECT_DIR$/component_demos/performance_demo/lib/main.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/component_demos/performance_demo/pubspec.lock" beforeDir="false" afterPath="$PROJECT_DIR$/component_demos/performance_demo/pubspec.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/component_demos/performance_demo/pubspec.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/component_demos/performance_demo/pubspec.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ios/Runner.xcodeproj/project.pbxproj" beforeDir="false" afterPath="$PROJECT_DIR$/ios/Runner.xcodeproj/project.pbxproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ios/Runner/Info.plist" beforeDir="false" afterPath="$PROJECT_DIR$/ios/Runner/Info.plist" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/BestUI/hotel_booking/hotel_list_view.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/BestUI/hotel_booking/hotel_list_view.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/MyApp/CircleOfFriends/Circle.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/MyApp/CircleOfFriends/Circle.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/MyApp/Tabbar/MyHomePage.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/MyApp/Tabbar/MyHomePage.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pubspec.lock" beforeDir="false" afterPath="$PROJECT_DIR$/pubspec.lock" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -75,6 +81,7 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "Flutter.main.dart.executor": "Debug",
+    "Flutter.main_profile.dart.executor": "Run",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.cidr.known.project.marker": "true",
@@ -82,6 +89,7 @@
     "RunOnceActivity.readMode.enableVisualFormatting": "true",
     "cf.first.check.clang-format": "false",
     "cidr.known.project.marker": "true",
+    "dart.analysis.tool.window.visible": "false",
     "git-widget-placeholder": "main",
     "io.flutter.reload.alreadyRun": "true",
     "kotlin-language-version-configured": "true",
@@ -96,19 +104,28 @@
       <recent name="$PROJECT_DIR$/assets" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/component_demos/performance_demo/lib/dev_tools_demo" />
       <recent name="$PROJECT_DIR$/component_demos/flutter_demo/lib/绘制/renderobject" />
       <recent name="$PROJECT_DIR$/component_demos/flutter_demo/lib/绘制" />
       <recent name="$PROJECT_DIR$/flutter_demo/lib/provider" />
       <recent name="$PROJECT_DIR$/performance_demo/lib/performance" />
-      <recent name="$PROJECT_DIR$/performance_demo/lib" />
     </key>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Flutter.main.dart">
     <configuration name="main.dart" type="FlutterRunConfigurationType" factoryName="Flutter" nameIsGenerated="true">
       <option name="additionalArgs" value="--dart-define=isFromFlutter=true" />
       <option name="filePath" value="$PROJECT_DIR$/lib/main.dart" />
       <method v="2" />
     </configuration>
+    <configuration name="main_profile.dart" type="FlutterRunConfigurationType" factoryName="Flutter">
+      <option name="additionalArgs" value="--profile" />
+      <option name="filePath" value="$PROJECT_DIR$/lib/main.dart" />
+      <method v="2" />
+    </configuration>
+    <list>
+      <item itemvalue="Flutter.main.dart" />
+      <item itemvalue="Flutter.main_profile.dart" />
+    </list>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -149,6 +166,11 @@
           <url>file://$PROJECT_DIR$/../../config/flutter/packages/flutter/lib/src/rendering/viewport.dart</url>
           <line>271</line>
           <option name="timeStamp" value="11" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="Dart">
+          <url>file://$PROJECT_DIR$/lib/BestUI/home_screen.dart</url>
+          <line>12</line>
+          <option name="timeStamp" value="17" />
         </line-breakpoint>
       </breakpoints>
       <default-breakpoints>

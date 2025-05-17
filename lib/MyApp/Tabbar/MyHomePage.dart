@@ -112,6 +112,7 @@ class _ScaffoldRouteState extends State<MyHomePage>
 
   @override
   Widget build(BuildContext context) {
+    print("MyHomePage build");
     return Scaffold(
       appBar: _buildAppBarWidget(),
       drawer: LeftDrawer(), //抽屉

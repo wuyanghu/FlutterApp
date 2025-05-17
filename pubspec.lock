@@ -9,6 +9,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "22.0.0"
+  after_layout:
+    dependency: transitive
+    description:
+      name: after_layout
+      sha256: "95a1cb2ca1464f44f14769329fbf15987d20ab6c88f8fc5d359bd362be625f29"
+      url: "https://pub.dev"
+    source: hosted
+    version: "1.2.0"
   alg_demo:
     dependency: "direct overridden"
     description:
@@ -356,6 +364,14 @@ packages:
       relative: true
     source: path
     version: "1.0.0+1"
+  flutter_lorem:
+    dependency: transitive
+    description:
+      name: flutter_lorem
+      sha256: "004e1af5b030b632628d8cc1eb2f90451f48b6c0080f43069f69baa4959e9fe5"
+      url: "https://pub.dev"
+    source: hosted
+    version: "2.0.0"
   flutter_rating_bar:
     dependency: "direct overridden"
     description:

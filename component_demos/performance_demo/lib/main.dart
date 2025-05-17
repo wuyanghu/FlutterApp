@@ -6,6 +6,8 @@ import 'package:flutter/rendering.dart';
 import 'package:performance_demo/performance/custom_single_scroll_view.dart';
 import 'package:performance_demo/performance/time_consuming_page.dart';
 
+import 'dev_tools_demo/screens/shrinklists.dart';
+import 'dev_tools_demo/screens/slivers.dart';
 import 'performance/custom_painter_page.dart';
 import 'lazy/iv_builder_page.dart';
 import 'lazy/iv_builder_table_page.dart';
@@ -148,7 +150,9 @@ class _PerformanceHomePageState extends State<PerformanceHomePage> {
       "复杂耗时计算时,也会UI也会卡顿",
       "自定义RepaintBoundary",
       "Lazy Performance Demos",
-      "自定义scrollView，卡顿"
+      "自定义scrollView，卡顿",
+      "dev_tools_demo",
+      "dev_tools_demo2",
     ];
     return Scaffold(
       appBar: widget.title?.isNotEmpty == true
@@ -171,6 +175,10 @@ class _PerformanceHomePageState extends State<PerformanceHomePage> {
                   pushPage(LazyPage(titles[index]));
                 } else if (index == 3) {
                   pushPage(CustomSingleChildScrollView(titles[index]));
+                } else if (index == 4) {
+                  pushPage(WrappedListsPage());
+                } else if (index == 5) {
+                  pushPage(SliversPage());
                 }
               },
               child: Row(

@@ -25,6 +25,7 @@ import 'animations/scale_animation1_page.dart';
 import 'animations/scale_animation2_page.dart';
 import 'animations/scale_animation_page.dart';
 import 'animations/stagger_animation_page.dart';
+import 'async_example/stream_example.dart';
 import 'flutter_实战/WPChapters_screen.dart';
 import 'slider/symmetric_slider_demo.dart';
 import 'package:leak_detector/leak_detector.dart';
@@ -169,13 +170,17 @@ class _FlutterDemoHomePageState extends State<FlutterDemoHomePage> {
           _buildItem("事件任务、微任务优先级", null, onTap: () {
             EventLoop().task();
           }),
+          _buildItem("stream", StreamExample(),),
           _buildItem("compute()开启Isolate", null, onTap: () {
             IsolateExample().computeExample();
           }),
           _buildItem("开启Isolate2", null, onTap: () {
             IsolateExample().startIsolate();
-            IsolateExample().asyncFactorialiMain();
-            IsolateExample().asyncFactorialiMain2();
+            // IsolateExample().asyncFactorialiMain();
+            // IsolateExample().asyncFactorialiMain2();
+          }),
+          _buildItem("compute()开启Isolate", null, onTap: () {
+            IsolateExample().computeExample();
           }),
           _buildItem("内存泄漏记录", null, onTap: () {
             getLeakedRecording().then((List<LeakedInfo> infoList) {
