@@ -15,6 +15,7 @@ class _WPChatersState extends State<WPChaters> {
     return Scaffold(
       appBar: AppBar(title: Text("flutter实战"),),
       body: ListView.builder(
+        shrinkWrap: true,
         itemCount: homeList.length,
         itemBuilder: (BuildContext context, int index) {
           return GestureDetector(

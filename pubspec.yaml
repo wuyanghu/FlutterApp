@@ -30,6 +30,7 @@ dependency_overrides:
   performance_demo:
     path: ./component_demos/performance_demo
 
+  sentry_flutter: 8.14.2
   leak_detector: 1.1.0 #内存泄漏监控
   vm_service: 11.2.0
   cupertino_icons: ^0.1.3

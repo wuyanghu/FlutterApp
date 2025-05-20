@@ -1,3 +1,5 @@
+import 'dart:async';
+
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_app/MyApp/Login/Login.dart';
@@ -6,11 +8,51 @@ import 'package:flutter_app/MyApp/Tabbar/MyHomePage.dart';
 import 'package:provider/provider.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:leak_detector/leak_detector.dart';
-void main() {
+import 'package:flutter/widgets.dart';
+import 'package:sentry_flutter/sentry_flutter.dart';
+import 'package:sentry_flutter/src/integrations/native_app_start_integration.dart';
+
+void main() async {
   // 将 debugPrint 指定为空的执行体, 所以它什么也不做
   debugPrint = (String? message, {int? wrapWidth}) {};
 
-  runApp(MyApp());
+  // await SentryFlutter.init(
+  //       (options) {
+  //     options.dsn = 'https://example@sentry.io/add-your-dsn-here';
+  //   },
+  //   // Init your App.
+  //   appRunner: () => runApp(MyApp()),
+  // );
+  runZonedGuarded(() async {
+    await SentryFlutter.init((options) {
+      options.dsn =
+          'https://06005edd867f982d76a48de50f1d6cc7@o4509348600741888.ingest.us.sentry.io/4509348760322048';
+      options.tracesSampleRate = 1.0;
+      options.sendDefaultPii = true;
+      options.profilesSampleRate = 1.0;
+      options.enableFramesTracking = true;
+
+      // in SentryFlutter.init
+      // final integration = options.integrations.firstWhere(
+      //     (integration) => integration is NativeAppStartIntegration);
+      // options.removeIntegration(integration);
+    }, appRunner: () {
+      SentryWidgetsFlutterBinding.ensureInitialized();
+      return runApp(SentryWidget(
+          child: DefaultAssetBundle(
+        bundle: SentryAssetBundle(),
+        child: MyApp(),
+      )));
+    });
+
+    // 捕获同步 Flutter 错误
+    FlutterError.onError = (FlutterErrorDetails details) {
+      Sentry.captureException(details.exception, stackTrace: details.stack);
+    };
+  }, (exception, stackTrace) async {
+    await Sentry.captureException(exception, stackTrace: stackTrace);
+  });
+  // runApp(MyApp());
 }
 
 void main_dev() {
@@ -81,13 +123,13 @@ class _MyApp extends State with WidgetsBindingObserver {
             LeakNavigatorObserver(
               //返回false则不会校验这个页面.
               shouldCheck: (route) {
-                return route.settings.name != null && route.settings.name != '/';
+                return route.settings.name != null &&
+                    route.settings.name != '/';
               },
             ),
           ],
           //注册路由表
-          routes: {
-          },
+          routes: {},
           onUnknownRoute: (RouteSettings setting) =>
               MaterialPageRoute(builder: (context) {
             return UnknownPage(); //统一处理没有生效,不是没有生效

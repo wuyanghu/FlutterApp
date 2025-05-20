@@ -42,6 +42,8 @@ dependencies:
   provider:
   video_player:
   after_layout: 1.2.0
+  sentry_flutter: 8.14.2
+
 
 dependency_overrides:
   leak_detector: 1.1.0 #内存泄漏监控

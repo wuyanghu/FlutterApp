@@ -13,20 +13,19 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6ee1ac08-7d97-4738-ae9f-d2a1444300ed" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/component_demos/flutter_demo/lib/async_example/stream_example.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/component_demos/performance_demo/lib/dev_tools_demo/commons.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.flutter-plugins" beforeDir="false" afterPath="$PROJECT_DIR$/.flutter-plugins" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.flutter-plugins-dependencies" beforeDir="false" afterPath="$PROJECT_DIR$/.flutter-plugins-dependencies" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/runConfigurations/main_dart.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/component_demos/flutter_demo/lib/flutter_实战/WPChapters_screen.dart" beforeDir="false" afterPath="$PROJECT_DIR$/component_demos/flutter_demo/lib/flutter_实战/WPChapters_screen.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/component_demos/flutter_demo/lib/main.dart" beforeDir="false" afterPath="$PROJECT_DIR$/component_demos/flutter_demo/lib/main.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/component_demos/performance_demo/lib/main.dart" beforeDir="false" afterPath="$PROJECT_DIR$/component_demos/performance_demo/lib/main.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/component_demos/performance_demo/pubspec.lock" beforeDir="false" afterPath="$PROJECT_DIR$/component_demos/performance_demo/pubspec.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/component_demos/performance_demo/pubspec.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/component_demos/performance_demo/pubspec.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ios/Runner.xcodeproj/project.pbxproj" beforeDir="false" afterPath="$PROJECT_DIR$/ios/Runner.xcodeproj/project.pbxproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ios/Runner/Info.plist" beforeDir="false" afterPath="$PROJECT_DIR$/ios/Runner/Info.plist" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/BestUI/hotel_booking/hotel_list_view.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/BestUI/hotel_booking/hotel_list_view.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/component_demos/flutter_demo/pubspec.lock" beforeDir="false" afterPath="$PROJECT_DIR$/component_demos/flutter_demo/pubspec.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/component_demos/flutter_demo/pubspec.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/component_demos/flutter_demo/pubspec.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ios/Podfile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/ios/Podfile.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/MyApp/CircleOfFriends/Circle.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/MyApp/CircleOfFriends/Circle.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/MyApp/Tabbar/MyHomePage.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/MyApp/Tabbar/MyHomePage.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/main.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/main.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pubspec.lock" beforeDir="false" afterPath="$PROJECT_DIR$/pubspec.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pubspec.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/pubspec.yaml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -81,6 +80,7 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "Flutter.main.dart.executor": "Debug",
+    "Flutter.main_debug.dart.executor": "Debug",
     "Flutter.main_profile.dart.executor": "Run",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
@@ -93,7 +93,7 @@
     "git-widget-placeholder": "main",
     "io.flutter.reload.alreadyRun": "true",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "/Users/wupeng/Desktop/code/FlutterApp/assets",
+    "last_opened_file_path": "/Users/wupeng/Desktop/code/FlutterApp",
     "settings.editor.selected.configurable": "flutter.settings",
     "show.migrate.to.gradle.popup": "false",
     "structure.view.defaults.are.configured": "true"
@@ -111,7 +111,7 @@
       <recent name="$PROJECT_DIR$/performance_demo/lib/performance" />
     </key>
   </component>
-  <component name="RunManager" selected="Flutter.main.dart">
+  <component name="RunManager" selected="Flutter.main_profile.dart">
     <configuration name="main.dart" type="FlutterRunConfigurationType" factoryName="Flutter" nameIsGenerated="true">
       <option name="additionalArgs" value="--dart-define=isFromFlutter=true" />
       <option name="filePath" value="$PROJECT_DIR$/lib/main.dart" />
@@ -123,7 +123,7 @@
       <method v="2" />
     </configuration>
     <list>
-      <item itemvalue="Flutter.main.dart" />
+      <item itemvalue="Flutter.main_debug.dart" />
       <item itemvalue="Flutter.main_profile.dart" />
     </list>
   </component>
@@ -171,6 +171,16 @@
           <url>file://$PROJECT_DIR$/lib/BestUI/home_screen.dart</url>
           <line>12</line>
           <option name="timeStamp" value="17" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="Dart">
+          <url>file://$USER_HOME$/.pub-cache/hosted/pub.dev/sentry_flutter-8.14.2/lib/src/integrations/native_app_start_integration.dart</url>
+          <line>25</line>
+          <option name="timeStamp" value="28" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="Dart">
+          <url>file://$USER_HOME$/.pub-cache/hosted/pub.dev/sentry_flutter-8.14.2/lib/src/binding_wrapper.dart</url>
+          <line>112</line>
+          <option name="timeStamp" value="30" />
         </line-breakpoint>
       </breakpoints>
       <default-breakpoints>

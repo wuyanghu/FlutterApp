@@ -109,6 +109,7 @@ class _Circle extends State<Circle> {
                 ),
               ),
             )));
+
   }
 
   List<Widget> cell(TweetList model) {

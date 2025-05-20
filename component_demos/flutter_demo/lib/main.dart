@@ -29,6 +29,8 @@ import 'async_example/stream_example.dart';
 import 'flutter_实战/WPChapters_screen.dart';
 import 'slider/symmetric_slider_demo.dart';
 import 'package:leak_detector/leak_detector.dart';
+import 'package:flutter/widgets.dart';
+import 'package:sentry_flutter/sentry_flutter.dart';
 
 void main() {
   runApp(const MyApp());
@@ -170,7 +172,10 @@ class _FlutterDemoHomePageState extends State<FlutterDemoHomePage> {
           _buildItem("事件任务、微任务优先级", null, onTap: () {
             EventLoop().task();
           }),
-          _buildItem("stream", StreamExample(),),
+          _buildItem(
+            "stream",
+            StreamExample(),
+          ),
           _buildItem("compute()开启Isolate", null, onTap: () {
             IsolateExample().computeExample();
           }),
@@ -190,6 +195,16 @@ class _FlutterDemoHomePageState extends State<FlutterDemoHomePage> {
           Divider(
             indent: 1,
           ),
+          _buildItem("Sentry 读取本地json监控", null, onTap: () async {
+            final transaction = Sentry.startTransaction(
+              'asset-bundle-transaction-1',
+              'load',
+              bindToScope: true,
+            );
+            final text = await DefaultAssetBundle.of(context)
+                .loadString('assets/markdown.md');
+            await transaction.finish(status: const SpanStatus.ok());
+          }),
         ],
       ),
       floatingActionButton: FloatingActionButton(
