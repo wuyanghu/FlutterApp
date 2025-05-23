@@ -13,16 +13,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6ee1ac08-7d97-4738-ae9f-d2a1444300ed" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.flutter-plugins" beforeDir="false" afterPath="$PROJECT_DIR$/.flutter-plugins" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.flutter-plugins-dependencies" beforeDir="false" afterPath="$PROJECT_DIR$/.flutter-plugins-dependencies" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/runConfigurations/main_dart.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/component_demos/flutter_demo/lib/flutter_实战/WPChapters_screen.dart" beforeDir="false" afterPath="$PROJECT_DIR$/component_demos/flutter_demo/lib/flutter_实战/WPChapters_screen.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/component_demos/flutter_demo/lib/main.dart" beforeDir="false" afterPath="$PROJECT_DIR$/component_demos/flutter_demo/lib/main.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/component_demos/flutter_demo/pubspec.lock" beforeDir="false" afterPath="$PROJECT_DIR$/component_demos/flutter_demo/pubspec.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/component_demos/flutter_demo/pubspec.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/component_demos/flutter_demo/pubspec.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/component_demos/performance_demo/lib/main.dart" beforeDir="false" afterPath="$PROJECT_DIR$/component_demos/performance_demo/lib/main.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ios/Podfile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/ios/Podfile.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/MyApp/CircleOfFriends/Circle.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/MyApp/CircleOfFriends/Circle.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ios/Runner.xcodeproj/project.pbxproj" beforeDir="false" afterPath="$PROJECT_DIR$/ios/Runner.xcodeproj/project.pbxproj" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/main.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/main.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pubspec.lock" beforeDir="false" afterPath="$PROJECT_DIR$/pubspec.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pubspec.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/pubspec.yaml" afterDir="false" />
@@ -178,9 +173,19 @@
           <option name="timeStamp" value="28" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="Dart">
-          <url>file://$USER_HOME$/.pub-cache/hosted/pub.dev/sentry_flutter-8.14.2/lib/src/binding_wrapper.dart</url>
-          <line>112</line>
-          <option name="timeStamp" value="30" />
+          <url>file://$USER_HOME$/.pub-cache/hosted/pub.dev/sentry_flutter-8.14.2/lib/src/integrations/debug_print_integration.dart</url>
+          <line>58</line>
+          <option name="timeStamp" value="61" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="Dart">
+          <url>file://$USER_HOME$/.pub-cache/hosted/pub.dev/sentry_flutter-8.14.2/lib/src/navigation/time_to_display_tracker.dart</url>
+          <line>46</line>
+          <option name="timeStamp" value="68" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="Dart">
+          <url>file://$USER_HOME$/.pub-cache/hosted/pub.dev/sentry_flutter-8.14.2/lib/src/widgets_binding_observer.dart</url>
+          <line>101</line>
+          <option name="timeStamp" value="79" />
         </line-breakpoint>
       </breakpoints>
       <default-breakpoints>

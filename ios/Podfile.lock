@@ -82,7 +82,7 @@ EXTERNAL SOURCES:
 SPEC CHECKSUMS:
   Flutter: 04420c5612cc0139b54ed1624e2bc933b56374e4
   flutter_webview_plugin: ed9e8a6a96baf0c867e90e1bce2673913eeac694
-  fluttertoast: f94325a7934d85c77ebb7bd5b7ceb591cb45cbc0
+  fluttertoast: 21eecd6935e7064cc1fcb733a4c5a428f3f24f0f
   leak_detector: 30775053068909f517f5ae3f82dffff4c9b450bc
   package_info: 873975fc26034f0b863a300ad47e7f1ac6c7ec62
   package_info_plus: c0502532a26c7662a62a356cebe2692ec5fe4ec4
@@ -97,4 +97,4 @@ SPEC CHECKSUMS:
 
 PODFILE CHECKSUM: ce13d36744da294d67f8e460dbb7aed7c09bd7f4
 
-COCOAPODS: 1.10.2
+COCOAPODS: 1.16.2

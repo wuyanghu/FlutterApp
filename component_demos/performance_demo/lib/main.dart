@@ -112,22 +112,24 @@ class PerformanceApp extends StatelessWidget {
           primarySwatch: Colors.blue,
         ),
         home: const PerformanceHomePage(title: '性能 Demo'),
-        routes: <String, Widget Function(BuildContext)>{
-          SingleChildScrollViewPage.routeName: (BuildContext context) =>
-              SingleChildScrollViewPage(),
-          ListViewBuilderPage.routeName: (BuildContext context) =>
-              ListViewBuilderPage(),
-          IVSlowPage.routeName: (BuildContext context) => IVSlowPage(),
-          IVBuilderPage.routeName: (BuildContext context) => IVBuilderPage(),
-          IVBuilderTablePage.routeName: (BuildContext context) =>
-              IVBuilderTablePage(),
-          ProceduralGenerationPage.routeName: (BuildContext context) =>
-              ProceduralGenerationPage(),
-        },
+        routes: routes,
       );
     }
     return const PerformanceHomePage(title: '性能 Demo');
   }
+
+  static Map<String, WidgetBuilder> routes = <String, Widget Function(BuildContext)>{
+    SingleChildScrollViewPage.routeName: (BuildContext context) =>
+        SingleChildScrollViewPage(),
+    ListViewBuilderPage.routeName: (BuildContext context) =>
+        ListViewBuilderPage(),
+    IVSlowPage.routeName: (BuildContext context) => IVSlowPage(),
+    IVBuilderPage.routeName: (BuildContext context) => IVBuilderPage(),
+    IVBuilderTablePage.routeName: (BuildContext context) =>
+        IVBuilderTablePage(),
+    ProceduralGenerationPage.routeName: (BuildContext context) =>
+        ProceduralGenerationPage(),
+  };
 }
 
 class PerformanceHomePage extends StatefulWidget {

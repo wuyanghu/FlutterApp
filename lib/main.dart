@@ -10,7 +10,7 @@ import 'package:shared_preferences/shared_preferences.dart';
 import 'package:leak_detector/leak_detector.dart';
 import 'package:flutter/widgets.dart';
 import 'package:sentry_flutter/sentry_flutter.dart';
-import 'package:sentry_flutter/src/integrations/native_app_start_integration.dart';
+import 'package:performance_demo/main.dart';
 
 void main() async {
   // 将 debugPrint 指定为空的执行体, 所以它什么也不做
@@ -30,16 +30,8 @@ void main() async {
       options.tracesSampleRate = 1.0;
       options.profilesSampleRate = 1.0;
       options.sendDefaultPii = true;
-      options.enableFramesTracking = true;
       options.debug = kDebugMode;
-      options.diagnosticLevel = SentryLevel.debug;
-      options.enableAutoSessionTracking = true;
-      options.enablePrintBreadcrumbs = true;
-      options.enableAutoPerformanceTracing = true;
-      // in SentryFlutter.init
-      // final integration = options.integrations.firstWhere(
-      //     (integration) => integration is NativeAppStartIntegration);
-      // options.removeIntegration(integration);
+
     }, appRunner: () {
       SentryWidgetsFlutterBinding.ensureInitialized();
       return runApp(SentryWidget(
@@ -134,7 +126,7 @@ class _MyApp extends State with WidgetsBindingObserver {
             ),
           ],
           //注册路由表
-          routes: {},
+          routes: PerformanceApp.routes,
           onUnknownRoute: (RouteSettings setting) =>
               MaterialPageRoute(builder: (context) {
             return UnknownPage(); //统一处理没有生效,不是没有生效
