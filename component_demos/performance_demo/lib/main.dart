@@ -5,6 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:performance_demo/performance/custom_single_scroll_view.dart';
 import 'package:performance_demo/performance/time_consuming_page.dart';
+import 'package:sentry_flutter/sentry_flutter.dart';
 
 import 'dev_tools_demo/screens/shrinklists.dart';
 import 'dev_tools_demo/screens/slivers.dart';
@@ -95,30 +96,37 @@ void main2() {
 }
 
 class PerformanceApp extends StatelessWidget {
-  const PerformanceApp({Key? key}) : super(key: key);
+  final bool? isMaterialApp;
+  const PerformanceApp({
+    Key? key,
+    this.isMaterialApp = true,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      title: '性能 Demo',
-      // showPerformanceOverlay: true,
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-      ),
-      home: const PerformanceHomePage(title: '性能 Demo'),
-      routes: <String, Widget Function(BuildContext)>{
-        SingleChildScrollViewPage.routeName: (BuildContext context) =>
-            SingleChildScrollViewPage(),
-        ListViewBuilderPage.routeName: (BuildContext context) =>
-            ListViewBuilderPage(),
-        IVSlowPage.routeName: (BuildContext context) => IVSlowPage(),
-        IVBuilderPage.routeName: (BuildContext context) => IVBuilderPage(),
-        IVBuilderTablePage.routeName: (BuildContext context) =>
-            IVBuilderTablePage(),
-        ProceduralGenerationPage.routeName: (BuildContext context) =>
-            ProceduralGenerationPage(),
-      },
-    );
+    if (isMaterialApp == true) {
+      return MaterialApp(
+        title: '性能 Demo',
+        // showPerformanceOverlay: true,
+        theme: ThemeData(
+          primarySwatch: Colors.blue,
+        ),
+        home: const PerformanceHomePage(title: '性能 Demo'),
+        routes: <String, Widget Function(BuildContext)>{
+          SingleChildScrollViewPage.routeName: (BuildContext context) =>
+              SingleChildScrollViewPage(),
+          ListViewBuilderPage.routeName: (BuildContext context) =>
+              ListViewBuilderPage(),
+          IVSlowPage.routeName: (BuildContext context) => IVSlowPage(),
+          IVBuilderPage.routeName: (BuildContext context) => IVBuilderPage(),
+          IVBuilderTablePage.routeName: (BuildContext context) =>
+              IVBuilderTablePage(),
+          ProceduralGenerationPage.routeName: (BuildContext context) =>
+              ProceduralGenerationPage(),
+        },
+      );
+    }
+    return const PerformanceHomePage(title: '性能 Demo');
   }
 }
 
@@ -204,10 +212,21 @@ class _PerformanceHomePageState extends State<PerformanceHomePage> {
     );
   }
 
-  void pushPage(Widget page) {
-    Navigator.push(
+  void pushPage(Widget page) async {
+    // final transaction = Sentry.startTransaction(
+    //   'load-${page.runtimeType}-page',
+    //   'ui.load',
+    //   bindToScope: true,
+    // );
+
+    await Navigator.push(
       context,
-      MaterialPageRoute(builder: (context) => page),
+      MaterialPageRoute(
+        builder: (context) => page,
+        settings: RouteSettings(name: "${page.runtimeType}"),
+      ),
     );
+    // print("pushPage pop");
+    // transaction.finish(status: const SpanStatus.ok());
   }
 }

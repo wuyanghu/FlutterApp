@@ -37,6 +37,7 @@ dependencies:
   cupertino_icons: ^1.0.5
   rive: 0.13.20
   flutter_lorem: ^2.0.0
+  sentry_flutter: 8.14.2
 
 dev_dependencies:
   flutter_test:

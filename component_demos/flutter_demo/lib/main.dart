@@ -91,7 +91,11 @@ class _FlutterDemoHomePageState extends State<FlutterDemoHomePage> {
               onTap!.call();
               return;
             }
-            Navigator.push(context, MaterialPageRoute(builder: (_) => body!));
+            Navigator.push(
+                context,
+                MaterialPageRoute(
+                    builder: (_) => body!,
+                    settings: RouteSettings(name: "${body.runtimeType}")));
           },
           child: Text(
             title,

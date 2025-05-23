@@ -4,7 +4,7 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_app/MyApp/Login/Login.dart';
 import 'package:flutter_app/MyApp/Login/LoginShare.dart';
-import 'package:flutter_app/MyApp/Tabbar/MyHomePage.dart';
+import 'package:flutter_app/MyApp/Tabbar/my_home_page.dart';
 import 'package:provider/provider.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:leak_detector/leak_detector.dart';
@@ -28,10 +28,14 @@ void main() async {
       options.dsn =
           'https://06005edd867f982d76a48de50f1d6cc7@o4509348600741888.ingest.us.sentry.io/4509348760322048';
       options.tracesSampleRate = 1.0;
-      options.sendDefaultPii = true;
       options.profilesSampleRate = 1.0;
+      options.sendDefaultPii = true;
       options.enableFramesTracking = true;
-
+      options.debug = kDebugMode;
+      options.diagnosticLevel = SentryLevel.debug;
+      options.enableAutoSessionTracking = true;
+      options.enablePrintBreadcrumbs = true;
+      options.enableAutoPerformanceTracing = true;
       // in SentryFlutter.init
       // final integration = options.integrations.firstWhere(
       //     (integration) => integration is NativeAppStartIntegration);
@@ -120,6 +124,7 @@ class _MyApp extends State with WidgetsBindingObserver {
             visualDensity: VisualDensity.adaptivePlatformDensity,
           ),
           navigatorObservers: [
+            SentryNavigatorObserver(setRouteNameAsTransaction: true),
             LeakNavigatorObserver(
               //返回false则不会校验这个页面.
               shouldCheck: (route) {
