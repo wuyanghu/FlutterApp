@@ -31,6 +31,8 @@ void main() async {
       options.profilesSampleRate = 1.0;
       options.sendDefaultPii = true;
       options.debug = kDebugMode;
+      options.attachViewHierarchy = true;
+
       options.enableTimeToFullDisplayTracing = true;
     }, appRunner: () {
       SentryWidgetsFlutterBinding.ensureInitialized();
