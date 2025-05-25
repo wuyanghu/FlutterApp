@@ -13,25 +13,11 @@ class WrappedListsPage extends StatefulWidget {
 class _WrappedListsPageState extends State<WrappedListsPage> {
   List<ListView> innerLists = [];
   final numLists = 15;
-  final numberOfItemsPerList = 200;
+  final numberOfItemsPerList = 1000;
 
   @override
   void initState() {
     super.initState();
-    for (int i = 0; i < numLists; i++) {
-      final innerList = <ColorRow>[];
-      for (int j = 0; j < numberOfItemsPerList; j++) {
-        innerList.add(const ColorRow());
-      }
-      innerLists.add(
-        ListView.builder(
-          itemCount: numberOfItemsPerList,
-          itemBuilder: (BuildContext context, int index) => innerList[index],
-          shrinkWrap: true,
-          physics: const NeverScrollableScrollPhysics(),
-        ),
-      );
-    }
   }
 
   @override
@@ -42,7 +28,16 @@ class _WrappedListsPageState extends State<WrappedListsPage> {
       ),
       body: ListView.builder(
           itemCount: numLists,
-          itemBuilder: (context, index) => innerLists[index]),
+          itemBuilder: (context, index) {
+            return ListView.builder(
+              itemCount: numberOfItemsPerList,
+              itemBuilder: (BuildContext context, int index) => ColorRow(
+                key: ValueKey<int>(index),
+              ),
+              shrinkWrap: true,
+              physics: const NeverScrollableScrollPhysics(),
+            );
+          }),
     );
   }
 }

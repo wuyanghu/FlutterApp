@@ -1,7 +1,8 @@
-import 'dart:io';
 
 import 'package:flutter_demo/%E7%BB%98%E5%88%B6/renderobject_paint/done_widget.dart';
+import 'package:flutter_demo/memory_example/memory_leak_time_page.dart';
 import 'package:flutter_demo/provider/Chapter7/shopping.dart';
+import 'package:flutter_demo/memory_example/memory_leak_big_page.dart';
 import 'package:flutter_demo/绘制/renderobject_paint/custom_checkbox_page.dart';
 import 'package:flutter_demo/绘制/custom_paint/custom_paint_page.dart';
 import 'package:flutter_demo/绘制/custom_paint/gradient_circular_progress_indicator_page.dart';
@@ -27,6 +28,8 @@ import 'animations/scale_animation_page.dart';
 import 'animations/stagger_animation_page.dart';
 import 'async_example/stream_example.dart';
 import 'flutter_实战/WPChapters_screen.dart';
+import 'memory_example/memory_leak_buildcontext_page.dart';
+import 'memory_example/memory_leak_scale_animiation_page.dart';
 import 'slider/symmetric_slider_demo.dart';
 import 'package:leak_detector/leak_detector.dart';
 import 'package:flutter/widgets.dart';
@@ -88,7 +91,7 @@ class _FlutterDemoHomePageState extends State<FlutterDemoHomePage> {
       return GestureDetector(
           onTap: () {
             if (onTap != null) {
-              onTap!.call();
+              onTap.call();
               return;
             }
             Navigator.push(
@@ -97,9 +100,12 @@ class _FlutterDemoHomePageState extends State<FlutterDemoHomePage> {
                     builder: (_) => body!,
                     settings: RouteSettings(name: "${body.runtimeType}")));
           },
-          child: Text(
-            title,
-            style: TextStyle(fontSize: 16),
+          child: SizedBox(
+            height: 25,
+            child: Text(
+              title,
+              style: TextStyle(fontSize: 16),
+            ),
           ));
     }
 
@@ -149,7 +155,13 @@ class _FlutterDemoHomePageState extends State<FlutterDemoHomePage> {
               "scale animation",
               ScaleAnimationRoute(
                 key: UniqueKey(),
-              )),
+              ),onTap: () {
+            Navigator.push(
+                context,
+                MaterialPageRoute(
+                    builder: (_) => ScaleAnimationRoute()!,
+                    settings: RouteSettings(name: "$ScaleAnimationRoute")));
+          }),
           _buildItem("scale1 AnimatedImage", ScaleAnimationRoute1()),
           _buildItem("scale2 AnimatedBuilder", ScaleAnimationRoute2()),
           _buildItem(
@@ -191,11 +203,20 @@ class _FlutterDemoHomePageState extends State<FlutterDemoHomePage> {
           _buildItem("compute()开启Isolate", null, onTap: () {
             IsolateExample().computeExample();
           }),
-          _buildItem("内存泄漏记录", null, onTap: () {
+          Divider(
+            indent: 1,
+          ),
+          _buildItem("内存泄漏记录列表", null, onTap: () {
             getLeakedRecording().then((List<LeakedInfo> infoList) {
               showLeakedInfoListPage(context, infoList);
             });
           }),
+          _buildItem("内存泄漏-AnimationController", MemoryLeakScaleAnimationPage()),
+          _buildItem("内存泄漏-大内存", BigMemoryPage()),
+          _buildItem("内存泄漏-time", MemoryLeakTimePage()),
+          _buildItem("内存泄漏-bildContext", MemoryLeakBuildcontextPage()),
+          _buildItem("内存泄漏-scrollController", MemoryLeakScrollControllerPage()),
+
           Divider(
             indent: 1,
           ),

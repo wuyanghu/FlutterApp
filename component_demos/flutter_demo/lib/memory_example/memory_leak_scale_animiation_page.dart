@@ -1,15 +1,17 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_demo/util/scaffold_mixin.dart';
 
-class ScaleAnimationRoute extends StatefulWidget {
-  const ScaleAnimationRoute({Key? key}) : super(key: key);
+class MemoryLeakScaleAnimationPage extends StatefulWidget {
+  const MemoryLeakScaleAnimationPage({Key? key}) : super(key: key);
 
   @override
-  _ScaleAnimationRouteState createState() => _ScaleAnimationRouteState();
+  _MemoryLeakScaleAnimationPageState createState() =>
+      _MemoryLeakScaleAnimationPageState();
 }
 
 //需要继承TickerProvider，如果有多个AnimationController，则应该使用TickerProviderStateMixin。
-class _ScaleAnimationRouteState extends State<ScaleAnimationRoute>
+class _MemoryLeakScaleAnimationPageState
+    extends State<MemoryLeakScaleAnimationPage>
     with SingleTickerProviderStateMixin {
   late Animation<double> animation;
   late AnimationController controller;
@@ -54,7 +56,36 @@ class _ScaleAnimationRouteState extends State<ScaleAnimationRoute>
   @override
   dispose() {
     //路由销毁时需要释放动画资源
-    controller.dispose();
+    // controller.dispose();
+    super.dispose();
+  }
+}
+
+class MemoryLeakScrollControllerPage extends StatefulWidget {
+  const MemoryLeakScrollControllerPage({super.key});
+
+  @override
+  State<MemoryLeakScrollControllerPage> createState() =>
+      _MemoryLeakScrollControllerPageState();
+}
+
+class _MemoryLeakScrollControllerPageState
+    extends State<MemoryLeakScrollControllerPage> {
+  final ScrollController _controller = ScrollController();
+
+  @override
+  Widget build(BuildContext context) {
+    return buildScaffold(
+        "ScrollController leak",
+        ListView.builder(
+          controller: _controller,
+          itemBuilder: (_, i) => Text('Item $i'),
+        ));
+  }
+
+  @override
+  void dispose() {
+    // _controller.dispose();
     super.dispose();
   }
 }

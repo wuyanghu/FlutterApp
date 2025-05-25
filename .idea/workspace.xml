@@ -13,11 +13,39 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6ee1ac08-7d97-4738-ae9f-d2a1444300ed" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/component_demos/flutter_demo/lib/memory_example/memory_leak_big_page.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/component_demos/flutter_demo/lib/memory_example/memory_leak_buildcontext_page.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/component_demos/flutter_demo/lib/memory_example/memory_leak_scale_animiation_page.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/component_demos/flutter_demo/lib/memory_example/memory_leak_time_page.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.flutter-plugins" beforeDir="false" afterPath="$PROJECT_DIR$/.flutter-plugins" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.flutter-plugins-dependencies" beforeDir="false" afterPath="$PROJECT_DIR$/.flutter-plugins-dependencies" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.fvm/flutter_sdk" beforeDir="false" afterPath="$PROJECT_DIR$/.fvm/flutter_sdk" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.fvm/fvm_config.json" beforeDir="false" afterPath="$PROJECT_DIR$/.fvm/fvm_config.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.fvmrc" beforeDir="false" afterPath="$PROJECT_DIR$/.fvmrc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Dart_SDK.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Dart_SDK.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/component_demos/performance_demo/lib/main.dart" beforeDir="false" afterPath="$PROJECT_DIR$/component_demos/performance_demo/lib/main.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.vscode/settings.json" beforeDir="false" afterPath="$PROJECT_DIR$/.vscode/settings.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/component_demos/alg_demo/.fvm/flutter_sdk" beforeDir="false" afterPath="$PROJECT_DIR$/component_demos/alg_demo/.fvm/flutter_sdk" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/component_demos/alg_demo/.fvm/fvm_config.json" beforeDir="false" afterPath="$PROJECT_DIR$/component_demos/alg_demo/.fvm/fvm_config.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/component_demos/alg_demo/.fvmrc" beforeDir="false" afterPath="$PROJECT_DIR$/component_demos/alg_demo/.fvmrc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/component_demos/alg_demo/lib/main.dart" beforeDir="false" afterPath="$PROJECT_DIR$/component_demos/alg_demo/lib/main.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/component_demos/alg_demo/pubspec.lock" beforeDir="false" afterPath="$PROJECT_DIR$/component_demos/alg_demo/pubspec.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/component_demos/flutter_demo/ios/Podfile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/component_demos/flutter_demo/ios/Podfile.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/component_demos/flutter_demo/ios/Runner.xcodeproj/project.pbxproj" beforeDir="false" afterPath="$PROJECT_DIR$/component_demos/flutter_demo/ios/Runner.xcodeproj/project.pbxproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/component_demos/flutter_demo/lib/animations/scale_animation_page.dart" beforeDir="false" afterPath="$PROJECT_DIR$/component_demos/flutter_demo/lib/animations/scale_animation_page.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/component_demos/flutter_demo/lib/main.dart" beforeDir="false" afterPath="$PROJECT_DIR$/component_demos/flutter_demo/lib/main.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/component_demos/flutter_demo/pubspec.lock" beforeDir="false" afterPath="$PROJECT_DIR$/component_demos/flutter_demo/pubspec.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/component_demos/flutter_demo/pubspec.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/component_demos/flutter_demo/pubspec.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/component_demos/performance_demo/lib/dev_tools_demo/screens/shrinklists.dart" beforeDir="false" afterPath="$PROJECT_DIR$/component_demos/performance_demo/lib/dev_tools_demo/screens/shrinklists.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/component_demos/performance_demo/pubspec.lock" beforeDir="false" afterPath="$PROJECT_DIR$/component_demos/performance_demo/pubspec.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/devtools_options.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/devtools_options.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/flutterapp.iml" beforeDir="false" afterPath="$PROJECT_DIR$/flutterapp.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ios/Podfile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/ios/Podfile.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ios/Runner.xcodeproj/project.pbxproj" beforeDir="false" afterPath="$PROJECT_DIR$/ios/Runner.xcodeproj/project.pbxproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ios/Runner.xcodeproj/xcshareddata/xcschemes/Runner.xcscheme" beforeDir="false" afterPath="$PROJECT_DIR$/ios/Runner.xcodeproj/xcshareddata/xcschemes/Runner.xcscheme" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ios/Runner/AppDelegate.swift" beforeDir="false" afterPath="$PROJECT_DIR$/ios/Runner/AppDelegate.swift" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ios/Runner/Info.plist" beforeDir="false" afterPath="$PROJECT_DIR$/ios/Runner/Info.plist" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/MyApp/Tabbar/my_home_page.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/MyApp/Tabbar/my_home_page.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/main.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/main.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pubspec.lock" beforeDir="false" afterPath="$PROJECT_DIR$/pubspec.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pubspec.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/pubspec.yaml" afterDir="false" />
@@ -72,52 +100,55 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Flutter.main.dart.executor": "Debug",
-    "Flutter.main_debug.dart.executor": "Debug",
-    "Flutter.main_profile.dart.executor": "Run",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.cidr.known.project.marker": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "RunOnceActivity.readMode.enableVisualFormatting": "true",
-    "cf.first.check.clang-format": "false",
-    "cidr.known.project.marker": "true",
-    "dart.analysis.tool.window.visible": "false",
-    "git-widget-placeholder": "main",
-    "io.flutter.reload.alreadyRun": "true",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "/Users/wupeng/Desktop/code/FlutterApp",
-    "settings.editor.selected.configurable": "flutter.settings",
-    "show.migrate.to.gradle.popup": "false",
-    "structure.view.defaults.are.configured": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Flutter.main.dart.executor&quot;: &quot;Debug&quot;,
+    &quot;Flutter.main_debug.dart.executor&quot;: &quot;Debug&quot;,
+    &quot;Flutter.main_profile.dart.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.cidr.known.project.marker&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.readMode.enableVisualFormatting&quot;: &quot;true&quot;,
+    &quot;cf.first.check.clang-format&quot;: &quot;false&quot;,
+    &quot;cidr.known.project.marker&quot;: &quot;true&quot;,
+    &quot;com.google.services.firebase.aqiPopupShown&quot;: &quot;true&quot;,
+    &quot;dart.analysis.tool.window.visible&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;io.flutter.reload.alreadyRun&quot;: &quot;true&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Users/wupeng/Desktop/code/FlutterApp&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;flutter.settings&quot;,
+    &quot;show.migrate.to.gradle.popup&quot;: &quot;false&quot;,
+    &quot;structure.view.defaults.are.configured&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/assets" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/component_demos/flutter_demo/lib/memory_example" />
       <recent name="$PROJECT_DIR$/component_demos/performance_demo/lib/dev_tools_demo" />
       <recent name="$PROJECT_DIR$/component_demos/flutter_demo/lib/绘制/renderobject" />
       <recent name="$PROJECT_DIR$/component_demos/flutter_demo/lib/绘制" />
       <recent name="$PROJECT_DIR$/flutter_demo/lib/provider" />
-      <recent name="$PROJECT_DIR$/performance_demo/lib/performance" />
     </key>
   </component>
-  <component name="RunManager" selected="Flutter.main_profile.dart">
+  <component name="RunManager" selected="Flutter.main_debug.dart">
     <configuration name="main.dart" type="FlutterRunConfigurationType" factoryName="Flutter" nameIsGenerated="true">
       <option name="additionalArgs" value="--dart-define=isFromFlutter=true" />
       <option name="filePath" value="$PROJECT_DIR$/lib/main.dart" />
       <method v="2" />
     </configuration>
     <configuration name="main_profile.dart" type="FlutterRunConfigurationType" factoryName="Flutter">
-      <option name="additionalArgs" value="--profile" />
+      <option name="additionalArgs" value="--profile --track-widget-creation --disable-dds" />
+      <option name="attachArgs" value="--profile --track-widget-creation --disable-dds" />
       <option name="filePath" value="$PROJECT_DIR$/lib/main.dart" />
       <method v="2" />
     </configuration>
     <list>
+      <item itemvalue="Flutter.main.dart" />
       <item itemvalue="Flutter.main_debug.dart" />
       <item itemvalue="Flutter.main_profile.dart" />
     </list>
@@ -192,5 +223,10 @@
         <breakpoint suspend="THREAD" type="dart-exception" />
       </default-breakpoints>
     </breakpoint-manager>
+    <watches-manager>
+      <configuration name="FlutterRunConfigurationType">
+        <watch expression="## Disable automatic upload of debug symbols&#10;  ## upload_debug_symbols: false&#10;  ## Enable source context&#10;  upload_source_context: true&#10;  ## Enable source maps&#10;  upload_source_maps: true" />
+      </configuration>
+    </watches-manager>
   </component>
 </project>

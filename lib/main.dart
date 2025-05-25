@@ -31,7 +31,7 @@ void main() async {
       options.profilesSampleRate = 1.0;
       options.sendDefaultPii = true;
       options.debug = kDebugMode;
-
+      options.enableTimeToFullDisplayTracing = true;
     }, appRunner: () {
       SentryWidgetsFlutterBinding.ensureInitialized();
       return runApp(SentryWidget(
@@ -74,15 +74,6 @@ class _MyApp extends State with WidgetsBindingObserver {
   @override
   void initState() {
     super.initState();
-    LeakDetector().init(maxRetainingPath: 300);
-    //show preview page
-    LeakDetector().onLeakedStream.listen((LeakedInfo info) {
-      //print to console
-      info.retainingPath.forEach((node) => print(node));
-      //show preview page
-      showLeakedInfoPage(context, info);
-    });
-
     WidgetsBinding.instance.addObserver(this); // 注册监听器
 
     loadData();
@@ -120,8 +111,9 @@ class _MyApp extends State with WidgetsBindingObserver {
             LeakNavigatorObserver(
               //返回false则不会校验这个页面.
               shouldCheck: (route) {
+                List<String> white = ['/', '_FlutterDemoHomePageState'];
                 return route.settings.name != null &&
-                    route.settings.name != '/';
+                    !white.contains(route.settings.name);
               },
             ),
           ],

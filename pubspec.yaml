@@ -18,7 +18,7 @@ publish_to: 'none' # Remove this line if you wish to publish to pub.dev
 version: 1.0.0+1
 
 environment:
-  sdk: ">=2.12.0 <3.5.0"
+  sdk: ">=2.12.0 <4.0.0"
 
 dependency_overrides:
   flutter:
@@ -31,7 +31,9 @@ dependency_overrides:
     path: ./component_demos/performance_demo
 
   sentry_flutter: 8.14.2
-  leak_detector: 1.1.0 #内存泄漏监控
+#  leak_detector: 1.1.0 #内存泄漏监控
+  leak_detector:
+    path: ./component_demos/leak_detector
   vm_service: 11.2.0
   cupertino_icons: ^0.1.3
   english_words: ^3.1.3

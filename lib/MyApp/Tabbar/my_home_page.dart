@@ -4,6 +4,7 @@ import 'package:flutter_app/MyApp/LeftDrawer/LeftDrawer.dart';
 import 'package:flutter_app/MyApp/Mine/mine_page.dart';
 import 'package:flutter_demo/main.dart';
 import 'package:performance_demo/main.dart';
+import 'package:leak_detector/leak_detector.dart';
 
 class MyHomePage extends StatefulWidget {
   MyHomePage({Key? key, required this.title}) : super(key: key);
@@ -23,6 +24,15 @@ class _ScaffoldRouteState extends State<MyHomePage>
   @override
   void initState() {
     super.initState();
+    LeakDetector().init(maxRetainingPath: 300);
+    //show preview page
+    LeakDetector().onLeakedStream.listen((LeakedInfo info) {
+      //print to console
+      info.retainingPath.forEach((node) => print(node));
+      //show preview page
+      showLeakedInfoPage(context, info);
+    });
+
     _tabController = TabController(length: tabs.length, vsync: this);
     _tabController.addListener(() {
       switch (_tabController.index) {
