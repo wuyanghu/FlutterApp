@@ -11,6 +11,10 @@ import 'package:leak_detector/leak_detector.dart';
 import 'package:flutter/widgets.dart';
 import 'package:sentry_flutter/sentry_flutter.dart';
 import 'package:performance_demo/main.dart';
+import 'package:leak_tracker/leak_tracker.dart';
+import 'package:flutter_demo/main.dart';
+
+import 'MyApp/CircleOfFriends/circle_page.dart';
 
 void main() async {
   // 将 debugPrint 指定为空的执行体, 所以它什么也不做
@@ -78,6 +82,10 @@ class _MyApp extends State with WidgetsBindingObserver {
     super.initState();
     WidgetsBinding.instance.addObserver(this); // 注册监听器
 
+    // LeakTracking.start();
+    // print('Hello, world!');
+    // LeakTracking.stop();
+
     loadData();
     LoginShare.getInstance().logOut(() {
       loadData();
@@ -110,17 +118,24 @@ class _MyApp extends State with WidgetsBindingObserver {
           ),
           navigatorObservers: [
             SentryNavigatorObserver(setRouteNameAsTransaction: true),
-            LeakNavigatorObserver(
-              //返回false则不会校验这个页面.
-              shouldCheck: (route) {
-                List<String> white = ['/', '_FlutterDemoHomePageState'];
-                return route.settings.name != null &&
-                    !white.contains(route.settings.name);
-              },
-            ),
+            // LeakNavigatorObserver(
+            //   checkLeakDelay: 0,
+            //   //返回false则不会校验这个页面.
+            //   shouldCheck: (route) {
+            //     List<String> white = ['/', '_FlutterDemoHomePageState'];
+            //     return route.settings.name != null &&
+            //         !white.contains(route.settings.name);
+            //   },
+            // ),
           ],
           //注册路由表
-          routes: PerformanceApp.routes,
+          routes: {
+            ...PerformanceApp.routes,
+            ...getFlutterDemoRoutes(),
+            ...{
+              CirclePage.route: (BuildContext context) => CirclePage(),
+            }
+          },
           onUnknownRoute: (RouteSettings setting) =>
               MaterialPageRoute(builder: (context) {
             return UnknownPage(); //统一处理没有生效,不是没有生效

@@ -3,7 +3,7 @@ import 'package:dio/dio.dart';
 import 'package:dio_http_cache/dio_http_cache.dart';
 import 'dart:convert';
 import 'package:flutter/services.dart';
-import 'package:flutter_app/MyApp/CircleOfFriends/CircleModel.dart';
+import 'package:flutter_app/MyApp/CircleOfFriends/circle_model.dart';
 import 'package:flutter_app/MyApp/Help/Network/Util.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:date_format/date_format.dart';

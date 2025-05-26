@@ -74,6 +74,8 @@ class StaggerAnimation extends StatelessWidget {
 }
 
 class StaggerRoute extends StatefulWidget {
+  static String route = 'StaggerRoute';
+
   @override
   _StaggerRouteState createState() => _StaggerRouteState();
 }

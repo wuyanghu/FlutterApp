@@ -127,6 +127,8 @@ class RenderDoneObject extends RenderBox with RenderObjectAnimationMixin {
 }
 
 class DonePage extends StatefulWidget {
+  static String route = 'DonePage';
+
   const DonePage({super.key});
 
   @override

@@ -62,6 +62,8 @@ class _TurnBoxState extends State<TurnBox>
 
 
 class TurnBoxPage extends StatefulWidget {
+  static String route = 'TurnBoxPage';
+
   const TurnBoxPage({Key? key}) : super(key: key);
 
   @override

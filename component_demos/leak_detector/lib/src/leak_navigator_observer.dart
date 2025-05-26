@@ -57,7 +57,7 @@ class LeakNavigatorObserver extends NavigatorObserver {
           if (element != null) {
             final key = _getRouteKey(route);
             watchObjectLeak(element, key); //Element
-            watchObjectLeak(element.widget, key); //Widget
+            // watchObjectLeak(element.widget, key); //Widget
             if (element is StatefulElement) {
               watchObjectLeak(element.state, key); //State
             }

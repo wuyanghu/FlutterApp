@@ -44,6 +44,7 @@ dependencies:
   after_layout: 1.2.0
   sentry_flutter: 8.14.2
   leak_detector: 1.1.0 #内存泄漏监控
+  cached_network_image: 3.4.1
 
 
 dependency_overrides:

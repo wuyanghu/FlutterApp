@@ -4,6 +4,8 @@ import 'Model/WPChapterModel.dart';
 import 'WP4Chapter.dart';
 
 class WPChaters extends StatefulWidget {
+  static String route = 'WPChaters';
+
   @override
   _WPChatersState createState() => _WPChatersState();
 }

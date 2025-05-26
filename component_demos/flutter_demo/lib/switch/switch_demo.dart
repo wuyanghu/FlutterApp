@@ -4,6 +4,8 @@ import 'package:flutter/material.dart';
 import 'custom_switch.dart';
 
 class SwitchDemo extends StatefulWidget {
+  static String route = 'SwitchDemo';
+
   const SwitchDemo({super.key});
 
   @override

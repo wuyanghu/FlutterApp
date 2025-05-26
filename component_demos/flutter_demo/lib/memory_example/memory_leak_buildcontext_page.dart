@@ -3,6 +3,8 @@ import 'package:flutter_demo/memory_example/memory_leak_scale_animiation_page.da
 import 'package:flutter_demo/util/scaffold_mixin.dart';
 
 class MemoryLeakBuildcontextPage extends StatefulWidget {
+  static String route = 'MemoryLeakBuildcontextPage';
+
   const MemoryLeakBuildcontextPage({super.key});
 
   @override
@@ -15,7 +17,7 @@ class _MemoryLeakBuildcontextPageState
   @override
   void initState() {
     super.initState();
-    Future.delayed(Duration(seconds: 3), () {
+    Future.delayed(Duration(seconds: 10), () {
       // ❌ 可能页面已经销毁，context 却被保留
       Navigator.of(context).push(
           MaterialPageRoute(builder: (_) => MemoryLeakScaleAnimationPage()));

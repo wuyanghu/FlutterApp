@@ -2,6 +2,8 @@ import 'dart:math';
 import 'package:flutter/material.dart';
 
 class CustomPaintPage extends StatelessWidget {
+  static String route = 'CustomPaintPage';
+
   const CustomPaintPage({super.key});
 
   @override

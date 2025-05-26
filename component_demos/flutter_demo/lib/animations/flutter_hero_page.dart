@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_demo/util/scaffold_mixin.dart';
 
 class HeroAnimationRouteA extends StatelessWidget {
+  static String route = 'HeroAnimationRouteA';
+
   const HeroAnimationRouteA({Key? key}) : super(key: key);
 
   @override

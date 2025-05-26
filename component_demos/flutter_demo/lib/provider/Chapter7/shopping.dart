@@ -46,6 +46,8 @@ class CartModel extends CustomChangeNotifier {
 }
 
 class ProviderRoute extends StatefulWidget {
+  static String route = 'ProviderRoute';
+
   @override
   _ProviderRouteState createState() => _ProviderRouteState();
 }

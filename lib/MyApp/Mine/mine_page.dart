@@ -1,12 +1,31 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_app/MyApp/Mine/mine_info_page.dart';
 import 'package:flutter_app/MyApp/Mine/Model/mine_model.dart';
+import 'package:flutter_app/MyApp/Mine/setting_page.dart';
+
+import '../../BestUI/navigation_home_screen.dart';
+import '../CircleOfFriends/circle_page.dart';
+import '../Thinking/Thinking.dart';
 
 class WPMine extends StatelessWidget {
-  final List commonUseList = WPMineModel.commonUseList;
-  final List mineList = WPMineModel.mineList;
-
   List<Widget> getCommonUseCellList(BuildContext context) {
+    List<WPMineModel> commonUseList = [
+      WPMineModel(
+          icon: "assets/bling/me/me_icon_fangyi@3x.png",
+          title: "想法",
+          screenCall: () => Thinking()),
+      WPMineModel(
+          icon: "assets/bling/me/me_icon_invite@3x.png",
+          title: "邀请",
+          screenCall: () => NavigationHomeScreen()),
+      WPMineModel(
+          icon: "assets/bling/me/me_icon_downloadapp@3x.png", title: "下载app"),
+      WPMineModel(
+          icon: "assets/bling/me/me_icon_setting@3x.png",
+          title: "设置",
+          screenCall: () => SettingScreen()),
+    ];
+
     List<Widget> listViews = <Widget>[];
     for (WPMineModel model in commonUseList) {
       listViews.add(cell(model, context));
@@ -15,6 +34,16 @@ class WPMine extends StatelessWidget {
   }
 
   List<Widget> getMineCellList(BuildContext context) {
+    List<WPMineModel> mineList = [
+      WPMineModel(
+        icon: "assets/bling/me/me_icon_circle@3x.png",
+        title: "朋友圈",
+        routeName: CirclePage.route,
+      ),
+      WPMineModel(icon: "assets/bling/me/me_icon_home@3x.png", title: "个人主页"),
+      WPMineModel(icon: "assets/bling/me/me_icon_collect@3x.png", title: "收藏"),
+    ];
+
     List<Widget> listViews = <Widget>[];
     for (WPMineModel model in mineList) {
       listViews.add(cell(model, context));
@@ -97,14 +126,18 @@ class WPMine extends StatelessWidget {
     return Expanded(
         child: InkWell(
             onTap: () {
-              if (model.screen == null) {
+              if (model.routeName != null) {
+                Navigator.pushNamed(context, model.routeName!);
+                return;
+              }
+              if (model.screenCall == null) {
                 print("跳转页面不存在");
                 return;
               }
               Navigator.push(
                   context,
                   MaterialPageRoute<dynamic>(
-                    builder: (BuildContext context) => model.screen!,
+                    builder: (BuildContext context) => model.screenCall!.call(),
                   ));
             },
             child: Column(

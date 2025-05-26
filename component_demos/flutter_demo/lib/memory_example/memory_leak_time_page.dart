@@ -3,6 +3,10 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 
 class MemoryLeakTimePage extends StatefulWidget {
+  static String route = 'MemoryLeakTimePage';
+
+  const MemoryLeakTimePage({super.key});
+
   @override
   _MemoryLeakTimePageState createState() => _MemoryLeakTimePageState();
 }

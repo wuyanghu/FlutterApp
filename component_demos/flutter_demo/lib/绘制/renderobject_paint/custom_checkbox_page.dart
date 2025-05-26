@@ -230,6 +230,8 @@ class RenderCustomCheckbox extends RenderBox with RenderObjectAnimationMixin {
 
 
 class CustomCheckboxPage extends StatefulWidget {
+  static String route = 'CustomCheckboxPage';
+
   const CustomCheckboxPage({Key? key}) : super(key: key);
 
   @override

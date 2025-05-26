@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 
 class TabDemo extends StatefulWidget {
+  static String route = 'TabDemo';
+
   const TabDemo({super.key});
 
   @override

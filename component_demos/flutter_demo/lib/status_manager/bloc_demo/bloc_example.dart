@@ -27,6 +27,8 @@ class AppBlocObserver extends BlocObserver {
 }
 
 class BlocExample extends StatefulWidget {
+  static String route = 'BlocExample';
+
   const BlocExample({super.key});
 
   @override

@@ -4,6 +4,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_demo/util/scaffold_mixin.dart';
 
 class StreamExample extends StatefulWidget {
+  static String route = 'StreamExample';
+
   const StreamExample({super.key});
 
   @override

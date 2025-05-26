@@ -4,6 +4,8 @@ import 'get_logic.dart';
 import 'get_state.dart';
 
 class GetPage extends StatelessWidget {
+  static String route = 'GetPage';
+
   GetPage({Key? key}) : super(key: key);
 
   final GetLogic logic = Get.put(GetLogic());

@@ -1,41 +1,24 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_app/BestUI/navigation_home_screen.dart';
-import 'package:flutter_app/MyApp/CircleOfFriends/Circle.dart';
+import 'package:flutter_app/MyApp/CircleOfFriends/circle_page.dart';
 import 'package:flutter_app/MyApp/Mine/setting_page.dart';
 import 'package:flutter_app/MyApp/Thinking/Thinking.dart';
 
+typedef ScreenCallback = Widget Function();
+
 class WPMineModel {
-  WPMineModel({required this.icon, this.title = '', this.screen});
+  WPMineModel({
+    required this.icon,
+    this.title = '',
+    this.screenCall,
+    this.routeName,
+  });
 
   String icon;
   String title;
-  Widget? screen;
+  String? routeName;
 
-  static List<WPMineModel> commonUseList = [
-    WPMineModel(
-        icon: "assets/bling/me/me_icon_fangyi@3x.png",
-        title: "想法",
-        screen: Thinking()),
-    WPMineModel(
-        icon: "assets/bling/me/me_icon_invite@3x.png",
-        title: "邀请",
-        screen: NavigationHomeScreen()),
-    WPMineModel(
-        icon: "assets/bling/me/me_icon_downloadapp@3x.png", title: "下载app"),
-    WPMineModel(
-        icon: "assets/bling/me/me_icon_setting@3x.png",
-        title: "设置",
-        screen: SettingScreen()),
-  ];
-
-  static List<WPMineModel> mineList = [
-    WPMineModel(
-        icon: "assets/bling/me/me_icon_circle@3x.png",
-        title: "朋友圈",
-        screen: Circle()),
-    WPMineModel(icon: "assets/bling/me/me_icon_home@3x.png", title: "个人主页"),
-    WPMineModel(icon: "assets/bling/me/me_icon_collect@3x.png", title: "收藏"),
-  ];
+  ScreenCallback? screenCall;
 }
 
 enum SettingCellType { normal, checkVersion, loginOut, empty }

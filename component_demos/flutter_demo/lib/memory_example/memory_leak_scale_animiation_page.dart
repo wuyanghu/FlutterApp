@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_demo/util/scaffold_mixin.dart';
 
 class MemoryLeakScaleAnimationPage extends StatefulWidget {
+  static String route = 'MemoryLeakScaleAnimationPage';
+
   const MemoryLeakScaleAnimationPage({Key? key}) : super(key: key);
 
   @override
@@ -62,6 +64,8 @@ class _MemoryLeakScaleAnimationPageState
 }
 
 class MemoryLeakScrollControllerPage extends StatefulWidget {
+  static String route = 'MemoryLeakScrollControllerPage';
+
   const MemoryLeakScrollControllerPage({super.key});
 
   @override
@@ -85,7 +89,7 @@ class _MemoryLeakScrollControllerPageState
 
   @override
   void dispose() {
-    // _controller.dispose();
+    _controller.dispose();
     super.dispose();
   }
 }

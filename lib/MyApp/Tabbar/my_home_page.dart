@@ -24,14 +24,14 @@ class _ScaffoldRouteState extends State<MyHomePage>
   @override
   void initState() {
     super.initState();
-    LeakDetector().init(maxRetainingPath: 300);
-    //show preview page
-    LeakDetector().onLeakedStream.listen((LeakedInfo info) {
-      //print to console
-      info.retainingPath.forEach((node) => print(node));
-      //show preview page
-      showLeakedInfoPage(context, info);
-    });
+    // LeakDetector().init(maxRetainingPath: 300);
+    // //show preview page
+    // LeakDetector().onLeakedStream.listen((LeakedInfo info) {
+    //   //print to console
+    //   info.retainingPath.forEach((node) => print(node));
+    //   //show preview page
+    //   showLeakedInfoPage(context, info);
+    // });
 
     _tabController = TabController(length: tabs.length, vsync: this);
     _tabController.addListener(() {

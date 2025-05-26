@@ -1,6 +1,6 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_app/MyApp/CircleOfFriends/CircleModel.dart';
+import 'package:flutter_app/MyApp/CircleOfFriends/circle_model.dart';
 import 'package:flutter_app/MyApp/Help/Network/Request.dart';
 import 'package:flutter_app/MyApp/Media/PrePhoto.dart';
 import 'package:flutter_app/MyApp/Media/BumbleBeeRemoteVideo.dart';
@@ -8,14 +8,17 @@ import 'package:flutter_app/MyApp/Mine/Load/refresh.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import 'package:pull_to_refresh/pull_to_refresh.dart';
 
-class Circle extends StatefulWidget {
+class CirclePage extends StatefulWidget {
+  static String route = 'CirclePage';
+  CirclePage();
+
   @override
   State<StatefulWidget> createState() {
-    return _Circle();
+    return _CirclePageState();
   }
 }
 
-class _Circle extends State<Circle> {
+class _CirclePageState extends State<CirclePage> {
   final int limit = 20;
   int startId = 0;
 

@@ -20,6 +20,8 @@ class AnimatedImage extends AnimatedWidget {
 }
 
 class ScaleAnimationRoute2 extends StatefulWidget {
+  static String route = 'ScaleAnimationRoute2';
+
   const ScaleAnimationRoute2({Key? key}) : super(key: key);
 
   @override

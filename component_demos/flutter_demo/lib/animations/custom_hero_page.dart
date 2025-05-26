@@ -4,6 +4,8 @@ import 'package:flutter_demo/util/scaffold_mixin.dart';
 import 'after_layout.dart';
 
 class CustomHeroAnimation extends StatefulWidget {
+  static String route = 'CustomHeroAnimation';
+
   const CustomHeroAnimation({Key? key}) : super(key: key);
 
   @override

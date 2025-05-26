@@ -5,6 +5,8 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'bloc_demo_bloc.dart';
 
 class BlocDemoPage extends StatelessWidget {
+  static String route = 'BlocDemoPage';
+
   const BlocDemoPage({super.key});
 
   @override

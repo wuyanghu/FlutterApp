@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 
 class SymmetricSliderDemo extends StatefulWidget {
+  static String route = 'SymmetricSliderDemo';
+
   @override
   _SymmetricSliderDemoState createState() => _SymmetricSliderDemoState();
 }

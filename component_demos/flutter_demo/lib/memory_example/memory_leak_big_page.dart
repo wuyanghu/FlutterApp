@@ -3,19 +3,22 @@ import 'package:flutter/material.dart';
 import 'package:flutter_demo/util/scaffold_mixin.dart';
 
 class BigMemoryPage extends StatefulWidget {
+  static String route = 'BigMemoryPage';
+
   const BigMemoryPage({super.key});
 
   @override
   State<BigMemoryPage> createState() => _BigMemoryPageState();
 }
 
+List<Uint8List> largeBuffer = [];
+
 class _BigMemoryPageState extends State<BigMemoryPage> {
-  List<Uint8List> largeBuffer = [];
 
   @override
   Widget build(BuildContext context) {
     void bigMemoryLeak() {
-      largeBuffer.add(Uint8List(10 * 1024 * 1024)); // 10MB
+      largeBuffer.add(Uint8List(100 * 1024 * 1024)); // 10MB
     }
 
     void disposeBigMemory() {

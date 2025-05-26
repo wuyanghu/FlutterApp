@@ -156,6 +156,8 @@ class _GradientCircularProgressPainter extends CustomPainter {
 
 
 class GradientCircularProgressPage extends StatefulWidget {
+  static String route = 'GradientCircularProgressPage';
+
   const GradientCircularProgressPage({Key? key}) : super(key: key);
 
   @override

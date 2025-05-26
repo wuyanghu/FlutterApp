@@ -3,6 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_demo/util/scaffold_mixin.dart';
 
 class CustomRouteAnimation extends StatefulWidget {
+  static String route = 'CustomRouteAnimation';
+
   final int count;
   const CustomRouteAnimation({super.key, required this.count});
 

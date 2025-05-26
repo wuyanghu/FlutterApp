@@ -24,6 +24,8 @@ class Counter with ChangeNotifier, DiagnosticableTreeMixin {
 }
 
 class ProviderDemo extends StatelessWidget {
+  static String route = 'ProviderDemo';
+
   const ProviderDemo({super.key});
 
   @override

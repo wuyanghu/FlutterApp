@@ -17,6 +17,8 @@ class CounterModel with ChangeNotifier {
 }
 
 class ShareProviderPage extends StatelessWidget {
+  static String route = 'ShareProviderPage';
+
   const ShareProviderPage({super.key});
 
   @override
