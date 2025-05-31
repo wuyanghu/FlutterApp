@@ -27,9 +27,11 @@ import 'animations/scale_animation1_page.dart';
 import 'animations/scale_animation2_page.dart';
 import 'animations/scale_animation_page.dart';
 import 'animations/stagger_animation_page.dart';
+import 'async_example/future_example.dart';
 import 'async_example/stream_example.dart';
 import 'flutter_实战/WPChapters_screen.dart';
 import 'memory_example/memory_leak_buildcontext_page.dart';
+import 'memory_example/memory_leak_file_read_page.dart';
 import 'memory_example/memory_leak_scale_animiation_page.dart';
 import 'slider/symmetric_slider_demo.dart';
 import 'package:leak_detector/leak_detector.dart';
@@ -102,6 +104,10 @@ Map<String, WidgetBuilder> getFlutterDemoRoutes() {
     MemoryLeakScrollControllerPage.route: (BuildContext context) =>
         MemoryLeakScrollControllerPage(),
     VideoPlayerPage.route: (BuildContext context) => VideoPlayerPage(),
+    MemoryLeakFileReadPage.route: (BuildContext context) =>
+        MemoryLeakFileReadPage(),
+    StreamExample.route: (BuildContext context) => StreamExample(),
+    FutureExample.route: (BuildContext context) => FutureExample(),
   };
 
   return routes;
@@ -226,9 +232,7 @@ class _FlutterDemoHomePageState extends State<FlutterDemoHomePage> {
           Divider(
             indent: 1,
           ),
-          _buildItem("事件任务、微任务优先级", onTap: () {
-            EventLoop().task();
-          }),
+          _buildItem("Future探究", routeName: FutureExample.route),
           _buildItem(
             "stream",
             routeName: StreamExample.route,
@@ -263,6 +267,7 @@ class _FlutterDemoHomePageState extends State<FlutterDemoHomePage> {
               routeName: MemoryLeakScaleAnimationPage.route),
           _buildItem("内存泄漏-scrollController no dispose",
               routeName: MemoryLeakScrollControllerPage.route),
+          _buildItem("内存泄漏-文件分片内存泄漏", routeName: MemoryLeakFileReadPage.route),
           Divider(
             indent: 1,
           ),

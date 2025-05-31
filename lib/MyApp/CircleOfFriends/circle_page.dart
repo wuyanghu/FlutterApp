@@ -286,8 +286,7 @@ class _CirclePageState extends State<CirclePage> {
         height = model.height!;
       }
       Size size = getImageSize(Size(width.toDouble(), height.toDouble()));
-      String url = DYBase.ossUrl +
-          "${model.isOnePic() ? model.pictures![0].url : model.videoPreview}";
+      String url = "https://flutter.github.io/assets-for-api-docs/assets/videos/bee.mp4";
       return SliverToBoxAdapter(
         child: InkWell(
             child: Padding(
@@ -323,7 +322,7 @@ class _CirclePageState extends State<CirclePage> {
               } else {
                 Navigator.push(context, MaterialPageRoute(builder: (context) {
                   return BumbleBeeRemoteVideo(
-                    videoUrl: DYBase.ossUrl + model.video!,
+                    videoUrl: url,
                   );
                 }));
               }

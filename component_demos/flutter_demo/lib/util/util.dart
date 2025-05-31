@@ -6,6 +6,24 @@ import 'package:flutter/foundation.dart';
 bool isFromFlutter = const bool.fromEnvironment("isFromFlutter");
 
 class EventLoop {
+  void task2() {
+    Future(() {
+      print('f1');
+    }).then((_) {
+      print('f1_1');
+    }); //声
+
+    Future(() async => fetchData()).then((_) {
+      print('f2_2');
+    }); //声
+  }
+
+  Future<int> fetchData() async {
+    await Future.delayed(Duration(seconds: 1));
+    print('f2');
+    return Future.value(3);
+  }
+
   void task() {
     //实例2:
     // f12 f11
@@ -15,7 +33,9 @@ class EventLoop {
     // f6 f9
     // f7 f8 //Future()是重新创建一个
 
-    Future(() => print('f1')); //声明一个匿名Future
+    Future(() {
+      print('f1');
+    }); //声明一个匿名Future
     Future fx = Future(() => null); //声明Future fx，其执行体为null
 
 //声明一个匿名Future，并注册了两个then。在第一个then回调里启动了一个微任务
@@ -40,6 +60,29 @@ class EventLoop {
     scheduleMicrotask(() => print('f11'));
     print('f12');
   }
+
+  ///手动控制异步完成
+  void completer() {
+    Future<String> fetchData() {
+      final completer = Completer<String>(); // 创建 Completer
+
+      // 模拟异步操作（如网络请求）
+      Future.delayed(Duration(seconds: 2), () {
+        if (true) {
+          completer.complete('Data loaded!'); // 成功完成
+        } else {
+          completer.completeError('Failed to load data'); // 失败完成
+        }
+      });
+
+      return completer.future; // 返回关联的 Future
+    }
+
+// 调用
+    fetchData().then((data) {
+      print(data);
+    }).catchError((e) => print(e));
+  }
 }
 
 class IsolateExample {
@@ -47,7 +90,7 @@ class IsolateExample {
     final result = await compute(subIsolate, 100);
     print("compute result = $result");
   }
-  
+
   void startIsolate() async {
     final receivePort = ReceivePort(); // 用于接收子Isolate的消息
 

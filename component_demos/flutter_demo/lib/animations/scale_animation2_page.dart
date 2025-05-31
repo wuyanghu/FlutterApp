@@ -1,24 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_demo/util/scaffold_mixin.dart';
 
-class AnimatedImage extends AnimatedWidget {
-  const AnimatedImage({
-    Key? key,
-    required Animation<double> animation,
-  }) : super(key: key, listenable: animation);
-
-  @override
-  Widget build(BuildContext context) {
-    final animation = listenable as Animation<double>;
-    return Center(
-      child: Icon(
-        Icons.headphones,
-        size: animation.value,
-      ),
-    );
-  }
-}
-
 class ScaleAnimationRoute2 extends StatefulWidget {
   static String route = 'ScaleAnimationRoute2';
 

@@ -12,11 +12,15 @@ class LoadImgPage extends StatefulWidget {
 }
 
 class _LoadImgPageState extends State<LoadImgPage> {
-  List images = [
+  List<String> images = [
     'https://images.pexels.com/photos/32213422/pexels-photo-32213422.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
     'https://images.pexels.com/photos/32186716/pexels-photo-32186716.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
     'https://images.pexels.com/photos/26201662/pexels-photo-26201662.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
-    'https://images.pexels.com/photos/32207839/pexels-photo-32207839.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2'
+    'https://images.pexels.com/photos/32207839/pexels-photo-32207839.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
+    'https://cdn.pixabay.com/photo/2021/10/30/17/54/desert-6755127_1280.jpg',
+    'https://images.pexels.com/photos/32209604/pexels-photo-32209604.jpeg?auto=compress&cs=tinysrgb&w=1200',
+    'https://images.pexels.com/photos/17664238/pexels-photo-17664238.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
+    'https://images.pexels.com/photos/17664142/pexels-photo-17664142.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2'
   ];
 
   @override
@@ -26,14 +30,22 @@ class _LoadImgPageState extends State<LoadImgPage> {
       SingleChildScrollView(
         child: Column(
           children: [
-            ImageNetworkWidget(
-                'https://images.pexels.com/photos/32186716/pexels-photo-32186716.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2'),
-            Divider(height: 1),
-            ImageNetworkWidget(
-                'https://images.pexels.com/photos/26201662/pexels-photo-26201662.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2'),
-            Divider(height: 1),
-            CachedNetworkImageWidget(
-                'https://images.pexels.com/photos/32207839/pexels-photo-32207839.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2'),
+            ...images
+                .map<Widget>((toElement) => Column(
+                      children: [
+                        ImageNetworkWidget(toElement),
+                        Divider(height: 1)
+                      ],
+                    ))
+                .toList(),
+            ...images
+                .map<Widget>((toElement) => Column(
+                      children: [
+                        CachedNetworkImageWidget(toElement),
+                        Divider(height: 1)
+                      ],
+                    ))
+                .toList(),
           ],
         ),
       ),

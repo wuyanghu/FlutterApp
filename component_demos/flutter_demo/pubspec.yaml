@@ -45,6 +45,7 @@ dependencies:
   sentry_flutter: 8.14.2
   leak_detector: 1.1.0 #内存泄漏监控
   cached_network_image: 3.4.1
+  rxdart: 0.28.0
 
 
 dependency_overrides:
