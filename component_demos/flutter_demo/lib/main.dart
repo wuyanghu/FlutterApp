@@ -30,6 +30,7 @@ import 'animations/stagger_animation_page.dart';
 import 'async_example/future_example.dart';
 import 'async_example/stream_example.dart';
 import 'flutter_实战/WPChapters_screen.dart';
+import 'list_demo/list_page.dart';
 import 'memory_example/memory_leak_buildcontext_page.dart';
 import 'memory_example/memory_leak_file_read_page.dart';
 import 'memory_example/memory_leak_scale_animiation_page.dart';
@@ -108,6 +109,7 @@ Map<String, WidgetBuilder> getFlutterDemoRoutes() {
         MemoryLeakFileReadPage(),
     StreamExample.route: (BuildContext context) => StreamExample(),
     FutureExample.route: (BuildContext context) => FutureExample(),
+    ListPage.route: (BuildContext context) => ListPage(),
   };
 
   return routes;
@@ -229,6 +231,7 @@ class _FlutterDemoHomePageState extends State<FlutterDemoHomePage> {
           _buildItem("slider_demo", routeName: SymmetricSliderDemo.route),
           _buildItem("switch_demo", routeName: SwitchDemo.route),
           _buildItem("tab_异常_demo", routeName: TabDemo.route),
+          _buildItem("listview顶部空白问题", routeName: ListPage.route),
           Divider(
             indent: 1,
           ),
@@ -244,9 +247,6 @@ class _FlutterDemoHomePageState extends State<FlutterDemoHomePage> {
             IsolateExample().startIsolate();
             // IsolateExample().asyncFactorialiMain();
             // IsolateExample().asyncFactorialiMain2();
-          }),
-          _buildItem("compute()开启Isolate", onTap: () {
-            IsolateExample().computeExample();
           }),
           Divider(
             indent: 1,

@@ -26,9 +26,11 @@ class CustomPaintRoute extends StatelessWidget {
       child: Column(
         mainAxisSize: MainAxisSize.min,
         children: [
-          CustomPaint(
-            size: Size(300, 300), //指定画布大小
-            painter: MyPainter(),
+          RepaintBoundary(
+            child: CustomPaint(
+              size: Size(300, 300), //指定画布大小
+              painter: MyPainter(),
+            ),
           ),
           //添加一个刷新button
           ElevatedButton(onPressed: () {}, child: Text("刷新"))
