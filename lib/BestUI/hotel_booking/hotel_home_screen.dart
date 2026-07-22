@@ -388,7 +388,7 @@ class _HotelHomeScreenState extends State<HotelHomeScreen>
                 },
                 child: Padding(
                   padding: const EdgeInsets.all(16.0),
-                  child: Icon(FontAwesomeIcons.search,
+                  child: FaIcon(FontAwesomeIcons.magnifyingGlass,
                       size: 20,
                       color: HotelAppTheme.buildLightTheme().scaffoldBackgroundColor),
                 ),
@@ -600,7 +600,7 @@ class _HotelHomeScreenState extends State<HotelHomeScreen>
                       },
                       child: Padding(
                         padding: const EdgeInsets.all(8.0),
-                        child: Icon(FontAwesomeIcons.mapMarkerAlt),
+                        child: FaIcon(FontAwesomeIcons.locationDot),
                       ),
                     ),
                   ),

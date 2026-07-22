@@ -120,8 +120,8 @@ class HotelListView extends StatelessWidget {
                                 const SizedBox(
                                   width: 4,
                                 ),
-                                Icon(
-                                  FontAwesomeIcons.mapMarkerAlt,
+                                FaIcon(
+                                  FontAwesomeIcons.locationDot,
                                   size: 12,
                                   color: HotelAppTheme
                                       .buildLightTheme()
