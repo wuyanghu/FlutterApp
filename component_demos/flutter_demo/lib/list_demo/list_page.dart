@@ -44,39 +44,11 @@ class _ListPageState extends State<ListPage> {
     //     ],
     //   ),
     // );
-    return Scaffold(
-      body: Column(
-        children: [
-          SizedBox(
-            height: MediaQuery.of(context).padding.top,
-          ),
-          Container(
-            color: Colors.green,
-            child: Text("ListView"),
-          ),
-          Expanded(
-              child: ListView(
-                children: List.generate(
-                  1,
-                      (index) => LayoutBuilder(builder: (context, constraints) {
-                    print("constraints = $constraints");
-                    return Container(
-                      height: 80,
-                      color: index.isEven ? Colors.blue : Colors.green,
-                      alignment: Alignment.center,
-                      child: Text('Item $index',
-                          style: const TextStyle(color: Colors.white)),
-                    );
-                  }),
-                ),
-              )),
-        ],
-      ),
-    );
+
     return DefaultTabController(
       length: 4,
       child: Scaffold(
-        appBar: AppBar(),
+        // appBar: AppBar(),
         body: Column(
           children: [
             SizedBox(

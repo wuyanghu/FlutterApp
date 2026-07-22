@@ -6,7 +6,7 @@ import FlutterMacOS
 import Foundation
 
 import leak_detector
-import sqflite
+import sqflite_darwin
 
 func RegisterGeneratedPlugins(registry: FlutterPluginRegistry) {
   LeakDetectorPlugin.register(with: registry.registrar(forPlugin: "LeakDetectorPlugin"))

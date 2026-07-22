@@ -35,7 +35,7 @@ dependency_overrides:
   leak_detector:
     path: ./component_demos/leak_detector
   vm_service: 11.2.0
-  cupertino_icons: ^0.1.3
+  cupertino_icons: ^1.0.8
   english_words: ^3.1.3
   encrypt: 5.0.1
   flutter_cache_manager: 3.4.1

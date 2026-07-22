@@ -3,7 +3,6 @@
 export "FLUTTER_ROOT=/Users/wupeng/fvm/versions/3.32.0"
 export "FLUTTER_APPLICATION_PATH=/Users/wupeng/Desktop/code/FlutterApp/component_demos/leak_detector/example"
 export "COCOAPODS_PARALLEL_CODE_SIGN=true"
-export "FLUTTER_TARGET=lib/main.dart"
 export "FLUTTER_BUILD_DIR=build"
 export "FLUTTER_BUILD_NAME=1.0.0"
 export "FLUTTER_BUILD_NUMBER=1"
