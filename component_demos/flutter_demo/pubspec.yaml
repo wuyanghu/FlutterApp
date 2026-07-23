@@ -42,7 +42,7 @@ dependencies:
   provider:
   video_player:
   after_layout: 1.2.0
-  sentry_flutter: 8.14.2
+  sentry_flutter: 9.25.0
   leak_detector: 1.1.0 #内存泄漏监控
   cached_network_image: 3.4.1
   rxdart: 0.28.0

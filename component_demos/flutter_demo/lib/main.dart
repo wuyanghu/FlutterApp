@@ -272,14 +272,11 @@ class _FlutterDemoHomePageState extends State<FlutterDemoHomePage> {
             indent: 1,
           ),
           _buildItem("Sentry 读取本地json监控", onTap: () async {
-            final transaction = Sentry.startTransaction(
-              'asset-bundle-transaction-1',
-              'load',
-              bindToScope: true,
-            );
+            final span = Sentry.startInactiveSpan('asset-bundle-transaction-1');
             final text = await DefaultAssetBundle.of(context)
                 .loadString('assets/markdown.md');
-            await transaction.finish(status: const SpanStatus.ok());
+            span.status = SentrySpanStatusV2.ok;
+            span.end();
           }),
           _buildItem("video_player播放", routeName: VideoPlayerPage.route)
         ],

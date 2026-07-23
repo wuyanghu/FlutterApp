@@ -43,10 +43,8 @@ class TimeConsumingPageState extends State<TimeConsumingPage> {
               ),
             TextButton(
                 onPressed: () async {
-                  final transaction = Sentry.startTransaction(
+                  final span = Sentry.startInactiveSpan(
                     'load-TimeConsumingPageState-onPressed',
-                    'ui.load',
-                    bindToScope: true,
                   );
 
                   // _counter = await compute(decrement, 2000000000);
@@ -55,7 +53,8 @@ class TimeConsumingPageState extends State<TimeConsumingPage> {
                     _calculation_ended = true;
                   });
 
-                  transaction.finish(status: const SpanStatus.ok());
+                  span.status = SentrySpanStatusV2.ok;
+                  span.end();
                 },
                 child: Text(_calculation_ended
                     ? 'calculation has ended $_counter'
